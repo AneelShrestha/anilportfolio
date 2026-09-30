@@ -673,46 +673,63 @@ section {
 
 }
 /* =========================================
-   MOBILE — CONSISTENT SECTION ALIGNMENT
+   FINAL MOBILE LAYOUT
    ========================================= */
 
 @media (max-width: 800px) {
 
   html,
   body {
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   section {
     width: 100%;
     padding: 70px 0;
+    overflow: hidden;
   }
 
   section .container {
     width: 100%;
     max-width: 100%;
+    margin: 0;
     padding-left: 24px;
     padding-right: 24px;
-    margin: 0;
   }
 
+  /* ---------- SECTION LABEL ---------- */
+
   .section-label {
+    display: block;
     width: 100%;
     margin: 0 0 18px 0;
     padding: 0;
+    line-height: 1.3;
   }
 
+  /* ---------- SECTION HEADINGS ---------- */
+
   .section-title {
+    display: block;
     width: 100%;
     max-width: 100%;
     margin: 0 0 32px 0;
     padding: 0;
     font-size: 44px;
-    line-height: 1;
+    line-height: 1.05;
     letter-spacing: -0.025em;
+    overflow: visible;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
-  /* ABOUT */
+  /* Keep every main heading aligned to the same left edge */
 
   #about .section-title,
   #skills .section-title,
@@ -724,20 +741,94 @@ section {
     margin-right: 0;
   }
 
-  #about .about-grid,
-  #skills .skills-grid,
-  #software .software-grid,
-  #work .work-intro,
-  #work .work-filters,
-  #work .projects-grid,
-  #contact .contact-grid {
+  /* ---------- ABOUT ---------- */
+
+  #about .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
     width: 100%;
     max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    gap: 35px;
+    margin: 0;
   }
 
-  /* Prevent long text from creating overflow */
+  /* ---------- SKILLS ---------- */
+
+  #skills .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    gap: 24px;
+    margin: 0;
+  }
+
+  /* ---------- SOFTWARE ---------- */
+
+  #software .software-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    gap: 24px;
+    margin: 0;
+  }
+
+  /* ---------- WORK ---------- */
+
+  #work .work-intro {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 28px 0;
+  }
+
+  #work .work-filters {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 32px 0;
+  }
+
+  #work .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    gap: 32px;
+    margin: 0;
+  }
+
+  /* ---------- CONTACT ---------- */
+
+  #contact .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    gap: 40px;
+    margin: 0;
+  }
+
+  #contact .contact-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  #contact .contact-item {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  #contact .social-links {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  /* ---------- TEXT / IMAGES ---------- */
 
   p,
   h1,
@@ -746,63 +837,12 @@ section {
   a,
   span {
     max-width: 100%;
-    overflow-wrap: anywhere;
   }
-
-  /* Images */
 
   img {
     display: block;
     max-width: 100%;
-  }
-
-}
-/* =========================================
-   MOBILE — STACK CONTENT VERTICALLY
-   ========================================= */
-
-@media (max-width: 800px) {
-
-  /* Skills: one card per row */
-  #skills .skills-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  /* Software: one card per row */
-  #software .software-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  /* Portfolio: one project per row */
-  #work .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  /* Contact: one item per row */
-  #contact .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  /* Contact cards: one per row */
-  #contact .contact-details {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  /* About content */
-  #about .about-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 35px;
+    height: auto;
   }
 
 }
