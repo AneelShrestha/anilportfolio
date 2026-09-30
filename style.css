@@ -1254,3 +1254,25 @@ section {
   }
 
 }
+/* =========================================
+   MOBILE TEXT — JUSTIFIED + LAST LINE CENTER
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  #about p,
+  #skills p,
+  #software p,
+  #work p,
+  #contact p,
+  .about-text,
+  .skill p,
+  .software p,
+  .work-intro p,
+  .contact-intro p {
+    text-align: justify;
+    text-align-last: center;
+    line-height: 1.7;
+  }
+
+}
