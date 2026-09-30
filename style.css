@@ -1286,6 +1286,18 @@ section {
   }
 
 }
+/* HERO TWO-COLUMN LAYOUT */
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
+}
 /* HERO PORTRAIT */
 .hero-portrait {
   flex: 0 0 460px;
