@@ -1310,21 +1310,30 @@ section {
 }
 
 /* Portrait */
+.hero-portrait {
+  flex: 0 0 460px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: stretch;
+  overflow: hidden;
+}
+
 .hero-portrait img {
   display: block;
   width: 100%;
-  max-width: 420px;
-  height: 560px;
+  max-width: 460px;
+  height: 650px;
   object-fit: contain;
   object-position: center bottom;
 
-  /* Bottom feather */
   -webkit-mask-image: linear-gradient(
     to bottom,
     black 0%,
     black 78%,
-    rgba(0, 0, 0, 0.85) 86%,
-    rgba(0, 0, 0, 0.45) 93%,
+    rgba(0, 0, 0, 0.85) 87%,
+    rgba(0, 0, 0, 0.45) 94%,
     transparent 100%
   );
 
@@ -1332,8 +1341,8 @@ section {
     to bottom,
     black 0%,
     black 78%,
-    rgba(0, 0, 0, 0.85) 86%,
-    rgba(0, 0, 0, 0.45) 93%,
+    rgba(0, 0, 0, 0.85) 87%,
+    rgba(0, 0, 0, 0.45) 94%,
     transparent 100%
   );
 }
