@@ -2459,3 +2459,144 @@ body {
 .btn {
   font-weight: 600;
 }
+/* =========================================
+   FINAL TYPOGRAPHY SYSTEM
+   ANTON = MAIN TITLES ONLY
+   ROBOTO = EVERYTHING ELSE
+========================================= */
+
+:root {
+  --font-main-title: "Anton", sans-serif;
+  --font-body: "Roboto", Arial, sans-serif;
+}
+
+
+/* EVERYTHING USES ROBOTO */
+
+body,
+nav,
+button,
+a,
+p,
+span,
+div {
+  font-family: var(--font-body);
+}
+
+
+/* =========================================
+   MAIN TITLES — ANTON
+========================================= */
+
+.hero h1,
+.section-title {
+  font-family: var(--font-main-title);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+
+/* HERO MAIN TITLE */
+
+.hero h1 {
+  font-size: clamp(55px, 8vw, 105px);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+}
+
+
+/* SECTION MAIN TITLES */
+
+.section-title {
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 0.98;
+  letter-spacing: 0.01em;
+}
+
+
+/* =========================================
+   EVERYTHING ELSE — ROBOTO
+========================================= */
+
+.hero-role,
+.hero p,
+.hero-status,
+.eyebrow,
+.section-label,
+.about-text,
+.stat h3,
+.stat p,
+.skill h3,
+.skill p,
+.skill-number,
+.software h3,
+.software p,
+.software span,
+.filter-btn,
+.project-info,
+.project-info h3,
+.project-info p,
+.project-type,
+.project-number,
+.contact-intro,
+.contact-details,
+.contact-item,
+.social-links,
+.btn,
+.logo,
+.nav-links a,
+footer {
+  font-family: var(--font-body);
+}
+
+
+/* NORMAL FONT WEIGHTS */
+
+.hero-role {
+  font-weight: 500;
+}
+
+.hero p,
+.about-text,
+.skill p,
+.stat p,
+.software p,
+.project-info p,
+.contact-intro {
+  font-weight: 400;
+}
+
+
+/* NAVIGATION */
+
+.logo {
+  font-weight: 700;
+}
+
+.nav-links a {
+  font-weight: 500;
+}
+
+
+/* BUTTONS */
+
+.btn {
+  font-weight: 600;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .hero h1 {
+    font-size: clamp(52px, 14vw, 78px);
+    line-height: 0.96;
+  }
+
+  .section-title {
+    font-size: clamp(45px, 12vw, 65px);
+    line-height: 0.98;
+  }
+
+}
