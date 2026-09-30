@@ -757,3 +757,52 @@ section {
   }
 
 }
+/* =========================================
+   MOBILE — STACK CONTENT VERTICALLY
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  /* Skills: one card per row */
+  #skills .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Software: one card per row */
+  #software .software-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Portfolio: one project per row */
+  #work .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Contact: one item per row */
+  #contact .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Contact cards: one per row */
+  #contact .contact-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* About content */
+  #about .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+}
