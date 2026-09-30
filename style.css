@@ -515,3 +515,78 @@ footer {
     flex-direction: column;
   }
 }
+/* =========================
+   HERO V2 POLISH
+========================= */
+
+.hero-content {
+  max-width: 850px;
+}
+
+.hero-role {
+  margin: 24px 0 20px;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+
+.hero-content > p {
+  max-width: 680px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.hero-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 28px 0 30px;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+
+.hero-status span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  background: currentColor;
+  box-shadow: 0 0 12px currentColor;
+}
+
+.hero .buttons {
+  margin-top: 10px;
+}
+
+.hero .btn {
+  min-width: 150px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+
+  .hero-role {
+    font-size: 1.15rem;
+  }
+
+  .hero-content > p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .hero-status {
+    font-size: 0.75rem;
+  }
+
+  .hero .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero .btn {
+    width: 100%;
+  }
+
+}
