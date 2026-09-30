@@ -2766,3 +2766,168 @@ body {
   }
 
 }
+/* =================================
+   PROFESSIONAL EXPERIENCES
+================================= */
+
+#experience {
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-list {
+  position: relative;
+  margin-top: 80px;
+  border-left: 1px solid rgba(255,255,255,.12);
+}
+
+.experience-item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 45px;
+
+  padding: 0 0 55px 45px;
+}
+
+.experience-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Timeline dot */
+
+.experience-item::before {
+  content: "";
+
+  position: absolute;
+  left: -5px;
+  top: 5px;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 0 6px rgba(91,124,255,.10),
+    0 0 20px rgba(91,124,255,.45);
+}
+
+/* Year */
+
+.experience-year {
+  font-family: var(--font-body);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  letter-spacing: .04em;
+
+  color: var(--accent);
+
+  padding-top: 3px;
+}
+
+/* Experience card */
+
+.experience-content {
+  padding: 25px 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.015)
+    );
+
+  border: 1px solid var(--glass-border);
+
+  border-radius: 18px;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,.25);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.experience-content:hover {
+  transform: translateX(8px);
+
+  border-color: rgba(91,124,255,.45);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.45),
+    0 0 30px rgba(91,124,255,.10);
+}
+
+/* Job title */
+
+.experience-content h3 {
+  margin: 0;
+
+  font-family: var(--font-body);
+
+  font-size: 22px;
+  line-height: 1.4;
+
+  font-weight: 600;
+
+  color: var(--text);
+}
+
+/* Company / organization */
+
+.experience-company {
+  margin: 10px 0 0;
+
+  font-family: var(--font-body);
+
+  font-size: 15px;
+  line-height: 1.6;
+
+  color: var(--muted);
+}
+
+
+/* =================================
+   EXPERIENCE — MOBILE
+================================= */
+
+@media (max-width: 800px) {
+
+  .experience-list {
+    margin-top: 55px;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    padding: 0 0 40px 30px;
+  }
+
+  .experience-year {
+    font-size: 14px;
+  }
+
+  .experience-content {
+    padding: 22px 20px;
+  }
+
+  .experience-content h3 {
+    font-size: 19px;
+  }
+
+  .experience-company {
+    font-size: 14px;
+  }
+
+}
