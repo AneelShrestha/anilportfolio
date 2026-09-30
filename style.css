@@ -672,3 +672,66 @@ section {
   }
 
 }
+/* =========================================
+   MOBILE SECTION HEADING ALIGNMENT
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  /* Consistent section spacing */
+  section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  /* Section labels */
+  .section-label {
+    margin-bottom: 18px;
+    line-height: 1.4;
+  }
+
+  /* Main section headings */
+  .section-title {
+    margin-top: 0;
+    margin-bottom: 35px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  /* About heading */
+  #about .section-title {
+    margin-bottom: 32px;
+  }
+
+  /* Skills heading */
+  #skills .section-title {
+    margin-bottom: 35px;
+  }
+
+  /* Software heading */
+  #software .section-title {
+    margin-bottom: 35px;
+  }
+
+  /* Work heading */
+  #work .section-title {
+    margin-bottom: 30px;
+  }
+
+  /* Contact heading */
+  #contact .section-title {
+    margin-bottom: 30px;
+  }
+
+  /* Keep content aligned with headings */
+  #about .about-grid,
+  #skills .skills-grid,
+  #software .software-grid,
+  #work .work-intro,
+  #work .work-filters,
+  #work .projects-grid,
+  #contact .contact-grid {
+    margin-top: 0;
+  }
+
+}
