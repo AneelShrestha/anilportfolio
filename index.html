@@ -1,1 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anil Shrestha — Graphic Designer & Video Editor. Personal professional portfolio.">
+  <title>Anil Shrestha — Designer & Editor</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 22px 0;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #888;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: #bbb;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(120,120,120,0.12), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05), transparent 30%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: #999;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 9vw, 110px);
+      line-height: 0.95;
+      letter-spacing: -6px;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 span {
+      color: #777;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: #aaa;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 25px;
+      border: 1px solid #fff;
+      border-radius: 40px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn.primary {
+      background: #fff;
+      color: #000;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 110px 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .section-label {
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      font-size: clamp(35px, 5vw, 65px);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 50px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .about-text {
+      color: #aaa;
+      font-size: 17px;
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat {
+      padding: 30px;
+      border: 1px solid #222;
+      border-radius: 15px;
+      background: #0f0f0f;
+    }
+
+    .stat h3 {
+      font-size: 35px;
+      margin-bottom: 5px;
+    }
+
+    .stat p {
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      padding: 35px;
+      min-height: 230px;
+      border: 1px solid #222;
+      border-radius: 18px;
+      background: #0f0f0f;
+      transition: 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-7px);
+      border-color: #555;
+    }
+
+    .service-number {
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .service h3 {
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* PORTFOLIO */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      min-height: 350px;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid #222;
+      background:
+        linear-gradient(135deg, #171717, #0d0d0d);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project small {
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    .project h3 {
+      font-size: 30px;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      padding: 60px;
+      border: 1px solid #222;
+      border-radius: 20px;
+      background: #0f0f0f;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(35px, 6vw, 70px);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .contact-box p {
+      color: #888;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+      color: #666;
+      font-size: 13px;
+      border-top: 1px solid #191919;
+    }
+
+    footer .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .about-grid,
+      .services,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-box {
+        padding: 35px 20px;
+      }
+
+      footer .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">ANIL<span>.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            Graphic Designer / Video Editor
+          </div>
+
+          <h1>
+            I create<br>
+            <span>visual stories.</span>
+          </h1>
+
+          <p>
+            I'm Anil Shrestha, a designer and editor focused on creating
+            meaningful visuals, engaging content and strong visual identities.
+          </p>
+
+          <div class="buttons">
+            <a href="#work" class="btn primary">View My Work</a>
+            <a href="#contact" class="btn">Let's Talk</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+      <div class="container">
+
+        <div class="section-label">01 — About</div>
+
+        <h2 class="section-title">
+          Design with<br>purpose.
+        </h2>
+
+        <div class="about-grid">
+
+          <div class="about-text">
+            <p>
+              I'm Anil Shrestha, a creative designer and video editor
+              passionate about turning ideas into visually engaging experiences.
+            </p>
+
+            <p>
+              From graphic design and branding to social media creatives
+              and video editing, I enjoy working on projects that combine
+              creativity, clarity and storytelling.
+            </p>
+
+            <p>
+              This portfolio is a collection of my work, skills and creative
+              journey.
+            </p>
+          </div>
+
+          <div class="stats">
+
+            <div class="stat">
+              <h3>01</h3>
+              <p>Graphic Design</p>
+            </div>
+
+            <div class="stat">
+              <h3>02</h3>
+              <p>Video Editing</p>
+            </div>
+
+            <div class="stat">
+              <h3>03</h3>
+              <p>Brand Identity</p>
+            </div>
+
+            <div class="stat">
+              <h3>04</h3>
+              <p>Creative Content</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+      <div class="container">
+
+        <div class="section-label">02 — Services</div>
+
+        <h2 class="section-title">
+          What I<br>do.
+        </h2>
+
+        <div class="services">
+
+          <div class="service">
+            <div class="service-number">01</div>
+            <h3>Graphic Design</h3>
+            <p>
+              Social media designs, promotional graphics, posters,
+              advertisements and visual communication.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-number">02</div>
+            <h3>Video Editing</h3>
+            <p>
+              Creative video editing, promotional videos, social content,
+              cinematic edits and storytelling.
+            </p>
+          </div>
+
+          <div class="service">
+            <div class="service-number">03</div>
+            <h3>Brand Identity</h3>
+            <p>
+              Visual identity, creative direction and design systems
+              that help brands communicate consistently.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- WORK -->
+
+    <section id="work">
+      <div class="container">
+
+        <div class="section-label">03 — Selected Work</div>
+
+        <h2 class="section-title">
+          Things I've<br>created.
+        </h2>
+
+        <div class="projects">
+
+          <div class="project">
+            <small>Graphic Design</small>
+            <h3>Brand Campaign</h3>
+          </div>
+
+          <div class="project">
+            <small>Social Media</small>
+            <h3>Creative Series</h3>
+          </div>
+
+          <div class="project">
+            <small>Video Editing</small>
+            <h3>Visual Story</h3>
+          </div>
+
+          <div class="project">
+            <small>Brand Identity</small>
+            <h3>Identity Project</h3>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+      <div class="container">
+
+        <div class="section-label">04 — Contact</div>
+
+        <div class="contact-box">
+
+          <h2>
+            Let's create<br>something.
+          </h2>
+
+          <p>
+            Have a project, idea or collaboration in mind?
+            I'd love to hear from you.
+          </p>
+
+          <a href="mailto:your@email.com" class="btn primary">
+            Get In Touch
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Anil Shrestha</div>
+      <div>Designer · Editor · Creator</div>
+    </div>
+  </footer>
+
+</body>
+</html>
