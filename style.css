@@ -1291,43 +1291,89 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 45px;
 }
 
 .hero-content {
   flex: 1;
+  min-width: 0;
 }
 
 .hero-portrait {
-  flex: 0 0 380px;
+  flex: 0 0 420px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  align-self: stretch;
+  overflow: hidden;
 }
 
+/* Portrait */
 .hero-portrait img {
   display: block;
   width: 100%;
-  max-width: 380px;
-  height: auto;
+  max-width: 420px;
+  height: 560px;
   object-fit: contain;
+  object-position: center bottom;
+
+  /* Bottom feather */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 78%,
+    rgba(0, 0, 0, 0.85) 86%,
+    rgba(0, 0, 0, 0.45) 93%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 78%,
+    rgba(0, 0, 0, 0.85) 86%,
+    rgba(0, 0, 0, 0.45) 93%,
+    transparent 100%
+  );
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
+
   .hero-layout {
     flex-direction: column;
     text-align: center;
-    gap: 40px;
+    gap: 25px;
   }
 
   .hero-portrait {
     flex: none;
     width: 100%;
+    height: auto;
+    overflow: visible;
   }
 
   .hero-portrait img {
-    max-width: 300px;
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black 82%,
+      rgba(0, 0, 0, 0.7) 92%,
+      transparent 100%
+    );
+
+    mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black 82%,
+      rgba(0, 0, 0, 0.7) 92%,
+      transparent 100%
+    );
   }
 
   .hero-status,
