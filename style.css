@@ -2343,3 +2343,119 @@ h6 {
   }
 
 }
+/* =========================================
+   ANTON + ROBOTO TYPOGRAPHY
+========================================= */
+
+:root {
+  --font-heading: "Anton", sans-serif;
+  --font-body: "Roboto", Arial, sans-serif;
+}
+
+
+/* HEADINGS */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+
+/* HERO HEADING */
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+}
+
+
+/* SECTION HEADINGS */
+
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 0.98;
+}
+
+
+/* CARD HEADINGS */
+
+.stat h3,
+.skill h3,
+.project-info h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+
+/* LOGO */
+
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+
+/* BODY */
+
+body {
+  font-family: var(--font-body);
+}
+
+
+/* SUBTITLES / DESCRIPTIONS */
+
+.hero-role,
+.hero p,
+.hero-status,
+.about-text,
+.skill p,
+.stat p,
+.software span,
+.project-info small,
+.nav-links a,
+.btn,
+.filter-btn {
+  font-family: var(--font-body);
+}
+
+
+/* HERO SUBTITLE */
+
+.hero-role {
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+
+
+/* BODY TEXT */
+
+.hero p,
+.about-text {
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+
+/* NAVIGATION */
+
+.nav-links a {
+  font-weight: 500;
+}
+
+
+/* BUTTONS */
+
+.btn {
+  font-weight: 600;
+}
