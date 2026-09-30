@@ -1952,3 +1952,394 @@ section {
     transform;
 
 }
+/* =========================================
+   PREMIUM TYPOGRAPHY SYSTEM
+========================================= */
+
+:root {
+
+  --font-body: "Inter", Arial, Helvetica, sans-serif;
+  --font-heading: "Manrope", Arial, Helvetica, sans-serif;
+
+}
+
+
+/* GLOBAL */
+
+body {
+
+  font-family: var(--font-body);
+
+  font-weight: 400;
+
+  letter-spacing: -0.01em;
+
+}
+
+
+/* HEADINGS */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  font-family: var(--font-heading);
+
+  font-weight: 700;
+
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.logo {
+
+  font-family: var(--font-heading);
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+
+}
+
+.nav-links a {
+
+  font-weight: 500;
+
+  letter-spacing: -0.01em;
+
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.eyebrow {
+
+  font-family: var(--font-body);
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+}
+
+
+.hero h1 {
+
+  font-family: var(--font-heading);
+
+  font-weight: 800;
+
+  letter-spacing: -0.065em;
+
+  line-height: 0.91;
+
+}
+
+
+.hero-role {
+
+  font-family: var(--font-heading);
+
+  font-weight: 600;
+
+  letter-spacing: -0.025em;
+
+  line-height: 1.35;
+
+}
+
+
+.hero p {
+
+  font-family: var(--font-body);
+
+  font-weight: 400;
+
+  letter-spacing: -0.012em;
+
+  line-height: 1.75;
+
+}
+
+
+.hero-status {
+
+  font-family: var(--font-body);
+
+  font-weight: 500;
+
+  letter-spacing: -0.01em;
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+
+  font-family: var(--font-body);
+
+  font-weight: 600;
+
+  letter-spacing: -0.015em;
+
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.section-label {
+
+  font-family: var(--font-body);
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+}
+
+
+.section-title {
+
+  font-family: var(--font-heading);
+
+  font-weight: 800;
+
+  letter-spacing: -0.055em;
+
+  line-height: 0.95;
+
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-text {
+
+  font-family: var(--font-body);
+
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  letter-spacing: -0.012em;
+
+}
+
+
+.stat h3 {
+
+  font-family: var(--font-heading);
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skill-number {
+
+  font-family: var(--font-body);
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+}
+
+
+.skill h3 {
+
+  font-family: var(--font-heading);
+
+  font-weight: 700;
+
+  letter-spacing: -0.025em;
+
+}
+
+
+.skill p {
+
+  line-height: 1.65;
+
+}
+
+
+/* =========================================
+   SOFTWARE
+========================================= */
+
+.software span {
+
+  font-family: var(--font-body);
+
+  font-weight: 500;
+
+  letter-spacing: -0.01em;
+
+}
+
+
+/* =========================================
+   PORTFOLIO
+========================================= */
+
+.filter-btn {
+
+  font-family: var(--font-body);
+
+  font-weight: 500;
+
+  letter-spacing: -0.01em;
+
+}
+
+
+.project-info small {
+
+  font-family: var(--font-body);
+
+  font-weight: 500;
+
+  letter-spacing: 0.02em;
+
+}
+
+
+.project-info h3 {
+
+  font-family: var(--font-heading);
+
+  font-weight: 700;
+
+  letter-spacing: -0.03em;
+
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+#contact {
+
+  font-family: var(--font-body);
+
+}
+
+
+#contact h2,
+#contact h3 {
+
+  font-family: var(--font-heading);
+
+}
+
+
+/* =========================================
+   DESKTOP SPACING
+========================================= */
+
+@media (min-width: 801px) {
+
+  .hero-content {
+
+    padding-right: 25px;
+
+  }
+
+  .hero-role {
+
+    margin-top: -12px;
+
+    margin-bottom: 22px;
+
+  }
+
+  .hero p {
+
+    max-width: 650px;
+
+  }
+
+  .section-title {
+
+    margin-bottom: 48px;
+
+  }
+
+}
+
+
+/* =========================================
+   MOBILE TYPOGRAPHY
+========================================= */
+
+@media (max-width: 800px) {
+
+  .hero h1 {
+
+    letter-spacing: -0.055em;
+
+    line-height: 0.94;
+
+  }
+
+  .hero-role {
+
+    line-height: 1.4;
+
+  }
+
+  .hero p {
+
+    line-height: 1.7;
+
+  }
+
+  .section-title {
+
+    letter-spacing: -0.045em;
+
+    line-height: 0.98;
+
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .hero h1 {
+
+    letter-spacing: -0.045em;
+
+  }
+
+  .section-title {
+
+    letter-spacing: -0.04em;
+
+  }
+
+}
