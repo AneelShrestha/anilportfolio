@@ -1255,7 +1255,7 @@ section {
 
 }
 /* =========================================
-   MOBILE TEXT — JUSTIFIED + LAST LINE CENTER
+   MOBILE TEXT — JUSTIFIED + LAST LINE LEFT
    ========================================= */
 
 @media (max-width: 800px) {
@@ -1271,7 +1271,7 @@ section {
   .work-intro p,
   .contact-intro p {
     text-align: justify;
-    text-align-last: center;
+    text-align-last: left;
     line-height: 1.7;
   }
 
