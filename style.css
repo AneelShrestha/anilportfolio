@@ -1276,3 +1276,13 @@ section {
   }
 
 }
+@media (max-width: 800px) {
+
+  /* Hero heading — prevent letters/lines from overlapping */
+  .hero h1 {
+    letter-spacing: 0.01em;
+    line-height: 1.12;
+    word-spacing: 0.03em;
+  }
+
+}
