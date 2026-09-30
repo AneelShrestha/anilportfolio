@@ -1286,3 +1286,52 @@ section {
   }
 
 }
+/* HERO PORTRAIT */
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-portrait {
+  flex: 0 0 380px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero-portrait img {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-layout {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-portrait {
+    flex: none;
+    width: 100%;
+  }
+
+  .hero-portrait img {
+    max-width: 300px;
+  }
+
+  .hero-status,
+  .buttons {
+    justify-content: center;
+  }
+}
