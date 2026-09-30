@@ -375,145 +375,227 @@ section {
   object-fit: cover;
 }
 
-/* CONTACT */
+/* =========================================
+   CONTACT SECTION — PREMIUM ORGANIZED STYLE
+   ========================================= */
 
-.contact-box {
-  padding: 65px 45px;
-  text-align: center;
-  border: 1px solid #222;
-  border-radius: 20px;
-  background: #0e0e0e;
+#contact {
+  position: relative;
 }
 
-.contact-box h2 {
-  font-size: clamp(38px, 6vw, 72px);
-  line-height: .95;
-  letter-spacing: -4px;
-  margin-bottom: 25px;
+#contact .contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 80px;
+  align-items: start;
+  margin-top: 50px;
 }
 
-.contact-box > p {
-  color: #777;
-  max-width: 600px;
-  margin: 0 auto 35px;
+/* Intro text */
+
+#contact .contact-intro {
+  max-width: 520px;
 }
 
-.contact-details {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
+#contact .contact-intro p {
+  margin: 0 0 24px;
+  line-height: 1.8;
 }
 
-.contact-item {
-  padding: 13px 18px;
-  border: 1px solid #292929;
-  border-radius: 40px;
-  color: #aaa;
-  font-size: 13px;
-  transition: .3s;
+/* Contact details */
+
+#contact .contact-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
 }
 
-.contact-item:hover {
-  border-color: #fff;
-  color: #fff;
+/* Individual contact card */
+
+#contact .contact-item {
+  position: relative;
+  padding: 26px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
 }
 
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+#contact .contact-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.045);
 }
 
-.socials a {
-  width: 42px;
-  height: 42px;
+/* Label */
+
+#contact .contact-label {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border: 1px solid #292929;
-  border-radius: 50%;
-  color: #aaa;
+  gap: 9px;
+  margin-bottom: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+/* Label icon */
+
+#contact .contact-label i {
   font-size: 13px;
-  transition: .3s;
+  width: 16px;
+  text-align: center;
 }
 
-.socials a:hover {
-  background: #fff;
-  color: #000;
-}
+/* Phone / email */
 
-/* FOOTER */
-
-footer {
-  padding: 30px 0;
-  border-top: 1px solid #171717;
-  color: #555;
-  font-size: 12px;
-}
-
-.footer-inner {
+#contact .contact-item > a:not(.contact-action) {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-/* MOBILE */
-
-@media (max-width: 900px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .software-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .about-grid,
-  .profile-area {
-    grid-template-columns: 1fr;
-  }
+#contact .contact-item > a:not(.contact-action):hover {
+  opacity: 0.7;
 }
 
-@media (max-width: 650px) {
-  .nav-links {
-    display: none;
+/* Main contact icon */
+
+#contact .contact-item > a:not(.contact-action) i {
+  font-size: 14px;
+  width: 18px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* WhatsApp action */
+
+#contact .contact-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0.72;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+#contact .contact-action:hover {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+#contact .contact-action i {
+  font-size: 15px;
+}
+
+/* Social links */
+
+#contact .social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 55px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+#contact .social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+#contact .social-links a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#contact .social-links i {
+  font-size: 14px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  #contact .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    margin-top: 40px;
   }
 
-  .hero h1 {
-    letter-spacing: -3px;
+  #contact .contact-intro {
+    max-width: 100%;
   }
 
-  .hero p {
-    font-size: 16px;
-  }
-
-  .skills-grid,
-  .projects {
+  #contact .contact-details {
     grid-template-columns: 1fr;
   }
 
-  .software-grid {
-    grid-template-columns: repeat(2, 1fr);
+  #contact .contact-item {
+    padding: 22px 20px;
   }
 
-  .stats {
-    grid-template-columns: 1fr 1fr;
+  #contact .social-links {
+    margin-top: 40px;
   }
 
-  section {
-    padding: 80px 0;
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+  #contact .contact-details {
+    gap: 14px;
   }
 
-  .contact-box {
-    padding: 45px 20px;
+  #contact .contact-item {
+    padding: 20px 18px;
   }
 
-  .footer-inner {
-    flex-direction: column;
+  #contact .social-links {
+    gap: 8px;
   }
+
+  #contact .social-links a {
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
 }
 /* =========================
    HERO V2 POLISH
