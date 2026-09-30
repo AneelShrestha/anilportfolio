@@ -1637,3 +1637,318 @@ section {
   border-color: rgba(91,124,255,.40);
   background: var(--accent-soft);
 }
+/* =========================================
+   DESIGN SYSTEM POLISH
+   HERO + PROFILE + CARDS + BUTTONS
+========================================= */
+
+
+/* GLOBAL DESIGN TOKENS */
+
+:root {
+
+  --accent: #5B7CFF;
+  --accent-hover: #7893ff;
+
+  --glass-bg: rgba(255,255,255,0.035);
+  --glass-border: rgba(255,255,255,0.12);
+
+  --soft-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+
+  --blue-shadow:
+    0 20px 70px rgba(91,124,255,.18);
+
+}
+
+
+/* =========================================
+   HERO PORTRAIT PREMIUM FRAME
+========================================= */
+
+.hero-portrait {
+
+  position: relative;
+
+}
+
+
+.hero-portrait::before {
+
+  content:"";
+
+  position:absolute;
+
+  width:360px;
+  height:360px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(91,124,255,.22),
+      transparent 70%
+    );
+
+  filter: blur(30px);
+
+  z-index:-1;
+
+}
+
+
+
+.hero-portrait img {
+
+  filter:
+    drop-shadow(
+      0 25px 45px rgba(0,0,0,.65)
+    );
+
+  transition:
+    transform .5s ease,
+    filter .5s ease;
+
+}
+
+
+.hero-portrait:hover img {
+
+  transform:
+    translateY(-8px);
+
+  filter:
+    drop-shadow(
+      0 35px 60px rgba(91,124,255,.25)
+    );
+
+}
+
+
+
+/* =========================================
+   PROFILE IMAGE SYSTEM
+========================================= */
+
+
+.profile-photo {
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.02)
+    );
+
+  border:
+    1px solid var(--glass-border);
+
+  box-shadow:
+    var(--soft-shadow);
+
+  position:relative;
+
+}
+
+
+.profile-photo::after {
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:inherit;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91,124,255,.18),
+      transparent 40%
+    );
+
+  pointer-events:none;
+
+}
+
+
+
+.profile-photo img {
+
+  transition:
+    transform .5s ease;
+
+}
+
+
+.profile-photo:hover img {
+
+  transform:scale(1.04);
+
+}
+
+
+
+/* =========================================
+   ALL CARDS SYSTEM
+========================================= */
+
+
+.stat,
+.skill,
+.software,
+.project,
+#contact .contact-item {
+
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.015)
+    );
+
+
+  border:
+    1px solid var(--glass-border);
+
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+
+  backdrop-filter:
+    blur(12px);
+
+
+  transition:
+
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+
+}
+
+
+
+.stat:hover,
+.skill:hover,
+.software:hover,
+.project:hover,
+#contact .contact-item:hover {
+
+
+  transform:
+    translateY(-8px);
+
+
+  border-color:
+    rgba(91,124,255,.45);
+
+
+  box-shadow:
+
+    0 25px 60px rgba(0,0,0,.45),
+    0 0 30px rgba(91,124,255,.12);
+
+}
+
+
+
+/* =========================================
+   BUTTON SYSTEM
+========================================= */
+
+
+.btn {
+
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:
+
+    transform .3s ease,
+    box-shadow .3s ease;
+
+}
+
+
+
+.btn.primary {
+
+
+  background:
+    linear-gradient(
+      135deg,
+      #5B7CFF,
+      #7893ff
+    );
+
+
+  box-shadow:
+
+    0 15px 40px rgba(91,124,255,.28);
+
+}
+
+
+
+.btn.primary:hover {
+
+
+  transform:
+    translateY(-5px);
+
+
+  box-shadow:
+
+    0 20px 60px rgba(91,124,255,.45);
+
+}
+
+
+
+.btn:not(.primary):hover {
+
+
+  background:
+    rgba(255,255,255,.06);
+
+
+}
+
+
+
+/* =========================================
+   ACCENT TEXT DETAILS
+========================================= */
+
+
+.hero h1 span,
+.section-label,
+.skill-number {
+
+  text-shadow:
+
+    0 0 25px rgba(91,124,255,.35);
+
+}
+
+
+
+/* =========================================
+   SMOOTH SCROLL FEEL
+========================================= */
+
+
+.hero,
+.profile-photo,
+.card,
+.btn {
+
+  will-change:
+    transform;
+
+}
