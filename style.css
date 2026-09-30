@@ -1414,3 +1414,226 @@ section {
   }
 
 }
+/* =========================================
+   PREMIUM THEME — DARK + COBALT
+   ========================================= */
+
+:root {
+  --bg: #08090B;
+  --surface: #101216;
+  --surface-light: #151820;
+  --border: rgba(255,255,255,.10);
+
+  --text: #F5F7FA;
+  --muted: #A5AAB3;
+  --subtle: #707680;
+
+  --accent: #5B7CFF;
+  --accent-soft: rgba(91,124,255,.16);
+  --accent-glow: rgba(91,124,255,.28);
+}
+
+
+/* MAIN BACKGROUND */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+/* HERO */
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 78% 20%,
+      rgba(91,124,255,.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(91,124,255,.06),
+      transparent 32%
+    );
+}
+
+
+/* HERO HIGHLIGHT */
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+
+/* EYEBROW */
+
+.eyebrow {
+  color: var(--accent);
+}
+
+
+/* HERO ROLE */
+
+.hero-role {
+  color: #E5E8EE;
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero p {
+  color: var(--muted);
+}
+
+
+/* AVAILABILITY */
+
+.hero-status {
+  color: #B9BFCA;
+}
+
+.hero-status span {
+  background: var(--accent);
+  box-shadow: 0 0 14px var(--accent);
+}
+
+
+/* BUTTONS */
+
+.btn {
+  border-color: #353A44;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+
+  box-shadow: 0 8px 30px rgba(91,124,255,.18);
+}
+
+.btn.primary:hover {
+  background: #6D8AFF;
+  border-color: #6D8AFF;
+}
+
+
+/* NAVIGATION */
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+
+/* SECTION LABELS */
+
+.section-label {
+  color: var(--accent);
+}
+
+
+/* SECTION BORDERS */
+
+section {
+  border-top-color: rgba(255,255,255,.08);
+}
+
+
+/* CARDS */
+
+.stat,
+.skill,
+.software {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.stat:hover,
+.skill:hover,
+.software:hover {
+  border-color: rgba(91,124,255,.35);
+}
+
+
+/* CARD NUMBERS */
+
+.skill-number {
+  color: var(--accent);
+}
+
+
+/* CARD SECONDARY TEXT */
+
+.stat p,
+.skill p {
+  color: var(--subtle);
+}
+
+
+/* SOFTWARE TEXT */
+
+.software span {
+  color: var(--muted);
+}
+
+
+/* PORTFOLIO FILTER */
+
+.filter-btn {
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+
+/* PROJECT CARDS */
+
+.project {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.project:hover {
+  border-color: rgba(91,124,255,.35);
+}
+
+
+/* PROFILE IMAGE */
+
+.profile-photo {
+  border-color: rgba(91,124,255,.25);
+  background: var(--surface);
+}
+
+
+/* CONTACT */
+
+#contact .contact-item {
+  border-color: var(--border);
+  background: rgba(255,255,255,.025);
+}
+
+#contact .contact-item:hover {
+  border-color: rgba(91,124,255,.35);
+  background: rgba(91,124,255,.045);
+}
+
+#contact .contact-action {
+  color: var(--accent);
+}
+
+#contact .social-links a:hover {
+  border-color: rgba(91,124,255,.40);
+  background: var(--accent-soft);
+}
