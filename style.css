@@ -1287,29 +1287,6 @@ section {
 
 }
 /* HERO PORTRAIT */
-.hero-layout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 45px;
-}
-
-.hero-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.hero-portrait {
-  flex: 0 0 420px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  align-self: stretch;
-  overflow: hidden;
-}
-
-/* Portrait */
 .hero-portrait {
   flex: 0 0 460px;
   position: relative;
@@ -1346,7 +1323,6 @@ section {
     transparent 100%
   );
 }
-
 /* MOBILE */
 @media (max-width: 768px) {
 
