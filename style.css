@@ -846,3 +846,75 @@ section {
   }
 
 }
+/* =========================================
+   FINAL MOBILE NAV + FOOTER FIX
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  /* ---------- MOBILE NAVIGATION ---------- */
+
+  nav {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  nav .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  nav ul,
+  nav .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    gap: 18px;
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  nav li {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  nav li a {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  footer {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  footer .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+  }
+
+  footer p,
+  footer a,
+  footer span {
+    text-align: center;
+  }
+
+}
