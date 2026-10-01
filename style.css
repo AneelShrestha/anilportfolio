@@ -2024,3 +2024,13 @@ nav {
   ) !important;
   border-bottom: 1px solid rgba(39, 228, 119, 0.20);
 }
+/* FOOTER — MATCH NAVIGATION */
+footer {
+  background: linear-gradient(
+    135deg,
+    #070A10 0%,
+    #0B1428 50%,
+    #0D211C 100%
+  ) !important;
+  border-top: 1px solid rgba(39, 228, 119, 0.20);
+}
