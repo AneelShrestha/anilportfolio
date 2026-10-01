@@ -3059,7 +3059,11 @@ body {
 
   object-fit: cover;
 }
-
+.recommendation-photo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 /* ================================
    NAME
