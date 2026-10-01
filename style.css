@@ -2018,8 +2018,9 @@ footer a:hover {
 nav {
   background: linear-gradient(
     135deg,
-    #06142F 0%,
-    #0A2E68 45%,
-    #18B85A 100%
+    #070A10 0%,
+    #0A1220 50%,
+    #0B1A1A 100%
   ) !important;
+  border-bottom: 1px solid rgba(39, 228, 119, 0.16);
 }
