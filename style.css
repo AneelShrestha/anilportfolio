@@ -3172,3 +3172,11 @@ body {
   }
 
 }
+/* FINAL COLOR OVERRIDE */
+html {
+  background: #07090C;
+}
+
+body {
+  background-color: #07090C !important;
+}
