@@ -2019,8 +2019,8 @@ nav {
   background: linear-gradient(
     135deg,
     #070A10 0%,
-    #0A1220 50%,
-    #0B1A1A 100%
+    #0B1428 50%,
+    #0D211C 100%
   ) !important;
-  border-bottom: 1px solid rgba(39, 228, 119, 0.16);
+  border-bottom: 1px solid rgba(39, 228, 119, 0.20);
 }
