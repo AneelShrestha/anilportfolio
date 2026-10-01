@@ -1988,3 +1988,14 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 }
+/* HERO TITLE — KHAND BOLD */
+.hero h1,
+.hero h1 span {
+  font-family: "Khand", sans-serif !important;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 {
+  line-height: 0.88;
+}
