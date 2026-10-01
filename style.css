@@ -2016,11 +2016,10 @@ footer a:hover {
 }
 /* NAVIGATION — NEON GREEN */
 nav {
-  background: #39FF14 !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-nav .logo,
-nav .nav-links a {
-  color: #06101F !important;
+  background: linear-gradient(
+    135deg,
+    #06142F 0%,
+    #0A2E68 45%,
+    #18B85A 100%
+  ) !important;
 }
