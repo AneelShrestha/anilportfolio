@@ -1419,18 +1419,30 @@ section {
    ========================================= */
 
 :root {
-  --bg: #08090B;
-  --surface: #101216;
-  --surface-light: #151820;
+  --bg: #07090C;
+  --surface: #0D1117;
+  --surface-light: #121821;
+
   --border: rgba(255,255,255,.10);
 
   --text: #F5F7FA;
-  --muted: #A5AAB3;
-  --subtle: #707680;
+  --muted: #A5ADB8;
+  --subtle: #707985;
 
-  --accent: #5B7CFF;
-  --accent-soft: rgba(91,124,255,.16);
-  --accent-glow: rgba(91,124,255,.28);
+  /* BRAND COLORS */
+  --accent: #176BFF;
+  --accent-blue: #176BFF;
+  --accent-blue-soft: rgba(23,107,255,.14);
+  --accent-blue-glow: rgba(23,107,255,.30);
+
+  --accent-green: #39FF88;
+  --accent-green-soft: rgba(57,255,136,.12);
+  --accent-green-glow: rgba(57,255,136,.24);
+
+  --white: #FFFFFF;
+
+  --font-main-title: "Anton", sans-serif;
+  --font-body: "Roboto", Arial, sans-serif;
 }
 
 
