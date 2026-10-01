@@ -2627,21 +2627,21 @@ footer {
 body {
   background:
     radial-gradient(
-      circle at 82% 8%,
-      rgba(23,107,255,.14),
-      transparent 28%
+      circle at 85% 5%,
+      rgba(23, 107, 255, 0.22),
+      transparent 32%
     ),
     radial-gradient(
-      circle at 12% 42%,
-      rgba(57,255,136,.045),
+      circle at 10% 45%,
+      rgba(57, 255, 136, 0.08),
       transparent 30%
     ),
     radial-gradient(
-      circle at 78% 88%,
-      rgba(23,107,255,.08),
-      transparent 30%
+      circle at 75% 90%,
+      rgba(23, 107, 255, 0.14),
+      transparent 35%
     ),
-    #07090C;
+    #07090C !important;
 
   background-attachment: fixed;
   background-size: cover;
