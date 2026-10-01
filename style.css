@@ -1999,3 +1999,18 @@ footer a:hover {
 .hero h1 {
   line-height: 0.88;
 }
+/* ALL LARGE DISPLAY TITLES — KHAND BOLD */
+
+.hero h1,
+.hero h1 span,
+.section-title,
+.profile-title,
+.expertise-title,
+.software-title,
+.work-title,
+.experience-title,
+.recommendation-title,
+.contact-title {
+  font-family: "Khand", sans-serif !important;
+  font-weight: 700;
+}
