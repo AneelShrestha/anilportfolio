@@ -2014,3 +2014,8 @@ footer a:hover {
   font-family: "Khand", sans-serif !important;
   font-weight: 700;
 }
+/* NAVIGATION — NEON GREEN */
+.navbar {
+  background: #39FF14 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
