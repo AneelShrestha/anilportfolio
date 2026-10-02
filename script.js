@@ -1,4 +1,3 @@
-```javascript
 /* ============================================================
    ANIL SHRESTHA — PORTFOLIO
    COMPLETE JAVASCRIPT
