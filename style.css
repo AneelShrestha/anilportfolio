@@ -1,1865 +1,1977 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =========================================================
+   ANIL SHRESTHA — PORTFOLIO
+   DARK PREMIUM PORTFOLIO STYLESHEET
+========================================================= */
+
+:root {
+
+    --bg: #070707;
+    --bg-soft: #0d0d0e;
+    --bg-card: #111113;
+    --bg-card-2: #151518;
+
+    --white: #ffffff;
+    --text: #eeeeef;
+    --muted: #929297;
+    --muted-2: #67676d;
+
+    --border: rgba(255,255,255,0.09);
+    --border-hover: rgba(255,255,255,0.18);
+
+    --blue: #315cff;
+    --blue-bright: #5276ff;
+
+    --green: #63d18a;
+    --silver: #5e91ff;
+    --gold: #a46aff;
+    --red: #ff5656;
+
+    --container: 1180px;
+
+    --radius: 20px;
+    --radius-small: 12px;
+
+    --transition: 0.3s ease;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+::selection {
+    background: var(--blue);
+    color: white;
+}
+
+
+/* =========================================================
+   UTILITIES
+========================================================= */
+
+.container {
+    width: min(var(--container), calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.section {
+    position: relative;
+    padding: 140px 0;
+}
+
+.section-heading {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 25px;
+    margin-bottom: 70px;
+}
+
+.section-number {
+    font-size: 14px;
+    color: var(--blue-bright);
+    font-weight: 700;
+    padding-top: 8px;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    max-width: 720px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -2.5px;
+}
+
+.section-heading h2 span {
+    color: var(--blue-bright);
+}
+
+
+/* =========================================================
+   PRELOADER
+========================================================= */
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background: #050505;
+
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+}
+
+.preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-logo {
+    display: flex;
+    gap: 7px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.loader-logo strong {
+    color: var(--blue-bright);
+}
+
+.loader-line {
+    width: 150px;
+    height: 2px;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.08);
+    overflow: hidden;
+}
+
+.loader-line span {
+    display: block;
+    width: 45%;
+    height: 100%;
+    background: var(--blue);
+    animation: loading 1.2s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(330%);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    border-bottom: 1px solid transparent;
+
+    transition:
+        background 0.3s ease,
+        border 0.3s ease,
+        backdrop-filter 0.3s ease;
+}
+
+.site-header.scrolled {
+    background: rgba(7,7,7,0.78);
+    border-bottom-color: var(--border);
+    backdrop-filter: blur(20px);
+}
+
+.nav-container {
+    height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.logo strong {
+    color: var(--blue-bright);
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    position: relative;
+
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: color var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--white);
+}
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+    background: var(--blue-bright);
+
+    transform: translateX(-50%);
+}
+
+.nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 50px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+.nav-cta:hover {
+    border-color: var(--blue);
+    background: rgba(49,92,255,0.1);
+}
+
+.nav-cta span {
+    color: var(--blue-bright);
+}
+
+.mobile-menu-button {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+}
+
+.mobile-menu-button span {
+    display: block;
+    width: 17px;
+    height: 1px;
+    margin: 4px auto;
+    background: white;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 160px;
+    padding-bottom: 100px;
+
+    overflow: hidden;
+}
+
+.hero-grid-bg {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+
+    background-size: 70px 70px;
+
+    mask-image: linear-gradient(to bottom, black, transparent 80%);
+
+    pointer-events: none;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 28px;
+    padding: 8px 13px;
+
+    border: 1px solid var(--border);
+    border-radius: 50px;
+
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background: #61dc83;
+
+    box-shadow: 0 0 12px rgba(97,220,131,0.8);
+}
+
+.hero h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(55px, 7vw, 92px);
+    line-height: 0.96;
+    letter-spacing: -5px;
+    font-weight: 600;
+}
+
+.gradient-text {
+    display: block;
+
+    background: linear-gradient(
+        100deg,
+        #ffffff 10%,
+        #7893ff 45%,
+        #315cff 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin-top: 32px;
+
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+
+    margin-top: 35px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 52px;
+    padding: 0 23px;
+
+    border-radius: 50px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border var(--transition);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    color: white;
+    background: var(--blue);
+}
+
+.button-primary:hover {
+    background: var(--blue-bright);
+}
+
+.button-outline {
+    color: white;
+    border: 1px solid var(--border);
+    background: transparent;
+}
+
+.button-outline:hover {
+    border-color: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.04);
+}
+
+.hero-meta {
+    display: flex;
+    gap: 45px;
+    margin-top: 60px;
+}
+
+.hero-meta div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-meta strong {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 27px;
+}
+
+.hero-meta span {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* HERO VISUAL */
+
+.hero-visual {
+    position: relative;
+
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-glow {
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(49,92,255,0.16);
+
+    filter: blur(100px);
+}
+
+.portrait-frame {
+    position: relative;
+    z-index: 2;
+
+    width: min(390px, 80%);
+    aspect-ratio: 0.78;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 200px 200px 25px 25px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(49,92,255,0.25),
+            transparent 55%
+        ),
+        linear-gradient(
+            150deg,
+            #18181c,
+            #08080a
+        );
+
+    box-shadow:
+        0 50px 100px rgba(0,0,0,0.55),
+        inset 0 0 80px rgba(49,92,255,0.08);
+}
+
+.portrait-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    color: var(--muted);
+    text-align: center;
+}
+
+.portrait-initial {
+    margin-bottom: 15px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+
+    color: rgba(255,255,255,0.07);
+}
+
+.portrait-placeholder span {
+    color: rgba(255,255,255,0.55);
+    font-size: 14px;
+}
+
+.portrait-placeholder small {
+    margin-top: 4px;
+    color: var(--muted-2);
+    font-size: 10px;
+}
+
+.floating-card {
+    position: absolute;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    background: rgba(15,15,17,0.82);
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.floating-card small {
+    display: block;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.floating-card strong {
+    font-size: 12px;
+}
+
+.mini-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 9px;
+
+    color: white;
+    background: var(--blue);
+}
+
+.card-one {
+    top: 20%;
+    left: 0;
+}
+
+.card-two {
+    right: 3%;
+    bottom: 22%;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0;
+}
+
+.card-two strong {
+    font-size: 24px;
+    color: var(--blue-bright);
+}
+
+.card-two span {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--muted-2);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transform: translateX(-50%);
+}
+
+.scroll-line {
+    width: 50px;
+    height: 1px;
+    background: var(--border);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    background: var(--bg-soft);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 100px;
+}
+
+.about-main {
+    max-width: 750px;
+}
+
+.about-main p {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.about-main .large-text {
+    margin-top: 0;
+
+    color: var(--text);
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.35;
+}
+
+.about-details {
+    border-top: 1px solid var(--border);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-item span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.detail-item strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.detail-item .available {
+    color: #69db8a;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.service-card {
+    padding: 35px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.035),
+        rgba(255,255,255,0.012)
+    );
+
+    transition:
+        transform var(--transition),
+        border var(--transition),
+        background var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-hover);
+    background: rgba(255,255,255,0.04);
+}
+
+.service-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-number {
+    color: var(--muted-2);
+    font-size: 11px;
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    color: var(--blue-bright);
+}
+
+.service-card h3 {
+    margin-top: 50px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 28px;
+}
+
+.service-card p {
+    max-width: 470px;
+    margin-top: 12px;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.service-tags {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+.service-tags span {
+    padding: 6px 10px;
+
+    border: 1px solid var(--border);
+    border-radius: 50px;
+
+    color: var(--muted);
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+
+.portfolio {
+    background: var(--bg-soft);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.portfolio-card {
+    cursor: pointer;
+}
+
+.portfolio-large {
+    grid-column: span 2;
+}
+
+.portfolio-image {
+    position: relative;
+
+    min-height: 330px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: #101014;
+}
+
+.portfolio-large .portfolio-image {
+    min-height: 470px;
+}
+
+.project-placeholder {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(49,92,255,0.3),
+            transparent 45%
+        ),
+        linear-gradient(140deg, #171b29, #09090b);
+
+    transition: transform 0.6s ease;
+}
+
+.project-placeholder.purple {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(164,106,255,0.28),
+            transparent 45%
+        ),
+        linear-gradient(140deg, #191322, #09090b);
+}
+
+.project-placeholder.orange {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255,112,63,0.24),
+            transparent 45%
+        ),
+        linear-gradient(140deg, #211612, #09090b);
+}
+
+.portfolio-card:hover .project-placeholder {
+    transform: scale(1.04);
+}
+
+.project-placeholder span {
+    color: rgba(255,255,255,0.35);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.project-placeholder strong {
+    margin-top: 8px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 34px;
+}
+
+.portfolio-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 5px;
+}
+
+.portfolio-info span {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.portfolio-info h3 {
+    margin-top: 4px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 19px;
+}
+
+.project-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    color: var(--blue-bright) !important;
+
+    transition: var(--transition);
+}
+
+.portfolio-card:hover .project-arrow {
+    color: white !important;
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+
+/* =========================================================
+   PACKAGES
+========================================================= */
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.package-card {
+    position: relative;
+
+    padding: 28px 25px;
+
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--bg-card);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition),
+        border var(--transition);
+}
+
+.package-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--package-color);
+}
+
+.package-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--package-color);
+}
+
+.bronze {
+    --package-color: var(--green);
+}
+
+.silver {
+    --package-color: var(--silver);
+}
+
+.gold {
+    --package-color: var(--gold);
+}
+
+.platinum {
+    --package-color: var(--red);
+}
+
+.package-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.package-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.package-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    color: var(--package-color, var(--blue));
+    background: rgba(255,255,255,0.05);
+
+    font-size: 10px;
+}
+
+.package-icon.large {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+
+    color: var(--blue-bright);
+    font-size: 20px;
+}
+
+.package-title h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 19px;
+}
+
+.package-badge {
+    padding: 5px 7px;
+
+    border: 1px solid var(--border);
+    border-radius: 50px;
+
+    color: var(--muted);
+    font-size: 7px;
+    letter-spacing: 1px;
+}
+
+.package-price {
+    margin-top: 35px;
+}
+
+.package-price strong {
+    display: block;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 28px;
+}
+
+.package-price span {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.package-card > p {
+    margin-top: 18px;
+
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.package-card ul {
+    list-style: none;
+
+    margin-top: 25px;
+}
+
+.package-card li {
+    position: relative;
+
+    padding: 8px 0 8px 20px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+
+    color: #b9b9bd;
+    font-size: 11px;
+}
+
+.package-card li::before {
+    content: "✓";
+
+    position: absolute;
+    left: 0;
+
+    color: var(--package-color);
+}
+
+.package-button {
+    width: 100%;
+    margin-top: auto;
+    padding: 14px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    color: white;
+    background: transparent;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+.package-button:hover {
+    color: #fff;
+    background: var(--package-color);
+    border-color: var(--package-color);
+}
+
+
+/* FULL DIGITAL */
+
+.full-digital {
+    margin-top: 18px;
+    padding: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    border: 1px solid rgba(49,92,255,0.25);
+    border-radius: var(--radius);
+
+    background:
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(49,92,255,0.13),
+            transparent 35%
+        ),
+        var(--bg-card);
+}
+
+.full-digital-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.full-digital h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 28px;
+}
+
+.full-digital p {
+    max-width: 600px;
+    margin-top: 7px;
+
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.full-digital-price {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.full-digital-price strong {
+    display: block;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 27px;
+}
+
+.full-digital-price > span {
+    display: block;
+    margin-bottom: 15px;
+
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.full-digital-price .package-button {
+    width: 180px;
+}
+
+
+/* CUSTOM */
+
+.custom-package {
+    margin-top: 18px;
+    padding: 32px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: rgba(255,255,255,0.018);
+}
+
+.custom-package h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 25px;
+}
+
+.custom-package p {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    background: var(--bg-soft);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.contact-content h2 {
+    max-width: 650px;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(48px, 6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+}
+
+.contact-content h2 span {
+    color: var(--blue-bright);
+}
+
+.contact-content > p {
+    max-width: 500px;
+    margin-top: 25px;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.contact-details {
+    margin-top: 45px;
+}
+
+.contact-details a {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-details span {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.contact-details strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.contact-form-wrapper {
+    padding: 35px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    background: var(--bg-card);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #c8c8ca;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    outline: none;
+
+    color: white;
+    background: #0b0b0d;
+
+    font-size: 12px;
+
+    transition: border var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--blue);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.form-group select {
+    appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--muted-2);
+}
+
+.submit-button {
+    width: 100%;
+}
+
+.form-message {
+    display: none;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    color: #75dd98;
+    background: rgba(117,221,152,0.08);
+
+    font-size: 11px;
+}
+
+.form-message.show {
+    display: block;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    padding: 70px 0 25px;
 
-    <title>Anil Shrestha — Designer & Editor</title>
+    border-top: 1px solid var(--border);
+}
 
-    <meta name="description"
-        content="Anil Shrestha — Professional Graphic Designer, Video Editor and Creative Digital Specialist.">
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
 
-    <meta name="author" content="Anil Shrestha">
+.footer-brand {
+    max-width: 350px;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+.footer-brand p {
+    margin-top: 15px;
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
 
-    <link rel="stylesheet" href="style.css">
-</head>
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-content: flex-start;
+}
 
-<body>
+.footer-links a {
+    color: var(--muted);
+    font-size: 11px;
 
-    <!-- =========================================================
-         PRELOADER
-    ========================================================== -->
+    transition: color var(--transition);
+}
 
-    <div id="preloader">
-        <div class="loader-logo">
-            ANIL<span>SHRESTHA</span>
-        </div>
+.footer-links a:hover {
+    color: white;
+}
 
-        <div class="loader-line">
-            <span></span>
-        </div>
-    </div>
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
 
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 
-    <!-- =========================================================
-         NAVIGATION
-    ========================================================== -->
+    border-top: 1px solid var(--border);
 
-    <header class="site-header" id="siteHeader">
+    color: var(--muted-2);
+    font-size: 9px;
+}
 
-        <div class="container nav-container">
 
-            <a href="#home" class="logo">
-                <span class="logo-main">ANIL</span>
-                <span class="logo-sub">SHRESTHA</span>
-            </a>
+/* =========================================================
+   MODAL
+========================================================= */
 
-            <nav class="desktop-nav">
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
 
-                <a href="#home" class="nav-link active">Home</a>
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                <a href="#about" class="nav-link">About</a>
+    padding: 20px;
 
-                <a href="#services" class="nav-link">Services</a>
+    visibility: hidden;
+    opacity: 0;
 
-                <a href="#work" class="nav-link">Work</a>
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
 
-                <a href="#packages" class="nav-link">Packages</a>
+.modal.open {
+    visibility: visible;
+    opacity: 1;
+}
 
-                <a href="#contact" class="nav-link">Contact</a>
+.modal-overlay {
+    position: absolute;
+    inset: 0;
 
-            </nav>
+    background: rgba(0,0,0,0.78);
+    backdrop-filter: blur(10px);
+}
 
-            <a href="#contact" class="nav-button">
-                Let's Talk
-                <span>↗</span>
-            </a>
+.modal-box {
+    position: relative;
+    z-index: 2;
 
-            <button class="mobile-menu-button" id="mobileMenuButton"
-                aria-label="Open navigation">
+    width: min(450px, 100%);
 
-                <span></span>
-                <span></span>
-            </button>
+    padding: 40px;
 
-        </div>
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 
-        <!-- MOBILE NAV -->
+    background: #101012;
 
-        <div class="mobile-menu" id="mobileMenu">
+    transform: translateY(20px);
 
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#work">Work</a>
-            <a href="#packages">Packages</a>
-            <a href="#contact">Contact</a>
+    transition: transform 0.3s ease;
+}
 
-        </div>
+.modal.open .modal-box {
+    transform: translateY(0);
+}
 
-    </header>
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
 
+    width: 35px;
+    height: 35px;
 
-    <main>
+    border: 1px solid var(--border);
+    border-radius: 50%;
 
+    color: white;
+    background: transparent;
 
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
+    font-size: 20px;
+}
 
-        <section class="hero section" id="home">
+.modal-box h3 {
+    margin-top: 8px;
 
-            <div class="hero-background">
-                <div class="hero-glow glow-one"></div>
-                <div class="hero-glow glow-two"></div>
-                <div class="hero-grid"></div>
-            </div>
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 32px;
+}
 
-            <div class="container hero-container">
+.modal-box p {
+    margin: 10px 0 25px;
 
-                <div class="hero-content">
+    color: var(--muted);
+    font-size: 13px;
+}
 
-                    <div class="hero-small-label reveal">
-                        <span class="status-dot"></span>
-                        AVAILABLE FOR CREATIVE PROJECTS
-                    </div>
 
-                    <h1 class="hero-title reveal">
+/* =========================================================
+   BACK TO TOP
+========================================================= */
 
-                        Creative
-                        <span>Designer</span>
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 800;
 
-                        <br>
+    width: 45px;
+    height: 45px;
 
-                        &amp; Video
-                        <span>Editor.</span>
+    border: 1px solid var(--border);
+    border-radius: 50%;
 
-                    </h1>
+    color: white;
+    background: rgba(15,15,16,0.85);
 
-                    <p class="hero-description reveal">
+    opacity: 0;
+    visibility: hidden;
 
-                        I’m <strong>Anil Shrestha</strong>, a professional
-                        graphic designer and video editor creating bold,
-                        meaningful and visually engaging digital experiences
-                        for brands, businesses and individuals.
+    transform: translateY(15px);
 
-                    </p>
+    transition: var(--transition);
+}
 
-                    <div class="hero-actions reveal">
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 
-                        <a href="#work" class="primary-button">
-                            Explore My Work
-                            <span>↗</span>
-                        </a>
+.back-to-top:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+}
 
-                        <a href="#contact" class="text-button">
-                            Let's Work Together
-                            <span>→</span>
-                        </a>
 
-                    </div>
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
 
-                    <div class="hero-meta reveal">
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
 
-                        <div class="hero-meta-item">
-                            <strong>10+</strong>
-                            <span>Years Experience</span>
-                        </div>
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
 
-                        <div class="hero-meta-divider"></div>
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-                        <div class="hero-meta-item">
-                            <strong>100+</strong>
-                            <span>Projects Completed</span>
-                        </div>
 
-                        <div class="hero-meta-divider"></div>
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
 
-                        <div class="hero-meta-item">
-                            <strong>24/7</strong>
-                            <span>Creative Support</span>
-                        </div>
+@media (max-width: 1050px) {
 
-                    </div>
+    .desktop-nav {
+        gap: 18px;
+    }
 
-                </div>
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
+    .hero-container {
+        grid-template-columns: 1fr 0.8fr;
+    }
 
-                <!-- HERO PORTRAIT -->
+    .hero h1 {
+        font-size: clamp(50px, 7vw, 75px);
+    }
 
-                <div class="hero-visual reveal">
+}
 
-                    <div class="portrait-frame">
 
-                        <div class="portrait-decoration decoration-one"></div>
-                        <div class="portrait-decoration decoration-two"></div>
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
 
-                        <div class="portrait-image">
+@media (max-width: 800px) {
 
-                            <!--
-                                Replace this image path with your PNG portrait.
+    .container {
+        width: min(var(--container), calc(100% - 32px));
+    }
 
-                                Recommended:
-                                assets/anil-portrait.png
-                            -->
+    .section {
+        padding: 90px 0;
+    }
 
-                            <img
-                                src="assets/anil-portrait.png"
-                                alt="Anil Shrestha">
+    .section-heading {
+        grid-template-columns: 40px 1fr;
+        gap: 12px;
+        margin-bottom: 45px;
+    }
 
-                        </div>
+    .section-heading h2 {
+        font-size: 39px;
+        letter-spacing: -1.8px;
+    }
 
-                        <div class="portrait-tag tag-top">
-                            DESIGN
-                        </div>
 
-                        <div class="portrait-tag tag-bottom">
-                            EDIT
-                        </div>
+    /* HEADER */
 
-                    </div>
+    .desktop-nav,
+    .nav-cta {
+        display: none;
+    }
 
-                </div>
+    .mobile-menu-button {
+        display: block;
+    }
 
-            </div>
+    .mobile-menu {
+        position: absolute;
+        top: 86px;
+        left: 16px;
+        right: 16px;
 
-            <div class="hero-scroll">
-                <span>Scroll to explore</span>
-                <span class="scroll-line"></span>
-            </div>
+        padding: 10px;
 
-        </section>
+        border: 1px solid var(--border);
+        border-radius: 16px;
 
+        background: rgba(12,12,14,0.97);
+        backdrop-filter: blur(20px);
 
-        <!-- =====================================================
-             MARQUEE
-        ====================================================== -->
+        display: flex;
+        flex-direction: column;
 
-        <section class="marquee-section">
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
 
-            <div class="marquee-track">
+        transition: var(--transition);
+    }
 
-                <span>GRAPHIC DESIGN</span>
-                <i>✦</i>
+    .mobile-menu.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 
-                <span>VIDEO EDITING</span>
-                <i>✦</i>
+    .mobile-menu a {
+        padding: 14px;
 
-                <span>BRANDING</span>
-                <i>✦</i>
+        border-radius: 10px;
 
-                <span>SOCIAL MEDIA</span>
-                <i>✦</i>
+        color: var(--muted);
+        font-size: 13px;
+    }
 
-                <span>DIGITAL CREATIVE</span>
-                <i>✦</i>
+    .mobile-menu a:hover {
+        color: white;
+        background: rgba(255,255,255,0.04);
+    }
 
-                <span>GRAPHIC DESIGN</span>
-                <i>✦</i>
 
-                <span>VIDEO EDITING</span>
-                <i>✦</i>
+    /* HERO */
 
-            </div>
+    .hero {
+        min-height: auto;
+        padding-top: 130px;
+    }
 
-        </section>
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
 
+    .hero h1 {
+        font-size: clamp(50px, 15vw, 75px);
+        letter-spacing: -3px;
+    }
 
-        <!-- =====================================================
-             ABOUT
-        ====================================================== -->
+    .hero-description {
+        font-size: 14px;
+    }
 
-        <section class="about section" id="about">
+    .hero-meta {
+        gap: 25px;
+        margin-top: 40px;
+    }
 
-            <div class="container">
+    .hero-meta strong {
+        font-size: 21px;
+    }
 
-                <div class="section-heading">
+    .hero-meta span {
+        font-size: 8px;
+    }
 
-                    <div class="section-number">
-                        01
-                    </div>
+    .hero-visual {
+        min-height: 500px;
+        margin-top: 30px;
+    }
 
-                    <div>
+    .portrait-frame {
+        width: 300px;
+    }
 
-                        <span class="eyebrow">
-                            WHO I AM
-                        </span>
+    .card-one {
+        left: 2%;
+        top: 18%;
+    }
 
-                        <h2>
-                            Turning ideas into
-                            <span>visual stories.</span>
-                        </h2>
+    .card-two {
+        right: 1%;
+        bottom: 16%;
+    }
 
-                    </div>
+    .scroll-indicator {
+        display: none;
+    }
 
-                </div>
 
+    /* ABOUT */
 
-                <div class="about-grid">
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
 
-                    <div class="about-intro">
+    .about-main .large-text {
+        font-size: 27px;
+    }
 
-                        <p class="large-text">
 
-                            I believe good design is not just about
-                            making something beautiful.
+    /* SERVICES */
 
-                            <strong>
-                                It is about making people notice,
-                                understand and remember.
-                            </strong>
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 
-                        </p>
 
-                    </div>
+    /* PORTFOLIO */
 
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
 
-                    <div class="about-copy">
+    .portfolio-large {
+        grid-column: auto;
+    }
 
-                        <p>
-                            I’m Anil Shrestha, a creative designer and
-                            video editor focused on helping people,
-                            businesses and brands communicate through
-                            powerful visuals.
-                        </p>
+    .portfolio-large .portfolio-image {
+        min-height: 330px;
+    }
 
-                        <p>
-                            From social media creatives and brand identity
-                            to promotional videos and complete digital
-                            campaigns, I combine design, editing and
-                            creative thinking to produce work that has
-                            purpose.
-                        </p>
 
-                        <p>
-                            Whether you need a single design or a complete
-                            creative solution, my goal is simple:
-                            understand your vision and turn it into
-                            something people remember.
-                        </p>
+    /* PACKAGES */
 
-                        <a href="#contact" class="underlined-link">
-                            Start a project with me
-                            <span>↗</span>
-                        </a>
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
 
-                    </div>
+    .package-card {
+        min-height: auto;
+    }
 
-                </div>
+    .full-digital {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .full-digital-content {
+        align-items: flex-start;
+    }
 
-                <!-- ABOUT STATS -->
+    .full-digital-price {
+        width: 100%;
+        text-align: left;
+    }
 
-                <div class="stats-grid">
+    .full-digital-price .package-button {
+        width: 100%;
+    }
 
-                    <div class="stat-box">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Years of Experience</span>
-                    </div>
+    .custom-package {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-                    <div class="stat-box">
-                        <span class="stat-number">100+</span>
-                        <span class="stat-label">Creative Projects</span>
-                    </div>
+    .custom-package .button {
+        width: 100%;
+    }
 
-                    <div class="stat-box">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Happy Clients</span>
-                    </div>
 
-                    <div class="stat-box">
-                        <span class="stat-number">∞</span>
-                        <span class="stat-label">Creative Ideas</span>
-                    </div>
+    /* CONTACT */
 
-                </div>
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
 
-            </div>
+    .contact-content h2 {
+        font-size: 54px;
+    }
 
-        </section>
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 
 
-        <!-- =====================================================
-             SERVICES
-        ====================================================== -->
+    /* FOOTER */
 
-        <section class="services section dark-section" id="services">
+    .footer-top {
+        flex-direction: column;
+    }
 
-            <div class="container">
+    .footer-links {
+        gap: 15px 25px;
+    }
 
-                <div class="section-heading light-heading">
+    .footer-bottom {
+        flex-direction: column;
+        margin-top: 40px;
+    }
 
-                    <div class="section-number">
-                        02
-                    </div>
+}
 
-                    <div>
 
-                        <span class="eyebrow">
-                            WHAT I DO
-                        </span>
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
-                        <h2>
-                            Creative services
-                            <span>built around your goals.</span>
-                        </h2>
+@media (max-width: 480px) {
 
-                    </div>
+    .section {
+        padding: 75px 0;
+    }
 
-                </div>
+    .hero h1 {
+        font-size: 48px;
+    }
 
+    .hero-buttons {
+        flex-direction: column;
+    }
 
-                <div class="services-list">
+    .hero-buttons .button {
+        width: 100%;
+    }
 
+    .hero-meta {
+        justify-content: space-between;
+        gap: 10px;
+    }
 
-                    <!-- SERVICE 01 -->
+    .hero-visual {
+        min-height: 440px;
+    }
 
-                    <article class="service-card">
+    .portrait-frame {
+        width: 270px;
+    }
 
-                        <div class="service-number">
-                            01
-                        </div>
+    .floating-card {
+        transform: scale(0.9);
+    }
 
-                        <div class="service-main">
+    .contact-form-wrapper {
+        padding: 22px;
+    }
 
-                            <h3>Graphic Design</h3>
+    .contact-content h2 {
+        font-size: 46px;
+    }
 
-                            <p>
-                                Creative visual solutions designed to
-                                communicate your message clearly and
-                                professionally.
-                            </p>
-
-                            <div class="service-tags">
-
-                                <span>Social Media</span>
-                                <span>Post Design</span>
-                                <span>Poster</span>
-                                <span>Banner</span>
-                                <span>Print Design</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="service-arrow">
-                            ↗
-                        </div>
-
-                    </article>
-
-
-                    <!-- SERVICE 02 -->
-
-                    <article class="service-card">
-
-                        <div class="service-number">
-                            02
-                        </div>
-
-                        <div class="service-main">
-
-                            <h3>Video Editing</h3>
-
-                            <p>
-                                Engaging video content for brands,
-                                businesses, social media and promotional
-                                campaigns.
-                            </p>
-
-                            <div class="service-tags">
-
-                                <span>Reels</span>
-                                <span>YouTube</span>
-                                <span>Promotional</span>
-                                <span>Commercial</span>
-                                <span>Short Films</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="service-arrow">
-                            ↗
-                        </div>
-
-                    </article>
-
-
-                    <!-- SERVICE 03 -->
-
-                    <article class="service-card">
-
-                        <div class="service-number">
-                            03
-                        </div>
-
-                        <div class="service-main">
-
-                            <h3>Branding</h3>
-
-                            <p>
-                                Complete visual identity systems that give
-                                your business a professional and memorable
-                                presence.
-                            </p>
-
-                            <div class="service-tags">
-
-                                <span>Logo Design</span>
-                                <span>Brand Identity</span>
-                                <span>Guidelines</span>
-                                <span>Packaging</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="service-arrow">
-                            ↗
-                        </div>
-
-                    </article>
-
-
-                    <!-- SERVICE 04 -->
-
-                    <article class="service-card">
-
-                        <div class="service-number">
-                            04
-                        </div>
-
-                        <div class="service-main">
-
-                            <h3>Social Media Creative</h3>
-
-                            <p>
-                                Consistent and attention-grabbing content
-                                created to strengthen your online presence.
-                            </p>
-
-                            <div class="service-tags">
-
-                                <span>Content Design</span>
-                                <span>Campaigns</span>
-                                <span>Ads</span>
-                                <span>Stories</span>
-                                <span>Reels</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="service-arrow">
-                            ↗
-                        </div>
-
-                    </article>
-
-
-                    <!-- SERVICE 05 -->
-
-                    <article class="service-card">
-
-                        <div class="service-number">
-                            05
-                        </div>
-
-                        <div class="service-main">
-
-                            <h3>Digital Creative Solutions</h3>
-
-                            <p>
-                                End-to-end creative support for businesses
-                                that need design, content and digital
-                                communication handled together.
-                            </p>
-
-                            <div class="service-tags">
-
-                                <span>Creative Direction</span>
-                                <span>Campaign Design</span>
-                                <span>Content</span>
-                                <span>Digital Marketing Creative</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="service-arrow">
-                            ↗
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             SELECTED WORK
-        ====================================================== -->
-
-        <section class="work section" id="work">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-number">
-                        03
-                    </div>
-
-                    <div>
-
-                        <span class="eyebrow">
-                            SELECTED WORK
-                        </span>
-
-                        <h2>
-                            A selection of
-                            <span>creative work.</span>
-                        </h2>
-
-                    </div>
-
-                    <a href="#contact" class="heading-link">
-                        Start your project
-                        <span>↗</span>
-                    </a>
-
-                </div>
-
-
-                <div class="portfolio-grid">
-
-
-                    <!-- PROJECT 01 -->
-
-                    <article class="portfolio-card portfolio-large">
-
-                        <a href="#" class="portfolio-image">
-
-                            <img
-                                src="assets/project-01.jpg"
-                                alt="Branding and graphic design project">
-
-                            <div class="portfolio-overlay">
-
-                                <span>VIEW PROJECT</span>
-
-                                <strong>↗</strong>
-
-                            </div>
-
-                        </a>
-
-                        <div class="portfolio-info">
-
-                            <div>
-
-                                <span class="portfolio-category">
-                                    BRANDING
-                                </span>
-
-                                <h3>
-                                    Brand Identity
-                                </h3>
-
-                            </div>
-
-                            <span class="portfolio-year">
-                                2026
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROJECT 02 -->
-
-                    <article class="portfolio-card">
-
-                        <a href="#" class="portfolio-image">
-
-                            <img
-                                src="assets/project-02.jpg"
-                                alt="Social media design project">
-
-                            <div class="portfolio-overlay">
-
-                                <span>VIEW PROJECT</span>
-
-                                <strong>↗</strong>
-
-                            </div>
-
-                        </a>
-
-                        <div class="portfolio-info">
-
-                            <div>
-
-                                <span class="portfolio-category">
-                                    SOCIAL MEDIA
-                                </span>
-
-                                <h3>
-                                    Digital Campaign
-                                </h3>
-
-                            </div>
-
-                            <span class="portfolio-year">
-                                2026
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROJECT 03 -->
-
-                    <article class="portfolio-card">
-
-                        <a href="#" class="portfolio-image">
-
-                            <img
-                                src="assets/project-03.jpg"
-                                alt="Creative design project">
-
-                            <div class="portfolio-overlay">
-
-                                <span>VIEW PROJECT</span>
-
-                                <strong>↗</strong>
-
-                            </div>
-
-                        </a>
-
-                        <div class="portfolio-info">
-
-                            <div>
-
-                                <span class="portfolio-category">
-                                    GRAPHIC DESIGN
-                                </span>
-
-                                <h3>
-                                    Creative Campaign
-                                </h3>
-
-                            </div>
-
-                            <span class="portfolio-year">
-                                2026
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROJECT 04 -->
-
-                    <article class="portfolio-card portfolio-wide">
-
-                        <a href="#" class="portfolio-image">
-
-                            <img
-                                src="assets/project-04.jpg"
-                                alt="Video editing project">
-
-                            <div class="portfolio-overlay">
-
-                                <span>VIEW PROJECT</span>
-
-                                <strong>↗</strong>
-
-                            </div>
-
-                        </a>
-
-                        <div class="portfolio-info">
-
-                            <div>
-
-                                <span class="portfolio-category">
-                                    VIDEO EDITING
-                                </span>
-
-                                <h3>
-                                    Promotional Video
-                                </h3>
-
-                            </div>
-
-                            <span class="portfolio-year">
-                                2026
-                            </span>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-
-                <div class="work-more">
-
-                    <a href="#contact" class="outline-button">
-
-                        Discuss Your Project
-
-                        <span>↗</span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             PROCESS
-        ====================================================== -->
-
-        <section class="process section light-section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-number">
-                        04
-                    </div>
-
-                    <div>
-
-                        <span class="eyebrow">
-                            MY PROCESS
-                        </span>
-
-                        <h2>
-                            From idea to
-                            <span>final result.</span>
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="process-grid">
-
-
-                    <div class="process-item">
-
-                        <span class="process-number">
-                            01
-                        </span>
-
-                        <h3>
-                            Discover
-                        </h3>
-
-                        <p>
-                            We discuss your goals, audience, requirements
-                            and creative direction.
-                        </p>
-
-                    </div>
-
-
-                    <div class="process-item">
-
-                        <span class="process-number">
-                            02
-                        </span>
-
-                        <h3>
-                            Plan
-                        </h3>
-
-                        <p>
-                            I develop the concept, visual direction and
-                            project approach.
-                        </p>
-
-                    </div>
-
-
-                    <div class="process-item">
-
-                        <span class="process-number">
-                            03
-                        </span>
-
-                        <h3>
-                            Create
-                        </h3>
-
-                        <p>
-                            Design, editing and refinement bring the idea
-                            into a finished creative piece.
-                        </p>
-
-                    </div>
-
-
-                    <div class="process-item">
-
-                        <span class="process-number">
-                            04
-                        </span>
-
-                        <h3>
-                            Deliver
-                        </h3>
-
-                        <p>
-                            Final files are prepared professionally and
-                            delivered according to the project needs.
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             PACKAGES
-        ====================================================== -->
-
-        <section class="packages section dark-section" id="packages">
-
-            <div class="container">
-
-                <div class="section-heading light-heading">
-
-                    <div class="section-number">
-                        05
-                    </div>
-
-                    <div>
-
-                        <span class="eyebrow">
-                            CREATIVE PACKAGES
-                        </span>
-
-                        <h2>
-                            Choose the level of
-                            <span>creative support.</span>
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="packages-grid">
-
-
-                    <!-- BRONZE -->
-
-                    <article class="package-card bronze">
-
-                        <div class="package-top">
-
-                            <div class="package-icon">
-                                ◈
-                            </div>
-
-                            <span class="package-level">
-                                01
-                            </span>
-
-                        </div>
-
-                        <div class="package-heading">
-
-                            <h3>
-                                Bronze
-                            </h3>
-
-                            <p>
-                                Essential creative support for individuals
-                                and small projects.
-                            </p>
-
-                        </div>
-
-                        <div class="package-price">
-
-                            <strong>
-                                NPR 8,000
-                            </strong>
-
-                            <span>
-                                / $60
-                            </span>
-
-                        </div>
-
-                        <div class="package-divider"></div>
-
-                        <p class="package-description">
-                            Perfect for individuals who need professional
-                            creative materials for a focused project.
-                        </p>
-
-                        <ul class="package-features">
-
-                            <li>
-                                <span>✓</span>
-                                5 Creative Designs
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Social Media Graphics
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                2 Revision Rounds
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                High-Quality Final Files
-                            </li>
-
-                        </ul>
-
-                        <button
-                            class="package-button"
-                            data-package="Bronze">
-
-                            Select Package
-                            <span>↗</span>
-
-                        </button>
-
-                    </article>
-
-
-                    <!-- SILVER -->
-
-                    <article class="package-card silver">
-
-                        <div class="package-top">
-
-                            <div class="package-icon">
-                                ◆
-                            </div>
-
-                            <span class="package-level">
-                                02
-                            </span>
-
-                        </div>
-
-                        <div class="package-heading">
-
-                            <h3>
-                                Silver
-                            </h3>
-
-                            <p>
-                                A stronger creative package for growing
-                                businesses and brands.
-                            </p>
-
-                        </div>
-
-                        <div class="package-price">
-
-                            <strong>
-                                NPR 18,000
-                            </strong>
-
-                            <span>
-                                / $135
-                            </span>
-
-                        </div>
-
-                        <div class="package-divider"></div>
-
-                        <p class="package-description">
-                            A balanced creative solution for businesses
-                            requiring consistent design support.
-                        </p>
-
-                        <ul class="package-features">
-
-                            <li>
-                                <span>✓</span>
-                                12 Creative Designs
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Social Media Content
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Promotional Designs
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                3 Revision Rounds
-                            </li>
-
-                        </ul>
-
-                        <button
-                            class="package-button"
-                            data-package="Silver">
-
-                            Select Package
-                            <span>↗</span>
-
-                        </button>
-
-                    </article>
-
-
-                    <!-- GOLD -->
-
-                    <article class="package-card gold featured-package">
-
-                        <div class="featured-label">
-                            POPULAR
-                        </div>
-
-                        <div class="package-top">
-
-                            <div class="package-icon">
-                                ✦
-                            </div>
-
-                            <span class="package-level">
-                                03
-                            </span>
-
-                        </div>
-
-                        <div class="package-heading">
-
-                            <h3>
-                                Gold
-                            </h3>
-
-                            <p>
-                                Complete creative support for established
-                                businesses and active brands.
-                            </p>
-
-                        </div>
-
-                        <div class="package-price">
-
-                            <strong>
-                                NPR 35,000
-                            </strong>
-
-                            <span>
-                                / $260
-                            </span>
-
-                        </div>
-
-                        <div class="package-divider"></div>
-
-                        <p class="package-description">
-                            Designed for brands that need a larger range of
-                            creative content and consistent visual quality.
-                        </p>
-
-                        <ul class="package-features">
-
-                            <li>
-                                <span>✓</span>
-                                25 Creative Designs
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Social Media Campaigns
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Promotional Content
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Video Editing Support
-                            </li>
-
-                        </ul>
-
-                        <button
-                            class="package-button"
-                            data-package="Gold">
-
-                            Select Package
-                            <span>↗</span>
-
-                        </button>
-
-                    </article>
-
-
-                    <!-- PLATINUM -->
-
-                    <article class="package-card platinum">
-
-                        <div class="package-top">
-
-                            <div class="package-icon">
-                                ✧
-                            </div>
-
-                            <span class="package-level">
-                                04
-                            </span>
-
-                        </div>
-
-                        <div class="package-heading">
-
-                            <h3>
-                                Platinum
-                            </h3>
-
-                            <p>
-                                Full creative and digital support for
-                                serious businesses and organizations.
-                            </p>
-
-                        </div>
-
-                        <div class="package-price">
-
-                            <strong>
-                                NPR 65,000
-                            </strong>
-
-                            <span>
-                                / $490
-                            </span>
-
-                        </div>
-
-                        <div class="package-divider"></div>
-
-                        <p class="package-description">
-                            A complete digital creative package covering
-                            design, content and ongoing creative support.
-                        </p>
-
-                        <ul class="package-features">
-
-                            <li>
-                                <span>✓</span>
-                                Complete Creative Direction
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Graphic Design
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Video Editing
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Social Media Creative
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Monthly Creative Support
-                            </li>
-
-                        </ul>
-
-                        <button
-                            class="package-button"
-                            data-package="Platinum">
-
-                            Select Package
-                            <span>↗</span>
-
-                        </button>
-
-                    </article>
-
-
-                </div>
-
-
-                <!-- CUSTOM PACKAGE -->
-
-                <div class="custom-package">
-
-                    <div>
-
-                        <span class="custom-number">
-                            05
-                        </span>
-
-                        <h3>
-                            Need Something Different?
-                        </h3>
-
-                        <p>
-                            Create a custom package based on your project,
-                            quantity, complexity and deadline.
-                        </p>
-
-                    </div>
-
-                    <a href="#contact" class="custom-button">
-
-                        Let's Discuss
-
-                        <span>↗</span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             TESTIMONIAL / STATEMENT
-        ====================================================== -->
-
-        <section class="statement section">
-
-            <div class="container">
-
-                <div class="statement-content">
-
-                    <span class="quote-mark">
-                        “
-                    </span>
-
-                    <blockquote>
-                        Good design gets attention.
-                        Great design creates connection.
-                    </blockquote>
-
-                    <div class="statement-line"></div>
-
-                    <span class="statement-author">
-                        — Anil Shrestha
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CTA
-        ====================================================== -->
-
-        <section class="cta-section">
-
-            <div class="cta-background">
-                <div class="cta-glow"></div>
-            </div>
-
-            <div class="container">
-
-                <div class="cta-content">
-
-                    <span class="eyebrow">
-                        HAVE A PROJECT IN MIND?
-                    </span>
-
-                    <h2>
-                        Let's create something
-                        <span>worth remembering.</span>
-                    </h2>
-
-                    <p>
-                        Tell me what you are working on and let's turn
-                        your idea into a strong visual experience.
-                    </p>
-
-                    <a href="#contact" class="cta-button">
-
-                        Start a Conversation
-
-                        <span>↗</span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             CONTACT
-        ====================================================== -->
-
-        <section class="contact section" id="contact">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div class="section-number">
-                        06
-                    </div>
-
-                    <div>
-
-                        <span class="eyebrow">
-                            GET IN TOUCH
-                        </span>
-
-                        <h2>
-                            Let's work
-                            <span>together.</span>
-                        </h2>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-grid">
-
-
-                    <!-- CONTACT INFORMATION -->
-
-                    <div class="contact-info">
-
-                        <p class="contact-intro">
-                            Have a project, idea or business that needs
-                            creative direction? Send me a message and
-                            let's discuss how I can help.
-                        </p>
-
-
-                        <div class="contact-details">
-
-                            <a
-                                href="tel:+9779815150233"
-                                class="contact-item">
-
-                                <span class="contact-icon">
-                                    ☎
-                                </span>
-
-                                <div>
-
-                                    <span>
-                                        Phone / WhatsApp
-                                    </span>
-
-                                    <strong>
-                                        +977 9815150233
-                                    </strong>
-
-                                </div>
-
-                                <span class="contact-arrow">
-                                    ↗
-                                </span>
-
-                            </a>
-
-
-                            <a
-                                href="tel:+9779846435100"
-                                class="contact-item">
-
-                                <span class="contact-icon">
-                                    ☎
-                                </span>
-
-                                <div>
-
-                                    <span>
-                                        Phone / WhatsApp
-                                    </span>
-
-                                    <strong>
-                                        +977 9846435100
-                                    </strong>
-
-                                </div>
-
-                                <span class="contact-arrow">
-                                    ↗
-                                </span>
-
-                            </a>
-
-
-                            <a
-                                href="https://wa.me/9779815150233"
-                                target="_blank"
-                                rel="noopener"
-                                class="contact-item">
-
-                                <span class="contact-icon">
-                                    ◉
-                                </span>
-
-                                <div>
-
-                                    <span>
-                                        WhatsApp
-                                    </span>
-
-                                    <strong>
-                                        Chat with me
-                                    </strong>
-
-                                </div>
-
-                                <span class="contact-arrow">
-                                    ↗
-                                </span>
-
-                            </a>
-
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- CONTACT FORM -->
-
-                    <form
-                        class="contact-form"
-                        id="contactForm">
-
-                        <div class="form-row">
-
-                            <div class="form-group">
-
-                                <label for="name">
-                                    Your Name
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    placeholder="Enter your name"
-                                    required>
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="email">
-                                    Email
-                                </label>
-
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="you@example.com"
-                                    required>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="service">
-                                What do you need?
-                            </label>
-
-                            <select id="service" name="service">
-
-                                <option value="">
-                                    Select a service
-                                </option>
-
-                                <option value="graphic-design">
-                                    Graphic Design
-                                </option>
-
-                                <option value="video-editing">
-                                    Video Editing
-                                </option>
-
-                                <option value="branding">
-                                    Branding
-                                </option>
-
-                                <option value="social-media">
-                                    Social Media Creative
-                                </option>
-
-                                <option value="digital">
-                                    Digital Creative Solutions
-                                </option>
-
-                                <option value="package">
-                                    Creative Package
-                                </option>
-
-                                <option value="other">
-                                    Something Else
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="message">
-                                Tell me about your project
-                            </label>
-
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="6"
-                                placeholder="Tell me about your project, requirements, budget or deadline..."
-                                required></textarea>
-
-                        </div>
-
-
-                        <button
-                            type="submit"
-                            class="form-submit">
-
-                            Send Message
-
-                            <span>↗</span>
-
-                        </button>
-
-
-                        <p
-                            class="form-note"
-                            id="formMessage">
-                        </p>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
-    <footer class="site-footer">
-
-        <div class="container">
-
-
-            <div class="footer-top">
-
-                <div class="footer-brand">
-
-                    <a href="#home" class="logo footer-logo">
-
-                        <span class="logo-main">
-                            ANIL
-                        </span>
-
-                        <span class="logo-sub">
-                            SHRESTHA
-                        </span>
-
-                    </a>
-
-                    <p>
-                        Designer. Editor. Creative Problem Solver.
-                    </p>
-
-                </div>
-
-
-                <div class="footer-navigation">
-
-                    <span class="footer-title">
-                        Navigate
-                    </span>
-
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#work">Work</a>
-                    <a href="#packages">Packages</a>
-                    <a href="#contact">Contact</a>
-
-                </div>
-
-
-                <div class="footer-social">
-
-                    <span class="footer-title">
-                        Connect
-                    </span>
-
-                    <a
-                        href="https://wa.me/9779815150233"
-                        target="_blank"
-                        rel="noopener">
-
-                        WhatsApp
-                        ↗
-
-                    </a>
-
-                    <a href="#contact">
-                        Let's Talk
-                        ↗
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                <span>
-                    © <span id="currentYear"></span>
-                    Anil Shrestha. All rights reserved.
-                </span>
-
-                <span>
-                    Designed &amp; Crafted by Anil Shrestha
-                </span>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
-    <!-- =========================================================
-         PACKAGE MODAL
-    ========================================================== -->
-
-    <div
-        class="package-modal"
-        id="packageModal"
-        aria-hidden="true">
-
-        <div class="modal-overlay" id="modalOverlay"></div>
-
-        <div class="modal-box">
-
-            <button
-                class="modal-close"
-                id="modalClose"
-                aria-label="Close">
-
-                ×
-
-            </button>
-
-            <span class="eyebrow">
-                PACKAGE SELECTED
-            </span>
-
-            <h3 id="selectedPackage">
-                Bronze Package
-            </h3>
-
-            <p>
-                Great choice. Tell me a little about your project and
-                I'll get back to you with the next steps.
-            </p>
-
-            <a
-                href="#contact"
-                class="modal-button"
-                id="modalContact">
-
-                Continue
-
-                <span>↗</span>
-
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================================================
-         BACK TO TOP
-    ========================================================== -->
-
-    <button
-        class="back-to-top"
-        id="backToTop"
-        aria-label="Back to top">
-
-        ↑
-
-    </button>
-
-
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================== -->
-
-    <script src="script.js"></script>
-
-</body>
-</html>
-```
+}
