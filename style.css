@@ -3439,3 +3439,22 @@ footer div {
         width: 100%;
     }
 }
+.package-bronze {
+    --package-color: #16a34a;
+    --package-light: rgba(22, 163, 74, 0.10);
+}
+
+.package-silver {
+    --package-color: #2563eb;
+    --package-light: rgba(37, 99, 235, 0.10);
+}
+
+.package-gold {
+    --package-color: #9333ea;
+    --package-light: rgba(147, 51, 234, 0.10);
+}
+
+.package-platinum {
+    --package-color: #dc2626;
+    --package-light: rgba(220, 38, 38, 0.10);
+}
