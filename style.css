@@ -3029,3 +3029,413 @@ footer div {
   }
 
 }
+/* =========================================================
+   PACKAGE SECTION
+   ========================================================= */
+
+.packages-section {
+    padding: 100px 0;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 45px;
+}
+
+
+/* =========================================================
+   BASE PACKAGE CARD
+   ========================================================= */
+
+.pricing-package {
+    --package-color: #16a34a;
+    --package-light: rgba(22, 163, 74, 0.10);
+
+    width: 100%;
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: #fff;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.07);
+
+    transition: all 0.3s ease;
+}
+
+.pricing-package:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   FOUR COLORS
+   ========================================================= */
+
+/* 🟢 BRONZE */
+
+.pricing-package--bronze {
+    --package-color: #16a34a;
+    --package-light: rgba(22, 163, 74, 0.10);
+}
+
+
+/* 🔵 SILVER */
+
+.pricing-package--silver {
+    --package-color: #2563eb;
+    --package-light: rgba(37, 99, 235, 0.10);
+}
+
+
+/* 🟣 GOLD */
+
+.pricing-package--gold {
+    --package-color: #9333ea;
+    --package-light: rgba(147, 51, 234, 0.10);
+}
+
+
+/* 🔴 PLATINUM */
+
+.pricing-package--platinum {
+    --package-color: #dc2626;
+    --package-light: rgba(220, 38, 38, 0.10);
+}
+
+
+/* =========================================================
+   TOP
+   ========================================================= */
+
+.pricing-package__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+/* LEFT */
+
+.pricing-package__title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pricing-package__icon {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: var(--package-light);
+    color: var(--package-color);
+
+    font-size: 23px;
+}
+
+.pricing-package__small-title {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: var(--package-color);
+}
+
+.pricing-package__title h3 {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TOP RIGHT PRICE
+   ========================================================= */
+
+.pricing-package__price-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.pricing-package__price {
+    white-space: nowrap;
+    text-align: right;
+}
+
+.pricing-package__price strong {
+    color: var(--package-color);
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.pricing-package__price span {
+    color: #777;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* TOP PRICING BUTTON */
+
+.pricing-package__top-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 17px;
+
+    border-radius: 9px;
+
+    background: var(--package-color);
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+.pricing-package__top-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.9);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.pricing-package__description {
+    padding: 22px 0 18px;
+}
+
+.pricing-package__description strong {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.pricing-package__features {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 50px;
+    row-gap: 13px;
+
+    padding-bottom: 25px;
+}
+
+.pricing-feature {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color: #444;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.pricing-feature i {
+    flex-shrink: 0;
+
+    margin-top: 4px;
+
+    color: var(--package-color);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   BOTTOM BUTTONS
+   ========================================================= */
+
+.pricing-package__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+/* VIEW MORE */
+
+.pricing-package__view-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 11px 20px;
+
+    border-radius: 9px;
+
+    border: 1px solid rgba(0, 0, 0, 0.12);
+
+    background: #fff;
+
+    color: #333;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.pricing-package__view-button:hover {
+    border-color: var(--package-color);
+    color: var(--package-color);
+}
+
+
+/* SELECT PACKAGE */
+
+.pricing-package__select-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 12px 23px;
+
+    border-radius: 9px;
+
+    background: var(--package-color);
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+.pricing-package__select-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(0.9);
+}
+
+
+/* =========================================================
+   VIEW MORE DETAILS
+   ========================================================= */
+
+.pricing-package__details {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease;
+}
+
+.pricing-package.show-details .pricing-package__details {
+    max-height: 250px;
+
+    opacity: 1;
+
+    padding-top: 20px;
+}
+
+.pricing-package__details > div {
+    padding: 9px 0;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+.pricing-package__details strong {
+    color: #222;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .pricing-package {
+        padding: 22px;
+    }
+
+    .pricing-package__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pricing-package__price-area {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .pricing-package__features {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-package__footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pricing-package__view-button,
+    .pricing-package__select-button {
+        width: 100%;
+    }
+}
