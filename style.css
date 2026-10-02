@@ -1860,12 +1860,8 @@ body::selection {
 ------------------------- */
 
 .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+    opacity: 1;
+    transform: none;
 }
 
 .reveal.revealed {
