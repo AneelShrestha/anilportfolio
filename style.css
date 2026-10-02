@@ -1,18 +1,1866 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Khand:wght@600;700&family=Roboto:wght@400;500;600;700&display=swap');
-:root{--bg:#07090c;--surface:#0d1117;--surface2:#111720;--text:#f5f7fa;--muted:#9ca6b5;--line:#202733;--accent:#4da3ff;--accent2:#74e6a2;--white:#fff;--shadow:0 20px 60px rgba(0,0,0,.35);--radius:18px;--max:1180px}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Roboto,Arial,sans-serif;line-height:1.7;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 80% 5%,rgba(77,163,255,.08),transparent 30%),radial-gradient(circle at 10% 80%,rgba(116,230,162,.045),transparent 30%);z-index:-1}.container{width:min(calc(100% - 48px),var(--max));margin:auto}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{font:inherit}
-nav{position:sticky;top:0;z-index:100;background:rgba(7,9,12,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}.nav-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:30px}.logo{font-family:Khand,sans-serif;font-size:27px;font-weight:700;letter-spacing:2px}.logo span{color:var(--accent)}.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);transition:.25s}.nav-links a:hover{color:var(--text)}
-section{padding:115px 0;border-bottom:1px solid var(--line)}.hero{min-height:calc(100vh - 76px);display:flex;align-items:center;padding:75px 0}.hero-layout{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:55px}.eyebrow,.section-label{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent2);font-weight:700}.hero h1{font-family:Anton,sans-serif;font-size:clamp(64px,9vw,128px);line-height:.92;letter-spacing:1px;margin:20px 0}.hero h1 span{color:var(--accent)}.hero-role{font-family:Khand,sans-serif;font-size:27px;line-height:1.2;margin-bottom:20px}.hero-content>p{max-width:650px;color:var(--muted);font-size:17px}.hero-status{display:flex;align-items:center;gap:10px;margin:25px 0;color:#c6ced9;font-size:14px}.hero-status span{width:9px;height:9px;border-radius:50%;background:var(--accent2);box-shadow:0 0 15px var(--accent2)}.buttons{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;padding:13px 22px;border:1px solid var(--line);border-radius:999px;text-transform:uppercase;letter-spacing:1.2px;font-size:12px;font-weight:700;transition:.25s}.btn:hover{transform:translateY(-2px);border-color:var(--accent)}.btn.primary{background:var(--accent);color:#06101c;border-color:var(--accent)}.hero-portrait{position:relative;display:flex;justify-content:center}.hero-portrait:after{content:"";position:absolute;width:72%;height:72%;border-radius:50%;background:rgba(77,163,255,.12);filter:blur(45px);z-index:-1}.hero-portrait img{max-height:650px;object-fit:contain;filter:drop-shadow(0 30px 45px rgba(0,0,0,.6))}
-.section-title{font-family:Anton,sans-serif;text-transform:uppercase;font-size:clamp(52px,7vw,92px);line-height:.95;letter-spacing:1px;margin:18px 0 55px}.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}.about-text{font-size:17px;color:var(--muted);max-width:650px}.about-text p+p{margin-top:18px}.stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}.stat{padding:24px 15px;border-bottom:1px solid var(--line)}.stat:nth-child(odd){border-right:1px solid var(--line)}.stat h3,.skill-number,.project-number{color:var(--accent);font-family:Khand,sans-serif;font-size:18px}.stat p{font-weight:700;margin-top:6px}
-.profile-expertise-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px}.profile-photo{border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--line);margin-bottom:28px}.profile-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}.profile-description{color:var(--muted);font-size:16px}.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}.skill{padding:22px 18px;border-bottom:1px solid var(--line)}.skill:nth-child(odd){border-right:1px solid var(--line)}.skill h3{font-size:18px;margin:5px 0}.skill p{color:var(--muted);font-size:14px;line-height:1.55}
-.software-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.software{background:linear-gradient(145deg,var(--surface2),var(--surface));border:1px solid var(--line);padding:24px 18px;border-radius:var(--radius);min-height:190px;transition:.25s}.software:hover{transform:translateY(-5px);border-color:#344255}.software-icon{height:58px;margin-bottom:18px;display:flex;align-items:center}.software-icon img{width:52px;height:52px;object-fit:contain}.software h3{font-size:16px}.software p{color:var(--muted);font-size:12px;line-height:1.45;margin-top:5px}
-.work-intro{max-width:700px;color:var(--muted);margin:-30px 0 30px}.work-filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px}.filter-btn{border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;padding:9px 16px;font-size:12px;text-transform:uppercase;letter-spacing:1px;cursor:pointer}.filter-btn.active,.filter-btn:hover{background:var(--text);color:var(--bg);border-color:var(--text)}.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s}.project:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.project-image{aspect-ratio:16/10;overflow:hidden}.project-image img{width:100%;height:100%;object-fit:cover;transition:.4s}.project:hover img{transform:scale(1.04)}.project-info{padding:20px}.project-info h3{font-size:20px;margin:3px 0 7px}.project-info p{color:var(--muted);font-size:14px}.project-type{display:inline-block;margin-top:12px;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent2)}.project.hidden{display:none}
-.experience-list{border-top:1px solid var(--line)}.experience-item{display:grid;grid-template-columns:160px 1fr;gap:30px;padding:27px 0;border-bottom:1px solid var(--line)}.experience-year{font-family:Khand,sans-serif;font-size:20px;color:var(--accent)}.experience-item h3{font-size:20px}.experience-item p{color:var(--muted);margin-top:3px}
-.pricing-intro{max-width:700px;color:var(--muted);margin:-30px 0 38px}.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.pricing-package{position:relative;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--package,#4da3ff);border-radius:var(--radius);padding:26px;overflow:hidden}.pricing-package:before{content:"";position:absolute;right:-70px;top:-70px;width:180px;height:180px;border-radius:50%;background:var(--package);opacity:.07;filter:blur(2px)}.pricing-package--bronze{--package:#48d17b}.pricing-package--silver{--package:#4da3ff}.pricing-package--gold{--package:#b276ff}.pricing-package--platinum{--package:#ff5f67}.pricing-package__header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.pricing-package__identity{display:flex;gap:14px;align-items:center}.pricing-package__icon{width:46px;height:46px;border:1px solid var(--package);border-radius:14px;display:grid;place-items:center;color:var(--package)}.pricing-package__number{font-size:10px;letter-spacing:1.5px;color:var(--muted)}.pricing-package__name h3{font-family:Khand,sans-serif;font-size:27px}.pricing-package__price{text-align:right}.pricing-package__price-value strong{display:block;font-size:21px}.pricing-package__price-value span{color:var(--muted);font-size:12px}.pricing-package__top-button{display:inline-block;margin-top:7px;color:var(--package);font-size:10px;text-transform:uppercase;letter-spacing:1px}.pricing-package__description{color:var(--muted);margin:20px 0}.pricing-package__details{display:none;border-top:1px solid var(--line);padding-top:16px}.pricing-package.show-details .pricing-package__details{display:block}.pricing-package__details li{list-style:none;padding:6px 0;color:#c8d0db;font-size:14px}.pricing-package__details li:before{content:"✓";color:var(--package);font-weight:bold;margin-right:9px}.pricing-package__footer{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:20px}.pricing-package__view,.pricing-package__select{border:1px solid var(--line);background:transparent;border-radius:999px;padding:10px 15px;font-size:11px;text-transform:uppercase;letter-spacing:1px;cursor:pointer}.pricing-package__view{color:var(--muted)}.pricing-package__select{background:var(--package);border-color:var(--package);color:#080a0d;font-weight:700}.custom-package{margin-top:18px;padding:32px;border:1px dashed #364151;border-radius:var(--radius);display:flex;justify-content:space-between;gap:30px;align-items:center;background:linear-gradient(120deg,rgba(77,163,255,.05),transparent)}.custom-package h3{font-family:Khand,sans-serif;font-size:31px}.custom-package p{color:var(--muted)}
-.recommendations-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.recommendation-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}.recommendation-profile{display:flex;gap:14px;align-items:center}.recommendation-photo{width:62px;height:62px;flex:0 0 62px}.recommendation-photo svg{width:100%;height:100%}.recommendation-person h3{font-size:16px}.recommendation-person p{color:var(--muted);font-size:12px}.recommendation-quote{margin-top:20px;color:#d7dde5;font-size:14px;font-style:italic}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.contact-intro p{font-size:19px;color:var(--muted);max-width:560px}.contact-intro p+p{margin-top:18px}.contact-details{border-top:1px solid var(--line)}.contact-item{padding:20px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column}.contact-label{font-size:10px;letter-spacing:1.5px;color:var(--muted);margin-bottom:5px}.contact-item>a{font-size:18px;font-weight:600}.contact-item .contact-action{font-size:12px;color:var(--accent2);margin-top:5px}.social-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:35px}.social-links a{border:1px solid var(--line);padding:10px 15px;border-radius:999px;color:var(--muted);font-size:12px}.social-links a:hover{color:var(--text);border-color:var(--accent)}footer{padding:30px 0;color:var(--muted);font-size:12px}footer .container{display:flex;justify-content:space-between;gap:20px}
-@media(max-width:1000px){.software-grid{grid-template-columns:repeat(3,1fr)}.recommendations-grid{grid-template-columns:1fr 1fr}.projects-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:760px){.container{width:min(calc(100% - 30px),var(--max))}.nav-inner{min-height:65px}.nav-links{display:none}.hero{padding:65px 0}.hero-layout,.about-grid,.profile-expertise-grid,.contact-grid{grid-template-columns:1fr;gap:45px}.hero-portrait{order:-1}.hero-portrait img{max-height:430px}.section-title{margin-bottom:35px}.software-grid,.projects-grid,.recommendations-grid,.pricing-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.skill:nth-child(odd){border-right:0}.experience-item{grid-template-columns:1fr;gap:5px}.custom-package{flex-direction:column;align-items:flex-start}.pricing-package__header{flex-direction:column}.pricing-package__price{text-align:left}.pricing-package__footer{flex-direction:column;align-items:stretch}.pricing-package__view,.pricing-package__select{text-align:center}footer .container{flex-direction:column}}
-/* Exact package markup compatibility */
-.packages-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.pricing-package__features{list-style:none;margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line)}.pricing-package__features li{font-size:13px;color:#c8d0db;padding:5px 0}.pricing-package__features i{color:var(--package);width:20px}.pricing-package__details>div{font-size:13px;color:#b9c2ce;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.035)}.pricing-package__details strong{color:#e8edf3}.pricing-package__detail-heading{font-size:10px!important;letter-spacing:1.5px;text-transform:uppercase;color:var(--package)!important;font-weight:700;margin-top:8px}.custom-package-card{margin-top:18px;padding:28px;border:1px dashed #364151;border-radius:var(--radius);display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;background:linear-gradient(120deg,rgba(77,163,255,.05),transparent)}.custom-package-icon{width:50px;height:50px;border-radius:14px;border:1px solid var(--accent);display:grid;place-items:center;color:var(--accent)}.custom-package-content .package-label{font-size:10px;letter-spacing:1.5px;color:var(--accent2)}.custom-package-content h3{font-family:Khand,sans-serif;font-size:31px;line-height:1.1}.custom-package-content p{color:var(--muted);font-size:14px}.custom-package-btn{border:1px solid var(--accent);padding:11px 17px;border-radius:999px;color:var(--accent);font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700}.recommendations-intro{color:var(--muted);max-width:700px;margin:-30px 0 35px}.packages-intro{color:var(--muted);max-width:700px;margin:-30px 0 35px}
-@media(max-width:760px){.packages-grid{grid-template-columns:1fr}.custom-package-card{grid-template-columns:auto 1fr}.custom-package-btn{grid-column:1/-1;text-align:center}}
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anil Shrestha — Designer & Editor</title>
+
+    <meta name="description"
+        content="Anil Shrestha — Professional Graphic Designer, Video Editor and Creative Digital Specialist.">
+
+    <meta name="author" content="Anil Shrestha">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         PRELOADER
+    ========================================================== -->
+
+    <div id="preloader">
+        <div class="loader-logo">
+            ANIL<span>SHRESTHA</span>
+        </div>
+
+        <div class="loader-line">
+            <span></span>
+        </div>
+    </div>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <div class="container nav-container">
+
+            <a href="#home" class="logo">
+                <span class="logo-main">ANIL</span>
+                <span class="logo-sub">SHRESTHA</span>
+            </a>
+
+            <nav class="desktop-nav">
+
+                <a href="#home" class="nav-link active">Home</a>
+
+                <a href="#about" class="nav-link">About</a>
+
+                <a href="#services" class="nav-link">Services</a>
+
+                <a href="#work" class="nav-link">Work</a>
+
+                <a href="#packages" class="nav-link">Packages</a>
+
+                <a href="#contact" class="nav-link">Contact</a>
+
+            </nav>
+
+            <a href="#contact" class="nav-button">
+                Let's Talk
+                <span>↗</span>
+            </a>
+
+            <button class="mobile-menu-button" id="mobileMenuButton"
+                aria-label="Open navigation">
+
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+        <!-- MOBILE NAV -->
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="hero section" id="home">
+
+            <div class="hero-background">
+                <div class="hero-glow glow-one"></div>
+                <div class="hero-glow glow-two"></div>
+                <div class="hero-grid"></div>
+            </div>
+
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-small-label reveal">
+                        <span class="status-dot"></span>
+                        AVAILABLE FOR CREATIVE PROJECTS
+                    </div>
+
+                    <h1 class="hero-title reveal">
+
+                        Creative
+                        <span>Designer</span>
+
+                        <br>
+
+                        &amp; Video
+                        <span>Editor.</span>
+
+                    </h1>
+
+                    <p class="hero-description reveal">
+
+                        I’m <strong>Anil Shrestha</strong>, a professional
+                        graphic designer and video editor creating bold,
+                        meaningful and visually engaging digital experiences
+                        for brands, businesses and individuals.
+
+                    </p>
+
+                    <div class="hero-actions reveal">
+
+                        <a href="#work" class="primary-button">
+                            Explore My Work
+                            <span>↗</span>
+                        </a>
+
+                        <a href="#contact" class="text-button">
+                            Let's Work Together
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                    <div class="hero-meta reveal">
+
+                        <div class="hero-meta-item">
+                            <strong>10+</strong>
+                            <span>Years Experience</span>
+                        </div>
+
+                        <div class="hero-meta-divider"></div>
+
+                        <div class="hero-meta-item">
+                            <strong>100+</strong>
+                            <span>Projects Completed</span>
+                        </div>
+
+                        <div class="hero-meta-divider"></div>
+
+                        <div class="hero-meta-item">
+                            <strong>24/7</strong>
+                            <span>Creative Support</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HERO PORTRAIT -->
+
+                <div class="hero-visual reveal">
+
+                    <div class="portrait-frame">
+
+                        <div class="portrait-decoration decoration-one"></div>
+                        <div class="portrait-decoration decoration-two"></div>
+
+                        <div class="portrait-image">
+
+                            <!--
+                                Replace this image path with your PNG portrait.
+
+                                Recommended:
+                                assets/anil-portrait.png
+                            -->
+
+                            <img
+                                src="assets/anil-portrait.png"
+                                alt="Anil Shrestha">
+
+                        </div>
+
+                        <div class="portrait-tag tag-top">
+                            DESIGN
+                        </div>
+
+                        <div class="portrait-tag tag-bottom">
+                            EDIT
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-scroll">
+                <span>Scroll to explore</span>
+                <span class="scroll-line"></span>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MARQUEE
+        ====================================================== -->
+
+        <section class="marquee-section">
+
+            <div class="marquee-track">
+
+                <span>GRAPHIC DESIGN</span>
+                <i>✦</i>
+
+                <span>VIDEO EDITING</span>
+                <i>✦</i>
+
+                <span>BRANDING</span>
+                <i>✦</i>
+
+                <span>SOCIAL MEDIA</span>
+                <i>✦</i>
+
+                <span>DIGITAL CREATIVE</span>
+                <i>✦</i>
+
+                <span>GRAPHIC DESIGN</span>
+                <i>✦</i>
+
+                <span>VIDEO EDITING</span>
+                <i>✦</i>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section class="about section" id="about">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <span class="eyebrow">
+                            WHO I AM
+                        </span>
+
+                        <h2>
+                            Turning ideas into
+                            <span>visual stories.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-intro">
+
+                        <p class="large-text">
+
+                            I believe good design is not just about
+                            making something beautiful.
+
+                            <strong>
+                                It is about making people notice,
+                                understand and remember.
+                            </strong>
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-copy">
+
+                        <p>
+                            I’m Anil Shrestha, a creative designer and
+                            video editor focused on helping people,
+                            businesses and brands communicate through
+                            powerful visuals.
+                        </p>
+
+                        <p>
+                            From social media creatives and brand identity
+                            to promotional videos and complete digital
+                            campaigns, I combine design, editing and
+                            creative thinking to produce work that has
+                            purpose.
+                        </p>
+
+                        <p>
+                            Whether you need a single design or a complete
+                            creative solution, my goal is simple:
+                            understand your vision and turn it into
+                            something people remember.
+                        </p>
+
+                        <a href="#contact" class="underlined-link">
+                            Start a project with me
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ABOUT STATS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-box">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Years of Experience</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Creative Projects</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+
+                    <div class="stat-box">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Creative Ideas</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SERVICES
+        ====================================================== -->
+
+        <section class="services section dark-section" id="services">
+
+            <div class="container">
+
+                <div class="section-heading light-heading">
+
+                    <div class="section-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <span class="eyebrow">
+                            WHAT I DO
+                        </span>
+
+                        <h2>
+                            Creative services
+                            <span>built around your goals.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="services-list">
+
+
+                    <!-- SERVICE 01 -->
+
+                    <article class="service-card">
+
+                        <div class="service-number">
+                            01
+                        </div>
+
+                        <div class="service-main">
+
+                            <h3>Graphic Design</h3>
+
+                            <p>
+                                Creative visual solutions designed to
+                                communicate your message clearly and
+                                professionally.
+                            </p>
+
+                            <div class="service-tags">
+
+                                <span>Social Media</span>
+                                <span>Post Design</span>
+                                <span>Poster</span>
+                                <span>Banner</span>
+                                <span>Print Design</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="service-arrow">
+                            ↗
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 02 -->
+
+                    <article class="service-card">
+
+                        <div class="service-number">
+                            02
+                        </div>
+
+                        <div class="service-main">
+
+                            <h3>Video Editing</h3>
+
+                            <p>
+                                Engaging video content for brands,
+                                businesses, social media and promotional
+                                campaigns.
+                            </p>
+
+                            <div class="service-tags">
+
+                                <span>Reels</span>
+                                <span>YouTube</span>
+                                <span>Promotional</span>
+                                <span>Commercial</span>
+                                <span>Short Films</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="service-arrow">
+                            ↗
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 03 -->
+
+                    <article class="service-card">
+
+                        <div class="service-number">
+                            03
+                        </div>
+
+                        <div class="service-main">
+
+                            <h3>Branding</h3>
+
+                            <p>
+                                Complete visual identity systems that give
+                                your business a professional and memorable
+                                presence.
+                            </p>
+
+                            <div class="service-tags">
+
+                                <span>Logo Design</span>
+                                <span>Brand Identity</span>
+                                <span>Guidelines</span>
+                                <span>Packaging</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="service-arrow">
+                            ↗
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 04 -->
+
+                    <article class="service-card">
+
+                        <div class="service-number">
+                            04
+                        </div>
+
+                        <div class="service-main">
+
+                            <h3>Social Media Creative</h3>
+
+                            <p>
+                                Consistent and attention-grabbing content
+                                created to strengthen your online presence.
+                            </p>
+
+                            <div class="service-tags">
+
+                                <span>Content Design</span>
+                                <span>Campaigns</span>
+                                <span>Ads</span>
+                                <span>Stories</span>
+                                <span>Reels</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="service-arrow">
+                            ↗
+                        </div>
+
+                    </article>
+
+
+                    <!-- SERVICE 05 -->
+
+                    <article class="service-card">
+
+                        <div class="service-number">
+                            05
+                        </div>
+
+                        <div class="service-main">
+
+                            <h3>Digital Creative Solutions</h3>
+
+                            <p>
+                                End-to-end creative support for businesses
+                                that need design, content and digital
+                                communication handled together.
+                            </p>
+
+                            <div class="service-tags">
+
+                                <span>Creative Direction</span>
+                                <span>Campaign Design</span>
+                                <span>Content</span>
+                                <span>Digital Marketing Creative</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="service-arrow">
+                            ↗
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SELECTED WORK
+        ====================================================== -->
+
+        <section class="work section" id="work">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <span class="eyebrow">
+                            SELECTED WORK
+                        </span>
+
+                        <h2>
+                            A selection of
+                            <span>creative work.</span>
+                        </h2>
+
+                    </div>
+
+                    <a href="#contact" class="heading-link">
+                        Start your project
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+
+                <div class="portfolio-grid">
+
+
+                    <!-- PROJECT 01 -->
+
+                    <article class="portfolio-card portfolio-large">
+
+                        <a href="#" class="portfolio-image">
+
+                            <img
+                                src="assets/project-01.jpg"
+                                alt="Branding and graphic design project">
+
+                            <div class="portfolio-overlay">
+
+                                <span>VIEW PROJECT</span>
+
+                                <strong>↗</strong>
+
+                            </div>
+
+                        </a>
+
+                        <div class="portfolio-info">
+
+                            <div>
+
+                                <span class="portfolio-category">
+                                    BRANDING
+                                </span>
+
+                                <h3>
+                                    Brand Identity
+                                </h3>
+
+                            </div>
+
+                            <span class="portfolio-year">
+                                2026
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 02 -->
+
+                    <article class="portfolio-card">
+
+                        <a href="#" class="portfolio-image">
+
+                            <img
+                                src="assets/project-02.jpg"
+                                alt="Social media design project">
+
+                            <div class="portfolio-overlay">
+
+                                <span>VIEW PROJECT</span>
+
+                                <strong>↗</strong>
+
+                            </div>
+
+                        </a>
+
+                        <div class="portfolio-info">
+
+                            <div>
+
+                                <span class="portfolio-category">
+                                    SOCIAL MEDIA
+                                </span>
+
+                                <h3>
+                                    Digital Campaign
+                                </h3>
+
+                            </div>
+
+                            <span class="portfolio-year">
+                                2026
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 03 -->
+
+                    <article class="portfolio-card">
+
+                        <a href="#" class="portfolio-image">
+
+                            <img
+                                src="assets/project-03.jpg"
+                                alt="Creative design project">
+
+                            <div class="portfolio-overlay">
+
+                                <span>VIEW PROJECT</span>
+
+                                <strong>↗</strong>
+
+                            </div>
+
+                        </a>
+
+                        <div class="portfolio-info">
+
+                            <div>
+
+                                <span class="portfolio-category">
+                                    GRAPHIC DESIGN
+                                </span>
+
+                                <h3>
+                                    Creative Campaign
+                                </h3>
+
+                            </div>
+
+                            <span class="portfolio-year">
+                                2026
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 04 -->
+
+                    <article class="portfolio-card portfolio-wide">
+
+                        <a href="#" class="portfolio-image">
+
+                            <img
+                                src="assets/project-04.jpg"
+                                alt="Video editing project">
+
+                            <div class="portfolio-overlay">
+
+                                <span>VIEW PROJECT</span>
+
+                                <strong>↗</strong>
+
+                            </div>
+
+                        </a>
+
+                        <div class="portfolio-info">
+
+                            <div>
+
+                                <span class="portfolio-category">
+                                    VIDEO EDITING
+                                </span>
+
+                                <h3>
+                                    Promotional Video
+                                </h3>
+
+                            </div>
+
+                            <span class="portfolio-year">
+                                2026
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <div class="work-more">
+
+                    <a href="#contact" class="outline-button">
+
+                        Discuss Your Project
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROCESS
+        ====================================================== -->
+
+        <section class="process section light-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <span class="eyebrow">
+                            MY PROCESS
+                        </span>
+
+                        <h2>
+                            From idea to
+                            <span>final result.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-item">
+
+                        <span class="process-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Discover
+                        </h3>
+
+                        <p>
+                            We discuss your goals, audience, requirements
+                            and creative direction.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item">
+
+                        <span class="process-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Plan
+                        </h3>
+
+                        <p>
+                            I develop the concept, visual direction and
+                            project approach.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item">
+
+                        <span class="process-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Create
+                        </h3>
+
+                        <p>
+                            Design, editing and refinement bring the idea
+                            into a finished creative piece.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-item">
+
+                        <span class="process-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Deliver
+                        </h3>
+
+                        <p>
+                            Final files are prepared professionally and
+                            delivered according to the project needs.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PACKAGES
+        ====================================================== -->
+
+        <section class="packages section dark-section" id="packages">
+
+            <div class="container">
+
+                <div class="section-heading light-heading">
+
+                    <div class="section-number">
+                        05
+                    </div>
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CREATIVE PACKAGES
+                        </span>
+
+                        <h2>
+                            Choose the level of
+                            <span>creative support.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="packages-grid">
+
+
+                    <!-- BRONZE -->
+
+                    <article class="package-card bronze">
+
+                        <div class="package-top">
+
+                            <div class="package-icon">
+                                ◈
+                            </div>
+
+                            <span class="package-level">
+                                01
+                            </span>
+
+                        </div>
+
+                        <div class="package-heading">
+
+                            <h3>
+                                Bronze
+                            </h3>
+
+                            <p>
+                                Essential creative support for individuals
+                                and small projects.
+                            </p>
+
+                        </div>
+
+                        <div class="package-price">
+
+                            <strong>
+                                NPR 8,000
+                            </strong>
+
+                            <span>
+                                / $60
+                            </span>
+
+                        </div>
+
+                        <div class="package-divider"></div>
+
+                        <p class="package-description">
+                            Perfect for individuals who need professional
+                            creative materials for a focused project.
+                        </p>
+
+                        <ul class="package-features">
+
+                            <li>
+                                <span>✓</span>
+                                5 Creative Designs
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Social Media Graphics
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                2 Revision Rounds
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                High-Quality Final Files
+                            </li>
+
+                        </ul>
+
+                        <button
+                            class="package-button"
+                            data-package="Bronze">
+
+                            Select Package
+                            <span>↗</span>
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- SILVER -->
+
+                    <article class="package-card silver">
+
+                        <div class="package-top">
+
+                            <div class="package-icon">
+                                ◆
+                            </div>
+
+                            <span class="package-level">
+                                02
+                            </span>
+
+                        </div>
+
+                        <div class="package-heading">
+
+                            <h3>
+                                Silver
+                            </h3>
+
+                            <p>
+                                A stronger creative package for growing
+                                businesses and brands.
+                            </p>
+
+                        </div>
+
+                        <div class="package-price">
+
+                            <strong>
+                                NPR 18,000
+                            </strong>
+
+                            <span>
+                                / $135
+                            </span>
+
+                        </div>
+
+                        <div class="package-divider"></div>
+
+                        <p class="package-description">
+                            A balanced creative solution for businesses
+                            requiring consistent design support.
+                        </p>
+
+                        <ul class="package-features">
+
+                            <li>
+                                <span>✓</span>
+                                12 Creative Designs
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Social Media Content
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Promotional Designs
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                3 Revision Rounds
+                            </li>
+
+                        </ul>
+
+                        <button
+                            class="package-button"
+                            data-package="Silver">
+
+                            Select Package
+                            <span>↗</span>
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- GOLD -->
+
+                    <article class="package-card gold featured-package">
+
+                        <div class="featured-label">
+                            POPULAR
+                        </div>
+
+                        <div class="package-top">
+
+                            <div class="package-icon">
+                                ✦
+                            </div>
+
+                            <span class="package-level">
+                                03
+                            </span>
+
+                        </div>
+
+                        <div class="package-heading">
+
+                            <h3>
+                                Gold
+                            </h3>
+
+                            <p>
+                                Complete creative support for established
+                                businesses and active brands.
+                            </p>
+
+                        </div>
+
+                        <div class="package-price">
+
+                            <strong>
+                                NPR 35,000
+                            </strong>
+
+                            <span>
+                                / $260
+                            </span>
+
+                        </div>
+
+                        <div class="package-divider"></div>
+
+                        <p class="package-description">
+                            Designed for brands that need a larger range of
+                            creative content and consistent visual quality.
+                        </p>
+
+                        <ul class="package-features">
+
+                            <li>
+                                <span>✓</span>
+                                25 Creative Designs
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Social Media Campaigns
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Promotional Content
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Video Editing Support
+                            </li>
+
+                        </ul>
+
+                        <button
+                            class="package-button"
+                            data-package="Gold">
+
+                            Select Package
+                            <span>↗</span>
+
+                        </button>
+
+                    </article>
+
+
+                    <!-- PLATINUM -->
+
+                    <article class="package-card platinum">
+
+                        <div class="package-top">
+
+                            <div class="package-icon">
+                                ✧
+                            </div>
+
+                            <span class="package-level">
+                                04
+                            </span>
+
+                        </div>
+
+                        <div class="package-heading">
+
+                            <h3>
+                                Platinum
+                            </h3>
+
+                            <p>
+                                Full creative and digital support for
+                                serious businesses and organizations.
+                            </p>
+
+                        </div>
+
+                        <div class="package-price">
+
+                            <strong>
+                                NPR 65,000
+                            </strong>
+
+                            <span>
+                                / $490
+                            </span>
+
+                        </div>
+
+                        <div class="package-divider"></div>
+
+                        <p class="package-description">
+                            A complete digital creative package covering
+                            design, content and ongoing creative support.
+                        </p>
+
+                        <ul class="package-features">
+
+                            <li>
+                                <span>✓</span>
+                                Complete Creative Direction
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Graphic Design
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Video Editing
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Social Media Creative
+                            </li>
+
+                            <li>
+                                <span>✓</span>
+                                Monthly Creative Support
+                            </li>
+
+                        </ul>
+
+                        <button
+                            class="package-button"
+                            data-package="Platinum">
+
+                            Select Package
+                            <span>↗</span>
+
+                        </button>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- CUSTOM PACKAGE -->
+
+                <div class="custom-package">
+
+                    <div>
+
+                        <span class="custom-number">
+                            05
+                        </span>
+
+                        <h3>
+                            Need Something Different?
+                        </h3>
+
+                        <p>
+                            Create a custom package based on your project,
+                            quantity, complexity and deadline.
+                        </p>
+
+                    </div>
+
+                    <a href="#contact" class="custom-button">
+
+                        Let's Discuss
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TESTIMONIAL / STATEMENT
+        ====================================================== -->
+
+        <section class="statement section">
+
+            <div class="container">
+
+                <div class="statement-content">
+
+                    <span class="quote-mark">
+                        “
+                    </span>
+
+                    <blockquote>
+                        Good design gets attention.
+                        Great design creates connection.
+                    </blockquote>
+
+                    <div class="statement-line"></div>
+
+                    <span class="statement-author">
+                        — Anil Shrestha
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="cta-section">
+
+            <div class="cta-background">
+                <div class="cta-glow"></div>
+            </div>
+
+            <div class="container">
+
+                <div class="cta-content">
+
+                    <span class="eyebrow">
+                        HAVE A PROJECT IN MIND?
+                    </span>
+
+                    <h2>
+                        Let's create something
+                        <span>worth remembering.</span>
+                    </h2>
+
+                    <p>
+                        Tell me what you are working on and let's turn
+                        your idea into a strong visual experience.
+                    </p>
+
+                    <a href="#contact" class="cta-button">
+
+                        Start a Conversation
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section class="contact section" id="contact">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div class="section-number">
+                        06
+                    </div>
+
+                    <div>
+
+                        <span class="eyebrow">
+                            GET IN TOUCH
+                        </span>
+
+                        <h2>
+                            Let's work
+                            <span>together.</span>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <!-- CONTACT INFORMATION -->
+
+                    <div class="contact-info">
+
+                        <p class="contact-intro">
+                            Have a project, idea or business that needs
+                            creative direction? Send me a message and
+                            let's discuss how I can help.
+                        </p>
+
+
+                        <div class="contact-details">
+
+                            <a
+                                href="tel:+9779815150233"
+                                class="contact-item">
+
+                                <span class="contact-icon">
+                                    ☎
+                                </span>
+
+                                <div>
+
+                                    <span>
+                                        Phone / WhatsApp
+                                    </span>
+
+                                    <strong>
+                                        +977 9815150233
+                                    </strong>
+
+                                </div>
+
+                                <span class="contact-arrow">
+                                    ↗
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                href="tel:+9779846435100"
+                                class="contact-item">
+
+                                <span class="contact-icon">
+                                    ☎
+                                </span>
+
+                                <div>
+
+                                    <span>
+                                        Phone / WhatsApp
+                                    </span>
+
+                                    <strong>
+                                        +977 9846435100
+                                    </strong>
+
+                                </div>
+
+                                <span class="contact-arrow">
+                                    ↗
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                href="https://wa.me/9779815150233"
+                                target="_blank"
+                                rel="noopener"
+                                class="contact-item">
+
+                                <span class="contact-icon">
+                                    ◉
+                                </span>
+
+                                <div>
+
+                                    <span>
+                                        WhatsApp
+                                    </span>
+
+                                    <strong>
+                                        Chat with me
+                                    </strong>
+
+                                </div>
+
+                                <span class="contact-arrow">
+                                    ↗
+                                </span>
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTACT FORM -->
+
+                    <form
+                        class="contact-form"
+                        id="contactForm">
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Your Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="service">
+                                What do you need?
+                            </label>
+
+                            <select id="service" name="service">
+
+                                <option value="">
+                                    Select a service
+                                </option>
+
+                                <option value="graphic-design">
+                                    Graphic Design
+                                </option>
+
+                                <option value="video-editing">
+                                    Video Editing
+                                </option>
+
+                                <option value="branding">
+                                    Branding
+                                </option>
+
+                                <option value="social-media">
+                                    Social Media Creative
+                                </option>
+
+                                <option value="digital">
+                                    Digital Creative Solutions
+                                </option>
+
+                                <option value="package">
+                                    Creative Package
+                                </option>
+
+                                <option value="other">
+                                    Something Else
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="message">
+                                Tell me about your project
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                placeholder="Tell me about your project, requirements, budget or deadline..."
+                                required></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="form-submit">
+
+                            Send Message
+
+                            <span>↗</span>
+
+                        </button>
+
+
+                        <p
+                            class="form-note"
+                            id="formMessage">
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+
+                    <a href="#home" class="logo footer-logo">
+
+                        <span class="logo-main">
+                            ANIL
+                        </span>
+
+                        <span class="logo-sub">
+                            SHRESTHA
+                        </span>
+
+                    </a>
+
+                    <p>
+                        Designer. Editor. Creative Problem Solver.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-navigation">
+
+                    <span class="footer-title">
+                        Navigate
+                    </span>
+
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#work">Work</a>
+                    <a href="#packages">Packages</a>
+                    <a href="#contact">Contact</a>
+
+                </div>
+
+
+                <div class="footer-social">
+
+                    <span class="footer-title">
+                        Connect
+                    </span>
+
+                    <a
+                        href="https://wa.me/9779815150233"
+                        target="_blank"
+                        rel="noopener">
+
+                        WhatsApp
+                        ↗
+
+                    </a>
+
+                    <a href="#contact">
+                        Let's Talk
+                        ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © <span id="currentYear"></span>
+                    Anil Shrestha. All rights reserved.
+                </span>
+
+                <span>
+                    Designed &amp; Crafted by Anil Shrestha
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         PACKAGE MODAL
+    ========================================================== -->
+
+    <div
+        class="package-modal"
+        id="packageModal"
+        aria-hidden="true">
+
+        <div class="modal-overlay" id="modalOverlay"></div>
+
+        <div class="modal-box">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+                aria-label="Close">
+
+                ×
+
+            </button>
+
+            <span class="eyebrow">
+                PACKAGE SELECTED
+            </span>
+
+            <h3 id="selectedPackage">
+                Bronze Package
+            </h3>
+
+            <p>
+                Great choice. Tell me a little about your project and
+                I'll get back to you with the next steps.
+            </p>
+
+            <a
+                href="#contact"
+                class="modal-button"
+                id="modalContact">
+
+                Continue
+
+                <span>↗</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         BACK TO TOP
+    ========================================================== -->
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Back to top">
+
+        ↑
+
+    </button>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
