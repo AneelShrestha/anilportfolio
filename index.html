@@ -1,990 +1,2346 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anil Shrestha — Creative Professional Portfolio</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['Syne', 'sans-serif'],
-          },
-          colors: {
-            neonCyan: '#06b6d4',
-            neonGreen: '#10b981',
-            neonPink: '#ec4899',
-            neonPurple: '#a855f7',
-          }
-        }
-      }
-    }
-  </script>
+    <title>Anil Shrestha — Creative Professional Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neonGreen: "#39FF88",
+                        neonBlue: "#2D8CFF",
+                        neonPink: "#FF4FD8",
+                        neonRed: "#FF4D5A"
+                    }
+                }
+            }
+        };
+    </script>
 </head>
 
-<body class="bg-gray-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-black overflow-x-hidden">
+<body class="bg-[#070707] text-white overflow-x-hidden">
 
-  <!-- Floating Ambient Glowing Background Orbs -->
-  <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-cyan-600/15 orb-glow animate-pulse-glow"></div>
-  <div class="fixed bottom-1/3 right-10 w-[600px] h-[600px] bg-emerald-600/15 orb-glow animate-pulse-glow" style="animation-delay: 2s;"></div>
-  <div class="fixed top-2/3 left-10 w-[450px] h-[450px] bg-pink-600/10 orb-glow animate-pulse-glow" style="animation-delay: 4s;"></div>
+<!-- =========================================================
+     AMBIENT BACKGROUND
+========================================================= -->
 
-  <!-- HEADER / NAVIGATION -->
-  <header class="sticky top-0 z-50 hdr-ftr-bg border-b border-white/10 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
-      <!-- Brand Logo -->
-      <a href="#" class="group flex items-center gap-2">
-        <span class="font-display text-xl sm:text-2xl font-extrabold tracking-wider text-white group-hover:text-cyan-400 transition-colors">
-          ANIL <span class="text-cyan-400 group-hover:text-emerald-400">SHRESTHA</span>
-        </span>
-      </a>
+<div class="fixed top-0 left-1/4 w-[500px] h-[500px]
+            bg-blue-600/10 orb-glow animate-pulse-glow
+            pointer-events-none"></div>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden lg:flex items-center space-x-6 text-xs xl:text-sm font-semibold uppercase tracking-wider text-slate-300">
-        <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
-        <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-        <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
-        <a href="#software" class="hover:text-cyan-400 transition-colors">Software</a>
-        <a href="#works" class="hover:text-cyan-400 transition-colors">Services</a>
-        <a href="#career" class="hover:text-cyan-400 transition-colors">Career</a>
-        <a href="#recommendations" class="hover:text-cyan-400 transition-colors">Recommendations</a>
-        <a href="#packages" class="hover:text-cyan-400 transition-colors">Package</a>
-        <a href="#contact" class="px-4 py-2 rounded-full border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500 hover:text-black transition-all shadow-sm shadow-cyan-500/20">Contact</a>
-      </nav>
+<div class="fixed bottom-1/3 right-10 w-[600px] h-[600px]
+            bg-emerald-500/10 orb-glow animate-pulse-glow
+            pointer-events-none"
+     style="animation-delay:2s;"></div>
 
-      <!-- Mobile Hamburger Button -->
-      <button id="mobileMenuBtn" class="lg:hidden text-slate-300 hover:text-white focus:outline-none p-2">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </div>
+<div class="fixed top-2/3 left-10 w-[450px] h-[450px]
+            bg-pink-500/10 orb-glow animate-pulse-glow
+            pointer-events-none"
+     style="animation-delay:4s;"></div>
 
-    <!-- Mobile Dropdown Navigation -->
-    <div id="mobileNav" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-6 space-y-4 text-sm font-semibold uppercase tracking-wider">
-      <a href="#home" class="block text-slate-300 hover:text-cyan-400">Home</a>
-      <a href="#about" class="block text-slate-300 hover:text-cyan-400">About</a>
-      <a href="#skills" class="block text-slate-300 hover:text-cyan-400">Skills</a>
-      <a href="#software" class="block text-slate-300 hover:text-cyan-400">Software</a>
-      <a href="#works" class="block text-slate-300 hover:text-cyan-400">Services & Works</a>
-      <a href="#career" class="block text-slate-300 hover:text-cyan-400">Career</a>
-      <a href="#recommendations" class="block text-slate-300 hover:text-cyan-400">Recommendations</a>
-      <a href="#packages" class="block text-slate-300 hover:text-cyan-400">Packages</a>
-      <a href="#contact" class="block text-cyan-400">Contact</a>
-    </div>
-  </header>
 
-  <!-- 01 HERO SECTION -->
-  <section id="home" class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Hero Copy -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-400 text-xs font-semibold uppercase tracking-widest">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-            Creative Professional
-          </div>
+<!-- =========================================================
+     HEADER / NAVIGATION
+========================================================= -->
 
-          <h1 class="font-display text-4xl sm:text-6xl xl:text-7xl font-extrabold uppercase tracking-tight leading-none">
-            ANIL SHRESTHA <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-pink-500">
-              I CREATE VISUAL STORIES
+<header id="siteHeader"
+        class="sticky top-0 z-50 hdr-ftr-bg border-b border-white/10">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+                h-20 flex items-center justify-between">
+
+        <!-- Logo -->
+
+        <a href="#home"
+           class="group flex items-center gap-2">
+
+            <span class="font-display text-xl sm:text-2xl
+                         font-extrabold tracking-wider text-white">
+
+                ANIL
+                <span class="text-[#2D8CFF] group-hover:text-[#39FF88]">
+                    SHRESTHA
+                </span>
+
             </span>
-          </h1>
 
-          <p class="text-lg sm:text-xl font-medium text-emerald-400 tracking-wide">
-            Graphic · Web · Multimedia Designer &nbsp;|&nbsp; Video Editor · Instructor
-          </p>
-
-          <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed mx-auto lg:mx-0">
-            I transform ideas into meaningful visual experiences through graphic design, branding, social media, web design, video editing and motion graphics.
-          </p>
-
-          <div class="pt-2 text-sm text-cyan-300/80 font-medium flex items-center justify-center lg:justify-start gap-2">
-            <i class="fas fa-circle text-[8px] text-emerald-400"></i> Available for creative projects & collaborations
-          </div>
-
-          <!-- Hero Action Buttons -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
-            <a href="#works" class="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-black font-extrabold uppercase tracking-wider text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 hover:scale-105 transition-all">
-              Explore Works <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-            <a href="#contact" class="px-8 py-4 rounded-full border border-slate-700 bg-slate-900/80 text-white font-extrabold uppercase tracking-wider text-sm hover:border-pink-500 hover:text-pink-400 hover:bg-slate-900 transition-all">
-              Let's Talk <i class="fas fa-comments ml-2"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right Hero Portrait Image (Side by Side) -->
-        <div class="lg:col-span-5 relative flex justify-center">
-          <div class="relative w-full max-w-md lg:max-w-none">
-            <!-- Neon Aura Glow Behind Portrait -->
-            <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-emerald-500/20 to-pink-500/30 rounded-full blur-3xl opacity-70"></div>
-            
-            <div class="relative z-10 portrait-feather">
-              <img src="anil portrait.jpg" alt="Anil Shrestha Portrait" class="w-full h-auto object-cover rounded-2xl filter drop-shadow-[0_20px_30px_rgba(6,182,212,0.25)]" />
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 02 ABOUT ME SECTION -->
-  <section id="about" class="py-20 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="mb-12">
-        <span class="section-tag text-cyan-400">02 — ABOUT ME</span>
-        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white mt-2">
-          Creativity with purpose.
-        </h2>
-      </div>
-
-      <!-- 6 Containers in 2x3 Columns Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <div class="glass-card aura-cyan p-8 rounded-2xl relative overflow-hidden">
-          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6 text-xl">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">Brand Strategy</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Crafting memorable brand identities that resonate deeply with target audiences and communicate authentic core values.
-          </p>
-        </div>
-
-        <div class="glass-card aura-emerald p-8 rounded-2xl relative overflow-hidden">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6 text-xl">
-            <i class="fas fa-vector-square"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">Graphic Design</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Visual solutions from print packaging to high-impact digital marketing assets tailored for optimal audience engagement.
-          </p>
-        </div>
-
-        <div class="glass-card aura-pink p-8 rounded-2xl relative overflow-hidden">
-          <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-6 text-xl">
-            <i class="fas fa-film"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">Video & Motion</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Dynamic video editing, visual effects, and captivating motion graphics that bring static concepts to vibrant life.
-          </p>
-        </div>
-
-        <div class="glass-card aura-purple p-8 rounded-2xl relative overflow-hidden">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-6 text-xl">
-            <i class="fas fa-desktop"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">Web & UI/UX</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Designing responsive, pixel-perfect user interfaces with intuitive navigation and modern aesthetics.
-          </p>
-        </div>
-
-        <div class="glass-card aura-cyan p-8 rounded-2xl relative overflow-hidden">
-          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6 text-xl">
-            <i class="fas fa-chalkboard-teacher"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">Mentorship</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Empowering aspiring creatives through practical, industry-aligned multimedia design instruction and workshops.
-          </p>
-        </div>
-
-        <div class="glass-card aura-emerald p-8 rounded-2xl relative overflow-hidden">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6 text-xl">
-            <i class="fas fa-bullhorn"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">Social Media</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Creating high-converting visual collateral designed specifically to stand out in crowded digital social feeds.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROFILE SECTION & 03 SKILLS -->
-  <section id="skills" class="py-20 relative z-10 bg-slate-950/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
-        <!-- Profile Side Section -->
-        <div class="lg:col-span-4 space-y-6">
-          <div class="glass-card aura-cyan p-8 rounded-3xl text-center">
-            <!-- Profile Photo with Glowing Rounded Border -->
-            <div class="relative w-40 h-40 mx-auto mb-6 rounded-full p-1 bg-gradient-to-tr from-cyan-500 via-emerald-400 to-pink-500 shadow-lg shadow-cyan-500/30">
-              <img src="anil portrait.jpg" alt="Anil Profile" class="w-full h-full object-cover rounded-full" />
-            </div>
-
-            <span class="section-tag text-cyan-400 block mb-1">CREATIVE PROFILE</span>
-            <h3 class="font-display text-2xl font-extrabold text-white mb-2">Designer. Editor. Instructor.</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-6">
-              Driven by innovation, precision craftsmanship, and a relentless passion for storytelling across visual mediums.
-            </p>
-
-            <div class="space-y-3 text-left border-t border-slate-800 pt-6 text-xs text-slate-300">
-              <div class="flex justify-between">
-                <span class="text-slate-500">Experience:</span>
-                <span class="text-emerald-400 font-semibold">8+ Years</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-slate-500">Specialization:</span>
-                <span class="text-cyan-400 font-semibold">Brand & Motion</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-slate-500">Location:</span>
-                <span class="text-white font-semibold">Kathmandu, Nepal</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 03 Skills Grid (12 Contents in 2x6 Columns Grid) -->
-        <div class="lg:col-span-8">
-          <div class="mb-8">
-            <span class="section-tag text-emerald-400">03 — SKILLS</span>
-            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-1">
-              What I create.
-            </h2>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
-            <div class="glass-card aura-cyan p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg"><i class="fas fa-palette"></i></div>
-              <div><h4 class="font-bold text-white text-sm">Visual Brand Identity</h4><p class="text-xs text-slate-400">Logos & Styleguides</p></div>
-            </div>
-
-            <div class="glass-card aura-emerald p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg"><i class="fas fa-film"></i></div>
-              <div><h4 class="font-bold text-white text-sm">Motion Graphics Design</h4><p class="text-xs text-slate-400">2D/3D Animation</p></div>
-            </div>
-
-            <div class="glass-card aura-pink p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center text-lg"><i class="fas fa-cut"></i></div>
-              <div><h4 class="font-bold text-white text-sm">Commercial Video Editing</h4><p class="text-xs text-slate-400">Promos & Reels</p></div>
-            </div>
-
-            <div class="glass-card aura-purple p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-lg"><i class="fas fa-laptop-code"></i></div>
-              <div><h4 class="font-bold text-white text-sm">UI/UX Web Interfaces</h4><p class="text-xs text-slate-400">Modern Websites</p></div>
-            </div>
-
-            <div class="glass-card aura-cyan p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg"><i class="fas fa-hashtag"></i></div>
-              <div><h4 class="font-bold text-white text-sm">Social Media Campaigns</h4><p class="text-xs text-slate-400">High Engagement Creatives</p></div>
-            </div>
-
-            <div class="glass-card aura-emerald p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg"><i class="fas fa-box"></i></div>
-              <div><h4 class="font-bold text-white text-sm">3D Product Visualization</h4><p class="text-xs text-slate-400">Renders & Concepts</p></div>
-            </div>
-
-            <div class="glass-card aura-pink p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center text-lg"><i class="fas fa-print"></i></div>
-              <div><h4 class="font-bold text-white text-sm">Print & Packaging</h4><p class="text-xs text-slate-400">Brochures & Boxes</p></div>
-            </div>
-
-            <div class="glass-card aura-purple p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-lg"><i class="fas fa-graduation-cap"></i></div>
-              <div><h4 class="font-bold text-white text-sm">Multimedia Instruction</h4><p class="text-xs text-slate-400">Software Workshops</p></div>
-            </div>
-
-            <div class="glass-card aura-cyan p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg"><i class="fas fa-wand-magic-sparkles"></i></div>
-              <div><h4 class="font-bold text-white text-sm">Visual Effects (VFX)</h4><p class="text-xs text-slate-400">Compositing & Effects</p></div>
-            </div>
-
-            <div class="glass-card aura-emerald p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg"><i class="fas fa-bullseye"></i></div>
-              <div><h4 class="font-bold text-white text-sm">Digital Advertising</h4><p class="text-xs text-slate-400">Ad Banners & Collateral</p></div>
-            </div>
-
-            <div class="glass-card aura-pink p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center text-lg"><i class="fas fa-vector-square"></i></div>
-              <div><h4 class="font-bold text-white text-sm">Vector Typography</h4><p class="text-xs text-slate-400">Custom Lettering</p></div>
-            </div>
-
-            <div class="glass-card aura-purple p-5 rounded-xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-lg"><i class="fas fa-photo-video"></i></div>
-              <div><h4 class="font-bold text-white text-sm">Creative Direction</h4><p class="text-xs text-slate-400">End-to-End Execution</p></div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 SOFTWARE TOOLS SECTION -->
-  <section id="software" class="py-20 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="mb-12">
-        <span class="section-tag text-pink-400">04 — SOFTWARE</span>
-        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white mt-1">
-          Tools I work with.
-        </h2>
-      </div>
-
-      <!-- 10 Software Containers Height Balanced -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-        
-        <div class="glass-card aura-cyan p-6 rounded-2xl text-center group">
-          <div class="text-4xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-image"></i></div>
-          <h4 class="font-bold text-white text-sm">Photoshop</h4>
-          <span class="text-[10px] text-slate-400 uppercase tracking-widest">Image Editing</span>
-        </div>
-
-        <div class="glass-card aura-emerald p-6 rounded-2xl text-center group">
-          <div class="text-4xl text-emerald-400 mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-pen-nib"></i></div>
-          <h4 class="font-bold text-white text-sm">Illustrator</h4>
-          <span class="text-[10px] text-slate-400 uppercase tracking-widest">Vector Graphics</span>
-        </div>
-
-        <div class="glass-card aura-pink p-6 rounded-2xl text-center group">
-          <div class="text-4xl text-pink-400 mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-video"></i></div>
-          <h4 class="font-bold text-white text-sm">Premiere Pro</h4>
-          <span class="text-[10px] text-slate-400 uppercase tracking-widest">Video Editing</span>
-        </div>
-
-        <div class="glass-card aura-purple p-6 rounded-2xl text-center group">
-          <div class="text-4xl text-purple-400 mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-sparkles"></i></div>
-          <h4 class="font-bold text-white text-sm">After Effects</h4>
-          <span class="text-[10px] text-slate-400 uppercase tracking-widest">Motion Graphics</span>
-        </div>
-
-        <div class="glass-card aura-cyan p-6 rounded-2xl text-center group">
-          <div class="text-4xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"><i class="fab fa-figma"></i></div>
-          <h4 class="font-bold text-white text-sm">Figma</h4>
-          <span class="text-[10px] text-slate-400 uppercase tracking-widest">UI/UX Design</span>
-        </div>
-
-        <div class="glass-card aura-emerald p-6 rounded-2xl text-center group">
-          <div class="text-4xl text-emerald-400 mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-cube"></i></div>
-          <h4 class="font-bold text-white text-sm">Cinema 4D</h4>
-          <span class="text-[10px] text-slate-400 uppercase tracking-widest">3D Modeling</span>
-        </div>
-
-        <div class="glass-card aura-pink p-6 rounded-2xl text-center group">
-          <div class="text-4xl text-pink-400 mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-book-open"></i></div>
-          <h4 class="font-bold text-white text-sm">InDesign</h4>
-          <span class="text-[10px] text-slate-400 uppercase tracking-widest">Editorial Layout</span>
-        </div>
-
-        <div class="glass-card aura-purple p-6 rounded-2xl text-center group">
-          <div class="text-4xl text-purple-400 mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-cubes"></i></div>
-          <h4 class="font-bold text-white text-sm">Blender</h4>
-          <span class="text-[10px] text-slate-400 uppercase tracking-widest">3D Animation</span>
-        </div>
-
-        <div class="glass-card aura-cyan p-6 rounded-2xl text-center group">
-          <div class="text-4xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-sliders-h"></i></div>
-          <h4 class="font-bold text-white text-sm">DaVinci Resolve</h4>
-          <span class="text-[10px] text-slate-400 uppercase tracking-widest">Color Grading</span>
-        </div>
-
-        <div class="glass-card aura-emerald p-6 rounded-2xl text-center group">
-          <div class="text-4xl text-emerald-400 mb-3 group-hover:scale-110 transition-transform"><i class="fas fa-camera"></i></div>
-          <h4 class="font-bold text-white text-sm">Lightroom</h4>
-          <span class="text-[10px] text-slate-400 uppercase tracking-widest">Photo Retouching</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 05 PORTFOLIO - WORKS SECTION -->
-  <section id="works" class="py-20 relative z-10 bg-slate-950/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-        <div>
-          <span class="section-tag text-cyan-400">05 — PORTFOLIO</span>
-          <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white mt-1">
-            Featured Works.
-          </h2>
-        </div>
-
-        <!-- Filter Buttons -->
-        <div class="flex flex-wrap gap-2">
-          <button class="filter-btn active px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-500 text-black shadow-lg shadow-cyan-500/30 transition-all" data-filter="all">All</button>
-          <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900/80 text-slate-300 border border-slate-800 hover:border-cyan-500 transition-all" data-filter="graphic">Graphic Design</button>
-          <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900/80 text-slate-300 border border-slate-800 hover:border-cyan-500 transition-all" data-filter="branding">Branding</button>
-          <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900/80 text-slate-300 border border-slate-800 hover:border-cyan-500 transition-all" data-filter="social">Social Media</button>
-          <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900/80 text-slate-300 border border-slate-800 hover:border-cyan-500 transition-all" data-filter="video">Video</button>
-        </div>
-      </div>
-
-      <!-- Portfolio Contents 2x3 Grid (6 Items) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Work 1 -->
-        <div class="portfolio-item glass-card aura-cyan rounded-2xl overflow-hidden group" data-category="branding">
-          <div class="relative h-64 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80" alt="Apex Rebrand" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-            <span class="absolute top-4 left-4 bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Branding</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Apex Corporate Rebrand</h3>
-            <p class="text-slate-400 text-sm">Comprehensive visual identity, logo manual, typography system, and brand guidelines for tech corporate entity.</p>
-          </div>
-        </div>
-
-        <!-- Work 2 -->
-        <div class="portfolio-item glass-card aura-emerald rounded-2xl overflow-hidden group" data-category="graphic">
-          <div class="relative h-64 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="Lumina Packaging" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-            <span class="absolute top-4 left-4 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Graphic Design</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Lumina Premium Product Packaging</h3>
-            <p class="text-slate-400 text-sm">Luxury foil-stamped cosmetic container designs and custom unboxing presentation assets.</p>
-          </div>
-        </div>
-
-        <!-- Work 3 -->
-        <div class="portfolio-item glass-card aura-pink rounded-2xl overflow-hidden group" data-category="video">
-          <div class="relative h-64 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Neon Velocity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-            <span class="absolute top-4 left-4 bg-pink-500/20 border border-pink-500/40 text-pink-300 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Video & Motion</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors">Neon Velocity Commercial Reel</h3>
-            <p class="text-slate-400 text-sm">High-octane video editing, custom sound design, visual effects, and speed-ramp color grading.</p>
-          </div>
-        </div>
-
-        <!-- Work 4 -->
-        <div class="portfolio-item glass-card aura-purple rounded-2xl overflow-hidden group" data-category="social">
-          <div class="relative h-64 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" alt="Social Campaign" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-            <span class="absolute top-4 left-4 bg-purple-500/20 border border-purple-500/40 text-purple-300 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Social Media</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Vibe Social Media Campaign</h3>
-            <p class="text-slate-400 text-sm">30-day viral creative campaign series including static carousels, animated reels, and story graphics.</p>
-          </div>
-        </div>
-
-        <!-- Work 5 -->
-        <div class="portfolio-item glass-card aura-cyan rounded-2xl overflow-hidden group" data-category="graphic">
-          <div class="relative h-64 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" alt="Festival Poster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-            <span class="absolute top-4 left-4 bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Graphic Design</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Cyberpunk Music Fest Key Art</h3>
-            <p class="text-slate-400 text-sm">Key artwork creation, festival event collateral, stage visual backdrops, and promotional poster art.</p>
-          </div>
-        </div>
-
-        <!-- Work 6 -->
-        <div class="portfolio-item glass-card aura-emerald rounded-2xl overflow-hidden group" data-category="branding">
-          <div class="relative h-64 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Web Identity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-            <span class="absolute top-4 left-4 bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold uppercase px-3 py-1 rounded-full">Branding & Web</span>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Nova SaaS UI Platform</h3>
-            <p class="text-slate-400 text-sm">Full web UI dashboard interface layout, custom vector icon library, and brand design elements.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 CAREER JOURNEY & 07 RECOMMENDATIONS -->
-  <section class="py-20 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
-        <!-- 06 CAREER JOURNEY (Tree Structure with Aura) -->
-        <div id="career" class="lg:col-span-6">
-          <div class="mb-10">
-            <span class="section-tag text-emerald-400">06 — CAREER JOURNEY</span>
-            <h2 class="font-display text-3xl font-extrabold text-white mt-1">
-              Professional Experiences.
-            </h2>
-          </div>
-
-          <div class="relative border-l-2 border-slate-800/80 ml-4 space-y-8 pl-8">
-            
-            <div class="relative group">
-              <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-cyan-400 shadow-lg shadow-cyan-500/50 group-hover:scale-125 transition-transform"></div>
-              <span class="text-xs font-bold text-cyan-400 tracking-widest uppercase">2022 — PRESENT</span>
-              <div class="glass-card aura-cyan p-5 rounded-xl mt-2">
-                <h4 class="font-bold text-white">Senior Lead Multimedia Designer</h4>
-                <p class="text-xs text-slate-400">Creative Agency Studio · Full-time</p>
-              </div>
-            </div>
-
-            <div class="relative group">
-              <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-emerald-400 shadow-lg shadow-emerald-500/50 group-hover:scale-125 transition-transform"></div>
-              <span class="text-xs font-bold text-emerald-400 tracking-widest uppercase">2020 — 2022</span>
-              <div class="glass-card aura-emerald p-5 rounded-xl mt-2">
-                <h4 class="font-bold text-white">Senior Video Editor & Motion Artist</h4>
-                <p class="text-xs text-slate-400">Digital Media Production House</p>
-              </div>
-            </div>
-
-            <div class="relative group">
-              <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-pink-400 shadow-lg shadow-pink-500/50 group-hover:scale-125 transition-transform"></div>
-              <span class="text-xs font-bold text-pink-400 tracking-widest uppercase">2018 — 2020</span>
-              <div class="glass-card aura-pink p-5 rounded-xl mt-2">
-                <h4 class="font-bold text-white">Graphic & Brand Specialist</h4>
-                <p class="text-xs text-slate-400">Global Brand Solutions</p>
-              </div>
-            </div>
-
-            <div class="relative group">
-              <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-purple-400 shadow-lg shadow-purple-500/50 group-hover:scale-125 transition-transform"></div>
-              <span class="text-xs font-bold text-purple-400 tracking-widest uppercase">2017 — PRESENT</span>
-              <div class="glass-card aura-purple p-5 rounded-xl mt-2">
-                <h4 class="font-bold text-white">Design & Animation Instructor</h4>
-                <p class="text-xs text-slate-400">Creative Training Academy</p>
-              </div>
-            </div>
-
-            <div class="relative group">
-              <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-cyan-400 shadow-lg shadow-cyan-500/50 group-hover:scale-125 transition-transform"></div>
-              <span class="text-xs font-bold text-cyan-400 tracking-widest uppercase">2016 — 2018</span>
-              <div class="glass-card aura-cyan p-5 rounded-xl mt-2">
-                <h4 class="font-bold text-white">UI/UX & Web Designer</h4>
-                <p class="text-xs text-slate-400">Tech & Software Innovations</p>
-              </div>
-            </div>
-
-            <div class="relative group">
-              <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-2 border-emerald-400 shadow-lg shadow-emerald-500/50 group-hover:scale-125 transition-transform"></div>
-              <span class="text-xs font-bold text-emerald-400 tracking-widest uppercase">2015 — 2016</span>
-              <div class="glass-card aura-emerald p-5 rounded-xl mt-2">
-                <h4 class="font-bold text-white">Junior Visual Designer</h4>
-                <p class="text-xs text-slate-400">Print & Publishing Firm</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- 07 RECOMMENDATIONS (2x3 Columns with Vector Avatar Samples) -->
-        <div id="recommendations" class="lg:col-span-6">
-          <div class="mb-10">
-            <span class="section-tag text-pink-400">07 — RECOMMENDATIONS</span>
-            <h2 class="font-display text-3xl font-extrabold text-white mt-1">
-              Client Testimonials.
-            </h2>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
-            <div class="glass-card aura-cyan p-5 rounded-2xl space-y-3">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-sm">
-                  <i class="fas fa-user-astronaut"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold text-white text-sm">Rajesh Sharma</h4>
-                  <p class="text-[11px] text-slate-400">CEO, TechNepal</p>
-                </div>
-              </div>
-              <p class="text-slate-300 text-xs italic leading-relaxed">
-                "Anil transformed our brand visual identity completely. His vision and attention to detail are world class."
-              </p>
-            </div>
-
-            <div class="glass-card aura-emerald p-5 rounded-2xl space-y-3">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
-                  <i class="fas fa-user-tie"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold text-white text-sm">Sophia Chen</h4>
-                  <p class="text-[11px] text-slate-400">Marketing Director</p>
-                </div>
-              </div>
-              <p class="text-slate-300 text-xs italic leading-relaxed">
-                "The video motion graphics produced for our product launch generated record social engagement for us."
-              </p>
-            </div>
-
-            <div class="glass-card aura-pink p-5 rounded-2xl space-y-3">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center font-bold text-sm">
-                  <i class="fas fa-user-ninja"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold text-white text-sm">Aarav Patel</h4>
-                  <p class="text-[11px] text-slate-400">Creative Founder</p>
-                </div>
-              </div>
-              <p class="text-slate-300 text-xs italic leading-relaxed">
-                "Working with Anil is seamless. He consistently turns high-pressure tight deadlines into stunning results."
-              </p>
-            </div>
-
-            <div class="glass-card aura-purple p-5 rounded-2xl space-y-3">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-sm">
-                  <i class="fas fa-user-gear"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold text-white text-sm">Elena Rostova</h4>
-                  <p class="text-[11px] text-slate-400">Product Manager</p>
-                </div>
-              </div>
-              <p class="text-slate-300 text-xs italic leading-relaxed">
-                "An exceptional UI/UX designer with a deep understanding of aesthetics and practical usability."
-              </p>
-            </div>
-
-            <div class="glass-card aura-cyan p-5 rounded-2xl space-y-3">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-sm">
-                  <i class="fas fa-user-graduate"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold text-white text-sm">Bikash Thapa</h4>
-                  <p class="text-[11px] text-slate-400">Design Student</p>
-                </div>
-              </div>
-              <p class="text-slate-300 text-xs italic leading-relaxed">
-                "Anil is an inspiring instructor. His hands-on software guidance propelled my multimedia career forward."
-              </p>
-            </div>
-
-            <div class="glass-card aura-emerald p-5 rounded-2xl space-y-3">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
-                  <i class="fas fa-user-shield"></i>
-                </div>
-                <div>
-                  <h4 class="font-bold text-white text-sm">David Miller</h4>
-                  <p class="text-[11px] text-slate-400">Agency Owner</p>
-                </div>
-              </div>
-              <p class="text-slate-300 text-xs italic leading-relaxed">
-                "Top tier visual storytelling! Anil is our primary go-to freelancer for critical high-profile commercial accounts."
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 09 PACKAGES SECTION (2x2 Grid with Customized Border Colors) -->
-  <section id="packages" class="py-20 relative z-10 bg-slate-950/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="mb-12 text-center max-w-2xl mx-auto">
-        <span class="section-tag text-emerald-400">09 — PACKAGES</span>
-        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white mt-1">
-          Service Plans.
-        </h2>
-        <p class="text-slate-400 text-sm mt-3">Select a structured package or request a custom solution tailored to your project scope.</p>
-      </div>
-
-      <!-- 2x2 Columns Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        
-        <!-- BRONZE 01 (Green Border) -->
-        <div class="glass-card aura-emerald border-2 border-emerald-500/60 p-8 rounded-3xl relative flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl font-bold">01</div>
-                <div>
-                  <h3 class="font-display text-2xl font-extrabold text-white">BRONZE</h3>
-                  <span class="text-xs text-emerald-400 uppercase tracking-widest font-bold">Starter Package</span>
-                </div>
-              </div>
-              <span class="px-4 py-2 rounded-full bg-emerald-500 text-black font-extrabold text-sm shadow-md shadow-emerald-500/30">
-                Rs. 25,000 / $250
-              </span>
-            </div>
-
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300 mb-8 border-t border-slate-800/80 pt-6">
-              <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Logo Design Basics</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Social Banner Art</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> 3 Revision Rounds</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> High-Res PNG & PDF</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Brand Color Palette</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> 5-Day Delivery</li>
-            </ul>
-          </div>
-
-          <div class="flex items-center gap-3 pt-4 border-t border-slate-800/60">
-            <button onclick="openPkgModal('BRONZE 01')" class="w-1/2 py-3 rounded-full border border-slate-700 text-slate-300 font-bold text-xs uppercase hover:border-emerald-400 hover:text-emerald-400 transition-all">View Details</button>
-            <button onclick="selectPackage('BRONZE 01')" class="w-1/2 py-3 rounded-full bg-emerald-500 text-black font-extrabold text-xs uppercase hover:bg-emerald-400 transition-all">Select Package</button>
-          </div>
-        </div>
-
-        <!-- SILVER 02 (Blue Border) -->
-        <div class="glass-card aura-cyan border-2 border-cyan-500/60 p-8 rounded-3xl relative flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl font-bold">02</div>
-                <div>
-                  <h3 class="font-display text-2xl font-extrabold text-white">SILVER</h3>
-                  <span class="text-xs text-cyan-400 uppercase tracking-widest font-bold">Professional Package</span>
-                </div>
-              </div>
-              <span class="px-4 py-2 rounded-full bg-cyan-500 text-black font-extrabold text-sm shadow-md shadow-cyan-500/30">
-                Rs. 50,000 / $500
-              </span>
-            </div>
-
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300 mb-8 border-t border-slate-800/80 pt-6">
-              <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Full Brand Identity</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> 5 Social Media Graphics</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Short Promo Video (15s)</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Vector Source Files</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Typography Manual</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> 7-Day Turnaround</li>
-            </ul>
-          </div>
-
-          <div class="flex items-center gap-3 pt-4 border-t border-slate-800/60">
-            <button onclick="openPkgModal('SILVER 02')" class="w-1/2 py-3 rounded-full border border-slate-700 text-slate-300 font-bold text-xs uppercase hover:border-cyan-400 hover:text-cyan-400 transition-all">View Details</button>
-            <button onclick="selectPackage('SILVER 02')" class="w-1/2 py-3 rounded-full bg-cyan-500 text-black font-extrabold text-xs uppercase hover:bg-cyan-400 transition-all">Select Package</button>
-          </div>
-        </div>
-
-        <!-- GOLD 03 (Pink Border) -->
-        <div class="glass-card aura-pink border-2 border-pink-500/60 p-8 rounded-3xl relative flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl font-bold">03</div>
-                <div>
-                  <h3 class="font-display text-2xl font-extrabold text-white">GOLD</h3>
-                  <span class="text-xs text-pink-400 uppercase tracking-widest font-bold">Commercial Package</span>
-                </div>
-              </div>
-              <span class="px-4 py-2 rounded-full bg-pink-500 text-black font-extrabold text-sm shadow-md shadow-pink-500/30">
-                Rs. 90,000 / $900
-              </span>
-            </div>
-
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300 mb-8 border-t border-slate-800/80 pt-6">
-              <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> Premium Branding Guide</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> 60s Commercial Video</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> UI Design Kit</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> 3D Product Mockups</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> Priority Revisions</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> 10-Day Delivery</li>
-            </ul>
-          </div>
-
-          <div class="flex items-center gap-3 pt-4 border-t border-slate-800/60">
-            <button onclick="openPkgModal('GOLD 03')" class="w-1/2 py-3 rounded-full border border-slate-700 text-slate-300 font-bold text-xs uppercase hover:border-pink-400 hover:text-pink-400 transition-all">View Details</button>
-            <button onclick="selectPackage('GOLD 03')" class="w-1/2 py-3 rounded-full bg-pink-500 text-black font-extrabold text-xs uppercase hover:bg-pink-400 transition-all">Select Package</button>
-          </div>
-        </div>
-
-        <!-- PLATINUM 04 (Purple/Red Border) -->
-        <div class="glass-card aura-purple border-2 border-purple-500/60 p-8 rounded-3xl relative flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl font-bold">04</div>
-                <div>
-                  <h3 class="font-display text-2xl font-extrabold text-white">PLATINUM</h3>
-                  <span class="text-xs text-purple-400 uppercase tracking-widest font-bold">Enterprise Package</span>
-                </div>
-              </div>
-              <span class="px-4 py-2 rounded-full bg-purple-500 text-white font-extrabold text-sm shadow-md shadow-purple-500/30">
-                Rs. 150,000 / $1,500
-              </span>
-            </div>
-
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300 mb-8 border-t border-slate-800/80 pt-6">
-              <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Complete Digital Suite</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Full Motion & Visual Effects</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Custom Web Design (UI)</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Full Marketing Assets</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Unlimited Revisions</li>
-              <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> VIP Dedicated Support</li>
-            </ul>
-          </div>
-
-          <div class="flex items-center gap-3 pt-4 border-t border-slate-800/60">
-            <button onclick="openPkgModal('PLATINUM 04')" class="w-1/2 py-3 rounded-full border border-slate-700 text-slate-300 font-bold text-xs uppercase hover:border-purple-400 hover:text-purple-400 transition-all">View Details</button>
-            <button onclick="selectPackage('PLATINUM 04')" class="w-1/2 py-3 rounded-full bg-purple-500 text-white font-extrabold text-xs uppercase hover:bg-purple-400 transition-all">Select Package</button>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- NEED SOMETHING DIFFERENT? Callout -->
-      <div class="glass-card aura-pink p-8 sm:p-10 rounded-3xl text-center max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border border-pink-500/30">
-        <div class="text-left space-y-2">
-          <h3 class="font-display text-2xl font-extrabold text-white">NEED SOMETHING DIFFERENT?</h3>
-          <p class="text-slate-300 text-sm max-w-xl">
-            Create a custom package for your project. Custom pricing can be prepared according to your project quantity, complexity, creative requirements and deadline.
-          </p>
-        </div>
-        <a href="#contact" class="px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-white font-extrabold text-xs uppercase tracking-wider whitespace-nowrap hover:scale-105 transition-transform shadow-lg shadow-pink-500/25">
-          Let's Discuss <i class="fas fa-comments ml-2"></i>
         </a>
-      </div>
+
+
+        <!-- Desktop Navigation -->
+
+        <nav class="site-nav hidden lg:flex items-center
+                    space-x-6 text-xs xl:text-sm
+                    font-semibold uppercase tracking-wider">
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#software">Software</a>
+            <a href="#works">Services</a>
+            <a href="#career">Career</a>
+            <a href="#recommendations">Recommendations</a>
+            <a href="#packages">Package</a>
+
+            <a href="#contact"
+               class="px-4 py-2 rounded-full
+                      border border-[#2D8CFF]/50
+                      text-[#2D8CFF]">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <!-- Mobile Menu Button -->
+
+        <button id="mobileMenuBtn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                class="lg:hidden text-slate-300
+                       hover:text-white p-2">
+
+            <i class="fas fa-bars text-2xl"></i>
+
+        </button>
 
     </div>
-  </section>
 
-  <!-- 11 CONTACT SECTION (Soft Gradient Background matching Header) -->
-  <section id="contact" class="py-20 relative z-10 hdr-ftr-bg border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Info Column -->
-        <div class="lg:col-span-5 space-y-8">
-          <div>
-            <span class="section-tag text-cyan-400">11 — CONTACT</span>
-            <h2 class="font-display text-4xl sm:text-5xl font-extrabold text-white mt-1">
-              Let's Start a Project.
+
+    <!-- Mobile Navigation -->
+
+    <div id="mobileNav"
+         class="hidden lg:hidden
+                bg-black/95 backdrop-blur-xl
+                border-b border-white/10
+                px-6 py-6 space-y-4
+                text-sm font-semibold
+                uppercase tracking-wider">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#software">Software</a>
+        <a href="#works">Services</a>
+        <a href="#career">Career</a>
+        <a href="#recommendations">Recommendations</a>
+        <a href="#packages">Packages</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================================================
+     01 — HERO
+========================================================= -->
+
+<section id="home"
+         class="relative pt-16 pb-20
+                lg:pt-24 lg:pb-32 overflow-hidden">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+                relative z-10">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12
+                    gap-12 items-center">
+
+
+            <!-- HERO CONTENT -->
+
+            <div class="lg:col-span-7
+                        space-y-6
+                        text-center lg:text-left">
+
+                <div class="inline-flex items-center gap-2
+                            px-4 py-2 rounded-full
+                            border border-[#2D8CFF]/30
+                            bg-[#2D8CFF]/5
+                            text-[#2D8CFF]
+                            text-xs font-semibold
+                            uppercase tracking-widest">
+
+                    <span class="w-2 h-2 rounded-full
+                                 bg-[#39FF88] animate-ping"></span>
+
+                    ANIL SHRESTHA — CREATIVE PROFESSIONAL
+
+                </div>
+
+
+                <h1 class="font-display
+                           text-5xl sm:text-6xl xl:text-8xl
+                           font-extrabold uppercase
+                           tracking-tight leading-[0.9]">
+
+                    I CREATE
+                    <br>
+
+                    <span class="hero-visual">
+                        VISUAL
+                    </span>
+
+                    <br>
+
+                    STORIES
+
+                </h1>
+
+
+                <div class="space-y-1">
+
+                    <p class="text-lg sm:text-xl
+                              font-semibold
+                              text-[#39FF88]
+                              tracking-wide">
+
+                        Graphic · Web · Multimedia Designer
+
+                    </p>
+
+                    <p class="text-lg sm:text-xl
+                              font-semibold
+                              text-[#2D8CFF]
+                              tracking-wide">
+
+                        Video Editor · Instructor
+
+                    </p>
+
+                </div>
+
+
+                <p class="text-slate-300
+                          text-base sm:text-lg
+                          max-w-2xl
+                          leading-relaxed
+                          mx-auto lg:mx-0">
+
+                    I transform ideas into meaningful visual experiences
+                    through graphic design, branding, social media,
+                    web design, video editing and motion graphics.
+
+                </p>
+
+
+                <div class="pt-2
+                            text-sm
+                            text-[#39FF88]/90
+                            font-medium
+                            flex items-center
+                            justify-center lg:justify-start
+                            gap-2">
+
+                    <i class="fas fa-circle text-[7px]"></i>
+
+                    Available for creative projects & collaborations
+
+                </div>
+
+
+                <!-- HERO BUTTONS -->
+
+                <div class="flex flex-wrap
+                            items-center
+                            justify-center lg:justify-start
+                            gap-4 pt-4">
+
+                    <a href="#works"
+                       class="hero-btn-primary">
+
+                        Explore My Work
+
+                        <i class="fas fa-arrow-right ml-2"></i>
+
+                    </a>
+
+
+                    <a href="#contact"
+                       class="hero-btn-secondary">
+
+                        Let's Talk
+
+                        <i class="fas fa-comments ml-2"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO PORTRAIT -->
+
+            <div class="lg:col-span-5
+                        relative flex justify-center">
+
+                <div class="relative
+                            w-full max-w-md
+                            lg:max-w-none">
+
+                    <div class="absolute inset-0
+                                bg-gradient-to-tr
+                                from-[#2D8CFF]/30
+                                via-[#39FF88]/15
+                                to-[#FF4FD8]/30
+                                rounded-full blur-3xl
+                                opacity-70">
+                    </div>
+
+
+                    <div class="relative z-10 portrait-feather">
+
+                        <img src="anil portrait.png"
+                             alt="Anil Shrestha Portrait"
+                             class="w-full h-auto
+                                    object-contain">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     02 — ABOUT ME
+========================================================= -->
+
+<section id="about"
+         class="py-20 relative z-10">
+
+    <div class="max-w-7xl mx-auto
+                px-4 sm:px-6 lg:px-8">
+
+
+        <div class="mb-12">
+
+            <span class="section-tag">
+                02 — ABOUT ME
+            </span>
+
+            <h2 class="font-display
+                       text-4xl sm:text-5xl
+                       font-extrabold
+                       text-white mt-2">
+
+                Creativity with purpose.
+
             </h2>
-            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
-              Have a project in mind or want to collaborate? Feel free to reach out directly through any channel.
+
+            <p class="text-slate-400
+                      max-w-3xl
+                      mt-4 leading-relaxed">
+
+                I believe good design is more than making something
+                look attractive. It is about communicating ideas clearly,
+                creating memorable experiences and giving every visual
+                a meaningful purpose.
+
             </p>
-          </div>
 
-          <div class="space-y-4">
-            <!-- Emails -->
-            <div class="glass-card p-4 rounded-2xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0"><i class="fas fa-envelope"></i></div>
-              <div class="text-xs">
-                <span class="text-slate-400 block uppercase font-bold text-[10px]">Email Addresses</span>
-                <a href="mailto:anilshrestha.design@gmail.com" class="text-white hover:text-cyan-400 font-medium block">anilshrestha.design@gmail.com</a>
-                <a href="mailto:info@anilshrestha.com.np" class="text-slate-300 hover:text-cyan-400 block">info@anilshrestha.com.np</a>
-              </div>
-            </div>
-
-            <!-- Call / WhatsApp -->
-            <div class="glass-card p-4 rounded-2xl flex items-center gap-4">
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0"><i class="fab fa-whatsapp"></i></div>
-              <div class="text-xs">
-                <span class="text-slate-400 block uppercase font-bold text-[10px]">Call / WhatsApp</span>
-                <a href="tel:+9779800000000" class="text-white hover:text-emerald-400 font-medium block">+977 9800000000</a>
-                <a href="tel:+9779841000000" class="text-slate-300 hover:text-emerald-400 block">+977 9841000000</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- 5 Responsive Social Media Links -->
-          <div>
-            <span class="text-slate-400 uppercase text-[10px] font-bold tracking-widest block mb-3">Connect On Social Media</span>
-            <div class="flex items-center gap-3">
-              <a href="#" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-slate-700 text-cyan-400 hover:bg-cyan-500 hover:text-black hover:border-cyan-500 flex items-center justify-center transition-all"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-slate-700 text-pink-400 hover:bg-pink-500 hover:text-black hover:border-pink-500 flex items-center justify-center transition-all"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-slate-700 text-cyan-300 hover:bg-cyan-400 hover:text-black hover:border-cyan-400 flex items-center justify-center transition-all"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-slate-700 text-red-500 hover:bg-red-500 hover:text-white hover:border-red-500 flex items-center justify-center transition-all"><i class="fab fa-youtube"></i></a>
-              <a href="#" class="w-10 h-10 rounded-xl bg-slate-900/80 border border-slate-700 text-emerald-400 hover:bg-emerald-500 hover:text-black hover:border-emerald-500 flex items-center justify-center transition-all"><i class="fab fa-behance"></i></a>
-            </div>
-          </div>
         </div>
 
-        <!-- Right Contact Form Column -->
-        <div class="lg:col-span-7">
-          <div class="glass-card p-8 rounded-3xl border border-white/10 shadow-2xl relative">
-            <h3 class="font-display text-2xl font-bold text-white mb-6">Send Me a Message</h3>
-            
-            <form id="contactForm" class="space-y-4">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Your Name</label>
-                  <input type="text" required placeholder="John Doe" class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyan-400 transition-colors" />
+
+        <!-- PROFILE + ABOUT CARDS -->
+
+        <div class="grid grid-cols-1
+                    lg:grid-cols-12
+                    gap-8 mb-10">
+
+
+            <!-- CREATIVE PROFILE -->
+
+            <div class="lg:col-span-4">
+
+                <div class="glass-card aura-cyan
+                            p-8 rounded-3xl h-full">
+
+                    <div class="relative
+                                w-40 h-40
+                                mx-auto mb-6
+                                rounded-full p-1
+                                profile-aura">
+
+                        <img src="assets/profile/profile.jpg"
+                             alt="Anil Shrestha Profile"
+                             class="w-full h-full
+                                    object-cover
+                                    rounded-full">
+
+                    </div>
+
+
+                    <span class="section-tag">
+                        CREATIVE PROFILE
+                    </span>
+
+
+                    <h3 class="font-display
+                               text-3xl
+                               font-extrabold
+                               text-white mt-2 mb-4">
+
+                        Designer.
+                        <br>
+                        Editor.
+                        <br>
+                        Instructor.
+
+                    </h3>
+
+
+                    <p class="text-slate-400
+                              text-sm leading-relaxed">
+
+                        A creative professional working across
+                        graphic design, digital media, branding,
+                        visual communication and video production,
+                        with a practical approach shaped by
+                        real-world projects and professional experience.
+
+                    </p>
+
                 </div>
-                <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Email Address</label>
-                  <input type="email" required placeholder="john@example.com" class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyan-400 transition-colors" />
-                </div>
-              </div>
 
-              <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Subject</label>
-                <input type="text" required placeholder="Project Discussion" class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyan-400 transition-colors" />
-              </div>
-
-              <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Message</label>
-                <textarea id="contactMessage" rows="5" required placeholder="Tell me about your project goals and timeline..." class="w-full bg-slate-900/90 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyan-400 transition-colors resize-none"></textarea>
-              </div>
-
-              <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 via-emerald-500 to-pink-500 text-black font-extrabold uppercase tracking-wider text-xs hover:opacity-95 transition-all shadow-lg shadow-cyan-500/20">
-                Send Message <i class="fas fa-paper-plane ml-2"></i>
-              </button>
-            </form>
-
-            <div id="formFeedback" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs text-center font-semibold">
-              Thank you! Your message has been sent successfully. Anil will respond shortly.
             </div>
-          </div>
+
+
+            <!-- SIX ABOUT CARDS -->
+
+            <div class="lg:col-span-8">
+
+                <div class="grid grid-cols-1
+                            md:grid-cols-2
+                            gap-5">
+
+
+                    <article class="glass-card aura-cyan
+                                    p-6 rounded-2xl">
+
+                        <span class="card-number">01</span>
+
+                        <h3>GRAPHIC DESIGN</h3>
+
+                        <p>
+                            Visual communication, layouts,
+                            campaigns and creative artwork.
+                        </p>
+
+                    </article>
+
+
+                    <article class="glass-card aura-emerald
+                                    p-6 rounded-2xl">
+
+                        <span class="card-number">02</span>
+
+                        <h3>BRANDING</h3>
+
+                        <p>
+                            Identity systems, brand visuals
+                            and consistent communication.
+                        </p>
+
+                    </article>
+
+
+                    <article class="glass-card aura-pink
+                                    p-6 rounded-2xl">
+
+                        <span class="card-number">03</span>
+
+                        <h3>DIGITAL MEDIA</h3>
+
+                        <p>
+                            Social media creatives,
+                            digital campaigns and online content.
+                        </p>
+
+                    </article>
+
+
+                    <article class="glass-card aura-purple
+                                    p-6 rounded-2xl">
+
+                        <span class="card-number">04</span>
+
+                        <h3>VIDEO EDITING</h3>
+
+                        <p>
+                            Promotional videos, reels,
+                            social content and storytelling.
+                        </p>
+
+                    </article>
+
+
+                    <article class="glass-card aura-cyan
+                                    p-6 rounded-2xl">
+
+                        <span class="card-number">05</span>
+
+                        <h3>WEB & UI</h3>
+
+                        <p>
+                            Modern web layouts, interface concepts
+                            and digital presentation.
+                        </p>
+
+                    </article>
+
+
+                    <article class="glass-card aura-emerald
+                                    p-6 rounded-2xl">
+
+                        <span class="card-number">06</span>
+
+                        <h3>CREATIVE DIRECTION</h3>
+
+                        <p>
+                            Concept development, visual planning
+                            and project coordination.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
         </div>
 
-      </div>
     </div>
-  </section>
 
-  <!-- 12 FOOTER SECTION -->
-  <footer class="hdr-ftr-bg border-t border-white/10 py-8 text-center relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-xs text-slate-300 font-medium tracking-wide">
-        &copy; 2026 <span class="text-cyan-400 font-bold">Anil Shrestha</span>. All Rights Reserved. Designed for Visual Experiences.
-      </p>
+</section>
+
+
+<!-- =========================================================
+     03 — SKILLS
+========================================================= -->
+
+<section id="skills"
+         class="py-20 relative z-10
+                bg-white/[0.015]">
+
+    <div class="max-w-7xl mx-auto
+                px-4 sm:px-6 lg:px-8">
+
+        <div class="mb-10">
+
+            <span class="section-tag">
+                03 — SKILLS
+            </span>
+
+            <h2 class="font-display
+                       text-4xl sm:text-5xl
+                       font-extrabold
+                       text-white mt-2">
+
+                What I create.
+
+            </h2>
+
+            <p class="text-slate-400
+                      max-w-2xl mt-4">
+
+                Creative skills developed through design,
+                digital media, branding, video and
+                visual communication.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid grid-cols-1
+                    sm:grid-cols-2
+                    lg:grid-cols-3
+                    gap-5">
+
+
+            <div class="skill-card aura-cyan">
+                <span>01</span>
+                <i class="fas fa-palette"></i>
+                <h3>Graphic Design</h3>
+                <p>Creative visual communication and artwork.</p>
+            </div>
+
+
+            <div class="skill-card aura-emerald">
+                <span>02</span>
+                <i class="fas fa-hashtag"></i>
+                <h3>Social Media Design</h3>
+                <p>Digital content and social media creatives.</p>
+            </div>
+
+
+            <div class="skill-card aura-pink">
+                <span>03</span>
+                <i class="fas fa-layer-group"></i>
+                <h3>Branding & Identity</h3>
+                <p>Visual identity and brand communication.</p>
+            </div>
+
+
+            <div class="skill-card aura-purple">
+                <span>04</span>
+                <i class="fas fa-laptop"></i>
+                <h3>Web Design</h3>
+                <p>Modern layouts and digital experiences.</p>
+            </div>
+
+
+            <div class="skill-card aura-cyan">
+                <span>05</span>
+                <i class="fas fa-video"></i>
+                <h3>Video Editing</h3>
+                <p>Promotional videos, reels and storytelling.</p>
+            </div>
+
+
+            <div class="skill-card aura-emerald">
+                <span>06</span>
+                <i class="fas fa-wand-magic-sparkles"></i>
+                <h3>Motion Graphics</h3>
+                <p>Animation and motion-based visual content.</p>
+            </div>
+
+
+            <div class="skill-card aura-pink">
+                <span>07</span>
+                <i class="fas fa-print"></i>
+                <h3>Print Design</h3>
+                <p>Brochures, posters, banners and print artwork.</p>
+            </div>
+
+
+            <div class="skill-card aura-purple">
+                <span>08</span>
+                <i class="fas fa-object-group"></i>
+                <h3>UI/UX Design</h3>
+                <p>User interfaces and practical digital layouts.</p>
+            </div>
+
+
+            <div class="skill-card aura-cyan">
+                <span>09</span>
+                <i class="fas fa-image"></i>
+                <h3>Photo Editing</h3>
+                <p>Image enhancement, retouching and composition.</p>
+            </div>
+
+
+            <div class="skill-card aura-emerald">
+                <span>10</span>
+                <i class="fas fa-photo-video"></i>
+                <h3>Content Creation</h3>
+                <p>Creative visual content for digital platforms.</p>
+            </div>
+
+
+            <div class="skill-card aura-pink">
+                <span>11</span>
+                <i class="fas fa-bullhorn"></i>
+                <h3>Digital Marketing</h3>
+                <p>Creative assets for digital promotion.</p>
+            </div>
+
+
+            <div class="skill-card aura-purple">
+                <span>12</span>
+                <i class="fas fa-compass-drafting"></i>
+                <h3>Creative Direction</h3>
+                <p>Concept development and visual planning.</p>
+            </div>
+
+        </div>
+
     </div>
-  </footer>
 
-  <!-- PACKAGE DETAILS MODAL -->
-  <div id="pkgModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-    <div class="glass-card max-w-md w-full p-6 rounded-3xl border border-cyan-500/40 relative animate-scale-up">
-      <button onclick="closePkgModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg"><i class="fas fa-times"></i></button>
-      <h3 id="modalPkgTitle" class="font-display text-2xl font-extrabold text-white mb-2">Package Specification</h3>
-      <p class="text-slate-300 text-xs leading-relaxed mb-6">
-        This package includes comprehensive commercial rights, source vector master files, dedicated revision rounds, and full quality assurance.
-      </p>
-      <button onclick="closePkgModal()" class="w-full py-3 rounded-full bg-cyan-500 text-black font-bold uppercase text-xs">Close Window</button>
+</section>
+
+
+<!-- =========================================================
+     04 — SOFTWARE
+========================================================= -->
+
+<section id="software"
+         class="py-20 relative z-10">
+
+    <div class="max-w-7xl mx-auto
+                px-4 sm:px-6 lg:px-8">
+
+
+        <div class="mb-12">
+
+            <span class="section-tag">
+                04 — SOFTWARE
+            </span>
+
+            <h2 class="font-display
+                       text-4xl sm:text-5xl
+                       font-extrabold
+                       text-white mt-2">
+
+                Tools I work with.
+
+            </h2>
+
+            <p class="text-slate-400
+                      max-w-2xl mt-4">
+
+                A practical creative toolkit for design,
+                editing, motion, publishing and digital production.
+
+            </p>
+
+        </div>
+
+
+        <div class="software-grid">
+
+
+            <!-- Photoshop -->
+
+            <div class="software-card aura-cyan">
+
+                <img src="assets/icon/photoshop.svg"
+                     alt="Adobe Photoshop">
+
+                <h3>Adobe Photoshop</h3>
+
+                <span>Photo Editing · Digital Design</span>
+
+            </div>
+
+
+            <!-- Illustrator -->
+
+            <div class="software-card aura-emerald">
+
+                <img src="assets/icon/illustrator.svg"
+                     alt="Adobe Illustrator">
+
+                <h3>Adobe Illustrator</h3>
+
+                <span>Vector Design · Branding</span>
+
+            </div>
+
+
+            <!-- Premiere Pro -->
+
+            <div class="software-card aura-pink">
+
+                <img src="assets/icon/premiere pro.svg"
+                     alt="Adobe Premiere Pro">
+
+                <h3>Adobe Premiere Pro</h3>
+
+                <span>Video Editing · Production</span>
+
+            </div>
+
+
+            <!-- After Effects -->
+
+            <div class="software-card aura-purple">
+
+                <img src="assets/icon/After Effects.svg"
+                     alt="Adobe After Effects">
+
+                <h3>Adobe After Effects</h3>
+
+                <span>Motion Graphics · Animation</span>
+
+            </div>
+
+
+            <!-- Canva -->
+
+            <div class="software-card aura-cyan">
+
+                <img src="assets/icon/Canva.svg"
+                     alt="Canva">
+
+                <h3>Canva</h3>
+
+                <span>Social Media · Quick Design</span>
+
+            </div>
+
+
+            <!-- CapCut -->
+
+            <div class="software-card aura-emerald">
+
+                <img src="assets/icon/Capcut.svg"
+                     alt="CapCut">
+
+                <h3>CapCut</h3>
+
+                <span>Short-form Video · Reels</span>
+
+            </div>
+
+
+            <!-- Figma -->
+
+            <div class="software-card aura-pink">
+
+                <img src="assets/icon/Figma.svg"
+                     alt="Figma">
+
+                <h3>Figma</h3>
+
+                <span>UI Design · Web Interface</span>
+
+            </div>
+
+
+            <!-- CorelDRAW -->
+
+            <div class="software-card aura-purple">
+
+                <img src="assets/icon/Corel Draw.svg"
+                     alt="CorelDRAW">
+
+                <h3>CorelDRAW</h3>
+
+                <span>Print Design · Vector Artwork</span>
+
+            </div>
+
+
+            <!-- InDesign -->
+
+            <div class="software-card aura-cyan">
+
+                <img src="assets/icon/Indesign.svg"
+                     alt="Adobe InDesign">
+
+                <h3>Adobe InDesign</h3>
+
+                <span>Publication · Layout Design</span>
+
+            </div>
+
+
+            <!-- VN Editor -->
+
+            <div class="software-card aura-emerald">
+
+                <img src="assets/icon/VN editor.svg"
+                     alt="VN Editor">
+
+                <h3>VN Editor</h3>
+
+                <span>Mobile Video · Social Content</span>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
 
-  <!-- Custom External JavaScript File -->
-  <script src="script.js"></script>
+</section>
+
+
+<!-- =========================================================
+     05 — PORTFOLIO / WORKS
+========================================================= -->
+
+<section id="works"
+         class="py-20 relative z-10
+                bg-white/[0.015]">
+
+    <div class="max-w-7xl mx-auto
+                px-4 sm:px-6 lg:px-8">
+
+
+        <div class="flex flex-col
+                    lg:flex-row
+                    lg:items-end
+                    justify-between
+                    gap-6 mb-12">
+
+            <div>
+
+                <span class="section-tag">
+                    05 — PORTFOLIO
+                </span>
+
+                <h2 class="font-display
+                           text-4xl sm:text-5xl
+                           font-extrabold
+                           text-white mt-2">
+
+                    Works.
+
+                </h2>
+
+                <p class="text-slate-400
+                          max-w-2xl mt-4">
+
+                    A selection of creative work across design,
+                    branding, social media and video.
+
+                </p>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="flex flex-wrap gap-2">
+
+                <button class="filter-btn active"
+                        data-filter="all">
+                    All
+                </button>
+
+                <button class="filter-btn"
+                        data-filter="graphic">
+                    Graphic Design
+                </button>
+
+                <button class="filter-btn"
+                        data-filter="branding">
+                    Branding
+                </button>
+
+                <button class="filter-btn"
+                        data-filter="social">
+                    Social Media
+                </button>
+
+                <button class="filter-btn"
+                        data-filter="video">
+                    Video
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PORTFOLIO GRID -->
+
+        <div class="grid grid-cols-1
+                    md:grid-cols-2
+                    lg:grid-cols-3
+                    gap-6">
+
+
+            <article class="portfolio-item glass-card aura-cyan"
+                     data-category="branding">
+
+                <div class="portfolio-image">
+
+                    <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1000&q=80"
+                         alt="Brand Identity Design">
+
+                </div>
+
+                <div class="portfolio-content">
+
+                    <span>BRANDING</span>
+
+                    <h3>Brand Identity Design</h3>
+
+                    <p>
+                        Logo system, visual identity and
+                        brand applications.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="portfolio-item glass-card aura-emerald"
+                     data-category="social">
+
+                <div class="portfolio-image">
+
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=80"
+                         alt="Social Media Campaign">
+
+                </div>
+
+                <div class="portfolio-content">
+
+                    <span>SOCIAL MEDIA</span>
+
+                    <h3>Social Media Campaign</h3>
+
+                    <p>
+                        Creative campaign visuals designed
+                        for digital engagement.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="portfolio-item glass-card aura-pink"
+                     data-category="graphic">
+
+                <div class="portfolio-image">
+
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=80"
+                         alt="Promotional Poster Series">
+
+                </div>
+
+                <div class="portfolio-content">
+
+                    <span>GRAPHIC DESIGN</span>
+
+                    <h3>Promotional Poster Series</h3>
+
+                    <p>
+                        High-impact promotional artwork
+                        for print and digital platforms.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="portfolio-item glass-card aura-purple"
+                     data-category="graphic">
+
+                <div class="portfolio-image">
+
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1000&q=80"
+                         alt="Product and Marketing Design">
+
+                </div>
+
+                <div class="portfolio-content">
+
+                    <span>GRAPHIC DESIGN</span>
+
+                    <h3>Product & Marketing Design</h3>
+
+                    <p>
+                        Visual content developed for
+                        product promotion and communication.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="portfolio-item glass-card aura-cyan"
+                     data-category="video">
+
+                <div class="portfolio-image">
+
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=80"
+                         alt="Video and Motion Content">
+
+                </div>
+
+                <div class="portfolio-content">
+
+                    <span>VIDEO</span>
+
+                    <h3>Video & Motion Content</h3>
+
+                    <p>
+                        Promotional content, reels and
+                        motion-based visual storytelling.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="portfolio-item glass-card aura-emerald"
+                     data-category="branding">
+
+                <div class="portfolio-image">
+
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&q=80"
+                         alt="Digital Creative Project">
+
+                </div>
+
+                <div class="portfolio-content">
+
+                    <span>BRANDING</span>
+
+                    <h3>Digital Creative Project</h3>
+
+                    <p>
+                        A combination of design, layout
+                        and digital communication.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     06 — CAREER JOURNEY
+========================================================= -->
+
+<section id="career"
+         class="py-20 relative z-10">
+
+    <div class="max-w-7xl mx-auto
+                px-4 sm:px-6 lg:px-8">
+
+
+        <div class="mb-12">
+
+            <span class="section-tag">
+                06 — CAREER JOURNEY
+            </span>
+
+            <h2 class="font-display
+                       text-4xl sm:text-5xl
+                       font-extrabold
+                       text-white mt-2">
+
+                Professional Experiences.
+
+            </h2>
+
+            <p class="text-slate-400
+                      max-w-3xl mt-4">
+
+                My professional journey combines creative work,
+                entrepreneurship, media, management and
+                organizational experience.
+
+            </p>
+
+        </div>
+
+
+        <div class="career-timeline">
+
+
+            <!-- 01 -->
+
+            <div class="career-item">
+
+                <span class="career-year">
+                    2018 — 2026
+                </span>
+
+                <div class="glass-card aura-cyan
+                            career-card">
+
+                    <h3>
+                        Owner / Managing Director
+                    </h3>
+
+                    <p>
+                        Cafe Restaurant & Thakali Bhanchha
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 02 -->
+
+            <div class="career-item">
+
+                <span class="career-year">
+                    2017 — 2026
+                </span>
+
+                <div class="glass-card aura-emerald
+                            career-card">
+
+                    <h3>
+                        Founder / CEO / Managing Director
+                    </h3>
+
+                    <p>
+                        Designing / Printing / Publishing Media
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 03 -->
+
+            <div class="career-item">
+
+                <span class="career-year">
+                    2016 — 2023
+                </span>
+
+                <div class="glass-card aura-pink
+                            career-card">
+
+                    <h3>
+                        Co-Secretary / Board of Directors
+                    </h3>
+
+                    <p>
+                        Saving & Credit Co-Operative
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 04 -->
+
+            <div class="career-item">
+
+                <span class="career-year">
+                    2016 — 2018
+                </span>
+
+                <div class="glass-card aura-purple
+                            career-card">
+
+                    <h3>
+                        Head Graphic Designer
+                    </h3>
+
+                    <p>
+                        Arts & Flex Prints
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 05 -->
+
+            <div class="career-item">
+
+                <span class="career-year">
+                    2015 — 2017
+                </span>
+
+                <div class="glass-card aura-cyan
+                            career-card">
+
+                    <h3>
+                        Event Manager / Art Director
+                    </h3>
+
+                    <p>
+                        Event Management Company
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 06 -->
+
+            <div class="career-item">
+
+                <span class="career-year">
+                    Additional Experience
+                </span>
+
+                <div class="glass-card aura-emerald
+                            career-card">
+
+                    <h3>
+                        Professional Experience
+                    </h3>
+
+                    <p>
+                        Additional career information can be added
+                        here when the sixth position and organization
+                        details are provided.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     07 — RECOMMENDATIONS
+========================================================= -->
+
+<section id="recommendations"
+         class="py-20 relative z-10
+                bg-white/[0.015]">
+
+    <div class="max-w-7xl mx-auto
+                px-4 sm:px-6 lg:px-8">
+
+
+        <div class="mb-12">
+
+            <span class="section-tag">
+                07 — RECOMMENDATIONS
+            </span>
+
+            <h2 class="font-display
+                       text-4xl sm:text-5xl
+                       font-extrabold
+                       text-white mt-2">
+
+                What professionals say.
+
+            </h2>
+
+            <p class="text-slate-400
+                      max-w-2xl mt-4">
+
+                Recommendations from clients, colleagues
+                and professional connections.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid grid-cols-1
+                    sm:grid-cols-2
+                    lg:grid-cols-3
+                    gap-5">
+
+
+            <!-- Recommendation 01 -->
+
+            <article class="recommendation-card aura-cyan">
+
+                <div class="recommendation-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <h3>
+                    Recommendation 01
+                </h3>
+
+                <span>
+                    CLIENT / PROFESSIONAL NAME
+                </span>
+
+                <p>
+                    Recommendation text will be placed here
+                    after the approved recommendation is provided.
+                </p>
+
+            </article>
+
+
+            <!-- Recommendation 02 -->
+
+            <article class="recommendation-card aura-emerald">
+
+                <div class="recommendation-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <h3>
+                    Recommendation 02
+                </h3>
+
+                <span>
+                    CLIENT / PROFESSIONAL NAME
+                </span>
+
+                <p>
+                    Recommendation text will be placed here
+                    after the approved recommendation is provided.
+                </p>
+
+            </article>
+
+
+            <!-- Recommendation 03 -->
+
+            <article class="recommendation-card aura-pink">
+
+                <div class="recommendation-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <h3>
+                    Recommendation 03
+                </h3>
+
+                <span>
+                    CLIENT / PROFESSIONAL NAME
+                </span>
+
+                <p>
+                    Recommendation text will be placed here
+                    after the approved recommendation is provided.
+                </p>
+
+            </article>
+
+
+            <!-- Recommendation 04 -->
+
+            <article class="recommendation-card aura-purple">
+
+                <div class="recommendation-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <h3>
+                    Recommendation 04
+                </h3>
+
+                <span>
+                    CLIENT / PROFESSIONAL NAME
+                </span>
+
+                <p>
+                    Recommendation text will be placed here
+                    after the approved recommendation is provided.
+                </p>
+
+            </article>
+
+
+            <!-- Recommendation 05 -->
+
+            <article class="recommendation-card aura-cyan">
+
+                <div class="recommendation-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <h3>
+                    Recommendation 05
+                </h3>
+
+                <span>
+                    CLIENT / PROFESSIONAL NAME
+                </span>
+
+                <p>
+                    Recommendation text will be placed here
+                    after the approved recommendation is provided.
+                </p>
+
+            </article>
+
+
+            <!-- Recommendation 06 -->
+
+            <article class="recommendation-card aura-emerald">
+
+                <div class="recommendation-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <h3>
+                    Recommendation 06
+                </h3>
+
+                <span>
+                    CLIENT / PROFESSIONAL NAME
+                </span>
+
+                <p>
+                    Recommendation text will be placed here
+                    after the approved recommendation is provided.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     09 — PACKAGES
+========================================================= -->
+
+<section id="packages"
+         class="py-20 relative z-10">
+
+    <div class="max-w-7xl mx-auto
+                px-4 sm:px-6 lg:px-8">
+
+
+        <div class="mb-12 text-center">
+
+            <span class="section-tag">
+                09 — PACKAGES
+            </span>
+
+            <h2 class="font-display
+                       text-4xl sm:text-5xl
+                       font-extrabold
+                       text-white mt-2">
+
+                Service Packages.
+
+            </h2>
+
+            <p class="text-slate-400
+                      max-w-2xl mx-auto mt-4">
+
+                Choose a structured creative package or
+                request a custom solution based on your project.
+
+            </p>
+
+        </div>
+
+
+        <!-- PACKAGE GRID -->
+
+        <div class="grid grid-cols-1
+                    md:grid-cols-2
+                    gap-8">
+
+
+            <!-- BRONZE -->
+
+            <article class="package-card package-bronze">
+
+                <div class="package-header">
+
+                    <div>
+
+                        <span class="package-number">
+                            01
+                        </span>
+
+                        <h3>BRONZE</h3>
+
+                        <span>
+                            Starter Package
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        NPR 8,000
+                        <small>/ $60</small>
+                    </strong>
+
+                </div>
+
+
+                <p class="package-description">
+                    Perfect for individuals and small projects.
+                </p>
+
+
+                <ul>
+
+                    <li>5 Creative Designs</li>
+                    <li>2 Posters / Banners</li>
+                    <li>1 Short Reel</li>
+                    <li>Basic Photo Editing</li>
+                    <li>Creative Concept</li>
+                    <li>2 Revisions</li>
+                    <li>Delivery: 3–5 Days</li>
+
+                </ul>
+
+
+                <div class="package-actions">
+
+                    <button onclick="openPkgModal('BRONZE')">
+                        View More
+                    </button>
+
+                    <button onclick="selectPackage('BRONZE')">
+                        Select Package
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- SILVER -->
+
+            <article class="package-card package-silver">
+
+                <div class="package-header">
+
+                    <div>
+
+                        <span class="package-number">
+                            02
+                        </span>
+
+                        <h3>SILVER</h3>
+
+                        <span>
+                            Professional Package
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        NPR 18,000
+                        <small>/ $135</small>
+                    </strong>
+
+                </div>
+
+
+                <p class="package-description">
+                    For growing businesses and regular content needs.
+                </p>
+
+
+                <ul>
+
+                    <li>10 Creative Designs</li>
+                    <li>4 Posters / Banners</li>
+                    <li>3 Short Reels</li>
+                    <li>Advanced Photo Editing</li>
+                    <li>Creative Concept & Direction</li>
+                    <li>Brand Styling</li>
+                    <li>Source Files Included</li>
+                    <li>4 Revisions</li>
+                    <li>Priority Support</li>
+                    <li>Delivery: 5–7 Days</li>
+
+                </ul>
+
+
+                <div class="package-actions">
+
+                    <button onclick="openPkgModal('SILVER')">
+                        View More
+                    </button>
+
+                    <button onclick="selectPackage('SILVER')">
+                        Select Package
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- GOLD -->
+
+            <article class="package-card package-gold">
+
+                <div class="package-header">
+
+                    <div>
+
+                        <span class="package-number">
+                            03
+                        </span>
+
+                        <h3>GOLD</h3>
+
+                        <span>
+                            Premium Creative Package
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        NPR 35,000
+                        <small>/ $260</small>
+                    </strong>
+
+                </div>
+
+
+                <p class="package-description">
+                    For brands that need a stronger creative presence.
+                </p>
+
+
+                <ul>
+
+                    <li>15 Creative Designs</li>
+                    <li>6 Posters / Banners</li>
+                    <li>5 Short Reels</li>
+                    <li>Advanced Photo & Video Editing</li>
+                    <li>Campaign Creative Direction</li>
+                    <li>Brand Visual Consistency</li>
+                    <li>Source Files Included</li>
+                    <li>6 Revisions</li>
+                    <li>Priority Delivery</li>
+                    <li>Dedicated Creative Support</li>
+
+                </ul>
+
+
+                <div class="package-actions">
+
+                    <button onclick="openPkgModal('GOLD')">
+                        View More
+                    </button>
+
+                    <button onclick="selectPackage('GOLD')">
+                        Select Package
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PLATINUM -->
+
+            <article class="package-card package-platinum">
+
+                <div class="package-header">
+
+                    <div>
+
+                        <span class="package-number">
+                            04
+                        </span>
+
+                        <h3>PLATINUM</h3>
+
+                        <span>
+                            Complete Creative Package
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        NPR 50,000
+                        <small>/ $375</small>
+                    </strong>
+
+                </div>
+
+
+                <p class="package-description">
+                    For businesses requiring a complete creative solution.
+                </p>
+
+
+                <ul>
+
+                    <li>20 Creative Designs</li>
+                    <li>8 Posters / Banners</li>
+                    <li>8 Short Reels</li>
+                    <li>Advanced Design & Editing</li>
+                    <li>Campaign Development</li>
+                    <li>Creative Direction</li>
+                    <li>Source Files Included</li>
+                    <li>Unlimited Minor Adjustments</li>
+                    <li>Priority Support</li>
+                    <li>Dedicated Project Coordination</li>
+
+                </ul>
+
+
+                <div class="package-actions">
+
+                    <button onclick="openPkgModal('PLATINUM')">
+                        View More
+                    </button>
+
+                    <button onclick="selectPackage('PLATINUM')">
+                        Select Package
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- FULL DIGITAL SECTOR HANDLING -->
+
+        <div class="featured-package">
+
+            <span class="section-tag">
+                FULL DIGITAL SECTOR HANDLING
+            </span>
+
+            <h3>
+                Complete Monthly Creative Support.
+            </h3>
+
+            <p>
+                A complete monthly creative support package
+                for businesses that need consistent design,
+                social media content, promotional materials
+                and video production.
+            </p>
+
+
+            <div class="digital-package-price">
+                NPR 65,000
+                <small>/ Month</small>
+            </div>
+
+
+            <div class="digital-package-grid">
+
+                <span>Up to 20 Social Media Designs</span>
+                <span>Up to 8 Promotional Posters / Banners</span>
+                <span>Up to 8 Short-form Videos / Reels</span>
+                <span>Up to 4 Campaign Concepts</span>
+                <span>Product / Service Promotional Creatives</span>
+                <span>Basic Photo Editing</span>
+                <span>Video Editing</span>
+                <span>Monthly Creative Planning</span>
+                <span>Brand Consistency Management</span>
+                <span>Dedicated Creative Workflow</span>
+                <span>Monthly Content Planning</span>
+                <span>Priority Communication</span>
+                <span>Source Files for Completed Projects</span>
+
+            </div>
+
+
+            <p class="package-note">
+                Deliverables beyond the monthly limits are quoted
+                separately according to quantity and complexity.
+            </p>
+
+
+            <button onclick="selectPackage('Full Digital Sector Handling')">
+                Discuss This Package
+            </button>
+
+        </div>
+
+
+        <!-- CUSTOM PACKAGE -->
+
+        <div class="custom-package">
+
+            <div>
+
+                <span class="section-tag">
+                    CUSTOM SOLUTION
+                </span>
+
+                <h3>
+                    NEED SOMETHING DIFFERENT?
+                </h3>
+
+                <p>
+                    Create a custom package for your project.
+                    Custom pricing can be prepared according to
+                    your project quantity, complexity,
+                    creative requirements and deadline.
+                </p>
+
+            </div>
+
+
+            <a href="#contact">
+                Let's Discuss
+                <i class="fas fa-comments ml-2"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     11 — CONTACT
+========================================================= -->
+
+<section id="contact"
+         class="py-20 relative z-10
+                hdr-ftr-bg
+                border-t border-white/10">
+
+    <div class="max-w-7xl mx-auto
+                px-4 sm:px-6 lg:px-8">
+
+
+        <div class="grid grid-cols-1
+                    lg:grid-cols-12
+                    gap-12">
+
+
+            <!-- CONTACT INFORMATION -->
+
+            <div class="lg:col-span-5">
+
+                <span class="section-tag">
+                    11 — CONTACT
+                </span>
+
+                <h2 class="font-display
+                           text-4xl sm:text-5xl
+                           font-extrabold
+                           text-white mt-2">
+
+                    Let's create something meaningful.
+
+                </h2>
+
+                <p class="text-slate-300
+                          text-sm mt-5
+                          leading-relaxed">
+
+                    Have a project, collaboration or creative idea
+                    in mind? Let's talk about how we can turn it
+                    into a strong visual experience.
+
+                </p>
+
+
+                <div class="space-y-4 mt-8">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="contact-info-card">
+
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Email Addresses</span>
+
+                            <a href="mailto:babal6anil@gmail.com">
+                                babal6anil@gmail.com
+                            </a>
+
+                            <a href="mailto:anilsuryapal@gmail.com">
+                                anilsuryapal@gmail.com
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="contact-info-card">
+
+                        <div class="contact-icon whatsapp-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Call / WhatsApp</span>
+
+                            <a href="tel:+9779815150233">
+                                +977 9815150233
+                            </a>
+
+                            <a href="tel:+9779846435100">
+                                +977 9846435100
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SOCIAL MEDIA -->
+
+                <div class="mt-8">
+
+                    <span class="social-label">
+                        Connect On Social Media
+                    </span>
+
+                    <div class="social-links">
+
+
+                        <a href="#"
+                           aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+
+                        <a href="#"
+                           aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+
+                        <a href="#"
+                           aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+
+
+                        <a href="#"
+                           aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+
+
+                        <a href="#"
+                           aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+
+                        <a href="#"
+                           aria-label="Behance">
+                            <i class="fab fa-behance"></i>
+                        </a>
+
+
+                        <a href="#"
+                           aria-label="Twitter X">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+
+            <div class="lg:col-span-7">
+
+                <div class="glass-card
+                            p-8 rounded-3xl
+                            border border-white/10">
+
+                    <h3 class="font-display
+                               text-2xl
+                               font-bold
+                               text-white mb-6">
+
+                        Send Me a Message
+
+                    </h3>
+
+
+                    <form id="contactForm"
+                          class="space-y-5">
+
+
+                        <div class="grid grid-cols-1
+                                    sm:grid-cols-2 gap-4">
+
+                            <div>
+
+                                <label>
+                                    Your Name
+                                </label>
+
+                                <input type="text"
+                                       name="name"
+                                       required
+                                       placeholder="Your name">
+
+                            </div>
+
+
+                            <div>
+
+                                <label>
+                                    Your Email
+                                </label>
+
+                                <input type="email"
+                                       name="email"
+                                       required
+                                       placeholder="your@email.com">
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Project / Subject
+                            </label>
+
+                            <input type="text"
+                                   name="subject"
+                                   required
+                                   placeholder="Project discussion">
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                Tell Me About Your Project
+                            </label>
+
+                            <textarea id="contactMessage"
+                                      name="message"
+                                      rows="6"
+                                      required
+                                      placeholder="Tell me about your project, quantity, requirements and deadline..."></textarea>
+
+                        </div>
+
+
+                        <button type="submit"
+                                class="contact-submit">
+
+                            Send Message
+
+                            <i class="fas fa-paper-plane ml-2"></i>
+
+                        </button>
+
+                    </form>
+
+
+                    <div id="formFeedback"
+                         class="hidden mt-4
+                                p-4 rounded-xl
+                                text-sm text-center">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="hdr-ftr-bg
+               border-t border-white/10
+               py-10 text-center">
+
+    <div class="max-w-7xl mx-auto
+                px-4 sm:px-6 lg:px-8">
+
+        <h3 class="font-display
+                   text-xl font-extrabold
+                   text-white">
+
+            ANIL
+            <span class="text-[#2D8CFF]">
+                SHRESTHA
+            </span>
+
+        </h3>
+
+
+        <p class="text-slate-400
+                  text-sm mt-2">
+
+            Graphic · Web · Multimedia Designer
+            <br>
+            Video Editor · Instructor
+
+        </p>
+
+
+        <p class="text-slate-500
+                  text-xs mt-4">
+
+            Creating ideas. Designing experiences.
+            Telling visual stories.
+
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#software">Software</a>
+            <a href="#works">Works</a>
+            <a href="#career">Career</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <p class="text-slate-600
+                  text-xs mt-6">
+
+            &copy;
+            <span class="current-year">2026</span>
+            Anil Shrestha.
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     PACKAGE DETAILS MODAL
+========================================================= -->
+
+<div id="pkgModal"
+     class="hidden fixed inset-0 z-[100]
+            items-center justify-center
+            p-4 bg-black/80
+            backdrop-blur-md">
+
+    <div class="glass-card
+                max-w-lg w-full
+                p-8 rounded-3xl
+                border border-[#2D8CFF]/40
+                relative">
+
+        <button id="modalClose"
+                type="button"
+                aria-label="Close package details"
+                class="absolute top-4 right-4
+                       text-slate-400
+                       hover:text-white">
+
+            <i class="fas fa-times"></i>
+
+        </button>
+
+
+        <span class="section-tag">
+            PACKAGE DETAILS
+        </span>
+
+
+        <h3 id="modalPkgTitle"
+            class="font-display
+                   text-3xl
+                   font-extrabold
+                   text-white mt-2 mb-4">
+
+            Package Details
+
+        </h3>
+
+
+        <p class="text-slate-300
+                  text-sm
+                  leading-relaxed mb-6">
+
+            Package details can be discussed according to
+            your project requirements, quantity, complexity,
+            creative direction and deadline.
+
+        </p>
+
+
+        <button onclick="closePkgModal()"
+                class="w-full
+                       py-3 rounded-full
+                       bg-[#2D8CFF]
+                       text-black
+                       font-bold uppercase
+                       text-xs">
+
+            Close Window
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button id="backToTop"
+        type="button"
+        aria-label="Back to top">
+
+    <i class="fas fa-arrow-up"></i>
+
+</button>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+
 </body>
 </html>
