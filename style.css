@@ -401,90 +401,690 @@ font-size: 0.72rem;
 line-height: 1.5;
 }
 
-/* ==========================================================================
-PORTFOLIO
-========================================================================== */
+/* =========================================================
+   05 — PORTFOLIO
+   CATEGORY CARDS + PROJECT GALLERY
+========================================================= */
 
-.filter-btn {
-padding: 0.6rem 0.9rem;
-border-radius: 999px;
-border: 1px solid rgba(255, 255, 255, 0.08);
-background: rgba(15, 23, 42, 0.8);
-color: #a5a5a5;
-font-size: 0.72rem;
-font-weight: 700;
-text-transform: uppercase;
-letter-spacing: 0.05em;
-transition: all 0.25s ease;
+
+/* =========================================================
+   PORTFOLIO CATEGORY CARD
+========================================================= */
+
+.portfolio-category-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 10px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+
+    isolation: isolate;
 }
 
-.filter-btn:hover {
-color: #ffffff;
-border-color: rgba(45, 140, 255, 0.45);
+
+/* =========================================================
+   SOFT AURA
+========================================================= */
+
+.portfolio-category-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -35px;
+
+    border-radius: 40px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(57, 255, 136, 0.16),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(45, 140, 255, 0.12),
+            transparent 45%
+        );
+
+    filter: blur(28px);
+
+    opacity: 0.55;
+
+    z-index: -2;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
 }
 
-.filter-btn.active {
-background: #2D8CFF;
-color: #070707;
-border-color: #2D8CFF;
-box-shadow: 0 0 20px rgba(45, 140, 255, 0.25);
+
+/* =========================================================
+   CATEGORY-SPECIFIC AURA
+========================================================= */
+
+.portfolio-category-card[data-category-card="graphic"]::before {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(57, 255, 136, 0.22),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(45, 140, 255, 0.14),
+            transparent 50%
+        );
 }
 
-.portfolio-item {
-overflow: hidden;
-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.portfolio-category-card[data-category-card="branding"]::before {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(45, 140, 255, 0.24),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(57, 255, 136, 0.12),
+            transparent 50%
+        );
 }
 
-.portfolio-item.hidden-item {
-display: none !important;
-opacity: 0;
-transform: scale(0.9);
+.portfolio-category-card[data-category-card="social"]::before {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 79, 216, 0.24),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(45, 140, 255, 0.14),
+            transparent 50%
+        );
 }
 
-.portfolio-image {
-width: 100%;
-aspect-ratio: 16 / 10;
-overflow: hidden;
-background: #0f172a;
+.portfolio-category-card[data-category-card="web"]::before {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(45, 140, 255, 0.24),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 79, 216, 0.16),
+            transparent 50%
+        );
 }
 
-.portfolio-image img {
-width: 100%;
-height: 100%;
-display: block;
-object-fit: cover;
-transition: transform 0.5s ease;
+.portfolio-category-card[data-category-card="video"]::before {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 77, 90, 0.24),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 79, 216, 0.16),
+            transparent 50%
+        );
 }
 
-.portfolio-item:hover .portfolio-image img {
-transform: scale(1.04);
+.portfolio-category-card[data-category-card="print"]::before {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(57, 255, 136, 0.18),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(45, 140, 255, 0.20),
+            transparent 50%
+        );
 }
 
-.portfolio-content {
-padding: 1.4rem;
+
+/* =========================================================
+   HOVER CARD
+========================================================= */
+
+.portfolio-category-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(57, 255, 136, 0.45);
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(57, 255, 136, 0.10);
 }
 
-.portfolio-content > span {
-color: #39FF88;
-font-size: 0.68rem;
-font-weight: 800;
-letter-spacing: 0.12em;
+.portfolio-category-card:hover::before {
+    opacity: 1;
+    transform: scale(1.08);
 }
 
-.portfolio-content h3 {
-margin-top: 0.5rem;
-color: #ffffff;
-font-size: 1.1rem;
-font-weight: 800;
+
+/* =========================================================
+   CATEGORY IMAGE
+========================================================= */
+
+.portfolio-category-image {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 250px;
+
+    border-radius: 21px;
+
+    background: #070707;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.portfolio-content p {
-margin-top: 0.5rem;
-color: #a5a5a5;
-font-size: 0.82rem;
-line-height: 1.6;
+
+.portfolio-category-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.55s ease,
+        filter 0.55s ease;
 }
 
+
+.portfolio-category-card:hover
+.portfolio-category-image img {
+    transform: scale(1.07);
+
+    filter:
+        brightness(0.72)
+        saturate(1.10);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.portfolio-category-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 7, 7, 0.05),
+            rgba(7, 7, 7, 0.78)
+        );
+
+    color: #F2F2F2;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.35s ease;
+}
+
+
+.portfolio-category-card:hover
+.portfolio-category-overlay {
+    opacity: 1;
+}
+
+
+.portfolio-category-overlay i {
+    color: #39FF88;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.portfolio-category-card:hover
+.portfolio-category-overlay i {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   CATEGORY CONTENT
+========================================================= */
+
+.portfolio-category-content {
+    padding: 24px 16px 16px;
+}
+
+
+/* =========================================================
+   CATEGORY NUMBER
+========================================================= */
+
+.portfolio-category-number {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #39FF88;
+
+    font-size: 0.70rem;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* =========================================================
+   CATEGORY TITLE
+========================================================= */
+
+.portfolio-category-content h3 {
+    margin: 0 0 10px;
+
+    color: #F2F2F2;
+
+    font-size: 1.35rem;
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   CATEGORY SUBTITLE / DESCRIPTION
+========================================================= */
+
+.portfolio-category-content p {
+    margin: 0 0 22px;
+
+    color: #A5A5A5;
+
+    font-size: 0.90rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   VIEW MORE BUTTON
+========================================================= */
+
+.portfolio-view-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 12px 18px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(57, 255, 136, 0.30);
+
+    background:
+        rgba(57, 255, 136, 0.055);
+
+    color: #39FF88;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.30s ease,
+        border-color 0.30s ease,
+        box-shadow 0.30s ease,
+        transform 0.30s ease;
+}
+
+
+.portfolio-view-btn:hover {
+    background:
+        rgba(57, 255, 136, 0.12);
+
+    border-color:
+        rgba(57, 255, 136, 0.65);
+
+    box-shadow:
+        0 0 20px rgba(57, 255, 136, 0.16);
+
+    transform: translateY(-2px);
+}
+
+
+.portfolio-view-btn i {
+    transition:
+        transform 0.30s ease;
+}
+
+
+.portfolio-view-btn:hover i {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   PORTFOLIO WORK AREA
+========================================================= */
+
+#portfolioWorks {
+    position: relative;
+}
+
+
+#portfolioWorks.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.portfolio-back-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 15px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: #A5A5A5;
+
+    font-size: 0.70rem;
+    font-weight: 800;
+
+    letter-spacing: 0.10em;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.portfolio-back-btn:hover {
+    color: #F2F2F2;
+
+    border-color:
+        rgba(45, 140, 255, 0.50);
+
+    background:
+        rgba(45, 140, 255, 0.07);
+}
+
+
+/* =========================================================
+   WORK COUNT
+========================================================= */
+
+.portfolio-work-count {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 10px 16px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: #A5A5A5;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.portfolio-work-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+.portfolio-work-grid.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.portfolio-project-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.portfolio-project-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(45, 140, 255, 0.40);
+
+    box-shadow:
+        0 16px 45px rgba(0, 0, 0, 0.40),
+        0 0 25px rgba(45, 140, 255, 0.08);
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.portfolio-project-image {
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: 16 / 10;
+
+    background: #070707;
+}
+
+
+.portfolio-project-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.portfolio-project-card:hover
+.portfolio-project-image img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   PROJECT INFORMATION
+========================================================= */
+
+.portfolio-project-info {
+    padding: 20px;
+}
+
+
+.portfolio-project-info span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #39FF88;
+
+    font-size: 0.65rem;
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+}
+
+
+.portfolio-project-info h4 {
+    margin: 0 0 7px;
+
+    color: #F2F2F2;
+
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+
+.portfolio-project-info p {
+    margin: 0;
+
+    color: #A5A5A5;
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .portfolio-category-image {
+        height: 220px;
+    }
+
+    .portfolio-work-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 640px) {
+
+    .portfolio-category-card {
+        padding: 8px;
+
+        border-radius: 23px;
+    }
+
+    .portfolio-category-image {
+        height: 210px;
+
+        border-radius: 17px;
+    }
+
+    .portfolio-category-content {
+        padding: 20px 12px 12px;
+    }
+
+    .portfolio-category-content h3 {
+        font-size: 1.20rem;
+    }
+
+    .portfolio-work-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .portfolio-work-count {
+        width: fit-content;
+    }
+}
 /* ==========================================================================
 CAREER
 ========================================================================== */
