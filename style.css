@@ -1260,3 +1260,42 @@ transition-duration: 0.01ms !important;
     border-radius: 22px;
     background: #070707;
 }
+ /* =========================================================
+    ABOUT — EXPERTISE ICONS
+ ========================================================= */
+
+.expertise-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    font-size: 1.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.aura-icon-cyan {
+    color: #2D8CFF;
+    background: rgba(45, 140, 255, 0.10);
+    box-shadow: 0 0 20px rgba(45, 140, 255, 0.18);
+}
+
+.aura-icon-emerald {
+    color: #39FF88;
+    background: rgba(57, 255, 136, 0.08);
+    box-shadow: 0 0 20px rgba(57, 255, 136, 0.16);
+}
+
+.aura-icon-pink {
+    color: #FF4FD8;
+    background: rgba(255, 79, 216, 0.10);
+    box-shadow: 0 0 20px rgba(255, 79, 216, 0.18);
+}
+
+.aura-icon-purple {
+    color: #FF4FD8;
+    background: rgba(255, 79, 216, 0.08);
+    box-shadow: 0 0 20px rgba(255, 79, 216, 0.16);
+}
