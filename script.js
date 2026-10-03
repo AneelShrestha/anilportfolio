@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     if (entry.isIntersecting) {
 
-                        entry.target.classList.add("visible");
+                        entry.target.classList.add("revealed");
 
                         revealObserver.unobserve(
                             entry.target
