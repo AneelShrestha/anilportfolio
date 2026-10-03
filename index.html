@@ -6,15 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 ```
-<title>Anil Shrestha — Designer & Editor</title>
-
 <meta name="description" content="Anil Shrestha — Graphic, Web & Multimedia Designer, Video Editor and Instructor.">
 <meta name="author" content="Anil Shrestha">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Anil Shrestha — Creative Professional</title>
 
 <link rel="stylesheet" href="style.css">
 ```
@@ -27,12 +22,11 @@
 <!-- =====================================================
      PRELOADER
 ====================================================== -->
-
-<div id="preloader">
+<div class="preloader" id="preloader">
     <div class="preloader-inner">
-        <div class="preloader-logo">ANIL SHRESTHA</div>
-        <div class="preloader-line"></div>
-        <div class="preloader-text">CREATIVE PROFESSIONAL</div>
+        <span class="preloader-name">ANIL SHRESTHA</span>
+        <span class="preloader-line"></span>
+        <span class="preloader-status">CREATIVE PROFESSIONAL</span>
     </div>
 </div>
 
@@ -40,7 +34,6 @@
 <!-- =====================================================
      HEADER
 ====================================================== -->
-
 <header class="site-header" id="siteHeader">
 
     <div class="container header-inner">
@@ -49,30 +42,24 @@
             ANIL <span>SHRESTHA</span>
         </a>
 
-        <nav class="desktop-nav">
-
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#services">Services</a>
-            <a href="#experience">Career</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#recommendations">Recommendations</a>
-            <a href="#packages">Packages</a>
-            <a href="#contact">Contact</a>
-
+        <nav class="desktop-nav" id="desktopNav">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#software">SOFTWARE</a>
+            <a href="#services">SERVICES</a>
+            <a href="#career">CAREER</a>
+            <a href="#recommendations">RECOMMENDATIONS</a>
+            <a href="#packages">PACKAGE</a>
+            <a href="#contact">CONTACT</a>
         </nav>
-
-        <a href="#contact" class="header-cta">
-            Let's Talk
-        </a>
 
         <button
             class="mobile-menu-button"
             id="mobileMenuButton"
-            type="button"
-            aria-label="Open navigation menu"
+            aria-label="Open navigation"
             aria-expanded="false"
+            type="button"
         >
             <span></span>
             <span></span>
@@ -81,310 +68,334 @@
 
     </div>
 
-
-    <!-- MOBILE MENU -->
-
-    <div class="mobile-menu" id="mobileMenu">
-
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#services">Services</a>
-        <a href="#experience">Career</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#recommendations">Recommendations</a>
-        <a href="#packages">Packages</a>
-        <a href="#contact">Contact</a>
-
-    </div>
+    <nav class="mobile-nav" id="mobileMenu">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#software">SOFTWARE</a>
+        <a href="#services">SERVICES</a>
+        <a href="#career">CAREER</a>
+        <a href="#recommendations">RECOMMENDATIONS</a>
+        <a href="#packages">PACKAGE</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
 
 </header>
 
 
 <main>
 
+    <!-- =================================================
+         01 — HERO
+    ================================================== -->
+    <section class="hero section" id="home">
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
-
-    <section class="hero-section" id="home">
-
-        <div class="hero-background"></div>
+        <div class="hero-glow hero-glow-one"></div>
+        <div class="hero-glow hero-glow-two"></div>
 
         <div class="container hero-grid">
 
-            <div class="hero-content reveal">
+            <div class="hero-content">
 
                 <div class="eyebrow">
-                    ANIL SHRESTHA · CREATIVE PROFESSIONAL
+                    <span class="eyebrow-number">01</span>
+                    <span>ANIL SHRESTHA — CREATIVE PROFESSIONAL</span>
                 </div>
 
-                <h1>
-                    I CREATE
-                    <span>VISUAL STORIES.</span>
+                <h1 class="hero-title">
+                    <span>I CREATE</span>
+                    <strong>VISUAL</strong>
+                    <strong class="hero-accent">STORIES</strong>
                 </h1>
 
-                <p class="hero-description">
+                <div class="hero-role">
                     Graphic · Web · Multimedia Designer
                     <br>
                     Video Editor · Instructor
+                </div>
+
+                <p class="hero-description">
+                    I transform ideas into meaningful visual experiences through
+                    graphic design, branding, social media, web design,
+                    video editing and motion graphics.
                 </p>
 
-                <p class="hero-text">
-                    I create visual identities, digital experiences,
-                    social media content, videos, motion graphics and
-                    creative campaigns that help ideas communicate clearly.
-                </p>
+                <div class="availability">
+                    <span class="availability-dot"></span>
+                    Available for creative projects &amp; collaborations
+                </div>
 
                 <div class="hero-actions">
-
                     <a href="#portfolio" class="btn btn-primary">
                         Explore My Work
                     </a>
 
                     <a href="#contact" class="btn btn-outline">
-                        Start a Project
+                        Let's Talk
                     </a>
-
-                </div>
-
-                <div class="hero-status">
-                    <span class="status-dot"></span>
-                    Available for creative projects & collaborations
                 </div>
 
             </div>
 
 
-            <div class="hero-visual reveal">
+            <div class="hero-visual">
 
-                <div class="hero-image-frame">
+                <div class="portrait-aura aura-one"></div>
+                <div class="portrait-aura aura-two"></div>
+
+                <div class="portrait-frame">
+
+                    <div class="portrait-glow"></div>
 
                     <img
                         src="anil%20portrait.png"
-                        alt="Anil Shrestha"
+                        alt="Anil Shrestha portrait"
                         class="hero-portrait"
                     >
 
+                    <div class="portrait-fade"></div>
+
                 </div>
 
-                <div class="hero-image-glow"></div>
+                <div class="floating-card floating-card-one">
+                    <span class="floating-number">12+</span>
+                    <span>Creative Skills</span>
+                </div>
+
+                <div class="floating-card floating-card-two">
+                    <span class="floating-number">10</span>
+                    <span>Professional Tools</span>
+                </div>
 
             </div>
 
         </div>
 
-        <div class="hero-bottom-fade"></div>
-
     </section>
 
 
-    <!-- =====================================================
-         ABOUT
-    ====================================================== -->
-
+    <!-- =================================================
+         02 — ABOUT ME
+    ================================================== -->
     <section class="section about-section" id="about">
 
         <div class="container">
 
-            <div class="section-heading reveal">
-
-                <div class="section-number">
-                    01 — ABOUT
+            <div class="section-heading">
+                <div class="section-label">
+                    <span>02</span>
+                    ABOUT ME
                 </div>
 
                 <h2>
-                    Creative thinking.
-                    <span>Visual execution.</span>
+                    Creativity
+                    <span>with purpose.</span>
                 </h2>
+            </div>
+
+
+            <div class="about-layout">
+
+                <div class="profile-area">
+
+                    <div class="profile-photo-card">
+
+                        <div class="profile-photo-glow"></div>
+
+                        <img
+                            src="assets/profile/For-Profile.jpg"
+                            alt="Anil Shrestha"
+                            class="profile-photo"
+                        >
+
+                    </div>
+
+                    <div class="profile-copy">
+
+                        <div class="mini-label">CREATIVE PROFILE</div>
+
+                        <h3>
+                            Designer.<br>
+                            Editor.<br>
+                            Instructor.
+                        </h3>
+
+                        <p>
+                            A multidisciplinary creative professional focused
+                            on turning ideas into clear, memorable and useful
+                            visual communication.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <div class="about-intro">
+                        <span class="section-label small">MY APPROACH</span>
+
+                        <p>
+                            I work across graphic design, branding, digital
+                            content, web design, video editing and motion
+                            graphics. My approach combines creative thinking,
+                            practical communication and attention to detail.
+                        </p>
+                    </div>
+
+
+                    <div class="about-stats">
+
+                        <article class="stat-card">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-title">Creative Skills</span>
+                            <p>Design and digital capabilities.</p>
+                        </article>
+
+                        <article class="stat-card">
+                            <span class="stat-number">10</span>
+                            <span class="stat-title">Software Tools</span>
+                            <p>Professional creative applications.</p>
+                        </article>
+
+                        <article class="stat-card">
+                            <span class="stat-number">360°</span>
+                            <span class="stat-title">Creative Approach</span>
+                            <p>From concept to final delivery.</p>
+                        </article>
+
+                        <article class="stat-card">
+                            <span class="stat-number">01</span>
+                            <span class="stat-title">Creative Vision</span>
+                            <p>Meaningful visual communication.</p>
+                        </article>
+
+                        <article class="stat-card">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-title">Ideas</span>
+                            <p>Always exploring new possibilities.</p>
+                        </article>
+
+                        <article class="stat-card">
+                            <span class="stat-number">01</span>
+                            <span class="stat-title">Purpose</span>
+                            <p>Create work that communicates.</p>
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         03 — SKILLS
+    ================================================== -->
+    <section class="section skills-section" id="skills">
+
+        <div class="container">
+
+            <div class="split-heading">
+
+                <div>
+                    <div class="section-label">
+                        <span>03</span>
+                        SKILLS
+                    </div>
+
+                    <h2>
+                        What I
+                        <span>create.</span>
+                    </h2>
+                </div>
 
                 <p>
-                    A multidisciplinary creative professional focused on
-                    design, digital media, branding and visual communication.
+                    Creative skills developed across visual communication,
+                    digital media, branding and content production.
                 </p>
 
             </div>
 
 
-            <div class="about-grid">
+            <div class="skills-grid">
 
-                <div class="about-content reveal">
+                <article class="skill-card">
+                    <span>01</span>
+                    <h3>Graphic Design</h3>
+                    <p>Visual communication for digital and print.</p>
+                </article>
 
-                    <p>
-                        I am Anil Shrestha, a Graphic, Web & Multimedia
-                        Designer, Video Editor and Instructor with experience
-                        across creative design, printing, publishing,
-                        branding, events and digital media.
-                    </p>
+                <article class="skill-card">
+                    <span>02</span>
+                    <h3>Social Media Design</h3>
+                    <p>Engaging visual content for social platforms.</p>
+                </article>
 
-                    <p>
-                        My approach combines creative ideas with practical
-                        execution — from a single social media design to
-                        complete visual communication systems for businesses
-                        and organizations.
-                    </p>
+                <article class="skill-card">
+                    <span>03</span>
+                    <h3>Branding</h3>
+                    <p>Identity systems with consistent visual direction.</p>
+                </article>
 
-                    <p>
-                        I work across graphic design, social media design,
-                        branding, web design, video editing, motion graphics,
-                        print design and digital content creation.
-                    </p>
+                <article class="skill-card">
+                    <span>04</span>
+                    <h3>Web Design</h3>
+                    <p>Modern layouts and visual web experiences.</p>
+                </article>
 
-                </div>
+                <article class="skill-card">
+                    <span>05</span>
+                    <h3>Video Editing</h3>
+                    <p>Story-driven editing for digital content.</p>
+                </article>
 
+                <article class="skill-card">
+                    <span>06</span>
+                    <h3>Motion Graphics</h3>
+                    <p>Animated graphics and visual storytelling.</p>
+                </article>
 
-                <div class="about-stats reveal">
+                <article class="skill-card">
+                    <span>07</span>
+                    <h3>Print Design</h3>
+                    <p>Posters, banners, publications and promotional materials.</p>
+                </article>
 
-                    <div class="stat-box">
-                        <strong>10+</strong>
-                        <span>Years of Creative Experience</span>
-                    </div>
+                <article class="skill-card">
+                    <span>08</span>
+                    <h3>UI / UX Design</h3>
+                    <p>Clear interfaces designed around usability.</p>
+                </article>
 
-                    <div class="stat-box">
-                        <strong>12+</strong>
-                        <span>Creative Skills</span>
-                    </div>
+                <article class="skill-card">
+                    <span>09</span>
+                    <h3>Photo Editing</h3>
+                    <p>Retouching, compositing and image enhancement.</p>
+                </article>
 
-                    <div class="stat-box">
-                        <strong>10+</strong>
-                        <span>Creative Software Tools</span>
-                    </div>
+                <article class="skill-card">
+                    <span>10</span>
+                    <h3>Content Creation</h3>
+                    <p>Visual content concepts for brands and campaigns.</p>
+                </article>
 
-                    <div class="stat-box">
-                        <strong>360°</strong>
-                        <span>Creative Services</span>
-                    </div>
+                <article class="skill-card">
+                    <span>11</span>
+                    <h3>Digital Marketing</h3>
+                    <p>Creative support for digital campaigns.</p>
+                </article>
 
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SKILLS / EXPERTISE
-    ====================================================== -->
-
-    <section class="section skills-section" id="skills">
-
-        <div class="container">
-
-            <div class="section-heading reveal">
-
-                <div class="section-number">
-                    02 — EXPERTISE
-                </div>
-
-                <h2>
-                    What I
-                    <span>create.</span>
-                </h2>
-
-            </div>
-
-
-            <div class="skills-layout">
-
-                <div class="skills-intro reveal">
-
-                    <div class="mini-label">
-                        CREATIVE PROFILE
-                    </div>
-
-                    <h3>
-                        Design is not only
-                        <span>how it looks.</span>
-                    </h3>
-
-                    <p>
-                        It is how an idea is understood, remembered and
-                        experienced. I combine visual design, storytelling,
-                        technology and communication to build meaningful
-                        creative work.
-                    </p>
-
-                </div>
-
-
-                <div class="skills-grid">
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">01</span>
-                        <h3>Graphic Design</h3>
-                        <p>Creative visual communication and design systems.</p>
-                    </div>
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">02</span>
-                        <h3>Social Media Design</h3>
-                        <p>Engaging content for digital platforms and campaigns.</p>
-                    </div>
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">03</span>
-                        <h3>Branding</h3>
-                        <p>Visual identities, brand systems and communication.</p>
-                    </div>
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">04</span>
-                        <h3>Web Design</h3>
-                        <p>Modern layouts and responsive digital experiences.</p>
-                    </div>
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">05</span>
-                        <h3>Video Editing</h3>
-                        <p>Professional editing for social, promotional and creative videos.</p>
-                    </div>
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">06</span>
-                        <h3>Motion Graphics</h3>
-                        <p>Animated visuals, titles, transitions and storytelling.</p>
-                    </div>
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">07</span>
-                        <h3>Print Design</h3>
-                        <p>Posters, brochures, banners, publications and print materials.</p>
-                    </div>
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">08</span>
-                        <h3>UI / UX Design</h3>
-                        <p>Clear, functional and user-focused interface concepts.</p>
-                    </div>
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">09</span>
-                        <h3>Photo Editing</h3>
-                        <p>Retouching, compositing, correction and creative manipulation.</p>
-                    </div>
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">10</span>
-                        <h3>Content Creation</h3>
-                        <p>Creative visual content for brands and organizations.</p>
-                    </div>
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">11</span>
-                        <h3>Digital Marketing</h3>
-                        <p>Creative communication for digital campaigns and audiences.</p>
-                    </div>
-
-                    <div class="skill-item reveal">
-                        <span class="skill-number">12</span>
-                        <h3>Creative Direction</h3>
-                        <p>Concept development, visual direction and campaign execution.</p>
-                    </div>
-
-                </div>
+                <article class="skill-card">
+                    <span>12</span>
+                    <h3>Creative Direction</h3>
+                    <p>Visual concepts, consistency and creative planning.</p>
+                </article>
 
             </div>
 
@@ -393,79 +404,86 @@
     </section>
 
 
-    <!-- =====================================================
-         SOFTWARE
-    ====================================================== -->
-
+    <!-- =================================================
+         04 — SOFTWARE
+    ================================================== -->
     <section class="section software-section" id="software">
 
         <div class="container">
 
-            <div class="section-heading reveal">
+            <div class="split-heading software-heading">
 
-                <div class="section-number">
-                    03 — SOFTWARE
+                <div>
+                    <div class="section-label">
+                        <span>04</span>
+                        SOFTWARE
+                    </div>
+
+                    <h2>
+                        Tools
+                        <span>I work with.</span>
+                    </h2>
                 </div>
 
-                <h2>
-                    Tools behind
-                    <span>the work.</span>
-                </h2>
+                <p>
+                    A practical creative toolkit for design, video,
+                    motion, publishing and digital production.
+                </p>
 
             </div>
 
 
             <div class="software-grid">
 
-                <div class="software-item reveal">
-                    <img src="assets/icon/photoshop.svg" alt="Adobe Photoshop">
+                <article class="software-card">
+                    <img src="assets/icon/photoshop.svg" alt="Photoshop">
                     <span>Photoshop</span>
-                </div>
+                </article>
 
-                <div class="software-item reveal">
-                    <img src="assets/icon/illustrator.svg" alt="Adobe Illustrator">
+                <article class="software-card">
+                    <img src="assets/icon/illustrator.svg" alt="Illustrator">
                     <span>Illustrator</span>
-                </div>
+                </article>
 
-                <div class="software-item reveal">
-                    <img src="assets/icon/premiere%20pro.svg" alt="Adobe Premiere Pro">
+                <article class="software-card">
+                    <img src="assets/icon/premiere pro.svg" alt="Premiere Pro">
                     <span>Premiere Pro</span>
-                </div>
+                </article>
 
-                <div class="software-item reveal">
-                    <img src="assets/icon/After%20Effects.svg" alt="Adobe After Effects">
+                <article class="software-card">
+                    <img src="assets/icon/After Effects.svg" alt="After Effects">
                     <span>After Effects</span>
-                </div>
+                </article>
 
-                <div class="software-item reveal">
+                <article class="software-card">
                     <img src="assets/icon/Canva.svg" alt="Canva">
                     <span>Canva</span>
-                </div>
+                </article>
 
-                <div class="software-item reveal">
+                <article class="software-card">
                     <img src="assets/icon/Capcut.svg" alt="CapCut">
                     <span>CapCut</span>
-                </div>
+                </article>
 
-                <div class="software-item reveal">
+                <article class="software-card">
                     <img src="assets/icon/Figma.svg" alt="Figma">
                     <span>Figma</span>
-                </div>
+                </article>
 
-                <div class="software-item reveal">
-                    <img src="assets/icon/Corel%20Draw.svg" alt="CorelDRAW">
+                <article class="software-card">
+                    <img src="assets/icon/Corel Draw.svg" alt="CorelDRAW">
                     <span>CorelDRAW</span>
-                </div>
+                </article>
 
-                <div class="software-item reveal">
-                    <img src="assets/icon/Indesign.svg" alt="Adobe InDesign">
+                <article class="software-card">
+                    <img src="assets/icon/Indesign.svg" alt="InDesign">
                     <span>InDesign</span>
-                </div>
+                </article>
 
-                <div class="software-item reveal">
-                    <img src="assets/icon/VN%20editor.svg" alt="VN Editor">
+                <article class="software-card">
+                    <img src="assets/icon/VN editor.svg" alt="VN Editor">
                     <span>VN Editor</span>
-                </div>
+                </article>
 
             </div>
 
@@ -474,81 +492,79 @@
     </section>
 
 
-    <!-- =====================================================
-         SERVICES
-    ====================================================== -->
-
+    <!-- =================================================
+         05 — SERVICES
+    ================================================== -->
     <section class="section services-section" id="services">
 
         <div class="container">
 
-            <div class="section-heading reveal">
-
-                <div class="section-number">
-                    04 — SERVICES
+            <div class="section-heading">
+                <div class="section-label">
+                    <span>05</span>
+                    SERVICES
                 </div>
 
                 <h2>
-                    Creative services
-                    <span>for real projects.</span>
+                    Creative
+                    <span>services.</span>
                 </h2>
-
             </div>
 
 
             <div class="services-grid">
 
-                <article class="service-card reveal">
+                <article class="service-card">
                     <span class="service-number">01</span>
                     <h3>Graphic Design</h3>
                     <p>
-                        Posters, banners, advertisements, brochures,
-                        social media creatives and visual communication.
+                        Posters, banners, advertisements, promotional
+                        materials and digital graphics.
                     </p>
                 </article>
 
-                <article class="service-card reveal">
+                <article class="service-card">
                     <span class="service-number">02</span>
-                    <h3>Brand Identity</h3>
+                    <h3>Branding</h3>
                     <p>
-                        Logo design, brand identity systems, guidelines
-                        and complete visual branding.
+                        Visual identity, brand assets and consistent
+                        communication systems.
                     </p>
                 </article>
 
-                <article class="service-card reveal">
+                <article class="service-card">
                     <span class="service-number">03</span>
                     <h3>Social Media</h3>
                     <p>
-                        Social media graphics, campaign creatives,
-                        reels and digital content packages.
+                        Creative social campaigns, posts, stories,
+                        covers and promotional content.
                     </p>
                 </article>
 
-                <article class="service-card reveal">
+                <article class="service-card">
                     <span class="service-number">04</span>
+                    <h3>Web Design</h3>
+                    <p>
+                        Portfolio websites, landing pages and
+                        visually focused digital experiences.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <span class="service-number">05</span>
                     <h3>Video Editing</h3>
                     <p>
-                        Promotional videos, reels, social content,
-                        event videos and creative edits.
+                        Promotional videos, reels, social content
+                        and narrative editing.
                     </p>
                 </article>
 
-                <article class="service-card reveal">
-                    <span class="service-number">05</span>
+                <article class="service-card">
+                    <span class="service-number">06</span>
                     <h3>Motion Graphics</h3>
                     <p>
                         Animated titles, promotional graphics,
-                        logo animation and visual effects.
-                    </p>
-                </article>
-
-                <article class="service-card reveal">
-                    <span class="service-number">06</span>
-                    <h3>Web & Digital</h3>
-                    <p>
-                        Portfolio websites, landing pages, digital
-                        layouts and online creative experiences.
+                        transitions and motion-based storytelling.
                     </p>
                 </article>
 
@@ -559,280 +575,153 @@
     </section>
 
 
-    <!-- =====================================================
-         CAREER / PROFESSIONAL EXPERIENCE
-    ====================================================== -->
-
-    <section class="section experience-section" id="experience">
-
-        <div class="container">
-
-            <div class="section-heading reveal">
-
-                <div class="section-number">
-                    05 — CAREER
-                </div>
-
-                <h2>
-                    Professional
-                    <span>experience.</span>
-                </h2>
-
-                <p>
-                    Experience across creative design, business,
-                    printing, publishing, events and organizations.
-                </p>
-
-            </div>
-
-
-            <div class="experience-list">
-
-                <article class="experience-item reveal">
-
-                    <div class="experience-year">
-                        2018 — 2026
-                    </div>
-
-                    <div class="experience-content">
-
-                        <h3>Owner / Managing Director</h3>
-
-                        <h4>
-                            Cafe Restaurant & Thakali Bhanchha
-                        </h4>
-
-                        <p>
-                            Business management, operations,
-                            customer communication, promotion and
-                            creative development.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="experience-item reveal">
-
-                    <div class="experience-year">
-                        2017 — 2026
-                    </div>
-
-                    <div class="experience-content">
-
-                        <h3>
-                            Founder / CEO / Managing Director
-                        </h3>
-
-                        <h4>
-                            Designing / Printing / Publishing Media
-                        </h4>
-
-                        <p>
-                            Creative direction, graphic design,
-                            printing, publishing, client management
-                            and business operations.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="experience-item reveal">
-
-                    <div class="experience-year">
-                        2016 — 2023
-                    </div>
-
-                    <div class="experience-content">
-
-                        <h3>
-                            Co-Secretary / Board of Directors
-                        </h3>
-
-                        <h4>
-                            Saving & Credit Co-Operative
-                        </h4>
-
-                        <p>
-                            Organizational coordination, administrative
-                            responsibilities and board-level participation.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="experience-item reveal">
-
-                    <div class="experience-year">
-                        2016 — 2018
-                    </div>
-
-                    <div class="experience-content">
-
-                        <h3>
-                            Head Graphic Designer
-                        </h3>
-
-                        <h4>
-                            Arts & Flex Prints
-                        </h4>
-
-                        <p>
-                            Graphic design, print production, creative
-                            concepts and visual communication.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="experience-item reveal">
-
-                    <div class="experience-year">
-                        2015 — 2017
-                    </div>
-
-                    <div class="experience-content">
-
-                        <h3>
-                            Event Manager / Art Director
-                        </h3>
-
-                        <h4>
-                            Event Management Company
-                        </h4>
-
-                        <p>
-                            Event coordination, creative direction,
-                            visual concepts and promotional materials.
-                        </p>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         PORTFOLIO
-    ====================================================== -->
-
+    <!-- =================================================
+         06 — PORTFOLIO
+    ================================================== -->
     <section class="section portfolio-section" id="portfolio">
 
         <div class="container">
 
-            <div class="section-heading reveal">
+            <div class="portfolio-top">
 
-                <div class="section-number">
-                    06 — PORTFOLIO
+                <div>
+                    <div class="section-label">
+                        <span>06</span>
+                        PORTFOLIO
+                    </div>
+
+                    <h2>
+                        Portfolio —
+                        <span>Works.</span>
+                    </h2>
                 </div>
 
-                <h2>
-                    Selected
-                    <span>creative work.</span>
-                </h2>
+                <div class="portfolio-filters">
+                    <button class="filter-button active" data-filter="all">
+                        All
+                    </button>
+                    <button class="filter-button" data-filter="graphic">
+                        Graphic Design
+                    </button>
+                    <button class="filter-button" data-filter="branding">
+                        Branding
+                    </button>
+                    <button class="filter-button" data-filter="social">
+                        Social Media
+                    </button>
+                    <button class="filter-button" data-filter="video">
+                        Video
+                    </button>
+                </div>
 
             </div>
 
 
             <div class="portfolio-grid">
 
-                <article class="portfolio-card portfolio-large reveal">
+                <article class="portfolio-card" data-category="graphic">
 
-                    <div class="portfolio-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=85"
-                            alt="Brand identity project"
-                            loading="lazy"
-                        >
+                    <div class="portfolio-image visual-one">
+                        <span>GRAPHIC DESIGN</span>
                     </div>
 
                     <div class="portfolio-info">
-                        <span>Branding</span>
-                        <h3>Visual Identity</h3>
+                        <span class="portfolio-category">01 / GRAPHIC</span>
+                        <h3>Visual Campaign</h3>
+                        <p>
+                            Promotional graphics and visual communication
+                            designed for a strong first impression.
+                        </p>
                     </div>
 
                 </article>
 
 
-                <article class="portfolio-card reveal">
+                <article class="portfolio-card" data-category="branding">
 
-                    <div class="portfolio-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=1000&q=85"
-                            alt="Graphic design project"
-                            loading="lazy"
-                        >
+                    <div class="portfolio-image visual-two">
+                        <span>BRANDING</span>
                     </div>
 
                     <div class="portfolio-info">
-                        <span>Graphic Design</span>
-                        <h3>Creative Campaign</h3>
+                        <span class="portfolio-category">02 / BRANDING</span>
+                        <h3>Brand Identity</h3>
+                        <p>
+                            Identity direction combining logo, typography
+                            and supporting visual elements.
+                        </p>
                     </div>
 
                 </article>
 
 
-                <article class="portfolio-card reveal">
+                <article class="portfolio-card" data-category="social">
 
-                    <div class="portfolio-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1613909207039-6b173b755cc1?auto=format&fit=crop&w=1000&q=85"
-                            alt="Digital design project"
-                            loading="lazy"
-                        >
+                    <div class="portfolio-image visual-three">
+                        <span>SOCIAL MEDIA</span>
                     </div>
 
                     <div class="portfolio-info">
-                        <span>Digital</span>
-                        <h3>Social Media Creative</h3>
+                        <span class="portfolio-category">03 / SOCIAL</span>
+                        <h3>Social Campaign</h3>
+                        <p>
+                            Social media visuals created for consistent
+                            digital communication.
+                        </p>
                     </div>
 
                 </article>
 
 
-                <article class="portfolio-card reveal">
+                <article class="portfolio-card" data-category="video">
 
-                    <div class="portfolio-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1000&q=85"
-                            alt="Event creative project"
-                            loading="lazy"
-                        >
+                    <div class="portfolio-image visual-four">
+                        <span>VIDEO</span>
                     </div>
 
                     <div class="portfolio-info">
-                        <span>Events</span>
-                        <h3>Event Visuals</h3>
+                        <span class="portfolio-category">04 / VIDEO</span>
+                        <h3>Video Story</h3>
+                        <p>
+                            Edited visual storytelling for digital
+                            and promotional content.
+                        </p>
                     </div>
 
                 </article>
 
 
-                <article class="portfolio-card portfolio-wide reveal">
+                <article class="portfolio-card" data-category="graphic">
 
-                    <div class="portfolio-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85"
-                            alt="Creative workspace project"
-                            loading="lazy"
-                        >
+                    <div class="portfolio-image visual-five">
+                        <span>PRINT DESIGN</span>
                     </div>
 
                     <div class="portfolio-info">
-                        <span>Creative Direction</span>
-                        <h3>Digital Experience</h3>
+                        <span class="portfolio-category">05 / PRINT</span>
+                        <h3>Print Collection</h3>
+                        <p>
+                            Print-focused creative materials designed
+                            for practical communication.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="portfolio-card" data-category="branding">
+
+                    <div class="portfolio-image visual-six">
+                        <span>CREATIVE DIRECTION</span>
+                    </div>
+
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">06 / CREATIVE</span>
+                        <h3>Creative Direction</h3>
+                        <p>
+                            Concept development and visual direction
+                            for a complete creative project.
+                        </p>
                     </div>
 
                 </article>
@@ -844,141 +733,272 @@
     </section>
 
 
-    <!-- =====================================================
-         RECOMMENDATIONS
-    ====================================================== -->
-
-    <section class="section recommendations-section" id="recommendations">
+    <!-- =================================================
+         07 + 08 — CAREER / RECOMMENDATIONS
+    ================================================== -->
+    <section class="section career-section" id="career">
 
         <div class="container">
 
-            <div class="section-heading reveal">
+            <div class="career-recommendation-grid">
 
-                <div class="section-number">
-                    07 — RECOMMENDATIONS
+                <!-- CAREER -->
+                <div class="career-column">
+
+                    <div class="section-label">
+                        <span>07</span>
+                        CAREER JOURNEY
+                    </div>
+
+                    <h2>
+                        Professional
+                        <span>Experiences.</span>
+                    </h2>
+
+
+                    <div class="career-timeline">
+
+                        <article class="career-item">
+
+                            <div class="career-date">
+                                2018<br>
+                                <span>— 2026</span>
+                            </div>
+
+                            <div class="career-marker"></div>
+
+                            <div class="career-card">
+                                <span>OWNER / MANAGING DIRECTOR</span>
+                                <h3>Cafe Restaurant &amp; Thakali Bhanchha</h3>
+                                <p>
+                                    Business management, operations,
+                                    creative communication and customer-facing
+                                    brand activities.
+                                </p>
+                            </div>
+
+                        </article>
+
+
+                        <article class="career-item">
+
+                            <div class="career-date">
+                                2017<br>
+                                <span>— 2026</span>
+                            </div>
+
+                            <div class="career-marker"></div>
+
+                            <div class="career-card">
+                                <span>FOUNDER / CEO / MANAGING DIRECTOR</span>
+                                <h3>Designing / Printing / Publishing Media</h3>
+                                <p>
+                                    Creative business direction, design,
+                                    printing, publishing and client services.
+                                </p>
+                            </div>
+
+                        </article>
+
+
+                        <article class="career-item">
+
+                            <div class="career-date">
+                                2016<br>
+                                <span>— 2023</span>
+                            </div>
+
+                            <div class="career-marker"></div>
+
+                            <div class="career-card">
+                                <span>CO-SECRETARY / BOARD OF DIRECTORS</span>
+                                <h3>Saving &amp; Credit Co-Operative</h3>
+                                <p>
+                                    Organizational participation,
+                                    administration and board responsibilities.
+                                </p>
+                            </div>
+
+                        </article>
+
+
+                        <article class="career-item">
+
+                            <div class="career-date">
+                                2016<br>
+                                <span>— 2018</span>
+                            </div>
+
+                            <div class="career-marker"></div>
+
+                            <div class="career-card">
+                                <span>HEAD GRAPHIC DESIGNER</span>
+                                <h3>Arts &amp; Flex Prints</h3>
+                                <p>
+                                    Graphic design, print production and
+                                    visual communication projects.
+                                </p>
+                            </div>
+
+                        </article>
+
+
+                        <article class="career-item">
+
+                            <div class="career-date">
+                                2015<br>
+                                <span>— 2017</span>
+                            </div>
+
+                            <div class="career-marker"></div>
+
+                            <div class="career-card">
+                                <span>EVENT MANAGER / ART DIRECTOR</span>
+                                <h3>Event Management Company</h3>
+                                <p>
+                                    Event coordination, visual direction
+                                    and creative production.
+                                </p>
+                            </div>
+
+                        </article>
+
+                    </div>
+
                 </div>
 
-                <h2>
-                    Words from
-                    <span>people I worked with.</span>
-                </h2>
 
-                <p>
-                    Recommendations will be added with the consent
-                    of the respective individuals.
-                </p>
+                <!-- RECOMMENDATIONS -->
+                <div class="recommendation-column" id="recommendations">
 
-            </div>
-
-
-            <div class="recommendations-grid">
-
-                <article class="recommendation-card reveal">
-
-                    <div class="recommendation-mark">
-                        “
+                    <div class="section-label">
+                        <span>08</span>
+                        RECOMMENDATIONS
                     </div>
 
-                    <p>
-                        Recommendation coming soon.
+                    <h2>
+                        Professional
+                        <span>Testimonials.</span>
+                    </h2>
+
+                    <p class="recommendation-intro">
+                        Client and professional recommendations will be
+                        displayed here with permission.
                     </p>
 
-                    <div class="recommendation-person">
-                        <strong>Professional Recommendation</strong>
-                        <span>To be added with consent</span>
+
+                    <div class="recommendation-grid">
+
+                        <article class="recommendation-card">
+
+                            <div class="recommendation-person">
+                                <div class="vector-avatar">01</div>
+                                <div>
+                                    <strong>Client 01</strong>
+                                    <span>Client / Professional</span>
+                                </div>
+                            </div>
+
+                            <p>
+                                Recommendation text will be added after
+                                receiving the client's permission.
+                            </p>
+
+                        </article>
+
+
+                        <article class="recommendation-card">
+
+                            <div class="recommendation-person">
+                                <div class="vector-avatar">02</div>
+                                <div>
+                                    <strong>Client 02</strong>
+                                    <span>Client / Professional</span>
+                                </div>
+                            </div>
+
+                            <p>
+                                Recommendation text will be added after
+                                receiving the client's permission.
+                            </p>
+
+                        </article>
+
+
+                        <article class="recommendation-card">
+
+                            <div class="recommendation-person">
+                                <div class="vector-avatar">03</div>
+                                <div>
+                                    <strong>Client 03</strong>
+                                    <span>Client / Professional</span>
+                                </div>
+                            </div>
+
+                            <p>
+                                Recommendation text will be added after
+                                receiving the client's permission.
+                            </p>
+
+                        </article>
+
+
+                        <article class="recommendation-card">
+
+                            <div class="recommendation-person">
+                                <div class="vector-avatar">04</div>
+                                <div>
+                                    <strong>Client 04</strong>
+                                    <span>Client / Professional</span>
+                                </div>
+                            </div>
+
+                            <p>
+                                Recommendation text will be added after
+                                receiving the client's permission.
+                            </p>
+
+                        </article>
+
+
+                        <article class="recommendation-card">
+
+                            <div class="recommendation-person">
+                                <div class="vector-avatar">05</div>
+                                <div>
+                                    <strong>Client 05</strong>
+                                    <span>Client / Professional</span>
+                                </div>
+                            </div>
+
+                            <p>
+                                Recommendation text will be added after
+                                receiving the client's permission.
+                            </p>
+
+                        </article>
+
+
+                        <article class="recommendation-card">
+
+                            <div class="recommendation-person">
+                                <div class="vector-avatar">06</div>
+                                <div>
+                                    <strong>Client 06</strong>
+                                    <span>Client / Professional</span>
+                                </div>
+                            </div>
+
+                            <p>
+                                Recommendation text will be added after
+                                receiving the client's permission.
+                            </p>
+
+                        </article>
+
                     </div>
 
-                </article>
-
-
-                <article class="recommendation-card reveal">
-
-                    <div class="recommendation-mark">
-                        “
-                    </div>
-
-                    <p>
-                        Recommendation coming soon.
-                    </p>
-
-                    <div class="recommendation-person">
-                        <strong>Professional Recommendation</strong>
-                        <span>To be added with consent</span>
-                    </div>
-
-                </article>
-
-
-                <article class="recommendation-card reveal">
-
-                    <div class="recommendation-mark">
-                        “
-                    </div>
-
-                    <p>
-                        Recommendation coming soon.
-                    </p>
-
-                    <div class="recommendation-person">
-                        <strong>Professional Recommendation</strong>
-                        <span>To be added with consent</span>
-                    </div>
-
-                </article>
-
-
-                <article class="recommendation-card reveal">
-
-                    <div class="recommendation-mark">
-                        “
-                    </div>
-
-                    <p>
-                        Recommendation coming soon.
-                    </p>
-
-                    <div class="recommendation-person">
-                        <strong>Professional Recommendation</strong>
-                        <span>To be added with consent</span>
-                    </div>
-
-                </article>
-
-
-                <article class="recommendation-card reveal">
-
-                    <div class="recommendation-mark">
-                        “
-                    </div>
-
-                    <p>
-                        Recommendation coming soon.
-                    </p>
-
-                    <div class="recommendation-person">
-                        <strong>Professional Recommendation</strong>
-                        <span>To be added with consent</span>
-                    </div>
-
-                </article>
-
-
-                <article class="recommendation-card reveal">
-
-                    <div class="recommendation-mark">
-                        “
-                    </div>
-
-                    <p>
-                        Recommendation coming soon.
-                    </p>
-
-                    <div class="recommendation-person">
-                        <strong>Professional Recommendation</strong>
-                        <span>To be added with consent</span>
-                    </div>
-
-                </article>
+                </div>
 
             </div>
 
@@ -987,28 +1007,28 @@
     </section>
 
 
-    <!-- =====================================================
-         PACKAGES
-    ====================================================== -->
-
+    <!-- =================================================
+         09 — PACKAGES
+    ================================================== -->
     <section class="section packages-section" id="packages">
 
         <div class="container">
 
-            <div class="section-heading reveal">
+            <div class="section-heading">
 
-                <div class="section-number">
-                    08 — PACKAGES
+                <div class="section-label">
+                    <span>09</span>
+                    PACKAGES
                 </div>
 
                 <h2>
-                    Creative packages
-                    <span>for every scale.</span>
+                    Creative
+                    <span>Packages.</span>
                 </h2>
 
                 <p>
                     Flexible creative support for individuals,
-                    businesses, organizations and complete digital operations.
+                    brands and growing businesses.
                 </p>
 
             </div>
@@ -1016,301 +1036,323 @@
 
             <div class="packages-grid">
 
-
                 <!-- BRONZE -->
-
-                <article class="package-card bronze reveal">
+                <article class="package-card package-bronze">
 
                     <div class="package-top">
 
-                        <div class="package-icon">
-                            B
-                        </div>
-
-                        <div>
-                            <div class="package-label">
-                                BRONZE
+                        <div class="package-title">
+                            <div class="package-icon">01</div>
+                            <div>
+                                <span>BRONZE</span>
+                                <h3>Starter</h3>
                             </div>
+                        </div>
 
-                            <h3>
-                                Starter
-                            </h3>
+                        <div class="package-price">
+                            NPR 8,000
+                            <small>/ $60</small>
                         </div>
 
                     </div>
 
-                    <div class="package-price">
-                        <strong>NPR 8,000</strong>
-                        <span>/ $60</span>
+
+                    <div class="package-content">
+
+                        <div class="package-features">
+
+                            <div>5 Designs</div>
+                            <div>2 Posters / Banners</div>
+                            <div>1 Reel</div>
+                            <div>Basic Photo Editing</div>
+                            <div>Creative Concept</div>
+                            <div>2 Revisions</div>
+
+                        </div>
+
+                        <div class="package-meta">
+                            <span>Delivery: 3–5 Days</span>
+                        </div>
+
                     </div>
 
-                    <p class="package-description">
-                        Perfect for individuals and small creative needs.
-                    </p>
 
-                    <ul class="package-list">
+                    <div class="package-actions">
 
-                        <li>5 Social Media Designs</li>
-                        <li>2 Posters / Banners</li>
-                        <li>1 Short Reel</li>
-                        <li>Basic Photo Editing / Concept</li>
-                        <li>2 Revisions</li>
-                        <li>3–5 Working Days</li>
+                        <button
+                            type="button"
+                            class="package-more"
+                            data-package="Bronze"
+                        >
+                            View More
+                        </button>
 
-                    </ul>
+                        <button
+                            type="button"
+                            class="package-select"
+                            data-package="Bronze"
+                        >
+                            Select Package
+                        </button>
 
-                    <button
-                        class="package-button"
-                        type="button"
-                        data-package="Bronze — NPR 8,000"
-                    >
-                        Select Package
-                    </button>
+                    </div>
 
                 </article>
 
 
                 <!-- SILVER -->
-
-                <article class="package-card silver reveal">
+                <article class="package-card package-silver">
 
                     <div class="package-top">
 
-                        <div class="package-icon">
-                            S
-                        </div>
-
-                        <div>
-                            <div class="package-label">
-                                SILVER
+                        <div class="package-title">
+                            <div class="package-icon">02</div>
+                            <div>
+                                <span>SILVER</span>
+                                <h3>Professional</h3>
                             </div>
+                        </div>
 
-                            <h3>
-                                Professional
-                            </h3>
+                        <div class="package-price">
+                            NPR 18,000
+                            <small>/ $135</small>
                         </div>
 
                     </div>
 
-                    <div class="package-price">
-                        <strong>NPR 18,000</strong>
-                        <span>/ $135</span>
+
+                    <div class="package-content">
+
+                        <div class="package-features">
+
+                            <div>10 Designs</div>
+                            <div>4 Posters / Banners</div>
+                            <div>3 Reels</div>
+                            <div>Advanced Editing</div>
+                            <div>Brand Styling</div>
+                            <div>Source Files</div>
+
+                        </div>
+
+                        <div class="package-meta">
+                            <span>4 Revisions · 5–7 Days</span>
+                        </div>
+
                     </div>
 
-                    <p class="package-description">
-                        For businesses that need consistent monthly creative support.
-                    </p>
 
-                    <ul class="package-list">
+                    <div class="package-actions">
 
-                        <li>10 Social Media Designs</li>
-                        <li>4 Posters / Banners</li>
-                        <li>3 Reels</li>
-                        <li>Advanced Editing / Concept</li>
-                        <li>Brand Styling</li>
-                        <li>Source Files</li>
-                        <li>4 Revisions</li>
-                        <li>Priority Support</li>
-                        <li>5–7 Working Days</li>
+                        <button
+                            type="button"
+                            class="package-more"
+                            data-package="Silver"
+                        >
+                            View More
+                        </button>
 
-                    </ul>
+                        <button
+                            type="button"
+                            class="package-select"
+                            data-package="Silver"
+                        >
+                            Select Package
+                        </button>
 
-                    <button
-                        class="package-button"
-                        type="button"
-                        data-package="Silver — NPR 18,000"
-                    >
-                        Select Package
-                    </button>
+                    </div>
 
                 </article>
 
 
                 <!-- GOLD -->
-
-                <article class="package-card gold reveal">
+                <article class="package-card package-gold">
 
                     <div class="package-top">
 
-                        <div class="package-icon">
-                            G
-                        </div>
-
-                        <div>
-                            <div class="package-label">
-                                GOLD
+                        <div class="package-title">
+                            <div class="package-icon">03</div>
+                            <div>
+                                <span>GOLD</span>
+                                <h3>Advanced</h3>
                             </div>
+                        </div>
 
-                            <h3>
-                                Business
-                            </h3>
+                        <div class="package-price">
+                            NPR 35,000
+                            <small>/ $260</small>
                         </div>
 
                     </div>
 
-                    <div class="package-price">
-                        <strong>NPR 35,000</strong>
-                        <span>/ $260</span>
+
+                    <div class="package-content">
+
+                        <div class="package-features">
+
+                            <div>15 Designs</div>
+                            <div>6 Posters / Banners</div>
+                            <div>5 Reels</div>
+                            <div>Advanced Photo Editing</div>
+                            <div>Brand Creative Direction</div>
+                            <div>Source Files Included</div>
+
+                        </div>
+
+                        <div class="package-meta">
+                            <span>Priority Support · 7–10 Days</span>
+                        </div>
+
                     </div>
 
-                    <p class="package-description">
-                        A larger creative package for active businesses and campaigns.
-                    </p>
 
-                    <ul class="package-list">
+                    <div class="package-actions">
 
-                        <li>20 Social Media Designs</li>
-                        <li>8 Posters / Banners</li>
-                        <li>6 Reels / Short Videos</li>
-                        <li>Brand & Campaign Styling</li>
-                        <li>Advanced Photo Editing</li>
-                        <li>Source Files</li>
-                        <li>Multiple Creative Concepts</li>
-                        <li>6 Revisions</li>
-                        <li>Priority Delivery</li>
+                        <button
+                            type="button"
+                            class="package-more"
+                            data-package="Gold"
+                        >
+                            View More
+                        </button>
 
-                    </ul>
+                        <button
+                            type="button"
+                            class="package-select"
+                            data-package="Gold"
+                        >
+                            Select Package
+                        </button>
 
-                    <button
-                        class="package-button"
-                        type="button"
-                        data-package="Gold — NPR 35,000"
-                    >
-                        Select Package
-                    </button>
+                    </div>
 
                 </article>
 
 
                 <!-- PLATINUM -->
-
-                <article class="package-card platinum reveal">
-
-                    <div class="package-top">
-
-                        <div class="package-icon">
-                            P
-                        </div>
-
-                        <div>
-                            <div class="package-label">
-                                PLATINUM
-                            </div>
-
-                            <h3>
-                                Premium
-                            </h3>
-                        </div>
-
-                    </div>
-
-                    <div class="package-price">
-                        <strong>NPR 50,000</strong>
-                        <span>/ $375</span>
-                    </div>
-
-                    <p class="package-description">
-                        Premium creative support for established brands and organizations.
-                    </p>
-
-                    <ul class="package-list">
-
-                        <li>30 Social Media Designs</li>
-                        <li>10 Posters / Banners</li>
-                        <li>10 Reels / Short Videos</li>
-                        <li>Brand Creative Direction</li>
-                        <li>Campaign Concepts</li>
-                        <li>Advanced Video Editing</li>
-                        <li>Source Files</li>
-                        <li>Priority Communication</li>
-                        <li>Dedicated Creative Support</li>
-
-                    </ul>
-
-                    <button
-                        class="package-button"
-                        type="button"
-                        data-package="Platinum — NPR 50,000"
-                    >
-                        Select Package
-                    </button>
-
-                </article>
-
-
-                <!-- FULL DIGITAL -->
-
-                <article class="package-card full-digital reveal">
+                <article class="package-card package-platinum">
 
                     <div class="package-top">
 
-                        <div class="package-icon">
-                            FD
-                        </div>
-
-                        <div>
-                            <div class="package-label">
-                                FULL DIGITAL
+                        <div class="package-title">
+                            <div class="package-icon">04</div>
+                            <div>
+                                <span>PLATINUM</span>
+                                <h3>Premium</h3>
                             </div>
+                        </div>
 
-                            <h3>
-                                Digital Sector Handling
-                            </h3>
+                        <div class="package-price">
+                            NPR 50,000
+                            <small>/ $375</small>
                         </div>
 
                     </div>
 
-                    <div class="package-price">
-                        <strong>NPR 65,000</strong>
-                        <span>/ Month</span>
+
+                    <div class="package-content">
+
+                        <div class="package-features">
+
+                            <div>20 Designs</div>
+                            <div>8 Posters / Banners</div>
+                            <div>8 Reels</div>
+                            <div>Premium Photo Editing</div>
+                            <div>Complete Brand Styling</div>
+                            <div>Source Files Included</div>
+
+                        </div>
+
+                        <div class="package-meta">
+                            <span>Priority Support · 10–14 Days</span>
+                        </div>
+
                     </div>
 
-                    <p class="package-description">
-                        Complete monthly creative and digital content support
-                        for businesses and organizations.
-                    </p>
 
-                    <ul class="package-list">
+                    <div class="package-actions">
 
-                        <li>Up to 30 Social Media Designs / Month</li>
-                        <li>Up to 12 Posters / Banners / Month</li>
-                        <li>Up to 12 Reels / Short Videos / Month</li>
-                        <li>Monthly Content Creative Planning</li>
-                        <li>Brand Visual Management</li>
-                        <li>Photo Editing & Retouching</li>
-                        <li>Campaign Creative Support</li>
-                        <li>Basic Motion Graphics</li>
-                        <li>Source Files for Final Approved Work</li>
-                        <li>Monthly Creative Coordination</li>
-                        <li>Priority Support</li>
+                        <button
+                            type="button"
+                            class="package-more"
+                            data-package="Platinum"
+                        >
+                            View More
+                        </button>
 
-                    </ul>
+                        <button
+                            type="button"
+                            class="package-select"
+                            data-package="Platinum"
+                        >
+                            Select Package
+                        </button>
 
-                    <button
-                        class="package-button"
-                        type="button"
-                        data-package="Full Digital Sector Handling — NPR 65,000/month"
-                    >
-                        Select Package
-                    </button>
+                    </div>
 
                 </article>
 
             </div>
 
 
-            <!-- CUSTOM PACKAGE -->
+            <!-- FULL DIGITAL -->
+            <article class="full-digital-card">
 
-            <div class="custom-package reveal">
+                <div class="full-digital-number">05</div>
 
-                <div>
+                <div class="full-digital-content">
 
-                    <span class="custom-label">
-                        NEED SOMETHING DIFFERENT?
-                    </span>
+                    <span>FULL DIGITAL SECTOR HANDLING</span>
 
                     <h3>
-                        Create a custom package for your project.
+                        Complete creative support
+                        <strong>for your business.</strong>
+                    </h3>
+
+                    <p>
+                        Monthly creative handling for businesses that need
+                        an ongoing design and digital content partner.
+                    </p>
+
+                    <div class="monthly-limits">
+
+                        <span>Up to 25 Social Designs / Month</span>
+                        <span>Up to 10 Reels / Month</span>
+                        <span>Up to 8 Posters / Banners</span>
+                        <span>Creative Direction</span>
+                        <span>Brand Content Support</span>
+                        <span>Monthly Planning</span>
+
+                    </div>
+
+                </div>
+
+                <div class="full-digital-price">
+                    <strong>NPR 65,000</strong>
+                    <span>/ MONTH</span>
+
+                    <button
+                        type="button"
+                        class="package-select"
+                        data-package="Full Digital Sector Handling"
+                    >
+                        Discuss This Package
+                    </button>
+                </div>
+
+            </article>
+
+
+            <!-- CUSTOM -->
+            <article class="custom-package">
+
+                <div>
+                    <div class="section-label small">
+                        NEED SOMETHING DIFFERENT?
+                    </div>
+
+                    <h3>
+                        Create a custom package
+                        <span>for your project.</span>
                     </h3>
 
                     <p>
@@ -1318,150 +1360,158 @@
                         project quantity, complexity, creative requirements
                         and deadline.
                     </p>
-
                 </div>
 
-                <a href="#contact" class="btn btn-primary">
+                <a href="#contact" class="btn btn-gradient">
                     Let's Discuss
                 </a>
 
-            </div>
+            </article>
 
         </div>
 
     </section>
 
 
-    <!-- =====================================================
-         CONTACT
-    ====================================================== -->
-
+    <!-- =================================================
+         10 — CONTACT
+    ================================================== -->
     <section class="section contact-section" id="contact">
 
         <div class="container">
 
             <div class="contact-grid">
 
+                <div class="contact-details">
 
-                <div class="contact-content reveal">
-
-                    <div class="section-number">
-                        09 — CONTACT
+                    <div class="section-label">
+                        <span>10</span>
+                        CONTACT
                     </div>
 
                     <h2>
                         Let's create
-                        <span>something meaningful.</span>
+                        <span>something.</span>
                     </h2>
 
                     <p>
-                        Have a project, campaign, business idea or creative
-                        requirement? Send me a message and let's discuss it.
+                        Have a project, collaboration or creative idea?
+                        Get in touch and let's discuss how we can turn
+                        it into a meaningful visual experience.
                     </p>
 
 
-                    <div class="contact-details">
+                    <div class="contact-items">
 
-                        <div class="contact-item">
+                        <a
+                            href="mailto:babal6anil@gmail.com"
+                            class="contact-item"
+                        >
+                            <span class="contact-icon">@</span>
+                            <div>
+                                <small>EMAIL</small>
+                                <strong>babal6anil@gmail.com</strong>
+                            </div>
+                        </a>
 
-                            <span class="contact-label">
-                                EMAIL
-                            </span>
+                        <a
+                            href="mailto:anilsuryapal@gmail.com"
+                            class="contact-item"
+                        >
+                            <span class="contact-icon">@</span>
+                            <div>
+                                <small>EMAIL</small>
+                                <strong>anilsuryapal@gmail.com</strong>
+                            </div>
+                        </a>
 
-                            <a href="mailto:babal6anil@gmail.com">
-                                babal6anil@gmail.com
-                            </a>
+                        <a
+                            href="https://wa.me/9779815150233"
+                            class="contact-item"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span class="contact-icon">W</span>
+                            <div>
+                                <small>CALL / WHATSAPP</small>
+                                <strong>+977 9815150233</strong>
+                            </div>
+                        </a>
 
-                            <a href="mailto:anilsuryapal@gmail.com">
-                                anilsuryapal@gmail.com
-                            </a>
-
-                        </div>
-
-
-                        <div class="contact-item">
-
-                            <span class="contact-label">
-                                PHONE / WHATSAPP
-                            </span>
-
-                            <a href="tel:+9779815150233">
-                                +977 9815150233
-                            </a>
-
-                            <a href="tel:+9779846435100">
-                                +977 9846435100
-                            </a>
-
-                        </div>
+                        <a
+                            href="https://wa.me/9779846435100"
+                            class="contact-item"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span class="contact-icon">W</span>
+                            <div>
+                                <small>CALL / WHATSAPP</small>
+                                <strong>+977 9846435100</strong>
+                            </div>
+                        </a>
 
                     </div>
 
 
                     <div class="social-links">
 
-                        <a href="#" aria-label="Facebook">Facebook</a>
-                        <a href="#" aria-label="Instagram">Instagram</a>
-                        <a href="#" aria-label="TikTok">TikTok</a>
-                        <a href="#" aria-label="YouTube">YouTube</a>
-                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                        <a href="#" aria-label="Behance">Behance</a>
-                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="Facebook">FB</a>
+                        <a href="#" aria-label="Instagram">IG</a>
+                        <a href="#" aria-label="TikTok">TK</a>
+                        <a href="#" aria-label="YouTube">YT</a>
+                        <a href="#" aria-label="LinkedIn">LI</a>
+                        <a href="#" aria-label="Behance">BE</a>
+                        <a href="#" aria-label="Twitter">X</a>
 
                     </div>
 
                 </div>
 
 
-                <!-- CONTACT FORM -->
+                <div class="contact-form-card">
 
-                <div class="contact-form-wrapper reveal">
+                    <div class="form-heading">
+                        <span>START A PROJECT</span>
+                        <h3>Tell me about your idea.</h3>
+                    </div>
 
                     <form id="contactForm">
 
-                        <div class="form-group">
+                        <div class="form-row">
 
-                            <label for="name">
-                                Your Name
-                            </label>
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Your name"
+                                    required
+                                >
+                            </div>
 
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Enter your name"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="email">
-                                Email Address
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Enter your email"
-                                required
-                            >
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    required
+                                >
+                            </div>
 
                         </div>
 
 
                         <div class="form-group">
 
-                            <label for="project">
-                                Project Type
-                            </label>
+                            <label for="service">Service</label>
 
-                            <select id="project" name="project">
+                            <select id="service" name="service" required>
 
-                                <option value="">
+                                <option value="" selected disabled>
                                     Select a service
                                 </option>
 
@@ -1469,12 +1519,16 @@
                                     Graphic Design
                                 </option>
 
-                                <option value="Social Media Design">
+                                <option value="Branding">
+                                    Branding
+                                </option>
+
+                                <option value="Social Media">
                                     Social Media Design
                                 </option>
 
-                                <option value="Branding">
-                                    Branding
+                                <option value="Web Design">
+                                    Web Design
                                 </option>
 
                                 <option value="Video Editing">
@@ -1485,16 +1539,8 @@
                                     Motion Graphics
                                 </option>
 
-                                <option value="Web Design">
-                                    Web Design
-                                </option>
-
-                                <option value="Full Digital Handling">
-                                    Full Digital Handling
-                                </option>
-
-                                <option value="Other">
-                                    Other
+                                <option value="Custom Package">
+                                    Custom Package
                                 </option>
 
                             </select>
@@ -1504,9 +1550,7 @@
 
                         <div class="form-group">
 
-                            <label for="message">
-                                Project Details
-                            </label>
+                            <label for="message">Project Details</label>
 
                             <textarea
                                 id="message"
@@ -1523,13 +1567,12 @@
                             type="submit"
                             class="btn btn-primary form-submit"
                         >
-                            Send Message
+                            Send Project Enquiry
                         </button>
 
-
                         <div
-                            id="formMessage"
                             class="form-message"
+                            id="formMessage"
                             aria-live="polite"
                         ></div>
 
@@ -1549,51 +1592,23 @@
 <!-- =====================================================
      FOOTER
 ====================================================== -->
-
 <footer class="site-footer">
 
     <div class="container footer-inner">
 
-        <div class="footer-brand">
+        <a href="#home" class="footer-logo">
+            ANIL <span>SHRESTHA</span>
+        </a>
 
-            <a href="#home" class="logo">
-                ANIL <span>SHRESTHA</span>
-            </a>
+        <p>
+            Graphic · Web · Multimedia Designer
+            · Video Editor · Instructor
+        </p>
 
-            <p>
-                Graphic · Web · Multimedia Designer
-                <br>
-                Video Editor · Instructor
-            </p>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#services">Services</a>
-            <a href="#experience">Career</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#packages">Packages</a>
-            <a href="#contact">Contact</a>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <p>
-                © <span id="currentYear"></span> Anil Shrestha.
-                All rights reserved.
-            </p>
-
-            <a href="#home">
-                Back to top ↑
-            </a>
-
-        </div>
+        <span class="copyright">
+            © <span id="currentYear"></span> Anil Shrestha.
+            All rights reserved.
+        </span>
 
     </div>
 
@@ -1603,42 +1618,39 @@
 <!-- =====================================================
      PACKAGE MODAL
 ====================================================== -->
-
 <div
-    class="package-modal"
+    class="modal"
     id="packageModal"
     aria-hidden="true"
 >
 
+    <div class="modal-overlay" id="modalOverlay"></div>
+
     <div
-        class="modal-overlay"
-        id="modalOverlay"
-    ></div>
-
-
-    <div class="modal-content">
+        class="modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="selectedPackage"
+    >
 
         <button
+            type="button"
             class="modal-close"
             id="modalClose"
-            type="button"
-            aria-label="Close modal"
+            aria-label="Close"
         >
             ×
         </button>
 
+        <span class="modal-label">PACKAGE ENQUIRY</span>
 
-        <div class="modal-label">
-            PACKAGE SELECTED
-        </div>
-
-        <h2 id="selectedPackage">
+        <h3 id="selectedPackage">
             Selected Package
-        </h2>
+        </h3>
 
         <p>
-            Thank you for selecting this package.
-            Send your project details and I will get back to you.
+            Your package has been selected. Continue to the contact
+            section to discuss your requirements.
         </p>
 
         <a
@@ -1657,20 +1669,15 @@
 <!-- =====================================================
      BACK TO TOP
 ====================================================== -->
-
 <button
+    type="button"
     class="back-to-top"
     id="backToTop"
-    type="button"
     aria-label="Back to top"
 >
     ↑
 </button>
 
-
-<!-- =====================================================
-     JAVASCRIPT
-====================================================== -->
 
 <script src="script.js"></script>
 ```
