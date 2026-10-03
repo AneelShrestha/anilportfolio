@@ -41,221 +41,208 @@ function initMobileMenu() {
 
 function initPortfolioFilter() {
 
-  const portfolioItems =
-    document.querySelectorAll('.portfolio-item');
-
-  /*
-   * New category cards.
-   *
-   * Supported selectors:
-   * .category-card
-   * .portfolio-category
-   * .filter-btn
-   */
-  const categoryCards =
-    document.querySelectorAll(
-      '.category-card, .portfolio-category, .filter-btn'
-    );
-
-  if (!categoryCards.length || !portfolioItems.length) return;
-
-
   /* ------------------------------------------------------------------------
-     Find the portfolio containers
+     Category Elements
      ------------------------------------------------------------------------ */
 
   const categoryContainer =
-    document.querySelector(
-      '#portfolioCategories, .portfolio-categories, .category-grid'
-    );
+    document.getElementById('portfolioCategories');
 
-  const worksContainer =
-    document.querySelector(
-      '#portfolioWorks, .portfolio-works'
-    );
+  const categoryCards =
+    document.querySelectorAll('.portfolio-category-card');
+
+  const categoryButtons =
+    document.querySelectorAll('.portfolio-view-btn');
+
+  const portfolioItems =
+    document.querySelectorAll('.portfolio-item');
+
+
+  /*
+   * If the portfolio category section or buttons don't exist,
+   * stop here without affecting the rest of the website.
+   */
+
+  if (!categoryContainer || !categoryButtons.length) {
+    return;
+  }
 
 
   /* ------------------------------------------------------------------------
-     Create / locate Back button
+     Find / Create Works Container
+     ------------------------------------------------------------------------ */
+
+  let worksContainer =
+    document.getElementById('portfolioWorks');
+
+
+  /*
+   * If your existing HTML already has #portfolioWorks,
+   * we use it.
+   *
+   * If it doesn't, we create a container around the existing
+   * .portfolio-item elements.
+   */
+
+  if (!worksContainer && portfolioItems.length) {
+
+    worksContainer =
+      document.createElement('div');
+
+    worksContainer.id =
+      'portfolioWorks';
+
+    worksContainer.className =
+      'portfolio-works mt-12';
+
+
+    /*
+     * Move existing portfolio items into the works container.
+     */
+
+    const firstItem =
+      portfolioItems[0];
+
+    firstItem.parentNode.insertBefore(
+      worksContainer,
+      firstItem
+    );
+
+    portfolioItems.forEach(item => {
+      worksContainer.appendChild(item);
+    });
+
+  }
+
+
+  /* ------------------------------------------------------------------------
+     Back Button
      ------------------------------------------------------------------------ */
 
   let backButton =
     document.getElementById('portfolioBack');
 
-  if (!backButton && worksContainer) {
 
-    backButton = document.createElement('button');
+  if (!backButton) {
 
-    backButton.id = 'portfolioBack';
+    backButton =
+      document.createElement('button');
 
-    backButton.type = 'button';
+    backButton.id =
+      'portfolioBack';
+
+    backButton.type =
+      'button';
 
     backButton.className =
-      'inline-flex items-center gap-2 mb-8 px-5 py-3 rounded-full border border-slate-700 bg-slate-900/80 text-slate-300 hover:bg-cyan-500 hover:text-black transition-all duration-300';
+      'portfolio-back-btn';
 
     backButton.innerHTML =
       '<i class="fas fa-arrow-left"></i> Back to Categories';
 
-    worksContainer.parentNode.insertBefore(
-      backButton,
-      worksContainer
-    );
+    /*
+     * Add the Back button before the works area.
+     */
 
-    backButton.classList.add('hidden');
-  }
+    if (worksContainer) {
 
-
-  /* ------------------------------------------------------------------------
-     Optional category / works heading elements
-     ------------------------------------------------------------------------ */
-
-  const worksTitle =
-    document.getElementById('portfolioWorksTitle');
-
-  const worksSubtitle =
-    document.getElementById('portfolioWorksSubtitle');
-
-
-  /* ------------------------------------------------------------------------
-     Get category value
-     ------------------------------------------------------------------------ */
-
-  function getCategoryValue(card) {
-
-    return (
-      card.getAttribute('data-category') ||
-      card.getAttribute('data-filter') ||
-      card.dataset.category ||
-      card.dataset.filter ||
-      ''
-    ).trim();
-  }
-
-
-  /* ------------------------------------------------------------------------
-     Normalize category names
-     ------------------------------------------------------------------------ */
-
-  function normalizeCategory(value) {
-
-    return value
-      .toLowerCase()
-      .trim()
-      .replace(/\s+/g, '-')
-      .replace(/_/g, '-');
-  }
-
-
-  /* ------------------------------------------------------------------------
-     Show selected category
-     ------------------------------------------------------------------------ */
-
-  function showCategory(selectedCategory, clickedCard) {
-
-    const normalizedSelected =
-      normalizeCategory(selectedCategory);
-
-
-    /* --------------------------------------------------------------
-       Hide category cards
-       -------------------------------------------------------------- */
-
-    if (categoryContainer) {
-
-      categoryContainer.classList.add('hidden');
+      worksContainer.parentNode.insertBefore(
+        backButton,
+        worksContainer
+      );
 
     } else {
 
-      categoryCards.forEach(card => {
-        card.classList.add('hidden');
-      });
+      categoryContainer.parentNode.insertBefore(
+        backButton,
+        categoryContainer.nextSibling
+      );
 
     }
 
+  }
 
-    /* --------------------------------------------------------------
-       Show works container
-       -------------------------------------------------------------- */
+
+  /* ------------------------------------------------------------------------
+     Initially Hide Works
+     ------------------------------------------------------------------------ */
+
+  if (worksContainer) {
+    worksContainer.classList.add('hidden');
+  }
+
+  backButton.classList.add('hidden');
+
+
+  /*
+   * Hide individual works initially.
+   */
+
+  portfolioItems.forEach(item => {
+    item.classList.add('hidden-item');
+  });
+
+
+  /* ==========================================================================
+     SHOW SELECTED CATEGORY
+     ========================================================================== */
+
+  function showCategory(category) {
+
+    /* ----------------------------------------------------------------------
+       Hide Category Cards
+       ---------------------------------------------------------------------- */
+
+    categoryContainer.classList.add('hidden');
+
+
+    /* ----------------------------------------------------------------------
+       Show Works Container
+       ---------------------------------------------------------------------- */
 
     if (worksContainer) {
       worksContainer.classList.remove('hidden');
     }
 
 
-    /* --------------------------------------------------------------
-       Show Back button
-       -------------------------------------------------------------- */
+    /* ----------------------------------------------------------------------
+       Show Back Button
+       ---------------------------------------------------------------------- */
 
-    if (backButton) {
-      backButton.classList.remove('hidden');
-    }
+    backButton.classList.remove('hidden');
 
 
-    /* --------------------------------------------------------------
-       Get category name for heading
-       -------------------------------------------------------------- */
+    /* ----------------------------------------------------------------------
+       Filter Works
+       ---------------------------------------------------------------------- */
 
-    let categoryName = selectedCategory;
+    let visibleWorks =
+      0;
 
-    if (clickedCard) {
-
-      const titleElement =
-        clickedCard.querySelector(
-          'h1, h2, h3, h4, .category-title, .package-name'
-        );
-
-      if (titleElement) {
-        categoryName = titleElement.textContent.trim();
-      }
-    }
-
-
-    /* --------------------------------------------------------------
-       Update heading if available
-       -------------------------------------------------------------- */
-
-    if (worksTitle) {
-      worksTitle.textContent = categoryName;
-    }
-
-    if (worksSubtitle) {
-      worksSubtitle.textContent =
-        `Selected works from ${categoryName}`;
-    }
-
-
-    /* --------------------------------------------------------------
-       Filter works
-       -------------------------------------------------------------- */
-
-    let visibleCount = 0;
 
     portfolioItems.forEach(item => {
 
       const itemCategory =
-        item.getAttribute('data-category') ||
-        item.dataset.category ||
-        '';
-
-      const normalizedItem =
-        normalizeCategory(itemCategory);
+        item.getAttribute('data-category');
 
 
       /*
-       * Only show matching category.
+       * Show only matching category.
        *
-       * Maximum 5 works are displayed.
+       * Maximum = 5 works.
        */
 
       if (
-        normalizedItem === normalizedSelected &&
-        visibleCount < 5
+        itemCategory &&
+        itemCategory.toLowerCase() ===
+        category.toLowerCase() &&
+        visibleWorks < 5
       ) {
 
-        item.classList.remove('hidden');
         item.classList.remove('hidden-item');
+        item.classList.remove('hidden');
 
-        visibleCount++;
+        visibleWorks++;
 
       } else {
 
@@ -266,26 +253,87 @@ function initPortfolioFilter() {
     });
 
 
-    /* --------------------------------------------------------------
-       Scroll to portfolio works
-       -------------------------------------------------------------- */
+    /* ----------------------------------------------------------------------
+       Update Works Heading
+       ---------------------------------------------------------------------- */
+
+    let categoryName =
+      category;
+
+
+    const selectedCard =
+      document.querySelector(
+        `.portfolio-category-card[data-category-card="${category}"]`
+      );
+
+
+    if (selectedCard) {
+
+      const title =
+        selectedCard.querySelector('h3');
+
+      if (title) {
+        categoryName =
+          title.textContent.trim();
+      }
+
+    }
+
+
+    /*
+     * Create heading if one doesn't already exist.
+     */
+
+    let worksHeader =
+      document.getElementById('portfolioWorksHeader');
+
+
+    if (!worksHeader && worksContainer) {
+
+      worksHeader =
+        document.createElement('div');
+
+      worksHeader.id =
+        'portfolioWorksHeader';
+
+      worksHeader.className =
+        'mb-8';
+
+      worksContainer.insertBefore(
+        worksHeader,
+        worksContainer.firstChild
+      );
+
+    }
+
+
+    if (worksHeader) {
+
+      worksHeader.innerHTML = `
+        <span class="section-tag">SELECTED WORK</span>
+        <h3 class="section-title mt-3">
+          ${categoryName}
+        </h3>
+        <p class="section-description">
+          Selected creative works from ${categoryName}.
+        </p>
+      `;
+
+    }
+
+
+    /* ----------------------------------------------------------------------
+       Scroll to Works
+       ---------------------------------------------------------------------- */
 
     if (worksContainer) {
 
       setTimeout(() => {
 
-        const portfolioSection =
-          document.getElementById('work') ||
-          document.getElementById('portfolio');
-
-        if (portfolioSection) {
-
-          portfolioSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-
-        }
+        worksContainer.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
 
       }, 100);
 
@@ -294,168 +342,119 @@ function initPortfolioFilter() {
   }
 
 
-  /* ------------------------------------------------------------------------
-     Return to category cards
-     ------------------------------------------------------------------------ */
+  /* ==========================================================================
+     RETURN TO CATEGORIES
+     ========================================================================== */
 
   function showCategories() {
 
-    /* --------------------------------------------------------------
-       Hide works
-       -------------------------------------------------------------- */
+    /* ----------------------------------------------------------------------
+       Hide All Works
+       ---------------------------------------------------------------------- */
 
     portfolioItems.forEach(item => {
+
       item.classList.add('hidden-item');
+
     });
 
 
-    /* --------------------------------------------------------------
-       Hide works container
-       -------------------------------------------------------------- */
+    /* ----------------------------------------------------------------------
+       Hide Works Container
+       ---------------------------------------------------------------------- */
 
     if (worksContainer) {
+
       worksContainer.classList.add('hidden');
-    }
-
-
-    /* --------------------------------------------------------------
-       Show category cards
-       -------------------------------------------------------------- */
-
-    if (categoryContainer) {
-
-      categoryContainer.classList.remove('hidden');
-
-    } else {
-
-      categoryCards.forEach(card => {
-        card.classList.remove('hidden');
-      });
 
     }
 
 
-    /* --------------------------------------------------------------
-       Hide Back button
-       -------------------------------------------------------------- */
+    /* ----------------------------------------------------------------------
+       Hide Back Button
+       ---------------------------------------------------------------------- */
 
-    if (backButton) {
-      backButton.classList.add('hidden');
-    }
+    backButton.classList.add('hidden');
 
 
-    /* --------------------------------------------------------------
-       Clear heading
-       -------------------------------------------------------------- */
+    /* ----------------------------------------------------------------------
+       Show Category Cards
+       ---------------------------------------------------------------------- */
 
-    if (worksTitle) {
-      worksTitle.textContent = '';
-    }
-
-    if (worksSubtitle) {
-      worksSubtitle.textContent = '';
-    }
+    categoryContainer.classList.remove('hidden');
 
 
-    /* --------------------------------------------------------------
-       Scroll back to category area
-       -------------------------------------------------------------- */
+    /* ----------------------------------------------------------------------
+       Scroll Back to Portfolio Categories
+       ---------------------------------------------------------------------- */
 
-    const portfolioSection =
-      document.getElementById('work') ||
-      document.getElementById('portfolio');
+    setTimeout(() => {
 
-    if (portfolioSection) {
-
-      portfolioSection.scrollIntoView({
+      categoryContainer.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
 
-    }
+    }, 100);
 
   }
 
 
-  /* ------------------------------------------------------------------------
-     Category click events
-     ------------------------------------------------------------------------ */
+  /* ==========================================================================
+     EXPLORE WORK BUTTONS
+     ========================================================================== */
 
-  categoryCards.forEach(card => {
+  categoryButtons.forEach(button => {
 
-    card.addEventListener('click', (event) => {
+    button.addEventListener('click', event => {
 
       /*
-       * If the category card contains a normal link,
-       * don't allow it to navigate away.
+       * Prevent the button from doing anything
+       * other than opening the selected category.
        */
 
-      const link =
-        event.target.closest('a');
+      event.preventDefault();
+      event.stopPropagation();
 
-      if (link) {
 
-        const href =
-          link.getAttribute('href');
+      /*
+       * Read the exact value from:
+       *
+       * data-open-category="graphic"
+       * data-open-category="branding"
+       * data-open-category="social"
+       * data-open-category="web"
+       * data-open-category="video"
+       * data-open-category="print"
+       */
 
-        /*
-         * Allow actual navigation links unless
-         * they are placeholder/hash links.
-         */
+      const category =
+        button.getAttribute('data-open-category');
 
-        if (
-          href &&
-          href !== '#' &&
-          !href.startsWith('javascript:')
-        ) {
-          return;
-        }
 
-        event.preventDefault();
+      if (!category) {
+        return;
       }
 
 
-      const category =
-        getCategoryValue(card);
-
-      if (!category) return;
-
-      showCategory(category, card);
+      showCategory(category);
 
     });
 
   });
 
 
-  /* ------------------------------------------------------------------------
-     Back button click
-     ------------------------------------------------------------------------ */
+  /* ==========================================================================
+     BACK BUTTON
+     ========================================================================== */
 
-  if (backButton) {
+  backButton.addEventListener('click', event => {
 
-    backButton.addEventListener(
-      'click',
-      showCategories
-    );
+    event.preventDefault();
 
-  }
+    showCategories();
 
-
-  /* ------------------------------------------------------------------------
-     Initial portfolio state
-     ------------------------------------------------------------------------ */
-
-  portfolioItems.forEach(item => {
-    item.classList.add('hidden-item');
   });
-
-  if (worksContainer) {
-    worksContainer.classList.add('hidden');
-  }
-
-  if (backButton) {
-    backButton.classList.add('hidden');
-  }
 
 }
 
@@ -475,19 +474,16 @@ function initContactForm() {
   if (!form || !feedback) return;
 
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', event => {
 
-    e.preventDefault();
+    event.preventDefault();
 
-
-    /* --------------------------------------------------------------
-       Submit button
-       -------------------------------------------------------------- */
 
     const submitBtn =
       form.querySelector(
         'button[type="submit"]'
       );
+
 
     if (!submitBtn) return;
 
@@ -496,19 +492,20 @@ function initContactForm() {
       submitBtn.innerHTML;
 
 
-    /* --------------------------------------------------------------
-       Loading state
-       -------------------------------------------------------------- */
+    /* ----------------------------------------------------------------------
+       Loading State
+       ---------------------------------------------------------------------- */
 
     submitBtn.innerHTML =
       `<i class="fas fa-spinner fa-spin mr-2"></i> Sending...`;
 
-    submitBtn.disabled = true;
+    submitBtn.disabled =
+      true;
 
 
-    /* --------------------------------------------------------------
-       Simulated submission
-       -------------------------------------------------------------- */
+    /* ----------------------------------------------------------------------
+       Submission Response
+       ---------------------------------------------------------------------- */
 
     setTimeout(() => {
 
@@ -519,12 +516,11 @@ function initContactForm() {
       submitBtn.innerHTML =
         originalText;
 
-      submitBtn.disabled = false;
+      submitBtn.disabled =
+        false;
 
 
-      /* ------------------------------------------------------------
-         Hide success message after 5 seconds
-         ------------------------------------------------------------ */
+      /* Hide feedback after 5 seconds */
 
       setTimeout(() => {
 
@@ -607,16 +603,12 @@ function initModalHandlers() {
       }
 
 
-      /* --------------------------------------------------------------
-         Close modal after selecting package
-         -------------------------------------------------------------- */
+      /* Close modal */
 
       pkgModal.classList.add('hidden');
 
 
-      /* --------------------------------------------------------------
-         Scroll to contact
-         -------------------------------------------------------------- */
+      /* Scroll to contact */
 
       if (contactSection) {
 
@@ -630,12 +622,12 @@ function initModalHandlers() {
 
 
   /* ------------------------------------------------------------------------
-     Close modal when clicking outside content box
+     Close Modal When Clicking Outside
      ------------------------------------------------------------------------ */
 
-  pkgModal.addEventListener('click', (e) => {
+  pkgModal.addEventListener('click', event => {
 
-    if (e.target === pkgModal) {
+    if (event.target === pkgModal) {
 
       window.closePkgModal();
 
@@ -645,13 +637,13 @@ function initModalHandlers() {
 
 
   /* ------------------------------------------------------------------------
-     Close modal with Escape key
+     Close Modal With Escape
      ------------------------------------------------------------------------ */
 
-  document.addEventListener('keydown', (e) => {
+  document.addEventListener('keydown', event => {
 
     if (
-      e.key === 'Escape' &&
+      event.key === 'Escape' &&
       !pkgModal.classList.contains('hidden')
     ) {
 
