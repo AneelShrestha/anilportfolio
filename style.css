@@ -1438,21 +1438,88 @@ font-size: 22px;
 ========================================================= */
 
 /* =========================================================
-   MAIN CAREER LAYOUT
+   CAREER + SOCIAL CONNECTION
+   Balanced spacing and wider social panel
 ========================================================= */
 
 .career-layout {
-    width: 100%;
-
     display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(260px, 0.48fr);
-
-    gap: 2.75rem;
-
+    grid-template-columns: minmax(0, 700px) minmax(300px, 340px);
+    gap: 3.5rem;
     align-items: start;
+    justify-content: start;
+}
+
+/* Career side */
+.career-main {
+    width: 100%;
+    max-width: 700px;
+}
+
+/* Social Connection side */
+.career-social-panel {
+    width: 100%;
+    max-width: 340px;
+    box-sizing: border-box;
+}
+
+/* Keep social cards contained */
+.career-social-panel .social-preview-card {
+    position: relative !important;
+    inset: auto !important;
+    width: 100%;
+    max-width: 340px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .career-layout {
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 2.5rem;
+    }
+
+    .career-main {
+        max-width: 700px;
+    }
+
+    .career-social-panel,
+    .career-social-panel .social-preview-card {
+        max-width: 300px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .career-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .career-main,
+    .career-list,
+    .career-card {
+        max-width: 700px;
+    }
+
+    .career-social-panel {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .career-social-panel .social-preview-card {
+        max-width: 700px;
+    }
 }
 
 /* =========================================================
