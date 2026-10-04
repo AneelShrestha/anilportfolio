@@ -2850,222 +2850,107 @@ FINAL CONSOLIDATED VERSION
 
 
 /* =========================================================
-   RECOMMENDATIONS SECTION STYLES
+   RECOMMENDATIONS SECTION & BADGE FIXES
 ========================================================= */
 
-/* Main Section Background & Radial Glows */
+/* Section Outer Box */
 #recommendations {
   background-color: #070913;
   color: #ffffff;
   position: relative;
   overflow: hidden;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Background Ambient Lighting Effect */
-#recommendations::before {
-  content: "";
-  position: absolute;
-  top: -10%;
-  right: -5%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-  pointer-events-none: none;
-}
-
-/* ---------------------------------------------------------
-   SECTION HEADER
-----------------========================================= */
-
-#recommendations .mb-12::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 2px;
-  height: 38px;
-  background-color: #06b6d4;
-  box-shadow: 0 0 8px #06b6d4;
-}
-
-/* Recommendation Pill Tag */
-.section-tag {
-  display: inline-block;
-  padding: 0.25rem 1rem;
-  border-radius: 9999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #ffffff;
-  background: rgba(139, 92, 246, 0.12);
-  border: 1px solid rgba(168, 85, 247, 0.6);
-  box-shadow: 0 0 12px rgba(168, 85, 247, 0.35);
-  margin-bottom: 0.5rem;
-}
-
-/* Gradient Subheading ("People I've Worked With.") */
-#recommendations h3 {
+/* Gradient Heading Style */
+.text-gradient-cyan-purple {
   background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 50%, #a855f7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-/* =========================================================
-   VECTOR AVATAR & CARD FIXES
-========================================================= */
 
-/* Fix card layout so avatar sits side-by-side with Name & Title */
-.recommendation-card {
-  display: grid;
-  grid-template-columns: 4.5rem 1fr;
-  grid-template-rows: auto auto auto;
-  column-gap: 1rem;
-  row-gap: 0.25rem;
+/* Tag Badge (Fixes button styling issue completely) */
+.section-tag-badge {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  padding: 0.3rem 1.1rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.35);
+  text-transform: uppercase;
+  pointer-events: none; /* Prevents button behavior */
+  user-select: none;
 }
 
-/* Fix Avatar Container Box */
+
+/* =========================================================
+   CARD GRID & VECTOR AVATAR STYLES
+========================================================= */
+
+.recommendation-card {
+  position: relative;
+  background: rgba(11, 16, 28, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 4.25rem 1fr;
+  grid-template-rows: auto auto 1fr;
+  column-gap: 1.1rem;
+  row-gap: 0.2rem;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Vector Avatar Box */
 .recommendation-avatar {
   grid-column: 1;
   grid-row: 1 / span 2;
-  width: 4.5rem;
-  height: 4.5rem;
-  min-width: 4.5rem;
-  min-height: 4.5rem;
+  width: 4.25rem;
+  height: 4.25rem;
   border-radius: 9999px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   box-sizing: border-box;
 }
 
-/* Ensure SVG fills the container properly and inherits current color */
 .recommendation-avatar svg {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-/* ---------------------------------------------------------
-   AVATAR COLOR SCHEMES (Fixes missing/dark vector colors)
-----------------========================================= */
-
-/* Cyan Card Vector Style */
-.aura-cyan .recommendation-avatar {
-  background-color: rgba(6, 182, 212, 0.15);
-  border: 1.5px solid rgba(6, 182, 212, 0.5);
-  color: #06b6d4; /* Color for inline SVG fill="currentColor" */
-}
-
-/* Emerald / Teal Card Vector Style */
-.aura-emerald .recommendation-avatar {
-  background-color: rgba(20, 184, 166, 0.15);
-  border: 1.5px solid rgba(20, 184, 166, 0.5);
-  color: #14b8a6;
-}
-
-/* Pink Card Vector Style */
-.aura-pink .recommendation-avatar {
-  background-color: rgba(236, 72, 153, 0.15);
-  border: 1.5px solid rgba(236, 72, 153, 0.5);
-  color: #ec4899;
-}
-
-/* Purple Card Vector Style */
-.aura-purple .recommendation-avatar {
-  background-color: rgba(168, 85, 247, 0.15);
-  border: 1.5px solid rgba(168, 85, 247, 0.5);
-  color: #a855f7;
-}
-
-/* Adjust heading & text positioning around grid */
+/* Card Titles */
 .recommendation-card h3 {
   grid-column: 2;
   grid-row: 1;
-  margin: 0;
-  align-self: end;
-}
-
-.recommendation-card span {
-  grid-column: 2;
-  grid-row: 2;
-  align-self: start;
-}
-
-.recommendation-card p {
-  grid-column: 1 / span 2;
-  grid-row: 3;
-}
-
-
-/* ---------------------------------------------------------
-   RECOMMENDATION CARDS
-----------------========================================= */
-
-.recommendation-card {
-  position: relative;
-  background: rgba(13, 20, 36, 0.75);
-  backdrop-filter: blur(12px);
-  border-radius: 1rem;
-  padding: 1.75rem;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto auto;
-  column-gap: 1.25rem;
-  row-gap: 0.25rem;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.recommendation-card:hover {
-  transform: translateY(-4px);
-}
-
-/* Avatar Circle Container */
-.recommendation-avatar {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 9999px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.recommendation-avatar svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* Author Name */
-.recommendation-card h3 {
-  grid-column: 2;
-  grid-row: 1;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
   align-self: end;
-  -webkit-text-fill-color: initial; /* Resets gradient heading style */
 }
 
-/* Author Role */
+/* Card Role / Designation */
 .recommendation-card span {
   grid-column: 2;
   grid-row: 2;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #94a3b8;
   align-self: start;
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
   position: relative;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.65rem;
 }
 
-/* Colored Line Under Role */
+/* Colored horizontal divider line under role */
 .recommendation-card span::after {
   content: "";
   position: absolute;
@@ -3073,106 +2958,90 @@ FINAL CONSOLIDATED VERSION
   left: 0;
   width: 2rem;
   height: 2px;
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
-/* Testimonial Paragraph */
+/* Testimonial Quote Body */
 .recommendation-card p {
   grid-column: 1 / span 2;
   grid-row: 3;
-  margin-top: 1rem;
-  font-size: 0.875rem;
-  line-height: 1.6;
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
   color: #cbd5e1;
   position: relative;
-  padding-left: 1.75rem;
+  padding-left: 1.6rem;
 }
 
-/* Quote Icon Prefix */
+/* Quote Mark Prefix */
 .recommendation-card p::before {
   content: "“";
   position: absolute;
   left: 0;
-  top: -0.2rem;
+  top: -0.25rem;
   font-size: 2.2rem;
   font-family: Georgia, serif;
   line-height: 1;
 }
 
 
-/* ---------------------------------------------------------
-   CARD AURA & GLOW VARIATIONS
-----------------========================================= */
+/* =========================================================
+   AURA GLOW COLOR VARIATIONS
+========================================================= */
 
-/* Cyan Card */
+/* Cyan Card Glow */
 .aura-cyan {
   border: 1px solid rgba(6, 182, 212, 0.5);
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.12), inset 0 0 15px rgba(6, 182, 212, 0.05);
+  box-shadow: 0 0 18px rgba(6, 182, 212, 0.15);
 }
 .aura-cyan .recommendation-avatar {
-  background: rgba(6, 182, 212, 0.15);
-  border: 1px solid rgba(6, 182, 212, 0.4);
-  color: #06b6d4;
+  border: 1.5px solid rgba(6, 182, 212, 0.6);
 }
-.aura-cyan span::after {
-  background-color: #06b6d4;
-  box-shadow: 0 0 6px #06b6d4;
-}
+.aura-cyan span::after,
 .aura-cyan p::before {
+  background-color: #06b6d4;
   color: #06b6d4;
 }
 
-/* Emerald / Teal Card */
+/* Emerald / Teal Card Glow */
 .aura-emerald {
   border: 1px solid rgba(20, 184, 166, 0.5);
-  box-shadow: 0 0 20px rgba(20, 184, 166, 0.12), inset 0 0 15px rgba(20, 184, 166, 0.05);
+  box-shadow: 0 0 18px rgba(20, 184, 166, 0.15);
 }
 .aura-emerald .recommendation-avatar {
-  background: rgba(20, 184, 166, 0.15);
-  border: 1px solid rgba(20, 184, 166, 0.4);
-  color: #14b8a6;
+  border: 1.5px solid rgba(20, 184, 166, 0.6);
 }
-.aura-emerald span::after {
-  background-color: #14b8a6;
-  box-shadow: 0 0 6px #14b8a6;
-}
+.aura-emerald span::after,
 .aura-emerald p::before {
+  background-color: #14b8a6;
   color: #14b8a6;
 }
 
-/* Pink Card */
+/* Pink Card Glow */
 .aura-pink {
   border: 1px solid rgba(236, 72, 153, 0.5);
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.12), inset 0 0 15px rgba(236, 72, 153, 0.05);
+  box-shadow: 0 0 18px rgba(236, 72, 153, 0.15);
 }
 .aura-pink .recommendation-avatar {
-  background: rgba(236, 72, 153, 0.15);
-  border: 1px solid rgba(236, 72, 153, 0.4);
-  color: #ec4899;
+  border: 1.5px solid rgba(236, 72, 153, 0.6);
 }
-.aura-pink span::after {
-  background-color: #ec4899;
-  box-shadow: 0 0 6px #ec4899;
-}
+.aura-pink span::after,
 .aura-pink p::before {
+  background-color: #ec4899;
   color: #ec4899;
 }
 
-/* Purple Card */
+/* Purple Card Glow */
 .aura-purple {
   border: 1px solid rgba(168, 85, 247, 0.5);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.12), inset 0 0 15px rgba(168, 85, 247, 0.05);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.15);
 }
 .aura-purple .recommendation-avatar {
-  background: rgba(168, 85, 247, 0.15);
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  color: #a855f7;
+  border: 1.5px solid rgba(168, 85, 247, 0.6);
 }
-.aura-purple span::after {
-  background-color: #a855f7;
-  box-shadow: 0 0 6px #a855f7;
-}
+.aura-purple span::after,
 .aura-purple p::before {
+  background-color: #a855f7;
   color: #a855f7;
 }
 
