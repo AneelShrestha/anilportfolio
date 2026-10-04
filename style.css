@@ -2878,22 +2878,6 @@ FINAL CONSOLIDATED VERSION
    SECTION HEADER
 ----------------========================================= */
 
-#recommendations .mb-12 {
-  position: relative;
-  padding-left: 3rem;
-}
-
-#recommendations .mb-12::before {
-  content: "07";
-  position: absolute;
-  left: 1rem;
-  top: 0;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #3b82f6;
-  font-family: monospace;
-}
-
 #recommendations .mb-12::after {
   content: "";
   position: absolute;
