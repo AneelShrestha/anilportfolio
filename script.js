@@ -35,358 +35,552 @@ function initMobileMenu() {
 }
 
 
+```javascript
 /* ==========================================================================
-   2. Portfolio — Category → 5 Works → Back
+   2. Portfolio — Category → Works → Back → Preview
    ========================================================================== */
 
 function initPortfolioFilter() {
 
-  /* ------------------------------------------------------------------------
-     Category Elements
-     ------------------------------------------------------------------------ */
-
   const categoryContainer =
     document.getElementById('portfolioCategories');
 
-  const categoryCards =
-    document.querySelectorAll('.portfolio-category-card');
+  const worksContainer =
+    document.getElementById('portfolioWorks');
 
   const categoryButtons =
     document.querySelectorAll('.portfolio-view-btn');
 
-  const portfolioItems =
-    document.querySelectorAll('.portfolio-item');
+  const workGrids =
+    document.querySelectorAll('.portfolio-work-grid');
+
+  const backButton =
+    document.getElementById('portfolioBackBtn');
+
+  const workNumber =
+    document.getElementById('portfolioWorkNumber');
+
+  const workTitle =
+    document.getElementById('portfolioWorkTitle');
+
+  const workDescription =
+    document.getElementById('portfolioWorkDescription');
+
+  const portfolioCount =
+    document.getElementById('portfolioCount');
 
 
-  /*
-   * If the portfolio category section or buttons don't exist,
-   * stop here without affecting the rest of the website.
-   */
+  /* ---------------------------------------------------------------
+     SAFETY CHECK
+  --------------------------------------------------------------- */
 
-  if (!categoryContainer || !categoryButtons.length) {
+  if (
+    !categoryContainer ||
+    !worksContainer ||
+    !categoryButtons.length ||
+    !workGrids.length
+  ) {
     return;
   }
 
 
-  /* ------------------------------------------------------------------------
-     Find / Create Works Container
-     ------------------------------------------------------------------------ */
+  /* ---------------------------------------------------------------
+     CATEGORY INFORMATION
+  --------------------------------------------------------------- */
 
-  let worksContainer =
-    document.getElementById('portfolioWorks');
+  const categoryInfo = {
 
+    graphic: {
+      number: '01 — GRAPHIC DESIGN',
+      title: 'Graphic Design',
+      description:
+        'Selected graphic design projects and creative visual work.'
+    },
 
-  /*
-   * If your existing HTML already has #portfolioWorks,
-   * we use it.
-   *
-   * If it doesn't, we create a container around the existing
-   * .portfolio-item elements.
-   */
+    branding: {
+      number: '02 — BRAND & IDENTITY',
+      title: 'Brand & Identity',
+      description:
+        'Selected branding, logo and visual identity projects.'
+    },
 
-  if (!worksContainer && portfolioItems.length) {
+    social: {
+      number: '03 — SOCIAL MEDIA DESIGN',
+      title: 'Social Media Design',
+      description:
+        'Selected social media campaigns and digital content designs.'
+    },
 
-    worksContainer =
-      document.createElement('div');
+    web: {
+      number: '04 — WEB · UI/UX DESIGN',
+      title: 'Web · UI/UX Design',
+      description:
+        'Selected website, interface and user experience design projects.'
+    },
 
-    worksContainer.id =
-      'portfolioWorks';
+    video: {
+      number: '05 — VIDEO · MOTION GRAPHIC',
+      title: 'Video · Motion Graphic',
+      description:
+        'Selected video editing, reels and motion graphic projects.'
+    },
 
-    worksContainer.className =
-      'portfolio-works mt-12';
-
-
-    /*
-     * Move existing portfolio items into the works container.
-     */
-
-    const firstItem =
-      portfolioItems[0];
-
-    firstItem.parentNode.insertBefore(
-      worksContainer,
-      firstItem
-    );
-
-    portfolioItems.forEach(item => {
-      worksContainer.appendChild(item);
-    });
-
-  }
-
-
-  /* ------------------------------------------------------------------------
-     Back Button
-     ------------------------------------------------------------------------ */
-
-  let backButton =
-    document.getElementById('portfolioBack');
-
-
-  if (!backButton) {
-
-    backButton =
-      document.createElement('button');
-
-    backButton.id =
-      'portfolioBack';
-
-    backButton.type =
-      'button';
-
-    backButton.className =
-      'portfolio-back-btn';
-
-    backButton.innerHTML =
-      '<i class="fas fa-arrow-left"></i> Back to Categories';
-
-    /*
-     * Add the Back button before the works area.
-     */
-
-    if (worksContainer) {
-
-      worksContainer.parentNode.insertBefore(
-        backButton,
-        worksContainer
-      );
-
-    } else {
-
-      categoryContainer.parentNode.insertBefore(
-        backButton,
-        categoryContainer.nextSibling
-      );
-
+    print: {
+      number: '06 — PRINTING / PUBLISHING MEDIA',
+      title: 'Printing / Publishing Media',
+      description:
+        'Selected print, publication, brochure and editorial design projects.'
     }
 
+  };
+
+
+  /* ---------------------------------------------------------------
+     INITIAL STATE
+  --------------------------------------------------------------- */
+
+  worksContainer.classList.add('hidden');
+
+  workGrids.forEach(grid => {
+    grid.classList.add('hidden');
+  });
+
+  if (backButton) {
+    backButton.classList.add('hidden');
   }
 
 
-  /* ------------------------------------------------------------------------
-     Initially Hide Works
-     ------------------------------------------------------------------------ */
+  /* ---------------------------------------------------------------
+     PREVIEW MODAL
+  --------------------------------------------------------------- */
 
-  if (worksContainer) {
-    worksContainer.classList.add('hidden');
+  let previewModal =
+    document.getElementById('portfolioPreviewModal');
+
+
+  if (!previewModal) {
+
+    previewModal =
+      document.createElement('div');
+
+    previewModal.id =
+      'portfolioPreviewModal';
+
+    previewModal.className =
+      'fixed inset-0 z-[9999] hidden items-center justify-center p-4 bg-black/90';
+
+
+    previewModal.innerHTML = `
+
+      <div
+        class="relative w-full max-w-6xl max-h-[92vh]
+               overflow-hidden rounded-2xl
+               bg-[#101010] border border-white/10
+               shadow-2xl"
+      >
+
+        <button
+          type="button"
+          id="portfolioPreviewClose"
+          class="absolute top-4 right-4 z-20
+                 w-11 h-11 rounded-full
+                 flex items-center justify-center
+                 bg-black/70 text-white
+                 border border-white/20
+                 hover:bg-white hover:text-black
+                 transition"
+          aria-label="Close Preview"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+
+
+        <div
+          class="max-h-[72vh] overflow-auto
+                 flex items-center justify-center
+                 bg-black"
+        >
+
+          <img
+            id="portfolioPreviewImage"
+            src=""
+            alt="Portfolio Preview"
+            class="max-w-full max-h-[72vh] object-contain"
+          >
+
+        </div>
+
+
+        <div class="p-6 md:p-8">
+
+          <span
+            id="portfolioPreviewCategory"
+            class="text-xs tracking-[0.2em]
+                   uppercase opacity-60"
+          ></span>
+
+          <h3
+            id="portfolioPreviewTitle"
+            class="text-2xl md:text-3xl
+                   font-semibold mt-2"
+          ></h3>
+
+          <p
+            id="portfolioPreviewDescription"
+            class="mt-3 opacity-70 max-w-3xl"
+          ></p>
+
+        </div>
+
+      </div>
+
+    `;
+
+    document.body.appendChild(previewModal);
   }
 
-  backButton.classList.add('hidden');
+
+  const previewImage =
+    document.getElementById('portfolioPreviewImage');
+
+  const previewCategory =
+    document.getElementById('portfolioPreviewCategory');
+
+  const previewTitle =
+    document.getElementById('portfolioPreviewTitle');
+
+  const previewDescription =
+    document.getElementById('portfolioPreviewDescription');
+
+  const previewClose =
+    document.getElementById('portfolioPreviewClose');
 
 
-  /*
-   * Hide individual works initially.
-   */
+  /* ---------------------------------------------------------------
+     OPEN PREVIEW
+  --------------------------------------------------------------- */
 
-  portfolioItems.forEach(item => {
-    item.classList.add('hidden-item');
+  function openPreview(card) {
+
+    if (!card) return;
+
+    const image =
+      card.querySelector('.portfolio-project-image img');
+
+    const title =
+      card.querySelector('.portfolio-project-info h4');
+
+    const category =
+      card.querySelector('.portfolio-project-info span');
+
+    const description =
+      card.querySelector('.portfolio-project-info p');
+
+
+    if (previewImage && image) {
+      previewImage.src =
+        image.src;
+
+      previewImage.alt =
+        image.alt || 'Portfolio Preview';
+    }
+
+
+    if (previewCategory && category) {
+      previewCategory.textContent =
+        category.textContent.trim();
+    }
+
+
+    if (previewTitle && title) {
+      previewTitle.textContent =
+        title.textContent.trim();
+    }
+
+
+    if (previewDescription && description) {
+      previewDescription.textContent =
+        description.textContent.trim();
+    }
+
+
+    previewModal.classList.remove('hidden');
+    previewModal.classList.add('flex');
+
+    document.body.style.overflow =
+      'hidden';
+  }
+
+
+  /* ---------------------------------------------------------------
+     CLOSE PREVIEW
+  --------------------------------------------------------------- */
+
+  function closePreview() {
+
+    previewModal.classList.add('hidden');
+    previewModal.classList.remove('flex');
+
+    document.body.style.overflow =
+      '';
+
+    if (previewImage) {
+      previewImage.src = '';
+    }
+  }
+
+
+  if (previewClose) {
+
+    previewClose.addEventListener(
+      'click',
+      closePreview
+    );
+
+  }
+
+
+  previewModal.addEventListener(
+    'click',
+    event => {
+
+      if (event.target === previewModal) {
+        closePreview();
+      }
+
+    }
+  );
+
+
+  document.addEventListener(
+    'keydown',
+    event => {
+
+      if (
+        event.key === 'Escape' &&
+        !previewModal.classList.contains('hidden')
+      ) {
+        closePreview();
+      }
+
+    }
+  );
+
+
+  /* ---------------------------------------------------------------
+     ADD PREVIEW BUTTON TO EVERY PROJECT
+  --------------------------------------------------------------- */
+
+  const projectCards =
+    document.querySelectorAll(
+      '.portfolio-project-card'
+    );
+
+
+  projectCards.forEach(card => {
+
+    const projectInfo =
+      card.querySelector('.portfolio-project-info');
+
+    if (!projectInfo) return;
+
+
+    /* Prevent duplicate buttons */
+
+    if (
+      projectInfo.querySelector(
+        '.portfolio-preview-btn'
+      )
+    ) {
+      return;
+    }
+
+
+    const previewButton =
+      document.createElement('button');
+
+    previewButton.type =
+      'button';
+
+    previewButton.className =
+      'portfolio-preview-btn mt-4';
+
+    previewButton.innerHTML =
+      `
+        PREVIEW
+        <i class="fas fa-expand-alt"></i>
+      `;
+
+
+    previewButton.addEventListener(
+      'click',
+      event => {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        openPreview(card);
+
+      }
+    );
+
+
+    projectInfo.appendChild(
+      previewButton
+    );
+
   });
 
 
-  /* ==========================================================================
+  /* ---------------------------------------------------------------
      SHOW SELECTED CATEGORY
-     ========================================================================== */
+  --------------------------------------------------------------- */
 
   function showCategory(category) {
 
-    /* ----------------------------------------------------------------------
-       Hide Category Cards
-       ---------------------------------------------------------------------- */
-
-    categoryContainer.classList.add('hidden');
+    const info =
+      categoryInfo[category];
 
 
-    /* ----------------------------------------------------------------------
-       Show Works Container
-       ---------------------------------------------------------------------- */
+    /* Hide category cards */
 
-    if (worksContainer) {
-      worksContainer.classList.remove('hidden');
+    categoryContainer.classList.add(
+      'hidden'
+    );
+
+
+    /* Show works area */
+
+    worksContainer.classList.remove(
+      'hidden'
+    );
+
+
+    /* Show back button */
+
+    if (backButton) {
+      backButton.classList.remove(
+        'hidden'
+      );
     }
 
 
-    /* ----------------------------------------------------------------------
-       Show Back Button
-       ---------------------------------------------------------------------- */
+    /* Hide every work grid */
 
-    backButton.classList.remove('hidden');
+    workGrids.forEach(grid => {
 
-
-    /* ----------------------------------------------------------------------
-       Filter Works
-       ---------------------------------------------------------------------- */
-
-    let visibleWorks =
-      0;
-
-
-    portfolioItems.forEach(item => {
-
-      const itemCategory =
-        item.getAttribute('data-category');
-
-
-      /*
-       * Show only matching category.
-       *
-       * Maximum = 5 works.
-       */
-
-      if (
-        itemCategory &&
-        itemCategory.toLowerCase() ===
-        category.toLowerCase() &&
-        visibleWorks < 5
-      ) {
-
-        item.classList.remove('hidden-item');
-        item.classList.remove('hidden');
-
-        visibleWorks++;
-
-      } else {
-
-        item.classList.add('hidden-item');
-
-      }
+      grid.classList.add(
+        'hidden'
+      );
 
     });
 
 
-    /* ----------------------------------------------------------------------
-       Update Works Heading
-       ---------------------------------------------------------------------- */
+    /* Find selected work grid */
 
-    let categoryName =
-      category;
-
-
-    const selectedCard =
+    const selectedGrid =
       document.querySelector(
-        `.portfolio-category-card[data-category-card="${category}"]`
+        `.portfolio-work-grid[data-work-category="${category}"]`
       );
 
 
-    if (selectedCard) {
+    if (!selectedGrid) {
+      return;
+    }
 
-      const title =
-        selectedCard.querySelector('h3');
 
-      if (title) {
-        categoryName =
-          title.textContent.trim();
+    /* Show selected grid */
+
+    selectedGrid.classList.remove(
+      'hidden'
+    );
+
+
+    /* Update header */
+
+    if (info) {
+
+      if (workNumber) {
+        workNumber.textContent =
+          info.number;
+      }
+
+      if (workTitle) {
+        workTitle.textContent =
+          info.title;
+      }
+
+      if (workDescription) {
+        workDescription.textContent =
+          info.description;
       }
 
     }
 
 
-    /*
-     * Create heading if one doesn't already exist.
-     */
+    /* Count works */
 
-    let worksHeader =
-      document.getElementById('portfolioWorksHeader');
-
-
-    if (!worksHeader && worksContainer) {
-
-      worksHeader =
-        document.createElement('div');
-
-      worksHeader.id =
-        'portfolioWorksHeader';
-
-      worksHeader.className =
-        'mb-8';
-
-      worksContainer.insertBefore(
-        worksHeader,
-        worksContainer.firstChild
+    const cards =
+      selectedGrid.querySelectorAll(
+        '.portfolio-project-card'
       );
 
-    }
 
+    if (portfolioCount) {
 
-    if (worksHeader) {
-
-      worksHeader.innerHTML = `
-        <span class="section-tag">SELECTED WORK</span>
-        <h3 class="section-title mt-3">
-          ${categoryName}
-        </h3>
-        <p class="section-description">
-          Selected creative works from ${categoryName}.
-        </p>
-      `;
+      portfolioCount.textContent =
+        `${cards.length} Selected Works`;
 
     }
 
 
-    /* ----------------------------------------------------------------------
-       Scroll to Works
-       ---------------------------------------------------------------------- */
+    /* Scroll to works */
 
-    if (worksContainer) {
+    setTimeout(() => {
 
-      setTimeout(() => {
+      worksContainer.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
 
-        worksContainer.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-
-      }, 100);
-
-    }
+    }, 100);
 
   }
 
 
-  /* ==========================================================================
-     RETURN TO CATEGORIES
-     ========================================================================== */
+  /* ---------------------------------------------------------------
+     BACK TO PORTFOLIO
+  --------------------------------------------------------------- */
 
   function showCategories() {
 
-    /* ----------------------------------------------------------------------
-       Hide All Works
-       ---------------------------------------------------------------------- */
+    workGrids.forEach(grid => {
 
-    portfolioItems.forEach(item => {
-
-      item.classList.add('hidden-item');
+      grid.classList.add(
+        'hidden'
+      );
 
     });
 
 
-    /* ----------------------------------------------------------------------
-       Hide Works Container
-       ---------------------------------------------------------------------- */
+    worksContainer.classList.add(
+      'hidden'
+    );
 
-    if (worksContainer) {
 
-      worksContainer.classList.add('hidden');
+    categoryContainer.classList.remove(
+      'hidden'
+    );
+
+
+    if (backButton) {
+
+      backButton.classList.add(
+        'hidden'
+      );
 
     }
 
-
-    /* ----------------------------------------------------------------------
-       Hide Back Button
-       ---------------------------------------------------------------------- */
-
-    backButton.classList.add('hidden');
-
-
-    /* ----------------------------------------------------------------------
-       Show Category Cards
-       ---------------------------------------------------------------------- */
-
-    categoryContainer.classList.remove('hidden');
-
-
-    /* ----------------------------------------------------------------------
-       Scroll Back to Portfolio Categories
-       ---------------------------------------------------------------------- */
 
     setTimeout(() => {
 
@@ -400,63 +594,63 @@ function initPortfolioFilter() {
   }
 
 
-  /* ==========================================================================
-     EXPLORE WORK BUTTONS
-     ========================================================================== */
+  /* ---------------------------------------------------------------
+     CATEGORY BUTTON EVENTS
+  --------------------------------------------------------------- */
 
   categoryButtons.forEach(button => {
 
-    button.addEventListener('click', event => {
+    button.addEventListener(
+      'click',
+      event => {
 
-      /*
-       * Prevent the button from doing anything
-       * other than opening the selected category.
-       */
-
-      event.preventDefault();
-      event.stopPropagation();
+        event.preventDefault();
+        event.stopPropagation();
 
 
-      /*
-       * Read the exact value from:
-       *
-       * data-open-category="graphic"
-       * data-open-category="branding"
-       * data-open-category="social"
-       * data-open-category="web"
-       * data-open-category="video"
-       * data-open-category="print"
-       */
-
-      const category =
-        button.getAttribute('data-open-category');
+        const category =
+          button.getAttribute(
+            'data-open-category'
+          );
 
 
-      if (!category) {
-        return;
+        if (!category) {
+          return;
+        }
+
+
+        showCategory(
+          category
+        );
+
       }
-
-
-      showCategory(category);
-
-    });
+    );
 
   });
 
 
-  /* ==========================================================================
-     BACK BUTTON
-     ========================================================================== */
+  /* ---------------------------------------------------------------
+     BACK BUTTON EVENT
+  --------------------------------------------------------------- */
 
-  backButton.addEventListener('click', event => {
+  if (backButton) {
 
-    event.preventDefault();
+    backButton.addEventListener(
+      'click',
+      event => {
 
-    showCategories();
+        event.preventDefault();
 
-  });
+        showCategories();
+
+      }
+    );
+
+  }
 
 }
+```
+
 
 
 /* ==========================================================================
