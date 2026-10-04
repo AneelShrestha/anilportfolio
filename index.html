@@ -1,39 +1,43 @@
 <!DOCTYPE html>
+
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Anil Shrestha — Creative Professional Portfolio</title>
+```
+<title>Anil Shrestha — Creative Professional Portfolio</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="style.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        neonGreen: "#39FF88",
-                        neonBlue: "#2D8CFF",
-                        neonPink: "#FF4FD8",
-                        neonRed: "#FF4D5A"
-                    }
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    neonGreen: "#39FF88",
+                    neonBlue: "#2D8CFF",
+                    neonPink: "#FF4FD8",
+                    neonRed: "#FF4D5A"
                 }
             }
-        };
-    </script>
+        }
+    };
+</script>
+```
+
 </head>
 
 <body class="bg-[#070707] text-white overflow-x-hidden">
@@ -56,7 +60,6 @@
             pointer-events-none"
      style="animation-delay:4s;"></div>
 
-
 <!-- =========================================================
      HEADER / NAVIGATION
 ========================================================= -->
@@ -64,261 +67,258 @@
 <header id="siteHeader"
         class="sticky top-0 z-50 hdr-ftr-bg border-b border-white/10">
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
-                h-20 flex items-center justify-between">
+```
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+            h-20 flex items-center justify-between">
 
-        <!-- Logo -->
+    <!-- LOGO -->
 
-        <a href="#home"
-           class="group flex items-center gap-2">
+    <a href="#home"
+       class="group flex items-center gap-2">
 
-            <span class="font-display text-xl sm:text-2xl
-                         font-extrabold tracking-wider text-white">
+        <span class="font-display text-xl sm:text-2xl
+                     font-extrabold tracking-wider text-white">
 
-                ANIL
-                <span class="text-[#2D8CFF] group-hover:text-[#39FF88]">
-                    SHRESTHA
-                </span>
-
+            ANIL
+            <span class="text-[#2D8CFF] group-hover:text-[#39FF88]">
+                SHRESTHA
             </span>
 
-        </a>
+        </span>
+
+    </a>
 
 
-        <!-- Desktop Navigation -->
+    <!-- DESKTOP NAVIGATION -->
 
-        <nav class="site-nav hidden lg:flex items-center
-                    space-x-6 text-xs xl:text-sm
-                    font-semibold uppercase tracking-wider">
-
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#software">Software</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#career">Career</a>
-            <a href="#recommendations">Recommendations</a>
-            <a href="#packages">Package</a>
-
-            <a href="#contact"
-               class="px-4 py-2 rounded-full
-                      border border-[#2D8CFF]/50
-                      text-[#2D8CFF]">
-                Contact
-            </a>
-
-        </nav>
-
-
-        <!-- Mobile Menu Button -->
-
-        <button id="mobileMenuBtn"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                class="lg:hidden text-slate-300
-                       hover:text-white p-2">
-
-            <i class="fas fa-bars text-2xl"></i>
-
-        </button>
-
-    </div>
-
-
-    <!-- Mobile Navigation -->
-
-    <div id="mobileNav"
-         class="hidden lg:hidden
-                bg-black/95 backdrop-blur-xl
-                border-b border-white/10
-                px-6 py-6 space-y-4
-                text-sm font-semibold
-                uppercase tracking-wider">
+    <nav class="site-nav hidden lg:flex items-center
+                space-x-6 text-xs xl:text-sm
+                font-semibold uppercase tracking-wider">
 
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#software">Software</a>
-        <a href="#works">Services</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#career">Career</a>
         <a href="#recommendations">Recommendations</a>
         <a href="#packages">Packages</a>
-        <a href="#contact">Contact</a>
 
-    </div>
+        <a href="#contact"
+           class="px-4 py-2 rounded-full
+                  border border-[#2D8CFF]/50
+                  text-[#2D8CFF]">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <!-- MOBILE MENU BUTTON -->
+
+    <button id="mobileMenuBtn"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            class="lg:hidden text-slate-300
+                   hover:text-white p-2">
+
+        <i class="fas fa-bars text-2xl"></i>
+
+    </button>
+
+</div>
+
+
+<!-- MOBILE NAVIGATION -->
+
+<div id="mobileNav"
+     class="hidden lg:hidden
+            bg-black/95 backdrop-blur-xl
+            border-b border-white/10
+            px-6 py-6 space-y-4
+            text-sm font-semibold
+            uppercase tracking-wider">
+
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#career">Career</a>
+    <a href="#recommendations">Recommendations</a>
+    <a href="#packages">Packages</a>
+    <a href="#contact">Contact</a>
+
+</div>
+```
 
 </header>
 
-
 <main>
 
-
 <!-- =========================================================
-     01 — HERO
+     HERO
 ========================================================= -->
 
 <section id="home"
          class="relative pt-16 pb-20
                 lg:pt-24 lg:pb-32 overflow-hidden">
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
-                relative z-10">
+```
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+            relative z-10">
 
-        <div class="grid grid-cols-1 lg:grid-cols-12
-                    gap-12 items-center">
-
-
-            <!-- HERO CONTENT -->
-
-            <div class="lg:col-span-7
-                        space-y-6
-                        text-center lg:text-left">
-
-                <div class="inline-flex items-center gap-2
-                            px-4 py-2 rounded-full
-                            border border-[#2D8CFF]/30
-                            bg-[#2D8CFF]/5
-                            text-[#2D8CFF]
-                            text-xs font-semibold
-                            uppercase tracking-widest">
-
-                    <span class="w-2 h-2 rounded-full
-                                 bg-[#39FF88] animate-ping"></span>
-
-                    ANIL SHRESTHA — CREATIVE PROFESSIONAL
-
-                </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12
+                gap-12 items-center">
 
 
-                <h1 class="font-display
-                           text-5xl sm:text-6xl xl:text-8xl
-                           font-extrabold uppercase
-                           tracking-tight leading-[0.9]">
+        <!-- HERO CONTENT -->
 
-                    I CREATE
-                    <br>
+        <div class="lg:col-span-7
+                    space-y-6
+                    text-center lg:text-left">
 
-                    <span class="hero-visual">
-                        VISUAL
-                    </span>
+            <div class="inline-flex items-center gap-2
+                        px-4 py-2 rounded-full
+                        border border-[#2D8CFF]/30
+                        bg-[#2D8CFF]/5
+                        text-[#2D8CFF]
+                        text-xs font-semibold
+                        uppercase tracking-widest">
 
-                    <br>
+                <span class="w-2 h-2 rounded-full
+                             bg-[#39FF88] animate-ping"></span>
 
-                    STORIES
-
-                </h1>
-
-
-                <div class="space-y-1">
-
-                    <p class="text-lg sm:text-xl
-                              font-semibold
-                              text-[#39FF88]
-                              tracking-wide">
-
-                        Graphic · Web · Multimedia Designer
-
-                    </p>
-
-                    <p class="text-lg sm:text-xl
-                              font-semibold
-                              text-[#2D8CFF]
-                              tracking-wide">
-
-                        Video Editor · Instructor
-
-                    </p>
-
-                </div>
-
-
-                <p class="text-slate-300
-                          text-base sm:text-lg
-                          max-w-2xl
-                          leading-relaxed
-                          mx-auto lg:mx-0">
-
-                    I transform ideas into meaningful visual experiences
-                    through graphic design, branding, social media,
-                    web design, video editing and motion graphics.
-
-                </p>
-
-
-                <div class="pt-2
-                            text-sm
-                            text-[#39FF88]/90
-                            font-medium
-                            flex items-center
-                            justify-center lg:justify-start
-                            gap-2">
-
-                    <i class="fas fa-circle text-[7px]"></i>
-
-                    Available for creative projects & collaborations
-
-                </div>
-
-
-                <!-- HERO BUTTONS -->
-
-                <div class="flex flex-wrap
-                            items-center
-                            justify-center lg:justify-start
-                            gap-4 pt-4">
-
-                    <a href="#works"
-                       class="hero-btn-primary">
-
-                        Explore My Work
-
-                        <i class="fas fa-arrow-right ml-2"></i>
-
-                    </a>
-
-
-                    <a href="#contact"
-                       class="hero-btn-secondary">
-
-                        Let's Talk
-
-                        <i class="fas fa-comments ml-2"></i>
-
-                    </a>
-
-                </div>
+                ANIL SHRESTHA — CREATIVE PROFESSIONAL
 
             </div>
 
 
-            <!-- HERO PORTRAIT -->
+            <h1 class="font-display
+                       text-5xl sm:text-6xl xl:text-8xl
+                       font-extrabold uppercase
+                       tracking-tight leading-[0.9]">
 
-            <div class="lg:col-span-5
-                        relative flex justify-center">
+                I CREATE
+                <br>
 
-                <div class="relative
-                            w-full max-w-md
-                            lg:max-w-none">
+                <span class="hero-visual">
+                    VISUAL
+                </span>
 
-                    <div class="absolute inset-0
-                                bg-gradient-to-tr
-                                from-[#2D8CFF]/30
-                                via-[#39FF88]/15
-                                to-[#FF4FD8]/30
-                                rounded-full blur-3xl
-                                opacity-70">
-                    </div>
+                <br>
+
+                STORIES
+
+            </h1>
 
 
-                    <div class="relative z-10 portrait-feather">
+            <div class="space-y-1">
 
-                        <img src="anil portrait.png"
-                             alt="Anil Shrestha Portrait"
-                             class="w-full h-auto
-                                    object-contain">
+                <p class="text-lg sm:text-xl
+                          font-semibold
+                          text-[#39FF88]
+                          tracking-wide">
 
-                    </div>
+                    Graphic · Web · Multimedia Designer
+
+                </p>
+
+                <p class="text-lg sm:text-xl
+                          font-semibold
+                          text-[#2D8CFF]
+                          tracking-wide">
+
+                    Video Editor · Instructor
+
+                </p>
+
+            </div>
+
+
+            <p class="text-slate-300
+                      text-base sm:text-lg
+                      max-w-2xl
+                      leading-relaxed
+                      mx-auto lg:mx-0">
+
+                I transform ideas into meaningful visual experiences
+                through graphic design, branding, social media,
+                web design, video editing and motion graphics.
+
+            </p>
+
+
+            <div class="pt-2
+                        text-sm
+                        text-[#39FF88]/90
+                        font-medium
+                        flex items-center
+                        justify-center lg:justify-start
+                        gap-2">
+
+                <i class="fas fa-circle text-[7px]"></i>
+
+                Available for creative projects & collaborations
+
+            </div>
+
+
+            <!-- HERO BUTTONS -->
+
+            <div class="flex flex-wrap
+                        items-center
+                        justify-center lg:justify-start
+                        gap-4 pt-4">
+
+                <a href="#portfolio"
+                   class="hero-btn-primary">
+
+                    Explore My Work
+
+                    <i class="fas fa-arrow-right ml-2"></i>
+
+                </a>
+
+
+                <a href="#contact"
+                   class="hero-btn-secondary">
+
+                    Let's Talk
+
+                    <i class="fas fa-comments ml-2"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO PORTRAIT -->
+
+        <div class="lg:col-span-5
+                    relative flex justify-center">
+
+            <div class="relative
+                        w-full max-w-md
+                        lg:max-w-none">
+
+                <div class="absolute inset-0
+                            bg-gradient-to-tr
+                            from-[#2D8CFF]/30
+                            via-[#39FF88]/15
+                            to-[#FF4FD8]/30
+                            rounded-full blur-3xl
+                            opacity-70">
+                </div>
+
+
+                <div class="relative z-10 portrait-feather">
+
+                    <img src="anil portrait.png"
+                         alt="Anil Shrestha Portrait"
+                         class="w-full h-auto
+                                object-contain">
 
                 </div>
 
@@ -328,259 +328,236 @@
 
     </div>
 
+</div>
+```
+
 </section>
 
-
 <!-- =========================================================
-     02 — ABOUT ME
+     ABOUT ME
 ========================================================= -->
 
 <section id="about"
          class="py-20 relative z-10">
 
-    <div class="max-w-7xl mx-auto
-                px-4 sm:px-6 lg:px-8">
+```
+<div class="max-w-7xl mx-auto
+            px-4 sm:px-6 lg:px-8">
 
 
-        <!-- PROFILE + ABOUT CONTENT -->
-
-        <div class="grid grid-cols-1
-                    lg:grid-cols-12
-                    gap-8">
+    <div class="grid grid-cols-1
+                lg:grid-cols-12
+                gap-8">
 
 
-            <!-- =================================================
-                 CREATIVE PROFILE
-            ================================================== -->
+        <!-- CREATIVE PROFILE -->
 
-            <div class="lg:col-span-4">
+        <div class="lg:col-span-4">
 
-                <div class="glass-card aura-cyan
-                            p-8 rounded-3xl h-full">
+            <div class="glass-card aura-cyan
+                        p-8 rounded-3xl h-full">
 
-                    <div class="profile-image-wrap">
+                <div class="profile-image-wrap">
 
-                        <img src="assets/profile/For-Profile.jpg"
-                             alt="Anil Shrestha Profile">
-
-                    </div>
-
-
-                    <span class="section-tag">
-                        CREATIVE PROFILE
-                    </span>
-
-
-                    <h3 class="font-display
-                               text-3xl
-                               font-extrabold
-                               text-white
-                               mt-2 mb-4">
-
-                        Designer.
-                        <br>
-                        Editor.
-                        <br>
-                        Instructor.
-
-                    </h3>
-
-
-                    <p class="text-slate-400
-                              text-sm
-                              leading-relaxed">
-
-                        A creative professional working across
-                        graphic design, digital media, branding,
-                        visual communication and video production,
-                        with a practical approach shaped by
-                        real-world projects and professional experience.
-
-                    </p>
+                    <img src="assets/profile/For-Profile.jpg"
+                         alt="Anil Shrestha Profile">
 
                 </div>
+
+
+                <span class="section-tag">
+                    CREATIVE PROFILE
+                </span>
+
+
+                <h3 class="font-display
+                           text-3xl
+                           font-extrabold
+                           text-white
+                           mt-2 mb-4">
+
+                    Designer.
+                    <br>
+                    Editor.
+                    <br>
+                    Instructor.
+
+                </h3>
+
+
+                <p class="text-slate-400
+                          text-sm
+                          leading-relaxed">
+
+                    A creative professional working across
+                    graphic design, digital media, branding,
+                    visual communication and video production,
+                    with a practical approach shaped by
+                    real-world projects and professional experience.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ABOUT CONTENT -->
+
+        <div class="lg:col-span-8">
+
+            <div class="mb-8">
+
+                <span class="section-tag">
+                    ABOUT ME
+                </span>
+
+
+                <h2 class="font-display
+                           text-4xl sm:text-5xl
+                           font-extrabold
+                           text-white
+                           mt-2">
+
+                    Creativity with purpose.
+
+                </h2>
+
+
+                <p class="text-slate-400
+                          max-w-3xl
+                          mt-4
+                          leading-relaxed">
+
+                    I believe good design is more than making something
+                    look attractive. It is about communicating ideas clearly,
+                    creating memorable experiences and giving every visual
+                    a meaningful purpose.
+
+                </p>
 
             </div>
 
 
-            <!-- =================================================
-                 ABOUT CONTENT + SIX EXPERTISE CARDS
-            ================================================== -->
+            <!-- EXPERTISE -->
 
-            <div class="lg:col-span-8">
-
-
-                <!-- ABOUT INTRO — NO CONTAINER -->
-
-                <div class="mb-8">
-
-                    <span class="section-tag">
-                        02 — ABOUT ME
-                    </span>
+            <div class="grid grid-cols-1
+                        md:grid-cols-2
+                        gap-5">
 
 
-                    <h2 class="font-display
-                               text-4xl sm:text-5xl
-                               font-extrabold
-                               text-white
-                               mt-2">
+                <article class="glass-card aura-cyan
+                                p-6 rounded-2xl">
 
-                        Creativity with purpose.
+                    <div class="expertise-icon aura-icon-cyan">
+                        <i class="fas fa-palette"></i>
+                    </div>
 
-                    </h2>
+                    <h3>
+                        GRAPHIC DESIGN
+                    </h3>
 
-
-                    <p class="text-slate-400
-                              max-w-3xl
-                              mt-4
-                              leading-relaxed">
-
-                        I believe good design is more than making something
-                        look attractive. It is about communicating ideas clearly,
-                        creating memorable experiences and giving every visual
-                        a meaningful purpose.
-
+                    <p>
+                        Visual communication, layouts,
+                        campaigns and creative artwork.
                     </p>
 
-                </div>
+                </article>
 
 
-                <!-- =================================================
-                     SIX EXPERTISE CARDS — 2 × 3
-                ================================================== -->
+                <article class="glass-card aura-emerald
+                                p-6 rounded-2xl">
 
-                <div class="grid grid-cols-1
-                            md:grid-cols-2
-                            gap-5">
+                    <div class="expertise-icon aura-icon-emerald">
+                        <i class="fas fa-copyright"></i>
+                    </div>
 
+                    <h3>
+                        BRANDING
+                    </h3>
 
-                    <!-- 01 GRAPHIC DESIGN -->
+                    <p>
+                        Identity systems, brand visuals
+                        and consistent communication.
+                    </p>
 
-                    <article class="glass-card aura-cyan
-                                    p-6 rounded-2xl">
-
-                        <div class="expertise-icon aura-icon-cyan">
-                            <i class="fas fa-palette"></i>
-                        </div>
-
-                        <h3>
-                            GRAPHIC DESIGN
-                        </h3>
-
-                        <p>
-                            Visual communication, layouts,
-                            campaigns and creative artwork.
-                        </p>
-
-                    </article>
+                </article>
 
 
-                    <!-- 02 BRANDING -->
+                <article class="glass-card aura-pink
+                                p-6 rounded-2xl">
 
-                    <article class="glass-card aura-emerald
-                                    p-6 rounded-2xl">
+                    <div class="expertise-icon aura-icon-pink">
+                        <i class="fas fa-globe"></i>
+                    </div>
 
-                        <div class="expertise-icon aura-icon-emerald">
-                            <i class="fas fa-copyright"></i>
-                        </div>
+                    <h3>
+                        DIGITAL MEDIA
+                    </h3>
 
-                        <h3>
-                            BRANDING
-                        </h3>
+                    <p>
+                        Social media creatives,
+                        digital campaigns and online content.
+                    </p>
 
-                        <p>
-                            Identity systems, brand visuals
-                            and consistent communication.
-                        </p>
-
-                    </article>
+                </article>
 
 
-                    <!-- 03 DIGITAL MEDIA -->
+                <article class="glass-card aura-purple
+                                p-6 rounded-2xl">
 
-                    <article class="glass-card aura-pink
-                                    p-6 rounded-2xl">
+                    <div class="expertise-icon aura-icon-purple">
+                        <i class="fas fa-film"></i>
+                    </div>
 
-                        <div class="expertise-icon aura-icon-pink">
-                            <i class="fas fa-globe"></i>
-                        </div>
+                    <h3>
+                        VIDEO EDITING
+                    </h3>
 
-                        <h3>
-                            DIGITAL MEDIA
-                        </h3>
+                    <p>
+                        Promotional videos, reels,
+                        social content and storytelling.
+                    </p>
 
-                        <p>
-                            Social media creatives,
-                            digital campaigns and online content.
-                        </p>
-
-                    </article>
+                </article>
 
 
-                    <!-- 04 VIDEO EDITING -->
+                <article class="glass-card aura-cyan
+                                p-6 rounded-2xl">
 
-                    <article class="glass-card aura-purple
-                                    p-6 rounded-2xl">
+                    <div class="expertise-icon aura-icon-cyan">
+                        <i class="fas fa-display"></i>
+                    </div>
 
-                        <div class="expertise-icon aura-icon-purple">
-                            <i class="fas fa-film"></i>
-                        </div>
+                    <h3>
+                        WEB &amp; UI
+                    </h3>
 
-                        <h3>
-                            VIDEO EDITING
-                        </h3>
+                    <p>
+                        Modern web layouts, interface concepts
+                        and digital presentation.
+                    </p>
 
-                        <p>
-                            Promotional videos, reels,
-                            social content and storytelling.
-                        </p>
-
-                    </article>
+                </article>
 
 
-                    <!-- 05 WEB & UI -->
+                <article class="glass-card aura-emerald
+                                p-6 rounded-2xl">
 
-                    <article class="glass-card aura-cyan
-                                    p-6 rounded-2xl">
+                    <div class="expertise-icon aura-icon-emerald">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
 
-                        <div class="expertise-icon aura-icon-cyan">
-                            <i class="fas fa-display"></i>
-                        </div>
+                    <h3>
+                        CREATIVE DIRECTION
+                    </h3>
 
-                        <h3>
-                            WEB &amp; UI
-                        </h3>
+                    <p>
+                        Concept development, visual planning
+                        and project coordination.
+                    </p>
 
-                        <p>
-                            Modern web layouts, interface concepts
-                            and digital presentation.
-                        </p>
-
-                    </article>
-
-
-                    <!-- 06 CREATIVE DIRECTION -->
-
-                    <article class="glass-card aura-emerald
-                                    p-6 rounded-2xl">
-
-                        <div class="expertise-icon aura-icon-emerald">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-
-                        <h3>
-                            CREATIVE DIRECTION
-                        </h3>
-
-                        <p>
-                            Concept development, visual planning
-                            and project coordination.
-                        </p>
-
-                    </article>
-
-
-                </div>
+                </article>
 
             </div>
 
@@ -588,292 +565,1119 @@
 
     </div>
 
+</div>
+```
+
 </section>
 
-
 <!-- =========================================================
-     03 — SKILLS
+     SKILLS
 ========================================================= -->
 
 <section id="skills"
          class="py-20 relative z-10
                 bg-white/[0.015]">
 
-    <div class="max-w-7xl mx-auto
-                px-4 sm:px-6 lg:px-8">
+```
+<div class="max-w-7xl mx-auto
+            px-4 sm:px-6 lg:px-8">
 
 
-        <!-- SECTION HEADER -->
+    <div class="mb-10">
 
-        <div class="mb-10">
+        <span class="section-tag">
+            SKILLS
+        </span>
 
-            <span class="section-tag">
-                03 — SKILLS
-            </span>
+        <h2 class="font-display
+                   text-4xl sm:text-5xl
+                   font-extrabold
+                   text-white mt-2">
 
-            <h2 class="font-display
-                       text-4xl sm:text-5xl
-                       font-extrabold
-                       text-white mt-2">
+            What I create.
 
-                What I create.
+        </h2>
 
-            </h2>
+        <p class="text-slate-400
+                  max-w-2xl mt-4">
 
-            <p class="text-slate-400
-                      max-w-2xl mt-4">
+            Creative skills developed through design,
+            digital media, branding, video and
+            visual communication.
 
-                Creative skills developed through design,
-                digital media, branding, video and
-                visual communication.
+        </p>
 
-            </p>
+    </div>
 
+
+    <div class="grid grid-cols-1
+                sm:grid-cols-2
+                lg:grid-cols-3
+                gap-5">
+
+
+        <div class="skill-card aura-cyan">
+            <i class="fas fa-palette"></i>
+            <h3>Graphic Design</h3>
+            <p>Creative visual communication and artwork.</p>
         </div>
 
 
-        <!-- =====================================================
-             SKILLS GRID
-        ====================================================== -->
-
-        <div class="grid grid-cols-1
-                    sm:grid-cols-2
-                    lg:grid-cols-3
-                    gap-5">
+        <div class="skill-card aura-emerald">
+            <i class="fas fa-share-nodes"></i>
+            <h3>Social Media Design</h3>
+            <p>Digital content and social media creatives.</p>
+        </div>
 
 
-            <!-- 01 — GRAPHIC DESIGN -->
+        <div class="skill-card aura-pink">
+            <i class="fas fa-layer-group"></i>
+            <h3>Branding &amp; Identity</h3>
+            <p>Visual identity and brand communication.</p>
+        </div>
 
-            <div class="skill-card aura-cyan">
 
-                <i class="fas fa-palette"></i>
+        <div class="skill-card aura-purple">
+            <i class="fas fa-laptop"></i>
+            <h3>Web Design</h3>
+            <p>Modern layouts and digital experiences.</p>
+        </div>
+
+
+        <div class="skill-card aura-cyan">
+            <i class="fas fa-video"></i>
+            <h3>Video Editing</h3>
+            <p>Promotional videos, reels and storytelling.</p>
+        </div>
+
+
+        <div class="skill-card aura-emerald">
+            <i class="fas fa-wand-magic-sparkles"></i>
+            <h3>Motion Graphics</h3>
+            <p>Animation and motion-based visual content.</p>
+        </div>
+
+
+        <div class="skill-card aura-pink">
+            <i class="fas fa-print"></i>
+            <h3>Print Design</h3>
+            <p>Brochures, posters, banners and print artwork.</p>
+        </div>
+
+
+        <div class="skill-card aura-purple">
+            <i class="fas fa-object-group"></i>
+            <h3>UI/UX Design</h3>
+            <p>User interfaces and practical digital layouts.</p>
+        </div>
+
+
+        <div class="skill-card aura-cyan">
+            <i class="fas fa-image"></i>
+            <h3>Photo Editing</h3>
+            <p>Image enhancement, retouching and composition.</p>
+        </div>
+
+
+        <div class="skill-card aura-emerald">
+            <i class="fas fa-photo-video"></i>
+            <h3>Content Creation</h3>
+            <p>Creative visual content for digital platforms.</p>
+        </div>
+
+
+        <div class="skill-card aura-pink">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Digital Marketing</h3>
+            <p>Creative assets for digital promotion.</p>
+        </div>
+
+
+        <div class="skill-card aura-purple">
+            <i class="fas fa-compass-drafting"></i>
+            <h3>Creative Direction</h3>
+            <p>Concept development and visual planning.</p>
+        </div>
+
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================================================
+     PORTFOLIO
+========================================================= -->
+
+<section id="portfolio" class="section-padding">
+
+```
+<div class="container mx-auto px-6">
+
+    <div class="mb-14">
+
+        <span class="section-tag">
+            PORTFOLIO
+        </span>
+
+        <h2 class="section-title mt-4">
+            Selected <span>Creative Work.</span>
+        </h2>
+
+        <p class="section-description max-w-2xl">
+            Explore selected work across graphic design, branding,
+            social media, web, multimedia, video and printing /
+            publishing media.
+        </p>
+
+    </div>
+
+
+    <!-- PORTFOLIO CATEGORY GRID -->
+
+    <div id="portfolioCategories"
+         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+        <!-- GRAPHIC DESIGN -->
+
+        <article class="portfolio-category-card"
+                 data-category-card="graphic">
+
+            <div class="portfolio-category-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=85"
+                    alt="Graphic Design portfolio sample"
+                    loading="lazy">
+
+                <div class="portfolio-category-overlay">
+                    <span>VIEW WORK</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+            </div>
+
+            <div class="portfolio-category-content">
+
+                <span class="portfolio-category-number">
+                    <i class="fas fa-palette"></i>
+                </span>
 
                 <h3>
                     Graphic Design
                 </h3>
 
                 <p>
-                    Creative visual communication and artwork.
+                    Posters, banners, creative artwork,
+                    photo manipulation and marketing visuals.
                 </p>
+
+                <button
+                    type="button"
+                    class="portfolio-view-btn"
+                    data-open-category="graphic">
+
+                    EXPLORE WORK
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </button>
 
             </div>
 
+        </article>
 
-            <!-- 02 — SOCIAL MEDIA DESIGN -->
 
-            <div class="skill-card aura-emerald">
+        <!-- BRAND & IDENTITY -->
 
-                <i class="fas fa-share-nodes"></i>
+        <article class="portfolio-category-card"
+                 data-category-card="branding">
+
+            <div class="portfolio-category-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=1200&q=85"
+                    alt="Brand and Identity portfolio sample"
+                    loading="lazy">
+
+                <div class="portfolio-category-overlay">
+                    <span>VIEW WORK</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+            </div>
+
+            <div class="portfolio-category-content">
+
+                <span class="portfolio-category-number">
+                    <i class="fas fa-layer-group"></i>
+                </span>
+
+                <h3>
+                    Brand &amp; Identity
+                </h3>
+
+                <p>
+                    Logo design, visual identity, business
+                    stationery and complete brand systems.
+                </p>
+
+                <button
+                    type="button"
+                    class="portfolio-view-btn"
+                    data-open-category="branding">
+
+                    EXPLORE WORK
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- SOCIAL MEDIA DESIGN -->
+
+        <article class="portfolio-category-card"
+                 data-category-card="social">
+
+            <div class="portfolio-category-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=85"
+                    alt="Social Media Design portfolio sample"
+                    loading="lazy">
+
+                <div class="portfolio-category-overlay">
+                    <span>VIEW WORK</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+            </div>
+
+            <div class="portfolio-category-content">
+
+                <span class="portfolio-category-number">
+                    <i class="fas fa-share-nodes"></i>
+                </span>
 
                 <h3>
                     Social Media Design
                 </h3>
 
                 <p>
-                    Digital content and social media creatives.
+                    Social posts, campaign creatives, promotional
+                    graphics, stories and digital content.
                 </p>
+
+                <button
+                    type="button"
+                    class="portfolio-view-btn"
+                    data-open-category="social">
+
+                    EXPLORE WORK
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </button>
 
             </div>
 
+        </article>
 
-            <!-- 03 — BRANDING & IDENTITY -->
 
-            <div class="skill-card aura-pink">
+        <!-- WEB / UI/UX -->
 
-                <i class="fas fa-layer-group"></i>
+        <article class="portfolio-category-card"
+                 data-category-card="web">
+
+            <div class="portfolio-category-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=85"
+                    alt="Web UI UX Design portfolio sample"
+                    loading="lazy">
+
+                <div class="portfolio-category-overlay">
+                    <span>VIEW WORK</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+            </div>
+
+            <div class="portfolio-category-content">
+
+                <span class="portfolio-category-number">
+                    <i class="fas fa-laptop"></i>
+                </span>
 
                 <h3>
-                    Branding &amp; Identity
+                    Web · UI/UX Design
                 </h3>
 
                 <p>
-                    Visual identity and brand communication.
+                    Website layouts, landing pages, interface
+                    design, UX concepts and Figma prototypes.
                 </p>
+
+                <button
+                    type="button"
+                    class="portfolio-view-btn"
+                    data-open-category="web">
+
+                    EXPLORE WORK
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </button>
 
             </div>
 
+        </article>
 
-            <!-- 04 — WEB DESIGN -->
 
-            <div class="skill-card aura-purple">
+        <!-- VIDEO / MOTION GRAPHIC -->
 
-                <i class="fas fa-laptop"></i>
+        <article class="portfolio-category-card"
+                 data-category-card="video">
+
+            <div class="portfolio-category-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=85"
+                    alt="Video and Motion Graphics portfolio sample"
+                    loading="lazy">
+
+                <div class="portfolio-category-overlay">
+                    <span>VIEW WORK</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+            </div>
+
+            <div class="portfolio-category-content">
+
+                <span class="portfolio-category-number">
+                    <i class="fas fa-film"></i>
+                </span>
 
                 <h3>
-                    Web Design
+                    Video · Motion Graphic
                 </h3>
 
                 <p>
-                    Modern layouts and digital experiences.
+                    Video editing, reels, promotional videos,
+                    motion graphics and animated visuals.
                 </p>
+
+                <button
+                    type="button"
+                    class="portfolio-view-btn"
+                    data-open-category="video">
+
+                    EXPLORE WORK
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </button>
 
             </div>
 
+        </article>
 
-            <!-- 05 — VIDEO EDITING -->
 
-            <div class="skill-card aura-cyan">
+        <!-- PRINTING / PUBLISHING -->
 
-                <i class="fas fa-video"></i>
+        <article class="portfolio-category-card"
+                 data-category-card="print">
+
+            <div class="portfolio-category-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=1200&q=85"
+                    alt="Printing and Publishing Media Design portfolio sample"
+                    loading="lazy">
+
+                <div class="portfolio-category-overlay">
+                    <span>VIEW WORK</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+
+            </div>
+
+            <div class="portfolio-category-content">
+
+                <span class="portfolio-category-number">
+                    <i class="fas fa-print"></i>
+                </span>
 
                 <h3>
-                    Video Editing
+                    Printing / Publishing Media
                 </h3>
 
                 <p>
-                    Promotional videos, reels and storytelling.
+                    Brochures, books, magazines, flyers, catalogs
+                    and professional print-ready publications.
                 </p>
+
+                <button
+                    type="button"
+                    class="portfolio-view-btn"
+                    data-open-category="print">
+
+                    EXPLORE WORK
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </button>
 
             </div>
 
+        </article>
 
-            <!-- 06 — MOTION GRAPHICS -->
+    </div>
 
-            <div class="skill-card aura-emerald">
 
-                <i class="fas fa-wand-magic-sparkles"></i>
+    <!-- PORTFOLIO WORK AREA -->
 
-                <h3>
-                    Motion Graphics
+    <div id="portfolioWorks"
+         class="hidden mt-16">
+
+
+        <!-- WORK HEADER -->
+
+        <div class="flex flex-col md:flex-row
+                    md:items-end md:justify-between
+                    gap-6 mb-10">
+
+            <div>
+
+                <button
+                    type="button"
+                    id="portfolioBackBtn"
+                    class="portfolio-back-btn mb-5">
+
+                    <i class="fas fa-arrow-left"></i>
+                    BACK TO PORTFOLIO
+
+                </button>
+
+
+                <span
+                    id="portfolioWorkNumber"
+                    class="section-tag">
+
+                    GRAPHIC DESIGN
+
+                </span>
+
+
+                <h3
+                    id="portfolioWorkTitle"
+                    class="section-title mt-4">
+
+                    Graphic Design
+
                 </h3>
 
-                <p>
-                    Animation and motion-based visual content.
+
+                <p
+                    id="portfolioWorkDescription"
+                    class="section-description max-w-2xl">
+
+                    Selected graphic design projects and
+                    creative visual work.
+
                 </p>
 
             </div>
 
 
-            <!-- 07 — PRINT DESIGN -->
+            <div class="portfolio-work-count">
 
-            <div class="skill-card aura-pink">
-
-                <i class="fas fa-print"></i>
-
-                <h3>
-                    Print Design
-                </h3>
-
-                <p>
-                    Brochures, posters, banners and print artwork.
-                </p>
+                <span id="portfolioCount">
+                    5 Selected Works
+                </span>
 
             </div>
 
-
-            <!-- 08 — UI/UX DESIGN -->
-
-            <div class="skill-card aura-purple">
-
-                <i class="fas fa-object-group"></i>
-
-                <h3>
-                    UI/UX Design
-                </h3>
-
-                <p>
-                    User interfaces and practical digital layouts.
-                </p>
-
-            </div>
+        </div>
 
 
-            <!-- 09 — PHOTO EDITING -->
+        <!-- GRAPHIC DESIGN -->
 
-            <div class="skill-card aura-cyan">
-
-                <i class="fas fa-image"></i>
-
-                <h3>
-                    Photo Editing
-                </h3>
-
-                <p>
-                    Image enhancement, retouching and composition.
-                </p>
-
-            </div>
+        <div class="portfolio-work-grid"
+             data-work-category="graphic">
 
 
-            <!-- 10 — CONTENT CREATION -->
+            <article class="portfolio-project-card">
 
-            <div class="skill-card aura-emerald">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=85"
+                        alt="Graphic Design sample 01"
+                        loading="lazy">
+                </div>
 
-                <i class="fas fa-photo-video"></i>
+                <div class="portfolio-project-info">
+                    <span>GRAPHIC DESIGN</span>
+                    <h4>Creative Poster Design</h4>
+                    <p>Promotional poster concept.</p>
+                </div>
 
-                <h3>
-                    Content Creation
-                </h3>
-
-                <p>
-                    Creative visual content for digital platforms.
-                </p>
-
-            </div>
-
-
-            <!-- 11 — DIGITAL MARKETING -->
-
-            <div class="skill-card aura-pink">
-
-                <i class="fas fa-bullhorn"></i>
-
-                <h3>
-                    Digital Marketing
-                </h3>
-
-                <p>
-                    Creative assets for digital promotion.
-                </p>
-
-            </div>
+            </article>
 
 
-            <!-- 12 — CREATIVE DIRECTION -->
+            <article class="portfolio-project-card">
 
-            <div class="skill-card aura-purple">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=85"
+                        alt="Graphic Design sample 02"
+                        loading="lazy">
+                </div>
 
-                <i class="fas fa-compass-drafting"></i>
+                <div class="portfolio-project-info">
+                    <span>GRAPHIC DESIGN</span>
+                    <h4>Creative Artwork</h4>
+                    <p>Experimental visual composition.</p>
+                </div>
 
-                <h3>
-                    Creative Direction
-                </h3>
+            </article>
 
-                <p>
-                    Concept development and visual planning.
-                </p>
 
-            </div>
+            <article class="portfolio-project-card">
 
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&q=85"
+                        alt="Graphic Design sample 03"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>GRAPHIC DESIGN</span>
+                    <h4>Marketing Artwork</h4>
+                    <p>Promotional creative design.</p>
+                </div>
+
+            </article>
+
+
+            <article class="portfolio-project-card">
+
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1200&q=85"
+                        alt="Graphic Design sample 04"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>GRAPHIC DESIGN</span>
+                    <h4>Digital Campaign Visual</h4>
+                    <p>Digital advertising artwork.</p>
+                </div>
+
+            </article>
+
+
+            <article class="portfolio-project-card">
+
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1200&q=85"
+                        alt="Graphic Design sample 05"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>GRAPHIC DESIGN</span>
+                    <h4>Visual Composition</h4>
+                    <p>Modern creative graphic artwork.</p>
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- BRAND & IDENTITY -->
+
+        <div class="portfolio-work-grid hidden"
+             data-work-category="branding">
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=1200&q=85"
+                        alt="Brand Identity sample 01"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>BRAND &amp; IDENTITY</span>
+                    <h4>Logo Identity Concept</h4>
+                    <p>Modern brand identity direction.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1561070791-36c11767b26a?auto=format&fit=crop&w=1200&q=85"
+                        alt="Brand Identity sample 02"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>BRAND &amp; IDENTITY</span>
+                    <h4>Corporate Branding</h4>
+                    <p>Visual identity system concept.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1200&q=85"
+                        alt="Brand Identity sample 03"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>BRAND &amp; IDENTITY</span>
+                    <h4>Stationery Design</h4>
+                    <p>Professional brand stationery.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1600508774634-4e11d34730e2?auto=format&fit=crop&w=1200&q=85"
+                        alt="Brand Identity sample 04"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>BRAND &amp; IDENTITY</span>
+                    <h4>Brand Guidelines</h4>
+                    <p>Complete visual branding direction.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=85"
+                        alt="Brand Identity sample 05"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>BRAND &amp; IDENTITY</span>
+                    <h4>Brand Visual System</h4>
+                    <p>Identity and communication concept.</p>
+                </div>
+            </article>
+
+        </div>
+
+
+        <!-- SOCIAL MEDIA -->
+
+        <div class="portfolio-work-grid hidden"
+             data-work-category="social">
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=85"
+                        alt="Social Media Design sample 01"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>SOCIAL MEDIA DESIGN</span>
+                    <h4>Social Campaign Creative</h4>
+                    <p>Digital campaign artwork.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=1200&q=85"
+                        alt="Social Media Design sample 02"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>SOCIAL MEDIA DESIGN</span>
+                    <h4>Promotional Social Post</h4>
+                    <p>Product promotion concept.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=1200&q=85"
+                        alt="Social Media Design sample 03"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>SOCIAL MEDIA DESIGN</span>
+                    <h4>Content Series</h4>
+                    <p>Social content visual system.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1611262588024-d12430b98920?auto=format&fit=crop&w=1200&q=85"
+                        alt="Social Media Design sample 04"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>SOCIAL MEDIA DESIGN</span>
+                    <h4>Social Story Creative</h4>
+                    <p>Vertical promotional content.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=1200&q=85"
+                        alt="Social Media Design sample 05"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>SOCIAL MEDIA DESIGN</span>
+                    <h4>Digital Content Pack</h4>
+                    <p>Multi-platform creative package.</p>
+                </div>
+            </article>
+
+        </div>
+
+
+        <!-- WEB / UI/UX -->
+
+        <div class="portfolio-work-grid hidden"
+             data-work-category="web">
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=85"
+                        alt="Web UI UX sample 01"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>WEB · UI/UX</span>
+                    <h4>Website Interface</h4>
+                    <p>Modern responsive web concept.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
+                        alt="Web UI UX sample 02"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>WEB · UI/UX</span>
+                    <h4>Landing Page Design</h4>
+                    <p>Conversion-focused landing page.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1200&q=85"
+                        alt="Web UI UX sample 03"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>WEB · UI/UX</span>
+                    <h4>Dashboard UI</h4>
+                    <p>Interface design concept.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=85"
+                        alt="Web UI UX sample 04"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>WEB · UI/UX</span>
+                    <h4>Mobile UI Concept</h4>
+                    <p>Mobile interface experience.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=85"
+                        alt="Web UI UX sample 05"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>WEB · UI/UX</span>
+                    <h4>Figma Prototype</h4>
+                    <p>Interactive interface concept.</p>
+                </div>
+            </article>
+
+        </div>
+
+
+        <!-- VIDEO / MOTION GRAPHIC -->
+
+        <div class="portfolio-work-grid hidden"
+             data-work-category="video">
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=85"
+                        alt="Video Motion Graphic sample 01"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>VIDEO · MOTION GRAPHIC</span>
+                    <h4>Promotional Video</h4>
+                    <p>Creative promotional edit.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=85"
+                        alt="Video Motion Graphic sample 02"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>VIDEO · MOTION GRAPHIC</span>
+                    <h4>Video Editing</h4>
+                    <p>Professional video production concept.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1200&q=85"
+                        alt="Video Motion Graphic sample 03"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>VIDEO · MOTION GRAPHIC</span>
+                    <h4>Motion Graphics</h4>
+                    <p>Animated visual communication.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85"
+                        alt="Video Motion Graphic sample 04"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>VIDEO · MOTION GRAPHIC</span>
+                    <h4>Short-form Content</h4>
+                    <p>Reels and social video concept.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85"
+                        alt="Video Motion Graphic sample 05"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>VIDEO · MOTION GRAPHIC</span>
+                    <h4>Creative Video Campaign</h4>
+                    <p>Campaign storytelling concept.</p>
+                </div>
+            </article>
+
+        </div>
+
+
+        <!-- PRINTING / PUBLISHING -->
+
+        <div class="portfolio-work-grid hidden"
+             data-work-category="print">
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=1200&q=85"
+                        alt="Printing Publishing Media sample 01"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>PRINTING / PUBLISHING</span>
+                    <h4>Brochure Design</h4>
+                    <p>Professional promotional brochure.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1200&q=85"
+                        alt="Printing Publishing Media sample 02"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>PRINTING / PUBLISHING</span>
+                    <h4>Book Publication</h4>
+                    <p>Book cover and publication concept.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=85"
+                        alt="Printing Publishing Media sample 03"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>PRINTING / PUBLISHING</span>
+                    <h4>Magazine Layout</h4>
+                    <p>Editorial publication design.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=85"
+                        alt="Printing Publishing Media sample 04"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>PRINTING / PUBLISHING</span>
+                    <h4>Catalog Design</h4>
+                    <p>Product catalog layout concept.</p>
+                </div>
+            </article>
+
+
+            <article class="portfolio-project-card">
+                <div class="portfolio-project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=1200&q=85"
+                        alt="Printing Publishing Media sample 05"
+                        loading="lazy">
+                </div>
+
+                <div class="portfolio-project-info">
+                    <span>PRINTING / PUBLISHING</span>
+                    <h4>Publication Artwork</h4>
+                    <p>Print-ready editorial artwork.</p>
+                </div>
+            </article>
 
         </div>
 
     </div>
 
+</div>
+```
+
 </section>
 
-
 <!-- =========================================================
-     04 — SOFTWARE
+     CAREER + SOFTWARE + SOCIAL CONNECTION
 ========================================================= -->
 
-<section id="software"
+<section id="career"
          class="py-20 relative z-10">
 
-    <div class="max-w-7xl mx-auto
-                px-4 sm:px-6 lg:px-8">
+```
+<div class="max-w-7xl mx-auto
+            px-4 sm:px-6 lg:px-8">
 
-        <div class="grid grid-cols-1
-            lg:grid-cols-12
-            gap-10 lg:gap-14
-            items-stretch">
 
-            <!-- LEFT — SOFTWARE INTRO -->
+    <div class="career-dashboard">
 
-            <div class="lg:col-span-4">
+
+        <!-- =================================================
+             LEFT COLUMN — CAREER
+        ================================================== -->
+
+        <div class="career-dashboard-column career-column">
+
+            <div class="career-dashboard-heading">
 
                 <span class="section-tag">
-                    04 — SOFTWARE
+                    CAREER JOURNEY
                 </span>
 
                 <h2 class="font-display
@@ -881,2407 +1685,1239 @@
                            font-extrabold
                            text-white mt-2">
 
-                    Tools
-                    <br>
-                    I work
-                    <br>
-                    with.
+                    Professional Journey.
 
                 </h2>
 
-                <p class="text-slate-400
-                          max-w-sm
-                          mt-5
-                          leading-relaxed">
+                <p class="text-slate-400 mt-4">
 
-                    A practical toolkit of professional
-                    design, video editing, motion graphics,
-                    UI and digital content creation software.
+                    A journey shaped by creative work,
+                    entrepreneurship, media, management,
+                    design and professional experience.
 
                 </p>
 
             </div>
 
 
-            <!-- RIGHT — SOFTWARE GRID -->
+            <!-- CAREER LIST -->
 
-            <div class="lg:col-span-8">
+            <div class="career-list">
 
-                <div class="grid grid-cols-1
-                            sm:grid-cols-2
-                            lg:grid-cols-5
-                            gap-4">
 
+                <!-- CAREER 01 -->
 
-                    <!-- 01 — ADOBE PHOTOSHOP -->
-
-                    <div class="software-card">
-
-                        <img src="assets/icon/photoshop.svg"
-                             alt="Adobe Photoshop"
-                             class="software-icon">
-
-                        <h3>
-                            Adobe Photoshop
-                        </h3>
-
-                        <p>
-                            Photo Editing · Digital Design
-                        </p>
-
-                    </div>
-
-
-                    <!-- 02 — ADOBE ILLUSTRATOR -->
-
-                    <div class="software-card">
-
-                        <img src="assets/icon/illustrator.svg"
-                             alt="Adobe Illustrator"
-                             class="software-icon">
-
-                        <h3>
-                            Adobe Illustrator
-                        </h3>
-
-                        <p>
-                            Vector Design · Branding
-                        </p>
-
-                    </div>
-
-
-                    <!-- 03 — ADOBE PREMIERE PRO -->
-
-                    <div class="software-card">
-
-                        <img src="assets/icon/premiere pro.svg"
-                             alt="Adobe Premiere Pro"
-                             class="software-icon">
-
-                        <h3>
-                            Adobe Premiere Pro
-                        </h3>
-
-                        <p>
-                            Video Editing · Production
-                        </p>
-
-                    </div>
-
-
-                    <!-- 04 — ADOBE AFTER EFFECTS -->
-
-                    <div class="software-card">
-
-                        <img src="assets/icon/After Effects.svg"
-                             alt="Adobe After Effects"
-                             class="software-icon">
-
-                        <h3>
-                            Adobe After Effects
-                        </h3>
-
-                        <p>
-                            Motion Graphics · Animation
-                        </p>
-
-                    </div>
-
-
-                    <!-- 05 — CANVA -->
-
-                    <div class="software-card">
-
-                        <img src="assets/icon/Canva.svg"
-                             alt="Canva"
-                             class="software-icon">
-
-                        <h3>
-                            Canva
-                        </h3>
-
-                        <p>
-                            Social Media · Quick Design
-                        </p>
-
-                    </div>
-
-
-                    <!-- 06 — CAPCUT -->
-
-                    <div class="software-card">
-
-                        <img src="assets/icon/Capcut.svg"
-                             alt="CapCut"
-                             class="software-icon">
-
-                        <h3>
-                            CapCut
-                        </h3>
-
-                        <p>
-                            Short-form Video · Reels
-                        </p>
-
-                    </div>
-
-
-                    <!-- 07 — FIGMA -->
-
-                    <div class="software-card">
-
-                        <img src="assets/icon/Figma.svg"
-                             alt="Figma"
-                             class="software-icon">
-
-                        <h3>
-                            Figma
-                        </h3>
-
-                        <p>
-                            UI Design · Web Interface
-                        </p>
-
-                    </div>
-
-
-                    <!-- 08 — CORELDRAW -->
-
-                    <div class="software-card">
-
-                        <img src="assets/icon/Corel Draw.svg"
-                             alt="CorelDRAW"
-                             class="software-icon">
-
-                        <h3>
-                            CorelDRAW
-                        </h3>
-
-                        <p>
-                            Print Design · Vector Artwork
-                        </p>
-
-                    </div>
-
-
-                    <!-- 09 — ADOBE INDESIGN -->
-
-                    <div class="software-card">
-
-                        <img src="assets/icon/Indesign.svg"
-                             alt="Adobe InDesign"
-                             class="software-icon">
-
-                        <h3>
-                            Adobe InDesign
-                        </h3>
-
-                        <p>
-                            Publication · Layout Design
-                        </p>
-
-                    </div>
-
-
-                    <!-- 10 — VN EDITOR -->
-
-                    <div class="software-card">
-
-                        <img src="assets/icon/VN editor.svg"
-                             alt="VN Editor"
-                             class="software-icon">
-
-                        <h3>
-                            VN Editor
-                        </h3>
-
-                        <p>
-                            Mobile Video · Social Content
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     05 — PORTFOLIO
-========================================================= -->
-<section id="portfolio" class="section-padding">
-
-    <div class="container mx-auto px-6">
-
-        <!-- SECTION INTRO -->
-        <div class="mb-14">
-            <span class="section-tag">05 — PORTFOLIO</span>
-
-            <h2 class="section-title mt-4">
-                Selected <span>Creative Work.</span>
-            </h2>
-
-            <p class="section-description max-w-2xl">
-                Explore selected work across graphic design, branding,
-                social media, web, multimedia, video and printing /
-                publishing media.
-            </p>
-        </div>
-
-
-        <!-- =====================================================
-             PORTFOLIO CATEGORY GRID
-        ====================================================== -->
-
-        <div id="portfolioCategories"
-             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-
-            <!-- =================================================
-                 01 — GRAPHIC DESIGN
-            ================================================== -->
-
-            <article class="portfolio-category-card"
-                     data-category-card="graphic">
-
-                <div class="portfolio-category-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=85"
-                        alt="Graphic Design portfolio sample"
-                        loading="lazy"
-                    >
-
-                    <div class="portfolio-category-overlay">
-                        <span>VIEW WORK</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-
-                </div>
-
-                <div class="portfolio-category-content">
-
-                    <span class="portfolio-category-number">
-    <i class="fas fa-palette"></i>
-</span>
-
-                    <h3>
-                        Graphic Design
-                    </h3>
-
-                    <p>
-                        Posters, banners, creative artwork,
-                        photo manipulation and marketing visuals.
-                    </p>
-
-                    <button
-                        type="button"
-                        class="portfolio-view-btn"
-                        data-open-category="graphic"
-                    >
-                        EXPLORE WORKS
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 02 — BRAND & IDENTITY
-            ================================================== -->
-
-            <article class="portfolio-category-card"
-                     data-category-card="branding">
-
-                <div class="portfolio-category-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=1200&q=85"
-                        alt="Brand and Identity portfolio sample"
-                        loading="lazy"
-                    >
-
-                    <div class="portfolio-category-overlay">
-                        <span>VIEW WORK</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-
-                </div>
-
-                <div class="portfolio-category-content">
-
-                    <span class="portfolio-category-number">
-    <i class="fas fa-layer-group"></i>
-</span>
-
-                    <h3>
-                        Brand &amp; Identity
-                    </h3>
-
-                    <p>
-                        Logo design, visual identity, business
-                        stationery and complete brand systems.
-                    </p>
-
-                    <button
-                        type="button"
-                        class="portfolio-view-btn"
-                        data-open-category="branding"
-                    >
-                        EXPLORE WORKS
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 03 — SOCIAL MEDIA DESIGN
-            ================================================== -->
-
-            <article class="portfolio-category-card"
-                     data-category-card="social">
-
-                <div class="portfolio-category-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=85"
-                        alt="Social Media Design portfolio sample"
-                        loading="lazy"
-                    >
-
-                    <div class="portfolio-category-overlay">
-                        <span>VIEW WORK</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-
-                </div>
-
-                <div class="portfolio-category-content">
-
-                    <span class="portfolio-category-number">
-    <i class="fas fa-share-nodes"></i>
-</span>
-
-                    <h3>
-                        Social Media Design
-                    </h3>
-
-                    <p>
-                        Social posts, campaign creatives, promotional
-                        graphics, stories and digital content.
-                    </p>
-
-                    <button
-                        type="button"
-                        class="portfolio-view-btn"
-                        data-open-category="social"
-                    >
-                        EXPLORE WORKS
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 04 — WEB / UI/UX DESIGN
-            ================================================== -->
-
-            <article class="portfolio-category-card"
-                     data-category-card="web">
-
-                <div class="portfolio-category-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=85"
-                        alt="Web UI UX Design portfolio sample"
-                        loading="lazy"
-                    >
-
-                    <div class="portfolio-category-overlay">
-                        <span>VIEW WORK</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-
-                </div>
-
-                <div class="portfolio-category-content">
-
-                    <span class="portfolio-category-number">
-    <i class="fas fa-laptop"></i>
-</span>
-
-                    <h3>
-                        Web · UI/UX Design
-                    </h3>
-
-                    <p>
-                        Website layouts, landing pages, interface
-                        design, UX concepts and Figma prototypes.
-                    </p>
-
-                    <button
-                        type="button"
-                        class="portfolio-view-btn"
-                        data-open-category="web"
-                    >
-                        EXPLORE WORKS
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 05 — VIDEO / MOTION GRAPHIC
-            ================================================== -->
-
-            <article class="portfolio-category-card"
-                     data-category-card="video">
-
-                <div class="portfolio-category-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=85"
-                        alt="Video and Motion Graphics portfolio sample"
-                        loading="lazy"
-                    >
-
-                    <div class="portfolio-category-overlay">
-                        <span>VIEW WORK</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-
-                </div>
-
-                <div class="portfolio-category-content">
-
-                    <span class="portfolio-category-number">
-    <i class="fas fa-film"></i>
-</span>
-
-                    <h3>
-                        Video · Motion Graphic
-                    </h3>
-
-                    <p>
-                        Video editing, reels, promotional videos,
-                        motion graphics and animated visuals.
-                    </p>
-
-                    <button
-                        type="button"
-                        class="portfolio-view-btn"
-                        data-open-category="video"
-                    >
-                        EXPLORE WORKS
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- =================================================
-                 06 — PRINTING / PUBLISHING MEDIA
-            ================================================== -->
-
-            <article class="portfolio-category-card"
-                     data-category-card="print">
-
-                <div class="portfolio-category-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=1200&q=85"
-                        alt="Printing and Publishing Media Design portfolio sample"
-                        loading="lazy"
-                    >
-
-                    <div class="portfolio-category-overlay">
-                        <span>VIEW WORK</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-
-                </div>
-
-                <div class="portfolio-category-content">
-
-                    <span class="portfolio-category-number">
-    <i class="fas fa-print"></i>
-</span>
-
-                    <h3>
-                        Printing / Publishing Media
-                    </h3>
-
-                    <p>
-                        Brochures, books, magazines, flyers, catalogs
-                        and professional print-ready publications.
-                    </p>
-
-                    <button
-                        type="button"
-                        class="portfolio-view-btn"
-                        data-open-category="print"
-                    >
-                        EXPLORE WORKS
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- =====================================================
-             CATEGORY WORK AREA
-             Hidden until a category is selected
-        ====================================================== -->
-
-        <div id="portfolioWorks"
-             class="hidden mt-16">
-
-
-            <!-- =================================================
-                 WORK HEADER
-            ================================================== -->
-
-            <div class="flex flex-col md:flex-row
-                        md:items-end md:justify-between
-                        gap-6 mb-10">
-
-                <div>
-
-                    <button
-                        type="button"
-                        id="portfolioBackBtn"
-                        class="portfolio-back-btn mb-5"
-                    >
-                        <i class="fas fa-arrow-left"></i>
-                        BACK TO PORTFOLIO
-                    </button>
-
-                    <span
-                        id="portfolioWorkNumber"
-                        class="section-tag"
-                    >
-                        01 — GRAPHIC DESIGN
-                    </span>
-
-                    <h3
-                        id="portfolioWorkTitle"
-                        class="section-title mt-4"
-                    >
-                        Graphic Design
-                    </h3>
-
-                    <p
-                        id="portfolioWorkDescription"
-                        class="section-description max-w-2xl"
-                    >
-                        Selected graphic design projects and
-                        creative visual work.
-                    </p>
-
-                </div>
-
-                <div class="portfolio-work-count">
-
-                    <span id="portfolioCount">
-                        5 Selected Works
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 GRAPHIC DESIGN — 5
-            ================================================== -->
-
-            <div
-                class="portfolio-work-grid"
-                data-work-category="graphic"
-            >
-
-                <article class="portfolio-project-card">
-
-                    <div class="portfolio-project-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=85"
-                            alt="Graphic Design sample 01"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="portfolio-project-info">
-
-                        <span>GRAPHIC DESIGN</span>
-
-                        <h4>
-                            Creative Poster Design
-                        </h4>
-
-                        <p>
-                            Promotional poster concept.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="portfolio-project-card">
-
-                    <div class="portfolio-project-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=85"
-                            alt="Graphic Design sample 02"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="portfolio-project-info">
-
-                        <span>GRAPHIC DESIGN</span>
-
-                        <h4>
-                            Creative Artwork
-                        </h4>
-
-                        <p>
-                            Experimental visual composition.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="portfolio-project-card">
-
-                    <div class="portfolio-project-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&q=85"
-                            alt="Graphic Design sample 03"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="portfolio-project-info">
-
-                        <span>GRAPHIC DESIGN</span>
-
-                        <h4>
-                            Marketing Artwork
-                        </h4>
-
-                        <p>
-                            Promotional creative design.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="portfolio-project-card">
-
-                    <div class="portfolio-project-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1200&q=85"
-                            alt="Graphic Design sample 04"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="portfolio-project-info">
-
-                        <span>GRAPHIC DESIGN</span>
-
-                        <h4>
-                            Digital Campaign Visual
-                        </h4>
-
-                        <p>
-                            Digital advertising artwork.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="portfolio-project-card">
-
-                    <div class="portfolio-project-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=1200&q=85"
-                            alt="Graphic Design sample 05"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                    <div class="portfolio-project-info">
-
-                        <span>GRAPHIC DESIGN</span>
-
-                        <h4>
-                            Visual Composition
-                        </h4>
-
-                        <p>
-                            Modern creative graphic artwork.
-                        </p>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-
-            <!-- =================================================
-                 BRAND & IDENTITY — 5
-            ================================================== -->
-
-            <div
-                class="portfolio-work-grid hidden"
-                data-work-category="branding"
-            >
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1634942537034-2531766767d1?auto=format&fit=crop&w=1200&q=85"
-                            alt="Brand Identity sample 01"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>BRAND &amp; IDENTITY</span>
-                        <h4>Logo Identity Concept</h4>
-                        <p>Modern brand identity direction.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1561070791-36c11767b26a?auto=format&fit=crop&w=1200&q=85"
-                            alt="Brand Identity sample 02"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>BRAND &amp; IDENTITY</span>
-                        <h4>Corporate Branding</h4>
-                        <p>Visual identity system concept.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1200&q=85"
-                            alt="Brand Identity sample 03"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>BRAND &amp; IDENTITY</span>
-                        <h4>Stationery Design</h4>
-                        <p>Professional brand stationery.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1600508774634-4e11d34730e2?auto=format&fit=crop&w=1200&q=85"
-                            alt="Brand Identity sample 04"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>BRAND &amp; IDENTITY</span>
-                        <h4>Brand Guidelines</h4>
-                        <p>Complete visual branding direction.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=85"
-                            alt="Brand Identity sample 05"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>BRAND &amp; IDENTITY</span>
-                        <h4>Brand Visual System</h4>
-                        <p>Identity and communication concept.</p>
-                    </div>
-                </article>
-
-            </div>
-
-
-            <!-- =================================================
-                 SOCIAL MEDIA — 5
-            ================================================== -->
-
-            <div
-                class="portfolio-work-grid hidden"
-                data-work-category="social"
-            >
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=85"
-                            alt="Social Media Design sample 01"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>SOCIAL MEDIA DESIGN</span>
-                        <h4>Social Campaign Creative</h4>
-                        <p>Digital campaign artwork.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&w=1200&q=85"
-                            alt="Social Media Design sample 02"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>SOCIAL MEDIA DESIGN</span>
-                        <h4>Promotional Social Post</h4>
-                        <p>Product promotion concept.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=1200&q=85"
-                            alt="Social Media Design sample 03"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>SOCIAL MEDIA DESIGN</span>
-                        <h4>Content Series</h4>
-                        <p>Social content visual system.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1611262588024-d12430b98920?auto=format&fit=crop&w=1200&q=85"
-                            alt="Social Media Design sample 04"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>SOCIAL MEDIA DESIGN</span>
-                        <h4>Social Story Creative</h4>
-                        <p>Vertical promotional content.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?auto=format&fit=crop&w=1200&q=85"
-                            alt="Social Media Design sample 05"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>SOCIAL MEDIA DESIGN</span>
-                        <h4>Digital Content Pack</h4>
-                        <p>Multi-platform creative package.</p>
-                    </div>
-                </article>
-
-            </div>
-
-
-            <!-- =================================================
-                 WEB / UI/UX — 5
-            ================================================== -->
-
-            <div
-                class="portfolio-work-grid hidden"
-                data-work-category="web"
-            >
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=85"
-                            alt="Web UI UX sample 01"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>WEB · UI/UX</span>
-                        <h4>Website Interface</h4>
-                        <p>Modern responsive web concept.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85"
-                            alt="Web UI UX sample 02"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>WEB · UI/UX</span>
-                        <h4>Landing Page Design</h4>
-                        <p>Conversion-focused landing page.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1200&q=85"
-                            alt="Web UI UX sample 03"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>WEB · UI/UX</span>
-                        <h4>Dashboard UI</h4>
-                        <p>Interface design concept.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=85"
-                            alt="Web UI UX sample 04"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>WEB · UI/UX</span>
-                        <h4>Mobile UI Concept</h4>
-                        <p>Mobile interface experience.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=85"
-                            alt="Web UI UX sample 05"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>WEB · UI/UX</span>
-                        <h4>Figma Prototype</h4>
-                        <p>Interactive interface concept.</p>
-                    </div>
-                </article>
-
-            </div>
-
-
-            <!-- =================================================
-                 VIDEO / MOTION GRAPHIC — 5
-            ================================================== -->
-
-            <div
-                class="portfolio-work-grid hidden"
-                data-work-category="video"
-            >
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=85"
-                            alt="Video Motion Graphic sample 01"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>VIDEO · MOTION GRAPHIC</span>
-                        <h4>Promotional Video</h4>
-                        <p>Creative promotional edit.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=85"
-                            alt="Video Motion Graphic sample 02"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>VIDEO · MOTION GRAPHIC</span>
-                        <h4>Video Editing</h4>
-                        <p>Professional video production concept.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1200&q=85"
-                            alt="Video Motion Graphic sample 03"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>VIDEO · MOTION GRAPHIC</span>
-                        <h4>Motion Graphics</h4>
-                        <p>Animated visual communication.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85"
-                            alt="Video Motion Graphic sample 04"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>VIDEO · MOTION GRAPHIC</span>
-                        <h4>Short-form Content</h4>
-                        <p>Reels and social video concept.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85"
-                            alt="Video Motion Graphic sample 05"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>VIDEO · MOTION GRAPHIC</span>
-                        <h4>Creative Video Campaign</h4>
-                        <p>Campaign storytelling concept.</p>
-                    </div>
-                </article>
-
-            </div>
-
-
-            <!-- =================================================
-                 PRINTING / PUBLISHING MEDIA — 5
-            ================================================== -->
-
-            <div
-                class="portfolio-work-grid hidden"
-                data-work-category="print"
-            >
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=1200&q=85"
-                            alt="Printing Publishing Media sample 01"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>PRINTING / PUBLISHING</span>
-                        <h4>Brochure Design</h4>
-                        <p>Professional promotional brochure.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=1200&q=85"
-                            alt="Printing Publishing Media sample 02"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>PRINTING / PUBLISHING</span>
-                        <h4>Book Publication</h4>
-                        <p>Book cover and publication concept.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=85"
-                            alt="Printing Publishing Media sample 03"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>PRINTING / PUBLISHING</span>
-                        <h4>Magazine Layout</h4>
-                        <p>Editorial publication design.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=85"
-                            alt="Printing Publishing Media sample 04"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>PRINTING / PUBLISHING</span>
-                        <h4>Catalog Design</h4>
-                        <p>Product catalog layout concept.</p>
-                    </div>
-                </article>
-
-
-                <article class="portfolio-project-card">
-                    <div class="portfolio-project-image">
-                        <img
-                            src="https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=1200&q=85"
-                            alt="Printing Publishing Media sample 05"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="portfolio-project-info">
-                        <span>PRINTING / PUBLISHING</span>
-                        <h4>Publication Artwork</h4>
-                        <p>Print-ready editorial artwork.</p>
-                    </div>
-                </article>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     06 — CAREER JOURNEY
-     DIRECT COLOR-CODED HTML
-========================================================= -->
-
-<section id="career" class="py-20 relative z-10">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="career-layout">
-
-
-            <!-- =================================================
-                 LEFT COLUMN — CAREER
-            ================================================== -->
-
-            <div class="career-main">
-
-                <!-- SECTION HEADING -->
-
-                <div class="mb-12">
-
-                    <span class="section-tag">
-                        06 — CAREER JOURNEY
-                    </span>
-
-                    <h2 class="font-display
-                               text-4xl sm:text-5xl
-                               font-extrabold
-                               text-white mt-2">
-
-                        Professional Journey.
-
-                    </h2>
-
-                    <p class="text-slate-400 max-w-3xl mt-4">
-
-                        A journey shaped by creative work,
-                        entrepreneurship, media, management,
-                        design and professional experience.
-
-                    </p>
-
-                </div>
-
-
-                <!-- =================================================
-                     CAREER LIST
-                ================================================== -->
-
-                <div class="career-list">
-
-
-                    <!-- =================================================
-                         01 — CYAN
-                    ================================================== -->
-
-                    <div class="career-card glass-card"
-                         style="
-                            --career-color: #22d3ee;
-                            --career-color-soft: rgba(34,211,238,0.16);
-                            --career-color-glow: rgba(34,211,238,0.45);
-                         ">
-
-                        <div class="career-date-column">
-
-                            <span class="career-date-to">
-                                2026
-                            </span>
-
-                            <span class="career-date-line"></span>
-
-                            <span class="career-date-from">
-                                2018
-                            </span>
-
-                        </div>
-
-                        <div class="career-info">
-
-                            <h3>
-                                Owner / Managing Director
-                            </h3>
-
-                            <p>
-                                Cafe Restaurant & Thakali Bhanchha
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         02 — EMERALD
-                    ================================================== -->
-
-                    <div class="career-card glass-card"
-                         style="
-                            --career-color: #34d399;
-                            --career-color-soft: rgba(52,211,153,0.16);
-                            --career-color-glow: rgba(52,211,153,0.45);
-                         ">
-
-                        <div class="career-date-column">
-
-                            <span class="career-date-to">
-                                2026
-                            </span>
-
-                            <span class="career-date-line"></span>
-
-                            <span class="career-date-from">
-                                2017
-                            </span>
-
-                        </div>
-
-                        <div class="career-info">
-
-                            <h3>
-                                Founder / CEO / MD
-                            </h3>
-
-                            <p>
-                                Designing / Printing / Publishing Media
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         03 — PINK
-                    ================================================== -->
-
-                    <div class="career-card glass-card"
-                         style="
-                            --career-color: #f472b6;
-                            --career-color-soft: rgba(244,114,182,0.16);
-                            --career-color-glow: rgba(244,114,182,0.45);
-                         ">
-
-                        <div class="career-date-column">
-
-                            <span class="career-date-to">
-                                2023
-                            </span>
-
-                            <span class="career-date-line"></span>
-
-                            <span class="career-date-from">
-                                2016
-                            </span>
-
-                        </div>
-
-                        <div class="career-info">
-
-                            <h3>
-                                Co-Secretary / Board of Directors
-                            </h3>
-
-                            <p>
-                                Saving & Credit Co-Operative
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         04 — PURPLE
-                    ================================================== -->
-
-                    <div class="career-card glass-card"
-                         style="
-                            --career-color: #a855f7;
-                            --career-color-soft: rgba(168,85,247,0.16);
-                            --career-color-glow: rgba(168,85,247,0.45);
-                         ">
-
-                        <div class="career-date-column">
-
-                            <span class="career-date-to">
-                                2018
-                            </span>
-
-                            <span class="career-date-line"></span>
-
-                            <span class="career-date-from">
-                                2016
-                            </span>
-
-                        </div>
-
-                        <div class="career-info">
-
-                            <h3>
-                                Head Graphic Designer
-                            </h3>
-
-                            <p>
-                                Arts & Flex Prints
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         05 — CYAN
-                    ================================================== -->
-
-                    <div class="career-card glass-card"
-                         style="
-                            --career-color: #22d3ee;
-                            --career-color-soft: rgba(34,211,238,0.16);
-                            --career-color-glow: rgba(34,211,238,0.45);
-                         ">
-
-                        <div class="career-date-column">
-
-                            <span class="career-date-to">
-                                2017
-                            </span>
-
-                            <span class="career-date-line"></span>
-
-                            <span class="career-date-from">
-                                2015
-                            </span>
-
-                        </div>
-
-                        <div class="career-info">
-
-                            <h3>
-                                Event Manager / Art Director
-                            </h3>
-
-                            <p>
-                                Event Management Company
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         06 — EMERALD
-                    ================================================== -->
-
-                    <div class="career-card glass-card"
-                         style="
-                            --career-color: #34d399;
-                            --career-color-soft: rgba(52,211,153,0.16);
-                            --career-color-glow: rgba(52,211,153,0.45);
-                         ">
-
-                        <div class="career-date-column">
-
-                            <span class="career-date-to">
-                                2026
-                            </span>
-
-                            <span class="career-date-line"></span>
-
-                            <span class="career-date-from">
-                                2014
-                            </span>
-
-                        </div>
-
-                        <div class="career-info">
-
-                            <h3>
-                                Editor / Instructor / Journalist
-                            </h3>
-
-                            <p>
-                                News / Entertainment Media
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         07 — PINK
-                    ================================================== -->
-
-                    <div class="career-card glass-card"
-                         style="
-                            --career-color: #f472b6;
-                            --career-color-soft: rgba(244,114,182,0.16);
-                            --career-color-glow: rgba(244,114,182,0.45);
-                         ">
-
-                        <div class="career-date-column">
-
-                            <span class="career-date-to">
-                                2017
-                            </span>
-
-                            <span class="career-date-line"></span>
-
-                            <span class="career-date-from">
-                                2014
-                            </span>
-
-                        </div>
-
-                        <div class="career-info">
-
-                            <h3>
-                                Senior Graphic Designer
-                            </h3>
-
-                            <p>
-                                Advertising Agency
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- =================================================
-                         08 — PURPLE
-                    ================================================== -->
-
-                    <div class="career-card glass-card"
-                         style="
-                            --career-color: #a855f7;
-                            --career-color-soft: rgba(168,85,247,0.16);
-                            --career-color-glow: rgba(168,85,247,0.45);
-                         ">
-
-                        <div class="career-date-column">
-
-                            <span class="career-date-to">
-                                2014
-                            </span>
-
-                            <span class="career-date-line"></span>
-
-                            <span class="career-date-from">
-                                2012
-                            </span>
-
-                        </div>
-
-                        <div class="career-info">
-
-                            <h3>
-                                Junior Graphic Designer
-                            </h3>
-
-                            <p>
-                                Printing Media Company
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 RIGHT COLUMN — SOCIAL SITES
-            ================================================== -->
-
-            <aside class="career-social-panel">
-
-
-                <!-- SOCIAL HEADING -->
-
-                <div class="career-social-heading">
-
-                    <span class="section-tag">
-                        CONNECT
-                    </span>
-
-                    <h3>
-                        CONNECT WITH<br>
-                        SOCIAL SITES
-                    </h3>
-
-                    <p>
-                        Follow my latest creative work,
-                        videos and professional updates.
-                    </p>
-
-                </div>
-
-
-                <!-- =================================================
-                     FACEBOOK
-                ================================================== -->
-
-                <div class="social-preview-card glass-card"
+                <div class="career-card glass-card"
                      style="
-                        --social-color: #1877f2;
-                        --social-color-soft: rgba(24,119,242,0.16);
-                        --social-color-glow: rgba(24,119,242,0.40);
+                        --career-color: #22d3ee;
+                        --career-color-soft: rgba(34,211,238,0.16);
+                        --career-color-glow: rgba(34,211,238,0.45);
                      ">
 
-                    <div class="social-preview-top">
+                    <div class="career-date-column">
 
-                        <div class="social-icon facebook-icon">
-                            f
-                        </div>
+                        <span class="career-date-to">
+                            2026
+                        </span>
 
-                        <div>
+                        <span class="career-date-line"></span>
 
-                            <span class="social-platform">
-                                FACEBOOK PAGE
-                            </span>
-
-                            <h4>
-                                Anil Shrestha
-                            </h4>
-
-                        </div>
+                        <span class="career-date-from">
+                            2018
+                        </span>
 
                     </div>
 
+                    <div class="career-info">
 
-                    <div class="facebook-preview">
+                        <h3>
+                            Owner / Managing Director
+                        </h3>
 
-                        <div class="facebook-preview-cover"></div>
-
-                        <div class="facebook-preview-profile">
-                            AS
-                        </div>
-
-                        <div class="facebook-preview-info">
-
-                            <strong>
-                                Anil Shrestha
-                            </strong>
-
-                            <span>
-                                Creative Professional
-                            </span>
-
-                        </div>
-
-                        <div class="facebook-feed-line"></div>
-
-                        <div class="facebook-feed-line short"></div>
-
-                        <div class="facebook-feed-image"></div>
+                        <p>
+                            Cafe Restaurant &amp; Thakali Bhanchha
+                        </p>
 
                     </div>
-
-
-                    <a href="https://www.facebook.com/shresthaanil001"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="social-visit-btn">
-
-                        <span>
-                            Visit Facebook Page
-                        </span>
-
-                        <span>
-                            ↗
-                        </span>
-
-                    </a>
 
                 </div>
 
 
-                <!-- =================================================
-                     YOUTUBE
-                ================================================== -->
+                <!-- CAREER 02 -->
 
-                <div class="social-preview-card glass-card"
+                <div class="career-card glass-card"
                      style="
-                        --social-color: #ff0033;
-                        --social-color-soft: rgba(255,0,51,0.16);
-                        --social-color-glow: rgba(255,0,51,0.40);
+                        --career-color: #34d399;
+                        --career-color-soft: rgba(52,211,153,0.16);
+                        --career-color-glow: rgba(52,211,153,0.45);
                      ">
 
-                    <div class="social-preview-top">
+                    <div class="career-date-column">
 
-                        <div class="social-icon youtube-icon">
+                        <span class="career-date-to">
+                            2026
+                        </span>
+
+                        <span class="career-date-line"></span>
+
+                        <span class="career-date-from">
+                            2017
+                        </span>
+
+                    </div>
+
+                    <div class="career-info">
+
+                        <h3>
+                            Founder / CEO / MD
+                        </h3>
+
+                        <p>
+                            Designing / Printing / Publishing Media
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAREER 03 -->
+
+                <div class="career-card glass-card"
+                     style="
+                        --career-color: #f472b6;
+                        --career-color-soft: rgba(244,114,182,0.16);
+                        --career-color-glow: rgba(244,114,182,0.45);
+                     ">
+
+                    <div class="career-date-column">
+
+                        <span class="career-date-to">
+                            2023
+                        </span>
+
+                        <span class="career-date-line"></span>
+
+                        <span class="career-date-from">
+                            2016
+                        </span>
+
+                    </div>
+
+                    <div class="career-info">
+
+                        <h3>
+                            Co-Secretary / Board of Directors
+                        </h3>
+
+                        <p>
+                            Saving &amp; Credit Co-Operative
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAREER 04 -->
+
+                <div class="career-card glass-card"
+                     style="
+                        --career-color: #a855f7;
+                        --career-color-soft: rgba(168,85,247,0.16);
+                        --career-color-glow: rgba(168,85,247,0.45);
+                     ">
+
+                    <div class="career-date-column">
+
+                        <span class="career-date-to">
+                            2018
+                        </span>
+
+                        <span class="career-date-line"></span>
+
+                        <span class="career-date-from">
+                            2016
+                        </span>
+
+                    </div>
+
+                    <div class="career-info">
+
+                        <h3>
+                            Head Graphic Designer
+                        </h3>
+
+                        <p>
+                            Arts &amp; Flex Prints
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAREER 05 -->
+
+                <div class="career-card glass-card"
+                     style="
+                        --career-color: #22d3ee;
+                        --career-color-soft: rgba(34,211,238,0.16);
+                        --career-color-glow: rgba(34,211,238,0.45);
+                     ">
+
+                    <div class="career-date-column">
+
+                        <span class="career-date-to">
+                            2017
+                        </span>
+
+                        <span class="career-date-line"></span>
+
+                        <span class="career-date-from">
+                            2015
+                        </span>
+
+                    </div>
+
+                    <div class="career-info">
+
+                        <h3>
+                            Event Manager / Art Director
+                        </h3>
+
+                        <p>
+                            Event Management Company
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAREER 06 -->
+
+                <div class="career-card glass-card"
+                     style="
+                        --career-color: #34d399;
+                        --career-color-soft: rgba(52,211,153,0.16);
+                        --career-color-glow: rgba(52,211,153,0.45);
+                     ">
+
+                    <div class="career-date-column">
+
+                        <span class="career-date-to">
+                            2026
+                        </span>
+
+                        <span class="career-date-line"></span>
+
+                        <span class="career-date-from">
+                            2014
+                        </span>
+
+                    </div>
+
+                    <div class="career-info">
+
+                        <h3>
+                            Editor / Instructor / Journalist
+                        </h3>
+
+                        <p>
+                            News / Entertainment Media
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAREER 07 -->
+
+                <div class="career-card glass-card"
+                     style="
+                        --career-color: #f472b6;
+                        --career-color-soft: rgba(244,114,182,0.16);
+                        --career-color-glow: rgba(244,114,182,0.45);
+                     ">
+
+                    <div class="career-date-column">
+
+                        <span class="career-date-to">
+                            2017
+                        </span>
+
+                        <span class="career-date-line"></span>
+
+                        <span class="career-date-from">
+                            2014
+                        </span>
+
+                    </div>
+
+                    <div class="career-info">
+
+                        <h3>
+                            Senior Graphic Designer
+                        </h3>
+
+                        <p>
+                            Advertising Agency
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAREER 08 -->
+
+                <div class="career-card glass-card"
+                     style="
+                        --career-color: #a855f7;
+                        --career-color-soft: rgba(168,85,247,0.16);
+                        --career-color-glow: rgba(168,85,247,0.45);
+                     ">
+
+                    <div class="career-date-column">
+
+                        <span class="career-date-to">
+                            2014
+                        </span>
+
+                        <span class="career-date-line"></span>
+
+                        <span class="career-date-from">
+                            2012
+                        </span>
+
+                    </div>
+
+                    <div class="career-info">
+
+                        <h3>
+                            Junior Graphic Designer
+                        </h3>
+
+                        <p>
+                            Printing Media Company
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CENTER COLUMN — SOFTWARE
+        ================================================== -->
+
+        <div id="software"
+             class="career-dashboard-column software-column">
+
+            <div class="career-dashboard-heading">
+
+                <span class="section-tag">
+                    SOFTWARE
+                </span>
+
+                <h2 class="font-display
+                           text-3xl sm:text-4xl
+                           font-extrabold
+                           text-white mt-2">
+
+                    Tools I use.
+
+                </h2>
+
+                <p class="text-slate-400 mt-4">
+
+                    Professional tools for design,
+                    video, motion, UI and digital content.
+
+                </p>
+
+            </div>
+
+
+            <!-- SOFTWARE GRID -->
+
+            <div class="software-dashboard-grid">
+
+
+                <div class="software-card">
+
+                    <img src="assets/icon/photoshop.svg"
+                         alt="Adobe Photoshop"
+                         class="software-icon">
+
+                    <h3>Adobe Photoshop</h3>
+
+                    <p>Photo Editing · Digital Design</p>
+
+                </div>
+
+
+                <div class="software-card">
+
+                    <img src="assets/icon/illustrator.svg"
+                         alt="Adobe Illustrator"
+                         class="software-icon">
+
+                    <h3>Adobe Illustrator</h3>
+
+                    <p>Vector Design · Branding</p>
+
+                </div>
+
+
+                <div class="software-card">
+
+                    <img src="assets/icon/premiere pro.svg"
+                         alt="Adobe Premiere Pro"
+                         class="software-icon">
+
+                    <h3>Adobe Premiere Pro</h3>
+
+                    <p>Video Editing · Production</p>
+
+                </div>
+
+
+                <div class="software-card">
+
+                    <img src="assets/icon/After Effects.svg"
+                         alt="Adobe After Effects"
+                         class="software-icon">
+
+                    <h3>Adobe After Effects</h3>
+
+                    <p>Motion Graphics · Animation</p>
+
+                </div>
+
+
+                <div class="software-card">
+
+                    <img src="assets/icon/Canva.svg"
+                         alt="Canva"
+                         class="software-icon">
+
+                    <h3>Canva</h3>
+
+                    <p>Social Media · Quick Design</p>
+
+                </div>
+
+
+                <div class="software-card">
+
+                    <img src="assets/icon/Capcut.svg"
+                         alt="CapCut"
+                         class="software-icon">
+
+                    <h3>CapCut</h3>
+
+                    <p>Short-form Video · Reels</p>
+
+                </div>
+
+
+                <div class="software-card">
+
+                    <img src="assets/icon/Figma.svg"
+                         alt="Figma"
+                         class="software-icon">
+
+                    <h3>Figma</h3>
+
+                    <p>UI Design · Web Interface</p>
+
+                </div>
+
+
+                <div class="software-card">
+
+                    <img src="assets/icon/Corel Draw.svg"
+                         alt="CorelDRAW"
+                         class="software-icon">
+
+                    <h3>CorelDRAW</h3>
+
+                    <p>Print Design · Vector Artwork</p>
+
+                </div>
+
+
+                <div class="software-card">
+
+                    <img src="assets/icon/Indesign.svg"
+                         alt="Adobe InDesign"
+                         class="software-icon">
+
+                    <h3>Adobe InDesign</h3>
+
+                    <p>Publication · Layout Design</p>
+
+                </div>
+
+
+                <div class="software-card">
+
+                    <img src="assets/icon/VN editor.svg"
+                         alt="VN Editor"
+                         class="software-icon">
+
+                    <h3>VN Editor</h3>
+
+                    <p>Mobile Video · Social Content</p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT COLUMN — SOCIAL CONNECTION
+        ================================================== -->
+
+        <aside class="career-dashboard-column social-column">
+
+
+            <div class="career-dashboard-heading">
+
+                <span class="section-tag">
+                    CONNECT
+                </span>
+
+                <h3>
+                    CONNECT WITH<br>
+                    SOCIAL SITES
+                </h3>
+
+                <p>
+                    Follow my latest creative work,
+                    videos and professional updates.
+                </p>
+
+            </div>
+
+
+            <!-- FACEBOOK -->
+
+            <div class="social-preview-card glass-card"
+                 style="
+                    --social-color: #1877f2;
+                    --social-color-soft: rgba(24,119,242,0.16);
+                    --social-color-glow: rgba(24,119,242,0.40);
+                 ">
+
+                <div class="social-preview-top">
+
+                    <div class="social-icon facebook-icon">
+                        f
+                    </div>
+
+                    <div>
+
+                        <span class="social-platform">
+                            FACEBOOK PAGE
+                        </span>
+
+                        <h4>
+                            Anil Shrestha
+                        </h4>
+
+                    </div>
+
+                </div>
+
+
+                <div class="facebook-preview">
+
+                    <div class="facebook-preview-cover"></div>
+
+                    <div class="facebook-preview-profile">
+                        AS
+                    </div>
+
+                    <div class="facebook-preview-info">
+
+                        <strong>
+                            Anil Shrestha
+                        </strong>
+
+                        <span>
+                            Creative Professional
+                        </span>
+
+                    </div>
+
+                    <div class="facebook-feed-line"></div>
+
+                    <div class="facebook-feed-line short"></div>
+
+                    <div class="facebook-feed-image"></div>
+
+                </div>
+
+
+                <a href="https://www.facebook.com/shresthaanil001"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="social-visit-btn">
+
+                    <span>
+                        Visit Facebook Page
+                    </span>
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- YOUTUBE -->
+
+            <div class="social-preview-card glass-card"
+                 style="
+                    --social-color: #ff0033;
+                    --social-color-soft: rgba(255,0,51,0.16);
+                    --social-color-glow: rgba(255,0,51,0.40);
+                 ">
+
+                <div class="social-preview-top">
+
+                    <div class="social-icon youtube-icon">
+                        ▶
+                    </div>
+
+                    <div>
+
+                        <span class="social-platform">
+                            YOUTUBE CHANNEL
+                        </span>
+
+                        <h4>
+                            Anil Shrestha
+                        </h4>
+
+                    </div>
+
+                </div>
+
+
+                <div class="youtube-preview">
+
+                    <div class="youtube-placeholder">
+
+                        <div class="youtube-play">
                             ▶
                         </div>
 
-                        <div>
-
-                            <span class="social-platform">
-                                YOUTUBE CHANNEL
-                            </span>
-
-                            <h4>
-                                Anil Shrestha
-                            </h4>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="youtube-preview">
-
-                        <div class="youtube-placeholder">
-
-                            <div class="youtube-play">
-                                ▶
-                            </div>
-
-                            <span>
-                                Latest videos & creative content
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <a href="https://www.youtube.com/@anilshrestha001"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="social-visit-btn">
-
                         <span>
-                            Visit YouTube Channel
+                            Latest videos &amp; creative content
                         </span>
 
-                        <span>
-                            ↗
-                        </span>
-
-                    </a>
+                    </div>
 
                 </div>
 
 
-            </aside>
+                <a href="https://www.youtube.com/@anilshrestha001"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="social-visit-btn">
 
-        </div>
+                    <span>
+                        Visit YouTube Channel
+                    </span>
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+
+        </aside>
 
     </div>
 
+</div>
+```
+
 </section>
 
-            
 <!-- =========================================================
-     07 — RECOMMENDATIONS
+     RECOMMENDATIONS
 ========================================================= -->
 
 <section id="recommendations"
          class="py-20 relative z-10
                 bg-white/[0.015]">
 
-    <div class="max-w-7xl mx-auto
-                px-4 sm:px-6 lg:px-8">
+```
+<div class="max-w-7xl mx-auto
+            px-4 sm:px-6 lg:px-8">
 
 
-        <div class="mb-12">
+    <div class="mb-12">
 
-            <span class="section-tag">
-                07 — RECOMMENDATIONS
-            </span>
+        <span class="section-tag">
+            RECOMMENDATIONS
+        </span>
 
-            <h2 class="font-display
-                       text-4xl sm:text-5xl
-                       font-extrabold
-                       text-white mt-2">
+        <h2 class="font-display
+                   text-4xl sm:text-5xl
+                   font-extrabold
+                   text-white mt-2">
 
-                What professionals say.
+            What professionals say.
 
-            </h2>
+        </h2>
 
-            <p class="text-slate-400
-                      max-w-2xl mt-4">
+        <p class="text-slate-400
+                  max-w-2xl mt-4">
 
-                Recommendations from clients, colleagues
-                and professional connections.
+            Recommendations from clients, colleagues
+            and professional connections.
 
-            </p>
-
-        </div>
-
-
-        <div class="grid grid-cols-1
-                    sm:grid-cols-2
-                    lg:grid-cols-3
-                    gap-5">
-
-
-            <!-- Recommendation 01 -->
-
-            <article class="recommendation-card aura-cyan">
-
-                <div class="recommendation-avatar">
-                    <i class="fas fa-user"></i>
-                </div>
-
-                <h3>
-                    Recommendation 01
-                </h3>
-
-                <span>
-                    CLIENT / PROFESSIONAL NAME
-                </span>
-
-                <p>
-                    Recommendation text will be placed here
-                    after the approved recommendation is provided.
-                </p>
-
-            </article>
-
-
-            <!-- Recommendation 02 -->
-
-            <article class="recommendation-card aura-emerald">
-
-                <div class="recommendation-avatar">
-                    <i class="fas fa-user"></i>
-                </div>
-
-                <h3>
-                    Recommendation 02
-                </h3>
-
-                <span>
-                    CLIENT / PROFESSIONAL NAME
-                </span>
-
-                <p>
-                    Recommendation text will be placed here
-                    after the approved recommendation is provided.
-                </p>
-
-            </article>
-
-
-            <!-- Recommendation 03 -->
-
-            <article class="recommendation-card aura-pink">
-
-                <div class="recommendation-avatar">
-                    <i class="fas fa-user"></i>
-                </div>
-
-                <h3>
-                    Recommendation 03
-                </h3>
-
-                <span>
-                    CLIENT / PROFESSIONAL NAME
-                </span>
-
-                <p>
-                    Recommendation text will be placed here
-                    after the approved recommendation is provided.
-                </p>
-
-            </article>
-
-
-            <!-- Recommendation 04 -->
-
-            <article class="recommendation-card aura-purple">
-
-                <div class="recommendation-avatar">
-                    <i class="fas fa-user"></i>
-                </div>
-
-                <h3>
-                    Recommendation 04
-                </h3>
-
-                <span>
-                    CLIENT / PROFESSIONAL NAME
-                </span>
-
-                <p>
-                    Recommendation text will be placed here
-                    after the approved recommendation is provided.
-                </p>
-
-            </article>
-
-
-            <!-- Recommendation 05 -->
-
-            <article class="recommendation-card aura-cyan">
-
-                <div class="recommendation-avatar">
-                    <i class="fas fa-user"></i>
-                </div>
-
-                <h3>
-                    Recommendation 05
-                </h3>
-
-                <span>
-                    CLIENT / PROFESSIONAL NAME
-                </span>
-
-                <p>
-                    Recommendation text will be placed here
-                    after the approved recommendation is provided.
-                </p>
-
-            </article>
-
-
-            <!-- Recommendation 06 -->
-
-            <article class="recommendation-card aura-emerald">
-
-                <div class="recommendation-avatar">
-                    <i class="fas fa-user"></i>
-                </div>
-
-                <h3>
-                    Recommendation 06
-                </h3>
-
-                <span>
-                    CLIENT / PROFESSIONAL NAME
-                </span>
-
-                <p>
-                    Recommendation text will be placed here
-                    after the approved recommendation is provided.
-                </p>
-
-            </article>
-
-        </div>
+        </p>
 
     </div>
 
+
+    <div class="grid grid-cols-1
+                sm:grid-cols-2
+                lg:grid-cols-3
+                gap-5">
+
+
+        <article class="recommendation-card aura-cyan">
+
+            <div class="recommendation-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+
+            <h3>
+                Recommendation 01
+            </h3>
+
+            <span>
+                CLIENT / PROFESSIONAL NAME
+            </span>
+
+            <p>
+                Recommendation text will be placed here
+                after the approved recommendation is provided.
+            </p>
+
+        </article>
+
+
+        <article class="recommendation-card aura-emerald">
+
+            <div class="recommendation-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+
+            <h3>
+                Recommendation 02
+            </h3>
+
+            <span>
+                CLIENT / PROFESSIONAL NAME
+            </span>
+
+            <p>
+                Recommendation text will be placed here
+                after the approved recommendation is provided.
+            </p>
+
+        </article>
+
+
+        <article class="recommendation-card aura-pink">
+
+            <div class="recommendation-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+
+            <h3>
+                Recommendation 03
+            </h3>
+
+            <span>
+                CLIENT / PROFESSIONAL NAME
+            </span>
+
+            <p>
+                Recommendation text will be placed here
+                after the approved recommendation is provided.
+            </p>
+
+        </article>
+
+
+        <article class="recommendation-card aura-purple">
+
+            <div class="recommendation-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+
+            <h3>
+                Recommendation 04
+            </h3>
+
+            <span>
+                CLIENT / PROFESSIONAL NAME
+            </span>
+
+            <p>
+                Recommendation text will be placed here
+                after the approved recommendation is provided.
+            </p>
+
+        </article>
+
+
+        <article class="recommendation-card aura-cyan">
+
+            <div class="recommendation-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+
+            <h3>
+                Recommendation 05
+            </h3>
+
+            <span>
+                CLIENT / PROFESSIONAL NAME
+            </span>
+
+            <p>
+                Recommendation text will be placed here
+                after the approved recommendation is provided.
+            </p>
+
+        </article>
+
+
+        <article class="recommendation-card aura-emerald">
+
+            <div class="recommendation-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+
+            <h3>
+                Recommendation 06
+            </h3>
+
+            <span>
+                CLIENT / PROFESSIONAL NAME
+            </span>
+
+            <p>
+                Recommendation text will be placed here
+                after the approved recommendation is provided.
+            </p>
+
+        </article>
+
+    </div>
+
+</div>
+```
+
 </section>
 
-
 <!-- =========================================================
-     09 — PACKAGES
+     PACKAGES
 ========================================================= -->
 
 <section id="packages"
          class="py-20 relative z-10">
 
-    <div class="max-w-7xl mx-auto
-                px-4 sm:px-6 lg:px-8">
+```
+<div class="max-w-7xl mx-auto
+            px-4 sm:px-6 lg:px-8">
 
 
-        <div class="mb-12 text-center">
+    <div class="mb-12 text-center">
 
-            <span class="section-tag">
-                09 — PACKAGES
-            </span>
+        <span class="section-tag">
+            PACKAGES
+        </span>
 
-            <h2 class="font-display
-                       text-4xl sm:text-5xl
-                       font-extrabold
-                       text-white mt-2">
+        <h2 class="font-display
+                   text-4xl sm:text-5xl
+                   font-extrabold
+                   text-white mt-2">
 
-                Service Packages.
+            Service Packages.
 
-            </h2>
+        </h2>
 
-            <p class="text-slate-400
-                      max-w-2xl mx-auto mt-4">
+        <p class="text-slate-400
+                  max-w-2xl mx-auto mt-4">
 
-                Choose a structured creative package or
-                request a custom solution based on your project.
+            Choose a structured creative package or
+            request a custom solution based on your project.
 
-            </p>
-
-        </div>
-
-
-        <!-- PACKAGE GRID -->
-
-        <div class="grid grid-cols-1
-                    md:grid-cols-2
-                    gap-8">
-
-
-            <!-- BRONZE -->
-
-            <article class="package-card package-bronze">
-
-                <div class="package-header">
-
-                    <div>
-
-                        <span class="package-number">
-                            01
-                        </span>
-
-                        <h3>BRONZE</h3>
-
-                        <span>
-                            Starter Package
-                        </span>
-
-                    </div>
-
-                    <strong>
-                        NPR 8,000
-                        <small>/ $60</small>
-                    </strong>
-
-                </div>
-
-
-                <p class="package-description">
-                    Perfect for individuals and small projects.
-                </p>
-
-
-                <ul>
-
-                    <li>5 Creative Designs</li>
-                    <li>2 Posters / Banners</li>
-                    <li>1 Short Reel</li>
-                    <li>Basic Photo Editing</li>
-                    <li>Creative Concept</li>
-                    <li>2 Revisions</li>
-                    <li>Delivery: 3–5 Days</li>
-
-                </ul>
-
-
-                <div class="package-actions">
-
-                    <button onclick="openPkgModal('BRONZE')">
-                        View More
-                    </button>
-
-                    <button onclick="selectPackage('BRONZE')">
-                        Select Package
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- SILVER -->
-
-            <article class="package-card package-silver">
-
-                <div class="package-header">
-
-                    <div>
-
-                        <span class="package-number">
-                            02
-                        </span>
-
-                        <h3>SILVER</h3>
-
-                        <span>
-                            Professional Package
-                        </span>
-
-                    </div>
-
-                    <strong>
-                        NPR 18,000
-                        <small>/ $135</small>
-                    </strong>
-
-                </div>
-
-
-                <p class="package-description">
-                    For growing businesses and regular content needs.
-                </p>
-
-
-                <ul>
-
-                    <li>10 Creative Designs</li>
-                    <li>4 Posters / Banners</li>
-                    <li>3 Short Reels</li>
-                    <li>Advanced Photo Editing</li>
-                    <li>Creative Concept & Direction</li>
-                    <li>Brand Styling</li>
-                    <li>Source Files Included</li>
-                    <li>4 Revisions</li>
-                    <li>Priority Support</li>
-                    <li>Delivery: 5–7 Days</li>
-
-                </ul>
-
-
-                <div class="package-actions">
-
-                    <button onclick="openPkgModal('SILVER')">
-                        View More
-                    </button>
-
-                    <button onclick="selectPackage('SILVER')">
-                        Select Package
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- GOLD -->
-
-            <article class="package-card package-gold">
-
-                <div class="package-header">
-
-                    <div>
-
-                        <span class="package-number">
-                            03
-                        </span>
-
-                        <h3>GOLD</h3>
-
-                        <span>
-                            Premium Creative Package
-                        </span>
-
-                    </div>
-
-                    <strong>
-                        NPR 35,000
-                        <small>/ $260</small>
-                    </strong>
-
-                </div>
-
-
-                <p class="package-description">
-                    For brands that need a stronger creative presence.
-                </p>
-
-
-                <ul>
-
-                    <li>15 Creative Designs</li>
-                    <li>6 Posters / Banners</li>
-                    <li>5 Short Reels</li>
-                    <li>Advanced Photo & Video Editing</li>
-                    <li>Campaign Creative Direction</li>
-                    <li>Brand Visual Consistency</li>
-                    <li>Source Files Included</li>
-                    <li>6 Revisions</li>
-                    <li>Priority Delivery</li>
-                    <li>Dedicated Creative Support</li>
-
-                </ul>
-
-
-                <div class="package-actions">
-
-                    <button onclick="openPkgModal('GOLD')">
-                        View More
-                    </button>
-
-                    <button onclick="selectPackage('GOLD')">
-                        Select Package
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <!-- PLATINUM -->
-
-            <article class="package-card package-platinum">
-
-                <div class="package-header">
-
-                    <div>
-
-                        <span class="package-number">
-                            04
-                        </span>
-
-                        <h3>PLATINUM</h3>
-
-                        <span>
-                            Complete Creative Package
-                        </span>
-
-                    </div>
-
-                    <strong>
-                        NPR 50,000
-                        <small>/ $375</small>
-                    </strong>
-
-                </div>
-
-
-                <p class="package-description">
-                    For businesses requiring a complete creative solution.
-                </p>
-
-
-                <ul>
-
-                    <li>20 Creative Designs</li>
-                    <li>8 Posters / Banners</li>
-                    <li>8 Short Reels</li>
-                    <li>Advanced Design & Editing</li>
-                    <li>Campaign Development</li>
-                    <li>Creative Direction</li>
-                    <li>Source Files Included</li>
-                    <li>Unlimited Minor Adjustments</li>
-                    <li>Priority Support</li>
-                    <li>Dedicated Project Coordination</li>
-
-                </ul>
-
-
-                <div class="package-actions">
-
-                    <button onclick="openPkgModal('PLATINUM')">
-                        View More
-                    </button>
-
-                    <button onclick="selectPackage('PLATINUM')">
-                        Select Package
-                    </button>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- FULL DIGITAL SECTOR HANDLING -->
-
-        <div class="featured-package">
-
-            <span class="section-tag">
-                FULL DIGITAL SECTOR HANDLING
-            </span>
-
-            <h3>
-                Complete Monthly Creative Support.
-            </h3>
-
-            <p>
-                A complete monthly creative support package
-                for businesses that need consistent design,
-                social media content, promotional materials
-                and video production.
-            </p>
-
-
-            <div class="digital-package-price">
-                NPR 65,000
-                <small>/ Month</small>
-            </div>
-
-
-            <div class="digital-package-grid">
-
-                <span>Up to 20 Social Media Designs</span>
-                <span>Up to 8 Promotional Posters / Banners</span>
-                <span>Up to 8 Short-form Videos / Reels</span>
-                <span>Up to 4 Campaign Concepts</span>
-                <span>Product / Service Promotional Creatives</span>
-                <span>Basic Photo Editing</span>
-                <span>Video Editing</span>
-                <span>Monthly Creative Planning</span>
-                <span>Brand Consistency Management</span>
-                <span>Dedicated Creative Workflow</span>
-                <span>Monthly Content Planning</span>
-                <span>Priority Communication</span>
-                <span>Source Files for Completed Projects</span>
-
-            </div>
-
-
-            <p class="package-note">
-                Deliverables beyond the monthly limits are quoted
-                separately according to quantity and complexity.
-            </p>
-
-
-            <button onclick="selectPackage('Full Digital Sector Handling')">
-                Discuss This Package
-            </button>
-
-        </div>
-
-
-        <!-- CUSTOM PACKAGE -->
-
-        <div class="custom-package">
-
-            <div>
-
-                <span class="section-tag">
-                    CUSTOM SOLUTION
-                </span>
-
-                <h3>
-                    NEED SOMETHING DIFFERENT?
-                </h3>
-
-                <p>
-                    Create a custom package for your project.
-                    Custom pricing can be prepared according to
-                    your project quantity, complexity,
-                    creative requirements and deadline.
-                </p>
-
-            </div>
-
-
-            <a href="#contact">
-                Let's Discuss
-                <i class="fas fa-comments ml-2"></i>
-            </a>
-
-        </div>
+        </p>
 
     </div>
 
+
+    <!-- PACKAGE GRID -->
+
+    <div class="grid grid-cols-1
+                md:grid-cols-2
+                gap-8">
+
+
+        <!-- BRONZE -->
+
+        <article class="package-card package-bronze">
+
+            <div class="package-header">
+
+                <div>
+
+                    <span class="package-number">
+                        01
+                    </span>
+
+                    <h3>BRONZE</h3>
+
+                    <span>
+                        Starter Package
+                    </span>
+
+                </div>
+
+                <strong>
+                    NPR 8,000
+                    <small>/ $60</small>
+                </strong>
+
+            </div>
+
+            <p class="package-description">
+                Perfect for individuals and small projects.
+            </p>
+
+            <ul>
+                <li>5 Creative Designs</li>
+                <li>2 Posters / Banners</li>
+                <li>1 Short Reel</li>
+                <li>Basic Photo Editing</li>
+                <li>Creative Concept</li>
+                <li>2 Revisions</li>
+                <li>Delivery: 3–5 Days</li>
+            </ul>
+
+            <div class="package-actions">
+
+                <button onclick="openPkgModal('BRONZE')">
+                    View More
+                </button>
+
+                <button onclick="selectPackage('BRONZE')">
+                    Select Package
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- SILVER -->
+
+        <article class="package-card package-silver">
+
+            <div class="package-header">
+
+                <div>
+
+                    <span class="package-number">
+                        02
+                    </span>
+
+                    <h3>SILVER</h3>
+
+                    <span>
+                        Professional Package
+                    </span>
+
+                </div>
+
+                <strong>
+                    NPR 18,000
+                    <small>/ $135</small>
+                </strong>
+
+            </div>
+
+            <p class="package-description">
+                For growing businesses and regular content needs.
+            </p>
+
+            <ul>
+                <li>10 Creative Designs</li>
+                <li>4 Posters / Banners</li>
+                <li>3 Short Reels</li>
+                <li>Advanced Photo Editing</li>
+                <li>Creative Concept &amp; Direction</li>
+                <li>Brand Styling</li>
+                <li>Source Files Included</li>
+                <li>4 Revisions</li>
+                <li>Priority Support</li>
+                <li>Delivery: 5–7 Days</li>
+            </ul>
+
+            <div class="package-actions">
+
+                <button onclick="openPkgModal('SILVER')">
+                    View More
+                </button>
+
+                <button onclick="selectPackage('SILVER')">
+                    Select Package
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- GOLD -->
+
+        <article class="package-card package-gold">
+
+            <div class="package-header">
+
+                <div>
+
+                    <span class="package-number">
+                        03
+                    </span>
+
+                    <h3>GOLD</h3>
+
+                    <span>
+                        Premium Creative Package
+                    </span>
+
+                </div>
+
+                <strong>
+                    NPR 35,000
+                    <small>/ $260</small>
+                </strong>
+
+            </div>
+
+            <p class="package-description">
+                For brands that need a stronger creative presence.
+            </p>
+
+            <ul>
+                <li>15 Creative Designs</li>
+                <li>6 Posters / Banners</li>
+                <li>5 Short Reels</li>
+                <li>Advanced Photo &amp; Video Editing</li>
+                <li>Campaign Creative Direction</li>
+                <li>Brand Visual Consistency</li>
+                <li>Source Files Included</li>
+                <li>6 Revisions</li>
+                <li>Priority Delivery</li>
+                <li>Dedicated Creative Support</li>
+            </ul>
+
+            <div class="package-actions">
+
+                <button onclick="openPkgModal('GOLD')">
+                    View More
+                </button>
+
+                <button onclick="selectPackage('GOLD')">
+                    Select Package
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- PLATINUM -->
+
+        <article class="package-card package-platinum">
+
+            <div class="package-header">
+
+                <div>
+
+                    <span class="package-number">
+                        04
+                    </span>
+
+                    <h3>PLATINUM</h3>
+
+                    <span>
+                        Complete Creative Package
+                    </span>
+
+                </div>
+
+                <strong>
+                    NPR 50,000
+                    <small>/ $375</small>
+                </strong>
+
+            </div>
+
+            <p class="package-description">
+                For businesses requiring a complete creative solution.
+            </p>
+
+            <ul>
+                <li>20 Creative Designs</li>
+                <li>8 Posters / Banners</li>
+                <li>8 Short Reels</li>
+                <li>Advanced Design &amp; Editing</li>
+                <li>Campaign Development</li>
+                <li>Creative Direction</li>
+                <li>Source Files Included</li>
+                <li>Unlimited Minor Adjustments</li>
+                <li>Priority Support</li>
+                <li>Dedicated Project Coordination</li>
+            </ul>
+
+            <div class="package-actions">
+
+                <button onclick="openPkgModal('PLATINUM')">
+                    View More
+                </button>
+
+                <button onclick="selectPackage('PLATINUM')">
+                    Select Package
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- FULL DIGITAL SECTOR HANDLING -->
+
+    <div class="featured-package">
+
+        <span class="section-tag">
+            FULL DIGITAL SECTOR HANDLING
+        </span>
+
+        <h3>
+            Complete Monthly Creative Support.
+        </h3>
+
+        <p>
+            A complete monthly creative support package
+            for businesses that need consistent design,
+            social media content, promotional materials
+            and video production.
+        </p>
+
+        <div class="digital-package-price">
+            NPR 65,000
+            <small>/ Month</small>
+        </div>
+
+        <div class="digital-package-grid">
+
+            <span>Up to 20 Social Media Designs</span>
+            <span>Up to 8 Promotional Posters / Banners</span>
+            <span>Up to 8 Short-form Videos / Reels</span>
+            <span>Up to 4 Campaign Concepts</span>
+            <span>Product / Service Promotional Creatives</span>
+            <span>Basic Photo Editing</span>
+            <span>Video Editing</span>
+            <span>Monthly Creative Planning</span>
+            <span>Brand Consistency Management</span>
+            <span>Dedicated Creative Workflow</span>
+            <span>Monthly Content Planning</span>
+            <span>Priority Communication</span>
+            <span>Source Files for Completed Projects</span>
+
+        </div>
+
+        <p class="package-note">
+            Deliverables beyond the monthly limits are quoted
+            separately according to quantity and complexity.
+        </p>
+
+        <button onclick="selectPackage('Full Digital Sector Handling')">
+            Discuss This Package
+        </button>
+
+    </div>
+
+
+    <!-- CUSTOM PACKAGE -->
+
+    <div class="custom-package">
+
+        <div>
+
+            <span class="section-tag">
+                CUSTOM SOLUTION
+            </span>
+
+            <h3>
+                NEED SOMETHING DIFFERENT?
+            </h3>
+
+            <p>
+                Create a custom package for your project.
+                Custom pricing can be prepared according to
+                your project quantity, complexity,
+                creative requirements and deadline.
+            </p>
+
+        </div>
+
+
+        <a href="#contact">
+            Let's Discuss
+            <i class="fas fa-comments ml-2"></i>
+        </a>
+
+    </div>
+
+</div>
+```
+
 </section>
 
-
 <!-- =========================================================
-     11 — CONTACT
+     CONTACT
 ========================================================= -->
 
 <section id="contact"
@@ -3289,148 +2925,90 @@
                 hdr-ftr-bg
                 border-t border-white/10">
 
-    <div class="max-w-7xl mx-auto
-                px-4 sm:px-6 lg:px-8">
+```
+<div class="max-w-7xl mx-auto
+            px-4 sm:px-6 lg:px-8">
 
 
-        <div class="grid grid-cols-1
-                    lg:grid-cols-12
-                    gap-12">
+    <div class="grid grid-cols-1
+                lg:grid-cols-12
+                gap-12">
 
 
-            <!-- CONTACT INFORMATION -->
+        <!-- CONTACT INFORMATION -->
 
-            <div class="lg:col-span-5">
+        <div class="lg:col-span-5">
 
-                <span class="section-tag">
-                    11 — CONTACT
-                </span>
+            <span class="section-tag">
+                CONTACT
+            </span>
 
-                <h2 class="font-display
-                           text-4xl sm:text-5xl
-                           font-extrabold
-                           text-white mt-2">
+            <h2 class="font-display
+                       text-4xl sm:text-5xl
+                       font-extrabold
+                       text-white mt-2">
 
-                    Let's create something meaningful.
+                Let's create something meaningful.
 
-                </h2>
+            </h2>
 
-                <p class="text-slate-300
-                          text-sm mt-5
-                          leading-relaxed">
+            <p class="text-slate-300
+                      text-sm mt-5
+                      leading-relaxed">
 
-                    Have a project, collaboration or creative idea
-                    in mind? Let's talk about how we can turn it
-                    into a strong visual experience.
+                Have a project, collaboration or creative idea
+                in mind? Let's talk about how we can turn it
+                into a strong visual experience.
 
-                </p>
-
-
-                <div class="space-y-4 mt-8">
+            </p>
 
 
-                    <!-- EMAIL -->
+            <div class="space-y-4 mt-8">
 
-                    <div class="contact-info-card">
 
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                <!-- EMAIL -->
 
-                        <div>
+                <div class="contact-info-card">
 
-                            <span>Email Addresses</span>
-
-                            <a href="mailto:babal6anil@gmail.com">
-                                babal6anil@gmail.com
-                            </a>
-
-                            <a href="mailto:anilsuryapal@gmail.com">
-                                anilsuryapal@gmail.com
-                            </a>
-
-                        </div>
-
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
                     </div>
 
+                    <div>
 
-                    <!-- PHONE -->
+                        <span>Email Addresses</span>
 
-                    <div class="contact-info-card">
+                        <a href="mailto:babal6anil@gmail.com">
+                            babal6anil@gmail.com
+                        </a>
 
-                        <div class="contact-icon whatsapp-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-
-                        <div>
-
-                            <span>Call / WhatsApp</span>
-
-                            <a href="tel:+9779815150233">
-                                +977 9815150233
-                            </a>
-
-                            <a href="tel:+9779846435100">
-                                +977 9846435100
-                            </a>
-
-                        </div>
+                        <a href="mailto:anilsuryapal@gmail.com">
+                            anilsuryapal@gmail.com
+                        </a>
 
                     </div>
 
                 </div>
 
 
-                <!-- SOCIAL MEDIA -->
+                <!-- PHONE -->
 
-                <div class="mt-8">
+                <div class="contact-info-card">
 
-                    <span class="social-label">
-                        Connect On Social Media
-                    </span>
+                    <div class="contact-icon whatsapp-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
 
-                    <div class="social-links">
+                    <div>
 
+                        <span>Call / WhatsApp</span>
 
-                        <a href="#"
-                           aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="tel:+9779815150233">
+                            +977 9815150233
                         </a>
 
-
-                        <a href="#"
-                           aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-
-
-                        <a href="#"
-                           aria-label="TikTok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-
-
-                        <a href="#"
-                           aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-
-
-                        <a href="#"
-                           aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-
-
-                        <a href="#"
-                           aria-label="Behance">
-                            <i class="fab fa-behance"></i>
-                        </a>
-
-
-                        <a href="#"
-                           aria-label="Twitter X">
-                            <i class="fab fa-x-twitter"></i>
+                        <a href="tel:+9779846435100">
+                            +977 9846435100
                         </a>
 
                     </div>
@@ -3440,71 +3018,97 @@
             </div>
 
 
-            <!-- CONTACT FORM -->
+            <!-- SOCIAL MEDIA -->
 
-            <div class="lg:col-span-7">
+            <div class="mt-8">
 
-                <div class="glass-card
-                            p-8 rounded-3xl
-                            border border-white/10">
+                <span class="social-label">
+                    Connect On Social Media
+                </span>
 
-                    <h3 class="font-display
-                               text-2xl
-                               font-bold
-                               text-white mb-6">
+                <div class="social-links">
 
-                        Send Me a Message
+                    <a href="https://www.facebook.com/shresthaanil001"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
 
-                    </h3>
+                    <a href="#"
+                       aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#"
+                       aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+
+                    <a href="https://www.youtube.com/@anilshrestha001"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+
+                    <a href="#"
+                       aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="#"
+                       aria-label="Behance">
+                        <i class="fab fa-behance"></i>
+                    </a>
+
+                    <a href="#"
+                       aria-label="Twitter X">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
 
 
-                    <form id="contactForm"
-                          class="space-y-5">
+        <!-- CONTACT FORM -->
+
+        <div class="lg:col-span-7">
+
+            <div class="glass-card
+                        p-8 rounded-3xl
+                        border border-white/10">
+
+                <h3 class="font-display
+                           text-2xl
+                           font-bold
+                           text-white mb-6">
+
+                    Send Me a Message
+
+                </h3>
 
 
-                        <div class="grid grid-cols-1
-                                    sm:grid-cols-2 gap-4">
-
-                            <div>
-
-                                <label>
-                                    Your Name
-                                </label>
-
-                                <input type="text"
-                                       name="name"
-                                       required
-                                       placeholder="Your name">
-
-                            </div>
+                <form id="contactForm"
+                      class="space-y-5">
 
 
-                            <div>
-
-                                <label>
-                                    Your Email
-                                </label>
-
-                                <input type="email"
-                                       name="email"
-                                       required
-                                       placeholder="your@email.com">
-
-                            </div>
-
-                        </div>
-
+                    <div class="grid grid-cols-1
+                                sm:grid-cols-2 gap-4">
 
                         <div>
 
                             <label>
-                                Project / Subject
+                                Your Name
                             </label>
 
                             <input type="text"
-                                   name="subject"
+                                   name="name"
                                    required
-                                   placeholder="Project discussion">
+                                   placeholder="Your name">
 
                         </div>
 
@@ -3512,36 +3116,64 @@
                         <div>
 
                             <label>
-                                Tell Me About Your Project
+                                Your Email
                             </label>
 
-                            <textarea id="contactMessage"
-                                      name="message"
-                                      rows="6"
-                                      required
-                                      placeholder="Tell me about your project, quantity, requirements and deadline..."></textarea>
+                            <input type="email"
+                                   name="email"
+                                   required
+                                   placeholder="your@email.com">
 
                         </div>
 
-
-                        <button type="submit"
-                                class="contact-submit">
-
-                            Send Message
-
-                            <i class="fas fa-paper-plane ml-2"></i>
-
-                        </button>
-
-                    </form>
+                    </div>
 
 
-                    <div id="formFeedback"
-                         class="hidden mt-4
-                                p-4 rounded-xl
-                                text-sm text-center">
+                    <div>
+
+                        <label>
+                            Project / Subject
+                        </label>
+
+                        <input type="text"
+                               name="subject"
+                               required
+                               placeholder="Project discussion">
 
                     </div>
+
+
+                    <div>
+
+                        <label>
+                            Tell Me About Your Project
+                        </label>
+
+                        <textarea id="contactMessage"
+                                  name="message"
+                                  rows="6"
+                                  required
+                                  placeholder="Tell me about your project, quantity, requirements and deadline..."></textarea>
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="contact-submit">
+
+                        Send Message
+
+                        <i class="fas fa-paper-plane ml-2"></i>
+
+                    </button>
+
+                </form>
+
+
+                <div id="formFeedback"
+                     class="hidden mt-4
+                            p-4 rounded-xl
+                            text-sm text-center">
 
                 </div>
 
@@ -3551,10 +3183,12 @@
 
     </div>
 
+</div>
+```
+
 </section>
 
 </main>
-
 
 <!-- =========================================================
      FOOTER
@@ -3564,68 +3198,68 @@
                border-t border-white/10
                py-10 text-center">
 
-    <div class="max-w-7xl mx-auto
-                px-4 sm:px-6 lg:px-8">
+```
+<div class="max-w-7xl mx-auto
+            px-4 sm:px-6 lg:px-8">
 
-        <h3 class="font-display
-                   text-xl font-extrabold
-                   text-white">
+    <h3 class="font-display
+               text-xl font-extrabold
+               text-white">
 
-            ANIL
-            <span class="text-[#2D8CFF]">
-                SHRESTHA
-            </span>
+        ANIL
+        <span class="text-[#2D8CFF]">
+            SHRESTHA
+        </span>
 
-        </h3>
-
-
-        <p class="text-slate-400
-                  text-sm mt-2">
-
-            Graphic · Web · Multimedia Designer
-            <br>
-            Video Editor · Instructor
-
-        </p>
+    </h3>
 
 
-        <p class="text-slate-500
-                  text-xs mt-4">
+    <p class="text-slate-400
+              text-sm mt-2">
 
-            Creating ideas. Designing experiences.
-            Telling visual stories.
+        Graphic · Web · Multimedia Designer
+        <br>
+        Video Editor · Instructor
 
-        </p>
-
-
-        <div class="footer-links">
-
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#software">Software</a>
-            <a href="#works">Works</a>
-            <a href="#career">Career</a>
-            <a href="#packages">Packages</a>
-            <a href="#contact">Contact</a>
-
-        </div>
+    </p>
 
 
-        <p class="text-slate-600
-                  text-xs mt-6">
+    <p class="text-slate-500
+              text-xs mt-4">
 
-            &copy;
-            <span class="current-year">2026</span>
-            Anil Shrestha.
-            All Rights Reserved.
+        Creating ideas. Designing experiences.
+        Telling visual stories.
 
-        </p>
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#career">Career</a>
+        <a href="#packages">Packages</a>
+        <a href="#contact">Contact</a>
 
     </div>
 
-</footer>
 
+    <p class="text-slate-600
+              text-xs mt-6">
+
+        &copy;
+        <span class="current-year">2026</span>
+        Anil Shrestha.
+        All Rights Reserved.
+
+    </p>
+
+</div>
+```
+
+</footer>
 
 <!-- =========================================================
      PACKAGE DETAILS MODAL
@@ -3637,80 +3271,82 @@
             p-4 bg-black/80
             backdrop-blur-md">
 
-    <div class="glass-card
-                max-w-lg w-full
-                p-8 rounded-3xl
-                border border-[#2D8CFF]/40
-                relative">
+```
+<div class="glass-card
+            max-w-lg w-full
+            p-8 rounded-3xl
+            border border-[#2D8CFF]/40
+            relative">
 
-        <button id="modalClose"
-                type="button"
-                aria-label="Close package details"
-                class="absolute top-4 right-4
-                       text-slate-400
-                       hover:text-white">
+    <button id="modalClose"
+            type="button"
+            aria-label="Close package details"
+            class="absolute top-4 right-4
+                   text-slate-400
+                   hover:text-white">
 
-            <i class="fas fa-times"></i>
+        <i class="fas fa-times"></i>
 
-        </button>
-
-
-        <span class="section-tag">
-            PACKAGE DETAILS
-        </span>
+    </button>
 
 
-        <h3 id="modalPkgTitle"
-            class="font-display
-                   text-3xl
-                   font-extrabold
-                   text-white mt-2 mb-4">
-
-            Package Details
-
-        </h3>
+    <span class="section-tag">
+        PACKAGE DETAILS
+    </span>
 
 
-        <p class="text-slate-300
-                  text-sm
-                  leading-relaxed mb-6">
+    <h3 id="modalPkgTitle"
+        class="font-display
+               text-3xl
+               font-extrabold
+               text-white mt-2 mb-4">
 
-            Package details can be discussed according to
-            your project requirements, quantity, complexity,
-            creative direction and deadline.
+        Package Details
 
-        </p>
+    </h3>
 
 
-        <button onclick="closePkgModal()"
-                class="w-full
-                       py-3 rounded-full
-                       bg-[#2D8CFF]
-                       text-black
-                       font-bold uppercase
-                       text-xs">
+    <p class="text-slate-300
+              text-sm
+              leading-relaxed mb-6">
 
-            Close Window
+        Package details can be discussed according to
+        your project requirements, quantity, complexity,
+        creative direction and deadline.
 
-        </button>
+    </p>
 
-    </div>
+
+    <button onclick="closePkgModal()"
+            class="w-full
+                   py-3 rounded-full
+                   bg-[#2D8CFF]
+                   text-black
+                   font-bold uppercase
+                   text-xs">
+
+        Close Window
+
+    </button>
 
 </div>
+```
 
+</div>
 
 <!-- =========================================================
      BACK TO TOP
 ========================================================= -->
 
 <button id="backToTop"
-        type="button"
-        aria-label="Back to top">
+     type="button"
+     aria-label="Back to top">
 
-    <i class="fas fa-arrow-up"></i>
+```
+<i class="fas fa-arrow-up"></i>
+```
 
 </button>
-
 
 <!-- =========================================================
      JAVASCRIPT
