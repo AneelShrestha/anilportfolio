@@ -2849,502 +2849,260 @@ FINAL CONSOLIDATED VERSION
 }
 
 
-/* ==========================================================================
-   RECOMMENDATIONS
-   ========================================================================== */
+/* =========================================================
+   RECOMMENDATIONS SECTION STYLES
+========================================================= */
 
-.recommendations-section {
-    position: relative;
-    z-index: 10;
-    padding: 6rem 1rem;
-    background: rgba(255, 255, 255, 0.015);
+/* Main Section Background & Radial Glows */
+#recommendations {
+  background-color: #070913;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.recommendations-container {
-    width: min(1280px, 100%);
-    margin: 0 auto;
+/* Background Ambient Lighting Effect */
+#recommendations::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events-none: none;
+}
+
+/* ---------------------------------------------------------
+   SECTION HEADER
+----------------========================================= */
+
+/* Number '07' Indicator and Line */
+#recommendations .mb-12 {
+  position: relative;
+  padding-left: 3rem;
+}
+
+#recommendations .mb-12::before {
+  content: "07";
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #3b82f6;
+  font-family: monospace;
+}
+
+#recommendations .mb-12::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 38px;
+  background-color: #06b6d4;
+  box-shadow: 0 0 8px #06b6d4;
+}
+
+/* Recommendation Pill Tag */
+.section-tag {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.35);
+  margin-bottom: 0.5rem;
+}
+
+/* Gradient Subheading ("People I've Worked With.") */
+#recommendations h3 {
+  background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 50%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
-/* --------------------------------------------------------------------------
-   HEADING
-   -------------------------------------------------------------------------- */
-
-.recommendations-heading {
-    max-width: 760px;
-    margin-bottom: 3rem;
-}
-
-.recommendations-heading .section-tag {
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.recommendations-heading h2 {
-    margin: 0;
-    font-family: "The Bold Font", sans-serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.045em;
-    color: #ffffff;
-}
-
-.recommendations-heading h2 span {
-    color: #2d8cff;
-}
-
-.recommendations-heading p {
-    max-width: 650px;
-    margin-top: 1.25rem;
-    color: #a5a5a5;
-    font-family: "Primavera Sans", sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.8;
-}
-
-
-/* --------------------------------------------------------------------------
-   GRID
-   -------------------------------------------------------------------------- */
-
-.recommendations-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-}
-
-
-/* --------------------------------------------------------------------------
-   CARD
-   -------------------------------------------------------------------------- */
+/* ---------------------------------------------------------
+   RECOMMENDATION CARDS
+----------------========================================= */
 
 .recommendation-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 330px;
-    padding: 1.5rem;
-    overflow: hidden;
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1.25rem;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.045),
-            rgba(255, 255, 255, 0.012)
-        ),
-        rgba(15, 23, 42, 0.65);
-
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    transition:
-        transform 0.35s ease,
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
+  position: relative;
+  background: rgba(13, 20, 36, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 1.25rem;
+  row-gap: 0.25rem;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
-/* subtle internal glow */
-
-.recommendation-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 90% 0%,
-            var(--recommendation-glow),
-            transparent 45%
-        );
-
-    opacity: 0.8;
-}
-
-
-/* bottom accent */
-
-.recommendation-card::after {
-    content: "";
-    position: absolute;
-    left: 1.5rem;
-    right: 1.5rem;
-    bottom: 0;
-
-    height: 1px;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        var(--recommendation-color),
-        transparent
-    );
-
-    opacity: 0.7;
-}
-
 
 .recommendation-card:hover {
-    transform: translateY(-5px);
-
-    border-color: var(--recommendation-border);
-
-    box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.28),
-        0 0 28px var(--recommendation-shadow);
+  transform: translateY(-4px);
 }
 
-
-/* --------------------------------------------------------------------------
-   CARD COLOR VARIANTS
-   -------------------------------------------------------------------------- */
-
-.recommendation-blue {
-    --recommendation-color: #2d8cff;
-    --recommendation-glow: rgba(45, 140, 255, 0.14);
-    --recommendation-border: rgba(45, 140, 255, 0.34);
-    --recommendation-shadow: rgba(45, 140, 255, 0.12);
-}
-
-.recommendation-purple {
-    --recommendation-color: #a855f7;
-    --recommendation-glow: rgba(168, 85, 247, 0.14);
-    --recommendation-border: rgba(168, 85, 247, 0.34);
-    --recommendation-shadow: rgba(168, 85, 247, 0.12);
-}
-
-.recommendation-green {
-    --recommendation-color: #39ff88;
-    --recommendation-glow: rgba(57, 255, 136, 0.12);
-    --recommendation-border: rgba(57, 255, 136, 0.32);
-    --recommendation-shadow: rgba(57, 255, 136, 0.10);
-}
-
-.recommendation-red {
-    --recommendation-color: #ff4d67;
-    --recommendation-glow: rgba(255, 77, 103, 0.13);
-    --recommendation-border: rgba(255, 77, 103, 0.34);
-    --recommendation-shadow: rgba(255, 77, 103, 0.11);
-}
-
-.recommendation-cyan {
-    --recommendation-color: #22d3ee;
-    --recommendation-glow: rgba(34, 211, 238, 0.13);
-    --recommendation-border: rgba(34, 211, 238, 0.34);
-    --recommendation-shadow: rgba(34, 211, 238, 0.11);
-}
-
-.recommendation-orange {
-    --recommendation-color: #ff9f43;
-    --recommendation-glow: rgba(255, 159, 67, 0.13);
-    --recommendation-border: rgba(255, 159, 67, 0.34);
-    --recommendation-shadow: rgba(255, 159, 67, 0.11);
-}
-
-
-/* --------------------------------------------------------------------------
-   TOP — NUMBER + QUOTE
-   -------------------------------------------------------------------------- */
-
-.recommendation-card-top {
-    position: relative;
-    z-index: 2;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-
-    min-height: 52px;
-}
-
-
-.recommendation-index {
-    font-family: "The Bold Font", sans-serif;
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.14em;
-
-    color: var(--recommendation-color);
-
-    opacity: 0.9;
-}
-
-
-.recommendation-quote {
-    font-family: Georgia, serif;
-    font-size: 4rem;
-    font-weight: 900;
-    line-height: 0.65;
-
-    color: var(--recommendation-color);
-
-    opacity: 0.28;
-
-    user-select: none;
-}
-
-
-/* --------------------------------------------------------------------------
-   RECOMMENDATION TEXT
-   -------------------------------------------------------------------------- */
-
-.recommendation-message {
-    position: relative;
-    z-index: 2;
-
-    flex: 1;
-
-    display: flex;
-    align-items: flex-start;
-}
-
-
-.recommendation-message p {
-    max-width: 95%;
-    margin: 0;
-
-    color: #d0d0d0;
-
-    font-family: "Primavera Sans", sans-serif;
-    font-size: 0.84rem;
-    line-height: 1.75;
-}
-
-
-/* --------------------------------------------------------------------------
-   BOTTOM PROFILE AREA
-   -------------------------------------------------------------------------- */
-
-.recommendation-card-bottom {
-    position: relative;
-    z-index: 2;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-
-    gap: 1rem;
-
-    margin-top: 1.5rem;
-    padding-top: 1.25rem;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-
-.recommendation-profile {
-    display: flex;
-    align-items: center;
-    min-width: 0;
-    gap: 0.75rem;
-}
-
-
-/* --------------------------------------------------------------------------
-   AVATAR
-   -------------------------------------------------------------------------- */
-
+/* Avatar Circle Container */
 .recommendation-avatar {
-    flex: 0 0 auto;
-
-    width: 46px;
-    height: 46px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            var(--recommendation-glow),
-            rgba(15, 23, 42, 0.8)
-        );
-
-    border: 1px solid var(--recommendation-border);
-
-    color: var(--recommendation-color);
-
-    box-shadow:
-        inset 0 0 16px var(--recommendation-glow),
-        0 0 14px var(--recommendation-shadow);
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .recommendation-avatar svg {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+/* Author Name */
+.recommendation-card h3 {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  align-self: end;
+  -webkit-text-fill-color: initial; /* Resets gradient heading style */
+}
+
+/* Author Role */
+.recommendation-card span {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  align-self: start;
+  margin-top: 0.15rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+/* Colored Line Under Role */
+.recommendation-card span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  border-radius: 1px;
+}
+
+/* Testimonial Paragraph */
+.recommendation-card p {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+/* Quote Icon Prefix */
+.recommendation-card p::before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -0.2rem;
+  font-size: 2.2rem;
+  font-family: Georgia, serif;
+  line-height: 1;
 }
 
 
-/* --------------------------------------------------------------------------
-   PERSON
-   -------------------------------------------------------------------------- */
+/* ---------------------------------------------------------
+   CARD AURA & GLOW VARIATIONS
+----------------========================================= */
 
-.recommendation-person {
-    min-width: 0;
+/* Cyan Card */
+.aura-cyan {
+  border: 1px solid rgba(6, 182, 212, 0.5);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.12), inset 0 0 15px rgba(6, 182, 212, 0.05);
+}
+.aura-cyan .recommendation-avatar {
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  color: #06b6d4;
+}
+.aura-cyan span::after {
+  background-color: #06b6d4;
+  box-shadow: 0 0 6px #06b6d4;
+}
+.aura-cyan p::before {
+  color: #06b6d4;
 }
 
-
-.recommendation-person h3 {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-family: "The Bold Font", sans-serif;
-    font-size: 0.9rem;
-    font-weight: 900;
-    line-height: 1.25;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+/* Emerald / Teal Card */
+.aura-emerald {
+  border: 1px solid rgba(20, 184, 166, 0.5);
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.12), inset 0 0 15px rgba(20, 184, 166, 0.05);
+}
+.aura-emerald .recommendation-avatar {
+  background: rgba(20, 184, 166, 0.15);
+  border: 1px solid rgba(20, 184, 166, 0.4);
+  color: #14b8a6;
+}
+.aura-emerald span::after {
+  background-color: #14b8a6;
+  box-shadow: 0 0 6px #14b8a6;
+}
+.aura-emerald p::before {
+  color: #14b8a6;
 }
 
-
-.recommendation-person span {
-    display: block;
-
-    max-width: 185px;
-    margin-top: 0.3rem;
-
-    color: var(--recommendation-color);
-
-    font-family: "Primavera Sans", sans-serif;
-    font-size: 0.58rem;
-    font-weight: 700;
-    line-height: 1.35;
-
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
+/* Pink Card */
+.aura-pink {
+  border: 1px solid rgba(236, 72, 153, 0.5);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.12), inset 0 0 15px rgba(236, 72, 153, 0.05);
+}
+.aura-pink .recommendation-avatar {
+  background: rgba(236, 72, 153, 0.15);
+  border: 1px solid rgba(236, 72, 153, 0.4);
+  color: #ec4899;
+}
+.aura-pink span::after {
+  background-color: #ec4899;
+  box-shadow: 0 0 6px #ec4899;
+}
+.aura-pink p::before {
+  color: #ec4899;
 }
 
-
-/* --------------------------------------------------------------------------
-   REFERENCE LABEL
-   -------------------------------------------------------------------------- */
-
-.recommendation-reference {
-    flex: 0 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    text-align: right;
+/* Purple Card */
+.aura-purple {
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.12), inset 0 0 15px rgba(168, 85, 247, 0.05);
 }
-
-
-.recommendation-reference strong {
-    color: #ffffff;
-
-    font-family: "The Bold Font", sans-serif;
-    font-size: 0.58rem;
-    font-weight: 900;
-
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+.aura-purple .recommendation-avatar {
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #a855f7;
 }
-
-
-.recommendation-reference span {
-    margin-top: 0.2rem;
-
-    color: #777777;
-
-    font-family: "Primavera Sans", sans-serif;
-    font-size: 0.5rem;
-
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+.aura-purple span::after {
+  background-color: #a855f7;
+  box-shadow: 0 0 6px #a855f7;
 }
-
-
-/* --------------------------------------------------------------------------
-   TABLET
-   -------------------------------------------------------------------------- */
-
-@media (max-width: 1050px) {
-
-    .recommendations-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-}
-
-
-/* --------------------------------------------------------------------------
-   MOBILE
-   -------------------------------------------------------------------------- */
-
-@media (max-width: 680px) {
-
-    .recommendations-section {
-        padding: 4.5rem 1rem;
-    }
-
-    .recommendations-heading {
-        margin-bottom: 2rem;
-    }
-
-    .recommendations-heading h2 {
-        font-size: 2.25rem;
-    }
-
-    .recommendations-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .recommendation-card {
-        min-height: 315px;
-        padding: 1.35rem;
-    }
-
-    .recommendation-message p {
-        max-width: 100%;
-    }
-
-    .recommendation-card-bottom {
-        align-items: flex-end;
-    }
-
-    .recommendation-reference {
-        display: none;
-    }
-
-}
-
-
-/* --------------------------------------------------------------------------
-   SMALL MOBILE
-   -------------------------------------------------------------------------- */
-
-@media (max-width: 420px) {
-
-    .recommendation-card {
-        min-height: 320px;
-    }
-
-    .recommendation-person h3 {
-        font-size: 0.82rem;
-    }
-
-    .recommendation-person span {
-        max-width: 150px;
-        font-size: 0.53rem;
-    }
-
+.aura-purple p::before {
+  color: #a855f7;
 }
 
 /* ==========================================================================
