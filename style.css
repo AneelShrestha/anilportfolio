@@ -2851,245 +2851,312 @@ FINAL CONSOLIDATED VERSION
 
 /* ==========================================================================
    RECOMMENDATIONS
-   ANIL SHRESTHA — PORTFOLIO
-========================================================================== */
+   ========================================================================== */
+
+.recommendations-section {
+    position: relative;
+    z-index: 10;
+    padding: 6rem 1rem;
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.recommendations-container {
+    width: min(1280px, 100%);
+    margin: 0 auto;
+}
 
 
-/* =========================================================
-   SECTION HEADING
-========================================================= */
+/* --------------------------------------------------------------------------
+   HEADING
+   -------------------------------------------------------------------------- */
 
 .recommendations-heading {
     max-width: 760px;
-    margin: 0 auto 4rem;
-    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .recommendations-heading .section-tag {
-    display: inline-block;
-
+    display: inline-flex;
+    align-items: center;
     margin-bottom: 1rem;
-
-    color: #2D8CFF;
-
-    font-size: 0.68rem;
-    font-weight: 800;
-
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
 }
 
 .recommendations-heading h2 {
     margin: 0;
-
-    color: #ffffff;
-
-    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-family: "The Bold Font", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
     font-weight: 900;
-
-    line-height: 1.05;
-    letter-spacing: -0.035em;
+    line-height: 1;
+    letter-spacing: -0.045em;
+    color: #ffffff;
 }
 
 .recommendations-heading h2 span {
-    display: block;
-
-    margin-top: 0.15rem;
-
-    background:
-        linear-gradient(
-            90deg,
-            #2D8CFF 0%,
-            #39FF88 100%
-        );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    -webkit-text-fill-color: transparent;
+    color: #2d8cff;
 }
 
 .recommendations-heading p {
-    max-width: 620px;
-
-    margin: 1.25rem auto 0;
-
-    color: rgba(255, 255, 255, 0.52);
-
+    max-width: 650px;
+    margin-top: 1.25rem;
+    color: #a5a5a5;
+    font-family: "Primavera Sans", sans-serif;
     font-size: 0.9rem;
-    line-height: 1.75;
+    line-height: 1.8;
 }
 
 
-/* =========================================================
-   3 × 2 GRID
-========================================================= */
+/* --------------------------------------------------------------------------
+   GRID
+   -------------------------------------------------------------------------- */
 
 .recommendations-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 1.5rem;
-
-    align-items: stretch;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
 }
 
 
-/* =========================================================
-   RECOMMENDATION CARD
-========================================================= */
+/* --------------------------------------------------------------------------
+   CARD
+   -------------------------------------------------------------------------- */
 
 .recommendation-card {
     position: relative;
-
-    min-width: 0;
-    min-height: 300px;
-
     display: flex;
     flex-direction: column;
-
-    padding: 1.75rem;
-
+    min-height: 330px;
+    padding: 1.5rem;
     overflow: hidden;
 
-    border-radius: 1.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
 
     background:
         linear-gradient(
             145deg,
-            rgba(15, 23, 42, 0.92),
-            rgba(8, 15, 30, 0.72)
-        );
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.012)
+        ),
+        rgba(15, 23, 42, 0.65);
 
-    border:
-        1px solid rgba(255, 255, 255, 0.08);
-
-    box-shadow:
-        0 18px 50px rgba(0, 0, 0, 0.18);
-
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-
-    isolation: isolate;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     transition:
-        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.4s ease,
-        box-shadow 0.4s ease;
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 
-/* =========================================================
-   SOFT CARD GLOW
-========================================================= */
+/* subtle internal glow */
 
 .recommendation-card::before {
     content: "";
-
     position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    top: -95px;
-    right: -75px;
-
-    border-radius: 50%;
+    inset: 0;
+    pointer-events: none;
 
     background:
         radial-gradient(
-            circle,
-            var(--recommendation-glow, rgba(45, 140, 255, 0.22)) 0%,
-            transparent 70%
+            circle at 90% 0%,
+            var(--recommendation-glow),
+            transparent 45%
         );
 
-    filter: blur(5px);
-
-    pointer-events: none;
-
-    opacity: 0.85;
-
-    z-index: -1;
+    opacity: 0.8;
 }
 
+
+/* bottom accent */
 
 .recommendation-card::after {
     content: "";
-
     position: absolute;
-
-    left: 0;
-    right: 0;
+    left: 1.5rem;
+    right: 1.5rem;
     bottom: 0;
 
-    height: 2px;
+    height: 1px;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--recommendation-accent, #2D8CFF),
-            transparent
-        );
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--recommendation-color),
+        transparent
+    );
 
-    opacity: 0.65;
-
-    transition:
-        opacity 0.35s ease;
+    opacity: 0.7;
 }
 
-
-/* =========================================================
-   CARD HOVER
-========================================================= */
 
 .recommendation-card:hover {
-    transform:
-        translateY(-7px);
+    transform: translateY(-5px);
 
-    border-color:
-        var(--recommendation-border, rgba(45, 140, 255, 0.35));
+    border-color: var(--recommendation-border);
 
     box-shadow:
-        0 24px 65px rgba(0, 0, 0, 0.28),
-        0 0 35px var(--recommendation-shadow, rgba(45, 140, 255, 0.08));
-}
-
-.recommendation-card:hover::after {
-    opacity: 1;
+        0 18px 45px rgba(0, 0, 0, 0.28),
+        0 0 28px var(--recommendation-shadow);
 }
 
 
-/* =========================================================
-   PROFILE ROW
-========================================================= */
+/* --------------------------------------------------------------------------
+   CARD COLOR VARIANTS
+   -------------------------------------------------------------------------- */
 
-.recommendation-profile {
+.recommendation-blue {
+    --recommendation-color: #2d8cff;
+    --recommendation-glow: rgba(45, 140, 255, 0.14);
+    --recommendation-border: rgba(45, 140, 255, 0.34);
+    --recommendation-shadow: rgba(45, 140, 255, 0.12);
+}
+
+.recommendation-purple {
+    --recommendation-color: #a855f7;
+    --recommendation-glow: rgba(168, 85, 247, 0.14);
+    --recommendation-border: rgba(168, 85, 247, 0.34);
+    --recommendation-shadow: rgba(168, 85, 247, 0.12);
+}
+
+.recommendation-green {
+    --recommendation-color: #39ff88;
+    --recommendation-glow: rgba(57, 255, 136, 0.12);
+    --recommendation-border: rgba(57, 255, 136, 0.32);
+    --recommendation-shadow: rgba(57, 255, 136, 0.10);
+}
+
+.recommendation-red {
+    --recommendation-color: #ff4d67;
+    --recommendation-glow: rgba(255, 77, 103, 0.13);
+    --recommendation-border: rgba(255, 77, 103, 0.34);
+    --recommendation-shadow: rgba(255, 77, 103, 0.11);
+}
+
+.recommendation-cyan {
+    --recommendation-color: #22d3ee;
+    --recommendation-glow: rgba(34, 211, 238, 0.13);
+    --recommendation-border: rgba(34, 211, 238, 0.34);
+    --recommendation-shadow: rgba(34, 211, 238, 0.11);
+}
+
+.recommendation-orange {
+    --recommendation-color: #ff9f43;
+    --recommendation-glow: rgba(255, 159, 67, 0.13);
+    --recommendation-border: rgba(255, 159, 67, 0.34);
+    --recommendation-shadow: rgba(255, 159, 67, 0.11);
+}
+
+
+/* --------------------------------------------------------------------------
+   TOP — NUMBER + QUOTE
+   -------------------------------------------------------------------------- */
+
+.recommendation-card-top {
+    position: relative;
+    z-index: 2;
+
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 
-    align-items: center;
+    min-height: 52px;
+}
+
+
+.recommendation-index {
+    font-family: "The Bold Font", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+
+    color: var(--recommendation-color);
+
+    opacity: 0.9;
+}
+
+
+.recommendation-quote {
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 0.65;
+
+    color: var(--recommendation-color);
+
+    opacity: 0.28;
+
+    user-select: none;
+}
+
+
+/* --------------------------------------------------------------------------
+   RECOMMENDATION TEXT
+   -------------------------------------------------------------------------- */
+
+.recommendation-message {
+    position: relative;
+    z-index: 2;
+
+    flex: 1;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.recommendation-message p {
+    max-width: 95%;
+    margin: 0;
+
+    color: #d0d0d0;
+
+    font-family: "Primavera Sans", sans-serif;
+    font-size: 0.84rem;
+    line-height: 1.75;
+}
+
+
+/* --------------------------------------------------------------------------
+   BOTTOM PROFILE AREA
+   -------------------------------------------------------------------------- */
+
+.recommendation-card-bottom {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 
     gap: 1rem;
 
-    min-width: 0;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 
-/* =========================================================
+.recommendation-profile {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    gap: 0.75rem;
+}
+
+
+/* --------------------------------------------------------------------------
    AVATAR
-========================================================= */
+   -------------------------------------------------------------------------- */
 
 .recommendation-avatar {
-    flex:
-        0 0 68px;
+    flex: 0 0 auto;
 
-    width: 68px;
-    height: 68px;
+    width: 46px;
+    height: 46px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -3098,347 +3165,187 @@ FINAL CONSOLIDATED VERSION
     border-radius: 50%;
 
     background:
-        rgba(255, 255, 255, 0.035);
+        radial-gradient(
+            circle,
+            var(--recommendation-glow),
+            rgba(15, 23, 42, 0.8)
+        );
 
-    border:
-        1px solid var(--recommendation-avatar-border, rgba(45, 140, 255, 0.42));
+    border: 1px solid var(--recommendation-border);
+
+    color: var(--recommendation-color);
 
     box-shadow:
-        0 0 0 5px rgba(255, 255, 255, 0.018),
-        0 0 24px var(--recommendation-avatar-glow, rgba(45, 140, 255, 0.12));
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
+        inset 0 0 16px var(--recommendation-glow),
+        0 0 14px var(--recommendation-shadow);
 }
 
-.recommendation-avatar svg {
-    display: block;
 
+.recommendation-avatar svg {
     width: 100%;
     height: 100%;
 }
 
-.recommendation-card:hover .recommendation-avatar {
-    transform:
-        scale(1.04);
 
-    box-shadow:
-        0 0 0 5px rgba(255, 255, 255, 0.025),
-        0 0 30px var(--recommendation-avatar-glow, rgba(45, 140, 255, 0.2));
-}
-
-
-/* =========================================================
-   PERSON DETAILS
-========================================================= */
+/* --------------------------------------------------------------------------
+   PERSON
+   -------------------------------------------------------------------------- */
 
 .recommendation-person {
     min-width: 0;
 }
+
 
 .recommendation-person h3 {
     margin: 0;
 
     color: #ffffff;
 
-    font-size: 0.98rem;
-    font-weight: 800;
+    font-family: "The Bold Font", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 900;
+    line-height: 1.25;
 
-    line-height: 1.3;
-
-    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
 
 .recommendation-person span {
     display: block;
 
-    margin-top: 0.32rem;
+    max-width: 185px;
+    margin-top: 0.3rem;
 
-    color:
-        var(--recommendation-accent, #39FF88);
+    color: var(--recommendation-color);
 
-    font-size: 0.62rem;
+    font-family: "Primavera Sans", sans-serif;
+    font-size: 0.58rem;
     font-weight: 700;
+    line-height: 1.35;
 
-    line-height: 1.45;
-
-    letter-spacing: 0.06em;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
 }
 
 
-/* =========================================================
-   DIVIDER
-========================================================= */
+/* --------------------------------------------------------------------------
+   REFERENCE LABEL
+   -------------------------------------------------------------------------- */
 
-.recommendation-line {
-    width: 100%;
+.recommendation-reference {
+    flex: 0 0 auto;
 
-    height: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
-    margin:
-        1.35rem 0 1.25rem;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--recommendation-divider, rgba(255, 255, 255, 0.12)),
-            rgba(255, 255, 255, 0.025)
-        );
+    text-align: right;
 }
 
 
-/* =========================================================
-   RECOMMENDATION CONTENT
-========================================================= */
+.recommendation-reference strong {
+    color: #ffffff;
 
-.recommendation-content {
-    position: relative;
-
-    flex: 1;
-
-    padding-left: 0.1rem;
-}
-
-.recommendation-quote {
-    display: block;
-
-    margin-bottom: 0.1rem;
-
-    color:
-        var(--recommendation-accent, #2D8CFF);
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 3rem;
+    font-family: "The Bold Font", sans-serif;
+    font-size: 0.58rem;
     font-weight: 900;
 
-    line-height: 0.7;
-
-    opacity: 0.75;
-}
-
-.recommendation-content p {
-    margin: 0.7rem 0 0;
-
-    color:
-        rgba(255, 255, 255, 0.63);
-
-    font-size: 0.79rem;
-
-    line-height: 1.75;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 
-/* =========================================================
-   BLUE
-========================================================= */
+.recommendation-reference span {
+    margin-top: 0.2rem;
 
-.recommendation-blue {
-    --recommendation-accent: #2D8CFF;
+    color: #777777;
 
-    --recommendation-glow:
-        rgba(45, 140, 255, 0.23);
+    font-family: "Primavera Sans", sans-serif;
+    font-size: 0.5rem;
 
-    --recommendation-border:
-        rgba(45, 140, 255, 0.35);
-
-    --recommendation-shadow:
-        rgba(45, 140, 255, 0.12);
-
-    --recommendation-avatar-border:
-        rgba(45, 140, 255, 0.48);
-
-    --recommendation-avatar-glow:
-        rgba(45, 140, 255, 0.18);
-
-    --recommendation-divider:
-        rgba(45, 140, 255, 0.28);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 
-/* =========================================================
-   GREEN
-========================================================= */
-
-.recommendation-green {
-    --recommendation-accent: #39FF88;
-
-    --recommendation-glow:
-        rgba(57, 255, 136, 0.2);
-
-    --recommendation-border:
-        rgba(57, 255, 136, 0.32);
-
-    --recommendation-shadow:
-        rgba(57, 255, 136, 0.1);
-
-    --recommendation-avatar-border:
-        rgba(57, 255, 136, 0.42);
-
-    --recommendation-avatar-glow:
-        rgba(57, 255, 136, 0.16);
-
-    --recommendation-divider:
-        rgba(57, 255, 136, 0.25);
-}
-
-
-/* =========================================================
-   PINK
-========================================================= */
-
-.recommendation-pink {
-    --recommendation-accent: #ff4fa3;
-
-    --recommendation-glow:
-        rgba(255, 79, 163, 0.2);
-
-    --recommendation-border:
-        rgba(255, 79, 163, 0.34);
-
-    --recommendation-shadow:
-        rgba(255, 79, 163, 0.1);
-
-    --recommendation-avatar-border:
-        rgba(255, 79, 163, 0.43);
-
-    --recommendation-avatar-glow:
-        rgba(255, 79, 163, 0.16);
-
-    --recommendation-divider:
-        rgba(255, 79, 163, 0.25);
-}
-
-
-/* =========================================================
-   PURPLE
-========================================================= */
-
-.recommendation-purple {
-    --recommendation-accent: #a855f7;
-
-    --recommendation-glow:
-        rgba(168, 85, 247, 0.2);
-
-    --recommendation-border:
-        rgba(168, 85, 247, 0.34);
-
-    --recommendation-shadow:
-        rgba(168, 85, 247, 0.1);
-
-    --recommendation-avatar-border:
-        rgba(168, 85, 247, 0.43);
-
-    --recommendation-avatar-glow:
-        rgba(168, 85, 247, 0.16);
-
-    --recommendation-divider:
-        rgba(168, 85, 247, 0.25);
-}
-
-
-/* =========================================================
+/* --------------------------------------------------------------------------
    TABLET
-========================================================= */
+   -------------------------------------------------------------------------- */
 
-@media (max-width: 1024px) {
+@media (max-width: 1050px) {
 
     .recommendations-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 1.25rem;
-    }
-
-    .recommendation-card {
-        min-height: 300px;
-
-        padding: 1.5rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
 }
 
 
-/* =========================================================
+/* --------------------------------------------------------------------------
    MOBILE
-========================================================= */
+   -------------------------------------------------------------------------- */
 
-@media (max-width: 640px) {
+@media (max-width: 680px) {
+
+    .recommendations-section {
+        padding: 4.5rem 1rem;
+    }
 
     .recommendations-heading {
-        margin-bottom: 2.75rem;
+        margin-bottom: 2rem;
     }
 
     .recommendations-heading h2 {
-        font-size: 2rem;
-    }
-
-    .recommendations-heading p {
-        font-size: 0.82rem;
+        font-size: 2.25rem;
     }
 
     .recommendations-grid {
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
     .recommendation-card {
-        min-height: 0;
-
+        min-height: 315px;
         padding: 1.35rem;
-
-        border-radius: 1.15rem;
     }
 
-    .recommendation-avatar {
-        flex-basis: 60px;
+    .recommendation-message p {
+        max-width: 100%;
+    }
 
-        width: 60px;
-        height: 60px;
+    .recommendation-card-bottom {
+        align-items: flex-end;
+    }
+
+    .recommendation-reference {
+        display: none;
+    }
+
+}
+
+
+/* --------------------------------------------------------------------------
+   SMALL MOBILE
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 420px) {
+
+    .recommendation-card {
+        min-height: 320px;
     }
 
     .recommendation-person h3 {
-        font-size: 0.92rem;
+        font-size: 0.82rem;
     }
 
     .recommendation-person span {
-        font-size: 0.58rem;
-    }
-
-    .recommendation-content p {
-        font-size: 0.77rem;
+        max-width: 150px;
+        font-size: 0.53rem;
     }
 
 }
-
-
-/* =========================================================
-   VERY SMALL DEVICES
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .recommendation-profile {
-        align-items: flex-start;
-    }
-
-    .recommendation-avatar {
-        flex-basis: 54px;
-
-        width: 54px;
-        height: 54px;
-    }
-
-    .recommendation-person h3 {
-        font-size: 0.86rem;
-    }
-
-}
-
 
 /* ==========================================================================
 PACKAGES
