@@ -4037,3 +4037,656 @@ RESPONSIVE
     box-shadow:
         0 0 20px rgba(255, 79, 216, 0.16);
 }
+
+/* =========================================================
+   ANIL SHRESTHA — CAREER DASHBOARD
+   06 CAREER + 04 SOFTWARE + SOCIAL CONNECTION
+   FINAL LAYOUT OVERRIDES
+========================================================= */
+
+
+/* =========================================================
+   MAIN 3-COLUMN DASHBOARD
+========================================================= */
+
+#career {
+    scroll-margin-top: 100px;
+}
+
+#software {
+    scroll-margin-top: 100px;
+}
+
+.career-dashboard {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(0, 1fr)
+        minmax(245px, 0.78fr);
+    gap: 18px;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   COMMON COLUMN
+========================================================= */
+
+.career-dashboard-column {
+    min-width: 0;
+    height: 100%;
+    padding: 20px;
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.018)
+        );
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.18);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* =========================================================
+   COLUMN HEADINGS
+========================================================= */
+
+.career-dashboard-heading {
+    margin-bottom: 18px;
+}
+
+.career-dashboard-heading .section-tag {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.career-dashboard-heading h2 {
+    margin-top: 6px;
+}
+
+.career-dashboard-heading p {
+    margin-top: 8px;
+    max-width: 34rem;
+}
+
+
+/* =========================================================
+   CAREER COLUMN
+========================================================= */
+
+.career-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.career-column .career-list {
+    width: 100%;
+    max-width: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    flex: 1;
+}
+
+
+/* =========================================================
+   CAREER CARDS
+========================================================= */
+
+.career-column .career-card {
+    width: 100%;
+    max-width: none;
+
+    min-height: 88px;
+
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 13px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CAREER DATE COLUMN
+   FIXED GRID — PREVENTS DATE / TIMELINE OVERLAP
+========================================================= */
+
+.career-date-column {
+    width: 76px !important;
+    min-width: 76px !important;
+
+    height: 62px !important;
+
+    display: grid !important;
+
+    grid-template-columns: 34px 12px !important;
+    grid-template-rows: 1fr 1fr !important;
+
+    column-gap: 8px !important;
+
+    align-items: center !important;
+
+    padding: 0 !important;
+
+    position: relative !important;
+}
+
+
+/* TOP YEAR */
+
+.career-date-to {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    width: auto !important;
+
+    margin: 0 !important;
+
+    text-align: right;
+    white-space: nowrap;
+
+    font-size: 10px;
+    line-height: 1;
+
+    z-index: 2;
+}
+
+
+/* BOTTOM YEAR */
+
+.career-date-from {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+
+    width: auto !important;
+
+    margin: 0 !important;
+
+    text-align: right;
+    white-space: nowrap;
+
+    font-size: 10px;
+    line-height: 1;
+
+    z-index: 2;
+}
+
+
+/* TIMELINE */
+
+.career-date-line {
+    grid-column: 2 !important;
+    grid-row: 1 / 3 !important;
+
+    position: relative !important;
+
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: 1px !important;
+    height: 100% !important;
+
+    align-self: stretch !important;
+
+    margin: 0 !important;
+
+    background: rgba(255,255,255,0.16);
+
+    z-index: 1;
+}
+
+
+/* REMOVE OLD YEAR CONNECTORS */
+
+.career-date-to::after,
+.career-date-from::after {
+    content: none !important;
+}
+
+
+/* TIMELINE DOTS */
+
+.career-date-line::before,
+.career-date-line::after {
+    content: "" !important;
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--career-color);
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 0 8px color-mix(
+            in srgb,
+            var(--career-color) 55%,
+            transparent
+        );
+}
+
+.career-date-line::before {
+    top: 0;
+}
+
+.career-date-line::after {
+    bottom: 0;
+}
+
+
+/* =========================================================
+   CAREER INFORMATION
+========================================================= */
+
+.career-column .career-info {
+    min-width: 0;
+}
+
+.career-column .career-info h3 {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.35;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.career-column .career-info p {
+    margin-top: 5px;
+
+    font-size: 11px;
+    line-height: 1.45;
+
+    color: rgba(148,163,184,0.92);
+}
+
+
+/* =========================================================
+   SOFTWARE COLUMN
+========================================================= */
+
+.software-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.software-column .software-dashboard-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    flex: 1;
+
+    align-content: start;
+}
+
+
+/* =========================================================
+   SOFTWARE CARDS
+========================================================= */
+
+.software-column .software-card {
+    width: 100%;
+
+    min-width: 0;
+    min-height: 126px;
+
+    padding: 13px 8px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.software-column .software-card:hover {
+    transform: translateY(-3px);
+}
+
+
+/* SOFTWARE ICON */
+
+.software-column .software-icon {
+    width: 38px;
+    height: 38px;
+
+    object-fit: contain;
+
+    margin-bottom: 9px;
+}
+
+
+/* SOFTWARE NAME */
+
+.software-column .software-card h3 {
+    width: 100%;
+
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+/* SOFTWARE DESCRIPTION */
+
+.software-column .software-card p {
+    width: 100%;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+    line-height: 1.35;
+
+    color: rgba(148,163,184,0.85);
+}
+
+
+/* =========================================================
+   SOCIAL COLUMN
+========================================================= */
+
+.social-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-column > div,
+.social-column > .career-dashboard-heading {
+    width: 100%;
+}
+
+
+/* SOCIAL PREVIEW WRAPPER */
+
+.social-column .social-preview-card {
+    position: relative !important;
+
+    inset: auto !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 100% !important;
+
+    max-width: none !important;
+
+    margin: 0 0 12px 0;
+
+    padding: 14px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   FACEBOOK PREVIEW
+========================================================= */
+
+.social-column .facebook-preview {
+    min-height: 145px;
+
+    height: auto !important;
+}
+
+
+/* =========================================================
+   YOUTUBE PREVIEW
+========================================================= */
+
+.social-column .youtube-preview {
+    min-height: 145px;
+
+    height: auto !important;
+}
+
+
+/* =========================================================
+   SOCIAL CARD LINKS
+========================================================= */
+
+.social-column a {
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.social-column a:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   PREVENT SOCIAL CARDS FROM BECOMING FULLSCREEN
+========================================================= */
+
+.social-column .social-preview-card,
+.social-column .facebook-preview,
+.social-column .youtube-preview {
+    position: relative !important;
+    width: 100% !important;
+
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    z-index: 1 !important;
+}
+
+
+/* =========================================================
+   DESKTOP BALANCE
+========================================================= */
+
+@media (min-width: 1101px) {
+
+    .career-dashboard-column {
+        min-height: 100%;
+    }
+
+    .career-column .career-list {
+        min-height: 0;
+    }
+
+    .software-column .software-dashboard-grid {
+        min-height: 0;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .career-dashboard {
+        grid-template-columns:
+            minmax(0, 1.15fr)
+            minmax(0, 0.85fr);
+
+        gap: 16px;
+    }
+
+    .career-column {
+        grid-column: 1 / -1;
+    }
+
+    .software-column {
+        grid-column: 1;
+    }
+
+    .social-column {
+        grid-column: 2;
+    }
+
+    .career-dashboard-column {
+        padding: 18px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .career-dashboard {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .career-column,
+    .software-column,
+    .social-column {
+        grid-column: auto;
+    }
+
+    .career-dashboard-column {
+        padding: 16px;
+    }
+
+    .software-column .software-dashboard-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .career-dashboard-column {
+        padding: 13px;
+        border-radius: 16px;
+    }
+
+    .career-column .career-card {
+        grid-template-columns: 70px minmax(0, 1fr);
+
+        gap: 9px;
+
+        padding: 10px;
+    }
+
+    .career-date-column {
+        width: 70px !important;
+        min-width: 70px !important;
+
+        grid-template-columns: 31px 11px !important;
+        column-gap: 7px !important;
+    }
+
+    .career-column .career-info h3 {
+        font-size: 12px;
+    }
+
+    .career-column .career-info p {
+        font-size: 10px;
+    }
+
+    .software-column .software-card {
+        min-height: 118px;
+
+        padding: 10px 6px;
+    }
+
+    .software-column .software-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .software-column .software-card h3 {
+        font-size: 10px;
+    }
+
+    .software-column .software-card p {
+        font-size: 8px;
+    }
+
+    .social-column .social-preview-card {
+        padding: 12px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .software-column .software-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .software-column .software-card {
+        min-height: 105px;
+    }
+}
