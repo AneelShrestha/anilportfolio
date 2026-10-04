@@ -4858,7 +4858,7 @@ RESPONSIVE
         min-height: 105px;
     }
 }
-```css
+
 /* =========================================================
    ANIL SHRESTHA — CAREER DASHBOARD
    06 CAREER + 04 SOFTWARE + SOCIAL CONNECTION
@@ -6811,39 +6811,88 @@ RESPONSIVE
     border-color: rgba(24,119,242,.45);
     transform: translateY(-1px);
 }
+```css
 /* =========================================================
-   RECOMMENDATIONS — 3 × 2 PROFESSIONAL GRID
+   RECOMMENDATIONS — POLISHED 3 × 2 SYSTEM
+========================================================= */
+
+/* =========================================================
+   SECTION HEADER
 ========================================================= */
 
 .recommendations-heading {
     max-width: 780px;
 }
 
+/*
+   Standard section label.
+   This removes the special badge/pill appearance and keeps
+   RECOMMENDATIONS visually consistent with the other sections.
+*/
+.recommendations-badge {
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    background: none;
+    border: 0;
+    border-radius: 0;
+
+    color: rgba(255,255,255,.48);
+
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 800;
+
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+/* Main heading */
 .recommendations-heading h2 {
     margin-top: 12px;
+
     font-size: clamp(2.4rem, 5vw, 4.5rem);
     line-height: .98;
+
     font-weight: 800;
     letter-spacing: -0.045em;
+
     color: #fff;
 }
 
-.recommendations-heading h2 span {
+/* Gradient secondary heading */
+.recommendations-heading h3 {
+    margin-top: 5px;
+
+    font-size: clamp(1.8rem, 4vw, 3.5rem);
+    line-height: 1;
+
+    font-weight: 800;
+    letter-spacing: -0.04em;
+
     background: linear-gradient(
         90deg,
         #39ff88,
         #2d8cff,
         #ff4fd8
     );
+
     -webkit-background-clip: text;
     background-clip: text;
+
     color: transparent;
 }
 
+/* Description */
 .recommendations-heading p {
-    margin-top: 20px;
+    margin-top: 18px;
+
     max-width: 650px;
+
     color: rgba(255,255,255,.52);
+
     font-size: 14px;
     line-height: 1.8;
 }
@@ -6853,10 +6902,8 @@ RESPONSIVE
    GRID
 ========================================================= */
 
-.recommendations-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+.grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    align-items: stretch;
 }
 
 
@@ -6866,8 +6913,9 @@ RESPONSIVE
 
 .recommendation-card {
     position: relative;
+
     min-width: 0;
-    min-height: 330px;
+    min-height: 335px;
 
     padding: 25px;
 
@@ -6887,52 +6935,97 @@ RESPONSIVE
     display: flex;
     flex-direction: column;
 
+    isolation: isolate;
+
     transition:
-        transform .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
+        transform .32s cubic-bezier(.22,.61,.36,1),
+        border-color .32s ease,
+        box-shadow .32s ease,
+        background .32s ease;
 }
 
+/* Soft individual aura */
 .recommendation-card::before {
     content: "";
-    position: absolute;
-    width: 170px;
-    height: 170px;
 
-    top: -100px;
-    right: -80px;
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    top: -105px;
+    right: -85px;
 
     border-radius: 50%;
 
     background: var(--recommendation-glow);
 
-    filter: blur(45px);
+    filter: blur(52px);
 
-    opacity: .25;
+    opacity: .18;
 
     pointer-events: none;
+
+    z-index: -1;
+}
+
+/* Very subtle lower atmosphere */
+.recommendation-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    bottom: -100px;
+    left: -80px;
+
+    border-radius: 50%;
+
+    background: var(--recommendation-glow);
+
+    filter: blur(65px);
+
+    opacity: .07;
+
+    pointer-events: none;
+
+    z-index: -1;
 }
 
 .recommendation-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+
     border-color: var(--recommendation-border);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.022)
+        );
+
     box-shadow:
-        0 20px 55px rgba(0,0,0,.28),
+        0 20px 55px rgba(0,0,0,.30),
         0 0 30px var(--recommendation-shadow);
 }
 
 
 /* =========================================================
-   PROFILE ROW
+   CURRENT HTML — HEADER
 ========================================================= */
 
-.recommendation-profile {
+.recommendation-header {
     position: relative;
     z-index: 2;
 
     display: flex;
     align-items: center;
+
     gap: 15px;
+
+    min-width: 0;
 }
 
 
@@ -6941,9 +7034,10 @@ RESPONSIVE
 ========================================================= */
 
 .recommendation-avatar {
-    width: 82px;
-    height: 82px;
-    min-width: 82px;
+    flex: 0 0 78px;
+
+    width: 78px;
+    height: 78px;
 
     border-radius: 50%;
 
@@ -6951,94 +7045,130 @@ RESPONSIVE
 
     border: 2px solid var(--recommendation-border);
 
-    background: rgba(255,255,255,.04);
+    background: rgba(255,255,255,.035);
 
     box-shadow:
-        0 0 22px var(--recommendation-shadow);
+        0 0 20px var(--recommendation-shadow);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.recommendation-card:hover .recommendation-avatar {
+    transform: scale(1.035);
+
+    box-shadow:
+        0 0 26px var(--recommendation-shadow);
 }
 
 .recommendation-avatar svg {
+    display: block;
+
     width: 100%;
     height: 100%;
-    display: block;
 }
 
 
 /* =========================================================
-   PERSON
+   PERSON META
 ========================================================= */
 
-.recommendation-person {
+.recommendation-meta {
     min-width: 0;
+
+    flex: 1;
 }
 
-.recommendation-person h3 {
+.recommendation-meta h3 {
     margin: 0;
 
     color: #fff;
 
     font-size: 17px;
-    line-height: 1.2;
+    line-height: 1.25;
+
     font-weight: 750;
+
+    letter-spacing: -.015em;
+
+    overflow-wrap: anywhere;
 }
 
-.recommendation-person span {
+.recommendation-meta .role-title {
     display: block;
 
-    margin-top: 7px;
+    margin-top: 6px;
 
     color: rgba(255,255,255,.48);
 
     font-size: 11px;
     line-height: 1.5;
+
+    font-weight: 500;
+
+    overflow-wrap: anywhere;
 }
 
 
 /* =========================================================
-   DIVIDER
+   QUOTE AREA
 ========================================================= */
 
-.recommendation-line {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-    height: 1px;
-
-    margin: 20px 0 18px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--recommendation-border),
-            rgba(255,255,255,.06),
-            transparent
-        );
-}
-
-
-/* =========================================================
-   RECOMMENDATION CONTENT
-========================================================= */
-
-.recommendation-content {
+.quote-container {
     position: relative;
     z-index: 2;
 
     display: flex;
-    gap: 12px;
+
+    align-items: flex-start;
+
+    gap: 11px;
 
     flex: 1;
+
+    min-width: 0;
+
+    margin-top: 23px;
+
+    padding-top: 19px;
+
+    border-top: 1px solid rgba(255,255,255,.075);
 }
 
-.recommendation-quote {
-    flex-shrink: 0;
+/* Small colored divider accent */
+.quote-container::before {
+    content: "";
 
-    margin-top: -4px;
+    position: absolute;
 
-    font-family: Georgia, serif;
+    top: -1px;
+    left: 0;
 
-    font-size: 48px;
+    width: 58px;
+    height: 1px;
+
+    background: var(--recommendation-color);
+
+    box-shadow:
+        0 0 9px var(--recommendation-shadow);
+
+    opacity: .8;
+}
+
+
+/* =========================================================
+   QUOTE MARK
+========================================================= */
+
+.quote-mark {
+    flex: 0 0 auto;
+
+    margin-top: -7px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 46px;
     line-height: 1;
 
     font-weight: 900;
@@ -7046,87 +7176,74 @@ RESPONSIVE
     color: var(--recommendation-color);
 
     text-shadow:
-        0 0 15px var(--recommendation-shadow);
+        0 0 14px var(--recommendation-shadow);
+
+    opacity: .9;
 }
 
-.recommendation-text,
-.recommendation-content p {
+
+/* =========================================================
+   RECOMMENDATION TEXT
+========================================================= */
+
+.quote-container p {
+    min-width: 0;
+
     margin: 0;
 
-    color: rgba(255,255,255,.68);
+    color: rgba(255,255,255,.67);
 
     font-size: 13px;
     line-height: 1.75;
+
+    font-weight: 400;
 }
 
 
 /* =========================================================
-   FOOTER
+   AURA COLORS
 ========================================================= */
 
-.recommendation-footer {
-    position: relative;
-    z-index: 2;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-top: 20px;
-    padding-top: 14px;
-
-    border-top: 1px solid rgba(255,255,255,.06);
-}
-
-.recommendation-footer span {
-    color: var(--recommendation-color);
-
-    font-size: 9px;
-    font-weight: 800;
-
-    letter-spacing: .18em;
-}
-
-.recommendation-footer strong {
-    color: var(--recommendation-color);
-
-    font-size: 13px;
-    font-weight: 800;
-
-    opacity: .85;
-}
-
-
-/* =========================================================
-   CARD COLORS
-========================================================= */
-
-.recommendation-blue {
+.aura-blue {
     --recommendation-color: #2d8cff;
-    --recommendation-border: rgba(45,140,255,.65);
+    --recommendation-border: rgba(45,140,255,.62);
     --recommendation-shadow: rgba(45,140,255,.25);
     --recommendation-glow: #2d8cff;
 }
 
-.recommendation-green {
+.aura-emerald {
     --recommendation-color: #39ff88;
-    --recommendation-border: rgba(57,255,136,.60);
+    --recommendation-border: rgba(57,255,136,.58);
     --recommendation-shadow: rgba(57,255,136,.22);
     --recommendation-glow: #39ff88;
 }
 
-.recommendation-pink {
+.aura-pink {
     --recommendation-color: #ff4fd8;
-    --recommendation-border: rgba(255,79,216,.65);
-    --recommendation-shadow: rgba(255,79,216,.25);
+    --recommendation-border: rgba(255,79,216,.62);
+    --recommendation-shadow: rgba(255,79,216,.24);
     --recommendation-glow: #ff4fd8;
 }
 
-.recommendation-purple {
+.aura-purple {
     --recommendation-color: #9b6cff;
-    --recommendation-border: rgba(155,108,255,.65);
-    --recommendation-shadow: rgba(155,108,255,.25);
+    --recommendation-border: rgba(155,108,255,.62);
+    --recommendation-shadow: rgba(155,108,255,.24);
     --recommendation-glow: #9b6cff;
+}
+
+.aura-cyan {
+    --recommendation-color: #26d9ff;
+    --recommendation-border: rgba(38,217,255,.60);
+    --recommendation-shadow: rgba(38,217,255,.23);
+    --recommendation-glow: #26d9ff;
+}
+
+.aura-teal {
+    --recommendation-color: #20e3c2;
+    --recommendation-border: rgba(32,227,194,.60);
+    --recommendation-shadow: rgba(32,227,194,.23);
+    --recommendation-glow: #20e3c2;
 }
 
 
@@ -7136,8 +7253,8 @@ RESPONSIVE
 
 @media (max-width: 1050px) {
 
-    .recommendations-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .recommendation-card {
+        min-height: 340px;
     }
 
 }
@@ -7149,33 +7266,79 @@ RESPONSIVE
 
 @media (max-width: 640px) {
 
-    .recommendations-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
     .recommendation-card {
         min-height: 0;
+
         padding: 20px;
+
+        border-radius: 16px;
+    }
+
+    .recommendation-header {
+        gap: 13px;
     }
 
     .recommendation-avatar {
+        flex-basis: 70px;
+
         width: 70px;
         height: 70px;
-        min-width: 70px;
     }
 
-    .recommendation-person h3 {
+    .recommendation-meta h3 {
         font-size: 15px;
+        line-height: 1.25;
     }
 
-    .recommendation-person span {
+    .recommendation-meta .role-title {
+        margin-top: 5px;
+
         font-size: 10px;
+        line-height: 1.45;
     }
 
-    .recommendation-text,
-    .recommendation-content p {
+    .quote-container {
+        gap: 9px;
+
+        margin-top: 20px;
+        padding-top: 17px;
+    }
+
+    .quote-mark {
+        font-size: 40px;
+    }
+
+    .quote-container p {
         font-size: 12px;
+        line-height: 1.7;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .recommendation-card {
+        padding: 18px;
+    }
+
+    .recommendation-avatar {
+        flex-basis: 62px;
+
+        width: 62px;
+        height: 62px;
+    }
+
+    .recommendation-meta h3 {
+        font-size: 14px;
+    }
+
+    .recommendation-meta .role-title {
+        font-size: 9.5px;
     }
 
 }
