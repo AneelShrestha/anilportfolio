@@ -2355,180 +2355,199 @@
 </section>
 
 <!-- =========================================================
-     RECOMMENDATIONS
+     RECOMMENDATIONS SECTION
 ========================================================= -->
-<section id="recommendations" class="py-20 relative z-10 bg-[#0B0F19] text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="recommendations" class="py-20 relative z-10 bg-[#070913] text-white overflow-hidden">
 
-    <!-- SECTION HEADER -->
-    <div class="flex items-start gap-6 mb-12">
-      <!-- Section Number Indicator -->
-      <div class="flex items-center gap-3 pt-1">
-        <div class="w-[2px] h-10 bg-cyan-500 shadow-[0_0_8px_#06b6d4]"></div>
-        <span class="text-slate-500 font-semibold text-lg">07</span>
-      </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div>
-        <!-- Pill Tag -->
-        <div class="inline-block px-4 py-1 rounded-full border border-purple-500/50 bg-purple-950/30 text-xs font-semibold tracking-widest text-white shadow-[0_0_10px_rgba(168,85,247,0.3)] mb-4">
-          RECOMMENDATIONS
+        <!-- SECTION HEADER -->
+        <div class="flex items-start gap-5 mb-12">
+
+            <!-- Section Number & Vertical Accent Line (No pseudo-elements needed) -->
+            <div class="flex items-center gap-3 pt-1 shrink-0">
+                <div class="w-[2px] h-10 bg-cyan-400 shadow-[0_0_8px_#06b6d4]"></div>
+                <span class="text-cyan-500 font-mono font-bold text-base tracking-wider">07</span>
+            </div>
+
+            <div class="flex-1">
+                <!-- RECOMMENDATIONS Tag (Pure text badge, not a button) -->
+                <span class="section-tag-badge">
+                    RECOMMENDATIONS
+                </span>
+
+                <h2 class="font-display text-4xl sm:text-5xl font-extrabold text-white mt-3">
+                    Trusted by
+                </h2>
+
+                <h3 class="font-display text-3xl sm:text-4xl font-extrabold mt-1 text-gradient-cyan-purple">
+                    People I've Worked With.
+                </h3>
+
+                <p class="text-slate-400 max-w-2xl mt-4 text-base">
+                    A few words from people I've had the opportunity to work, collaborate and create with.
+                </p>
+            </div>
+
         </div>
 
-        <h2 class="font-display text-4xl sm:text-5xl font-extrabold text-white">
-          Trusted by
-        </h2>
 
-        <!-- Gradient Heading -->
-        <h3 class="font-display text-3xl sm:text-4xl font-extrabold mt-1 bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-500 bg-clip-text text-transparent">
-          People I’ve Worked With.
-        </h3>
+        <!-- =====================================================
+             RECOMMENDATION GRID — 3 × 2
+        ====================================================== -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <p class="text-slate-400 max-w-2xl mt-4 text-base">
-          A few words from people I’ve had the opportunity to work, collaborate and create with.
-        </p>
-      </div>
+            <!-- 01 — APIL TRIPATHI -->
+            <article class="recommendation-card aura-cyan">
+                <div class="recommendation-avatar">
+                    <!-- Detailed Vector Illustration: Apil Tripathi -->
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="#0c2a38"/>
+                        <circle cx="50" cy="45" r="22" fill="#e8a87c"/>
+                        <!-- Hair & Glasses -->
+                        <path d="M 28 40 C 28 20, 72 20, 72 40 C 65 28, 35 28, 28 40 Z" fill="#1e1e24"/>
+                        <rect x="36" y="38" width="10" height="7" rx="1" fill="none" stroke="#111" stroke-width="2"/>
+                        <rect x="54" y="38" width="10" height="7" rx="1" fill="none" stroke="#111" stroke-width="2"/>
+                        <line x1="46" y1="41" x2="54" y2="41" stroke="#111" stroke-width="2"/>
+                        <!-- Suit -->
+                        <path d="M 18 100 C 18 70, 82 70, 82 100 Z" fill="#1b263b"/>
+                        <path d="M 42 70 L 50 85 L 58 70 L 50 100 Z" fill="#ffffff"/>
+                        <path d="M 48 78 L 52 78 L 51 95 L 49 95 Z" fill="#3a86ef"/>
+                    </svg>
+                </div>
+                <h3>Apil Tripathi</h3>
+                <span>Journalist / Media Personality</span>
+                <p>
+                    Anil brings creativity, dedication and a strong visual sense to every project. His ability to turn ideas into engaging communication is impressive.
+                </p>
+            </article>
+
+
+            <!-- 02 — MAOTSE GURUNG -->
+            <article class="recommendation-card aura-emerald">
+                <div class="recommendation-avatar">
+                    <!-- Detailed Vector Illustration: Maotse Gurung -->
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="#093028"/>
+                        <circle cx="50" cy="45" r="22" fill="#e8a87c"/>
+                        <!-- Hair -->
+                        <path d="M 26 42 C 26 15, 74 15, 74 42 C 60 25, 40 25, 26 42 Z" fill="#111111"/>
+                        <!-- Jacket -->
+                        <path d="M 18 100 C 18 70, 82 70, 82 100 Z" fill="#2d3748"/>
+                        <path d="M 38 72 L 50 88 L 62 72 Z" fill="#1a202c"/>
+                        <path d="M 44 72 L 50 82 L 56 72 Z" fill="#319795"/>
+                    </svg>
+                </div>
+                <h3>Maotse Gurung</h3>
+                <span>Actor / Director / Writer</span>
+                <p>
+                    Anil is a creative professional who understands visual storytelling and brings sincerity, skill and originality to his work.
+                </p>
+            </article>
+
+
+            <!-- 03 — MOTI BHUJEL -->
+            <article class="recommendation-card aura-pink">
+                <div class="recommendation-avatar">
+                    <!-- Detailed Vector Illustration: Moti Bhujel (with Dhaka Topi) -->
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="#331022"/>
+                        <circle cx="50" cy="48" r="21" fill="#f0b7a4"/>
+                        <!-- Traditional Dhaka Topi Cap -->
+                        <path d="M 32 35 L 50 18 L 68 35 Z" fill="#e63946"/>
+                        <path d="M 32 35 L 68 35 L 66 40 L 34 40 Z" fill="#d62828"/>
+                        <line x1="38" y1="28" x2="62" y2="28" stroke="#f1faee" stroke-width="1.5" stroke-dasharray="2,2"/>
+                        <!-- Coat -->
+                        <path d="M 18 100 C 18 72, 82 72, 82 100 Z" fill="#1d3557"/>
+                        <path d="M 42 72 L 50 85 L 58 72 Z" fill="#f1faee"/>
+                    </svg>
+                </div>
+                <h3>Moti Bhujel</h3>
+                <span>Former President / Pokhreli Yuwa Sanskritik Pariwar</span>
+                <p>
+                    Anil is creative, responsible and committed to his work. His professional approach and positive attitude make collaboration meaningful.
+                </p>
+            </article>
+
+
+            <!-- 04 — HON. UTTAM PRASAD POUDEL -->
+            <article class="recommendation-card aura-purple">
+                <div class="recommendation-avatar">
+                    <!-- Detailed Vector Illustration: Hon. Uttam Prasad Poudel (with Cap) -->
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="#25123e"/>
+                        <circle cx="50" cy="48" r="21" fill="#e8a87c"/>
+                        <!-- Cap -->
+                        <path d="M 32 34 Q 50 22 68 34 L 66 39 L 34 39 Z" fill="#2b2d42"/>
+                        <!-- Suit & Red Tie -->
+                        <path d="M 18 100 C 18 72, 82 72, 82 100 Z" fill="#111827"/>
+                        <path d="M 42 72 L 50 85 L 58 72 Z" fill="#ffffff"/>
+                        <path d="M 48 78 L 52 78 L 51 98 L 49 98 Z" fill="#e63946"/>
+                    </svg>
+                </div>
+                <h3>Hon. Uttam Prasad Poudel</h3>
+                <span>Member of Parliament / Kaski-2</span>
+                <p>
+                    Anil combines creative thinking with practical execution. His dedication and ability to communicate ideas visually are valuable strengths.
+                </p>
+            </article>
+
+
+            <!-- 05 — SHYAMU ARYAL -->
+            <article class="recommendation-card aura-cyan">
+                <div class="recommendation-avatar">
+                    <!-- Detailed Vector Illustration: Shyamu Aryal (Police Uniform) -->
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="#0c2a38"/>
+                        <circle cx="50" cy="48" r="21" fill="#e8a87c"/>
+                        <!-- Police Cap -->
+                        <path d="M 28 32 C 28 20, 72 20, 72 32 Z" fill="#1d3557"/>
+                        <path d="M 26 32 L 74 32 L 70 36 L 30 36 Z" fill="#111"/>
+                        <circle cx="50" cy="27" r="3" fill="#ffb703"/>
+                        <!-- Uniform -->
+                        <path d="M 18 100 C 18 72, 82 72, 82 100 Z" fill="#1d3557"/>
+                        <path d="M 45 72 L 55 72 L 55 100 L 45 100 Z" fill="#111827"/>
+                        <circle cx="35" cy="80" r="2" fill="#ffb703"/>
+                        <circle cx="65" cy="80" r="2" fill="#ffb703"/>
+                    </svg>
+                </div>
+                <h3>Shyamu Aryal</h3>
+                <span>Superintendent of Police / Nepal Police</span>
+                <p>
+                    Anil demonstrates professionalism, creativity and responsibility in his work. He approaches every assignment with commitment and attention to detail.
+                </p>
+            </article>
+
+
+            <!-- 06 — BINOD BANIYA -->
+            <article class="recommendation-card aura-emerald">
+                <div class="recommendation-avatar">
+                    <!-- Detailed Vector Illustration: Binod Baniya (Sunglasses) -->
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="#093028"/>
+                        <circle cx="50" cy="45" r="22" fill="#e8a87c"/>
+                        <!-- Hair -->
+                        <path d="M 26 38 C 26 15, 74 15, 74 38 Z" fill="#111"/>
+                        <!-- Sunglasses -->
+                        <rect x="34" y="40" width="13" height="9" rx="2" fill="#111"/>
+                        <rect x="53" y="40" width="13" height="9" rx="2" fill="#111"/>
+                        <line x1="47" y1="43" x2="53" y2="43" stroke="#111" stroke-width="2"/>
+                        <!-- Jacket -->
+                        <path d="M 18 100 C 18 70, 82 70, 82 100 Z" fill="#2d3748"/>
+                        <path d="M 42 70 L 50 85 L 58 70 Z" fill="#1a202c"/>
+                    </svg>
+                </div>
+                <h3>Binod Baniya</h3>
+                <span>Singer / Music Artist</span>
+                <p>
+                    Anil has a strong creative vision and a genuine passion for his work. His ability to understand an idea and turn it into an effective visual is commendable.
+                </p>
+            </article>
+
+        </div>
+
     </div>
 
-
-    <!-- =====================================================
-         RECOMMENDATION GRID — 3 × 2
-    ====================================================== -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <!-- 01 — APIL TRIPATHI -->
-      <article class="recommendation-card p-6 rounded-2xl bg-[#0d1424]/80 border border-cyan-500/50 shadow-[0_0_15px_rgba(6,182,212,0.15)] flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-full overflow-hidden shrink-0 bg-cyan-500/10 border border-cyan-500/30">
-              <img src="path-to-apil-avatar.png" alt="Apil Tripathi" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="text-lg font-bold text-white">Apil Tripathi</h4>
-              <p class="text-xs text-slate-400 mt-0.5">Journalist / Media Personality</p>
-              <div class="w-8 h-[2px] bg-cyan-500 mt-2"></div>
-            </div>
-          </div>
-          <div class="flex gap-2">
-            <span class="text-cyan-400 text-3xl font-serif leading-none">“</span>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Anil brings creativity, dedication and a strong visual sense to every project. His ability to turn ideas into engaging communication is impressive.”
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 02 — MAOTSE GURUNG -->
-      <article class="recommendation-card p-6 rounded-2xl bg-[#0d1424]/80 border border-teal-500/50 shadow-[0_0_15px_rgba(20,184,166,0.15)] flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-full overflow-hidden shrink-0 bg-teal-500/10 border border-teal-500/30">
-              <img src="path-to-maotse-avatar.png" alt="Maotse Gurung" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="text-lg font-bold text-white">Maotse Gurung</h4>
-              <p class="text-xs text-slate-400 mt-0.5">Actor / Director / Writer</p>
-              <div class="w-8 h-[2px] bg-teal-500 mt-2"></div>
-            </div>
-          </div>
-          <div class="flex gap-2">
-            <span class="text-teal-400 text-3xl font-serif leading-none">“</span>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Anil is a creative professional who understands visual storytelling and brings sincerity, skill and originality to his work.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 03 — MOTI BHUJEL -->
-      <article class="recommendation-card p-6 rounded-2xl bg-[#0d1424]/80 border border-pink-500/50 shadow-[0_0_15px_rgba(236,72,153,0.15)] flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-full overflow-hidden shrink-0 bg-pink-500/10 border border-pink-500/30">
-              <img src="path-to-moti-avatar.png" alt="Moti Bhujel" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="text-lg font-bold text-white">Moti Bhujel</h4>
-              <p class="text-xs text-slate-400 mt-0.5">Former President / Pokhreli Yuwa Sanskritik Pariwar</p>
-              <div class="w-8 h-[2px] bg-pink-500 mt-2"></div>
-            </div>
-          </div>
-          <div class="flex gap-2">
-            <span class="text-pink-400 text-3xl font-serif leading-none">“</span>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Anil is creative, responsible and committed to his work. His professional approach and positive attitude make collaboration meaningful.”
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 04 — HON. UTTAM PRASAD POUDEL -->
-      <article class="recommendation-card p-6 rounded-2xl bg-[#0d1424]/80 border border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.15)] flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-full overflow-hidden shrink-0 bg-purple-500/10 border border-purple-500/30">
-              <img src="path-to-uttam-avatar.png" alt="Hon. Uttam Prasad Poudel" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="text-lg font-bold text-white">Hon. Uttam Prasad Poudel</h4>
-              <p class="text-xs text-slate-400 mt-0.5">Member of Parliament / Kaski-2</p>
-              <div class="w-8 h-[2px] bg-purple-500 mt-2"></div>
-            </div>
-          </div>
-          <div class="flex gap-2">
-            <span class="text-purple-400 text-3xl font-serif leading-none">“</span>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Anil combines creative thinking with practical execution. His dedication and ability to communicate ideas visually are valuable strengths.”
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 05 — SHYAMU ARYAL -->
-      <article class="recommendation-card p-6 rounded-2xl bg-[#0d1424]/80 border border-cyan-500/50 shadow-[0_0_15px_rgba(6,182,212,0.15)] flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-full overflow-hidden shrink-0 bg-cyan-500/10 border border-cyan-500/30">
-              <img src="path-to-shyamu-avatar.png" alt="Shyamu Aryal" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="text-lg font-bold text-white">Shyamu Aryal</h4>
-              <p class="text-xs text-slate-400 mt-0.5">Superintendent of Police / Nepal Police</p>
-              <div class="w-8 h-[2px] bg-cyan-500 mt-2"></div>
-            </div>
-          </div>
-          <div class="flex gap-2">
-            <span class="text-cyan-400 text-3xl font-serif leading-none">“</span>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Anil demonstrates professionalism, creativity and responsibility in his work. He approaches every assignment with commitment and attention to detail.”
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- 06 — BINOD BANIYA -->
-      <article class="recommendation-card p-6 rounded-2xl bg-[#0d1424]/80 border border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.15)] flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-16 h-16 rounded-full overflow-hidden shrink-0 bg-emerald-500/10 border border-emerald-500/30">
-              <img src="path-to-binod-avatar.png" alt="Binod Baniya" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="text-lg font-bold text-white">Binod Baniya</h4>
-              <p class="text-xs text-slate-400 mt-0.5">Singer / Music Artist</p>
-              <div class="w-8 h-[2px] bg-emerald-500 mt-2"></div>
-            </div>
-          </div>
-          <div class="flex gap-2">
-            <span class="text-emerald-400 text-3xl font-serif leading-none">“</span>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              Anil has a strong creative vision and a genuine passion for his work. His ability to understand an idea and turn it into an effective visual is commendable.
-            </p>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
 </section>
 
 <!-- =========================================================
