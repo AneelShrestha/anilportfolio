@@ -1899,3 +1899,884 @@ transition-duration: 0.01ms !important;
     background: rgba(255, 79, 216, 0.08);
     box-shadow: 0 0 20px rgba(255, 79, 216, 0.16);
 }
+/* =========================================================
+   PORTFOLIO — FULL PREVIEW GALLERY
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   PREVIEW MODAL
+--------------------------------------------------------- */
+
+#portfolioPreviewModal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+#portfolioPreviewModal.is-active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* ---------------------------------------------------------
+   DARK BACKDROP
+--------------------------------------------------------- */
+
+.portfolio-preview-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background:
+        rgba(5, 7, 12, 0.94);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* ---------------------------------------------------------
+   MAIN PREVIEW CONTAINER
+--------------------------------------------------------- */
+
+.portfolio-preview-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1180px, 96vw);
+    height: min(900px, 94vh);
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        rgba(12, 15, 22, 0.98);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.65),
+        0 0 0 1px rgba(255, 255, 255, 0.025);
+
+    overflow: hidden;
+
+    transform: scale(0.96);
+
+    transition:
+        transform 0.35s ease;
+}
+
+#portfolioPreviewModal.is-active
+.portfolio-preview-container {
+    transform: scale(1);
+}
+
+
+/* ---------------------------------------------------------
+   FIXED BORDER / INNER FRAME
+--------------------------------------------------------- */
+
+.portfolio-preview-container::before {
+    content: "";
+
+    position: absolute;
+    inset: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    pointer-events: none;
+
+    z-index: 20;
+}
+
+
+/* ---------------------------------------------------------
+   CLOSE BUTTON
+--------------------------------------------------------- */
+
+.portfolio-preview-close {
+    position: absolute;
+
+    top: 22px;
+    right: 22px;
+
+    z-index: 50;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.portfolio-preview-close:hover {
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border-color:
+        rgba(255, 255, 255, 0.45);
+
+    transform:
+        rotate(90deg);
+}
+
+
+/* ---------------------------------------------------------
+   TOP BAR
+--------------------------------------------------------- */
+
+.portfolio-preview-topbar {
+    position: relative;
+
+    z-index: 5;
+
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 88px 18px 32px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.09);
+}
+
+
+/* ---------------------------------------------------------
+   CATEGORY LABEL
+--------------------------------------------------------- */
+
+.portfolio-preview-category {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+}
+
+#previewCategory {
+    color:
+        #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   COUNTER
+--------------------------------------------------------- */
+
+.portfolio-preview-counter {
+    min-width: 58px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    color:
+        rgba(255, 255, 255, 0.7);
+
+    padding: 8px 12px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE STAGE
+--------------------------------------------------------- */
+
+.portfolio-preview-stage {
+    position: relative;
+
+    flex: 1;
+
+    min-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 28px 90px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.035),
+            rgba(0, 0, 0, 0.15) 60%,
+            rgba(0, 0, 0, 0.3)
+        );
+
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   FIXED IMAGE FRAME
+--------------------------------------------------------- */
+
+.portfolio-preview-frame {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 900px;
+    max-height: 570px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px;
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.24);
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+
+    overflow: hidden;
+}
+
+
+/* Inner fixed frame */
+
+.portfolio-preview-frame::before {
+    content: "";
+
+    position: absolute;
+    inset: 7px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+
+/* ---------------------------------------------------------
+   PREVIEW IMAGE
+--------------------------------------------------------- */
+
+#portfolioPreviewImage {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    opacity: 0;
+
+    transform: scale(0.985);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.3s ease;
+}
+
+#portfolioPreviewImage.portfolio-preview-image-visible {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* ---------------------------------------------------------
+   PREVIOUS / NEXT BUTTONS
+--------------------------------------------------------- */
+
+.portfolio-preview-nav {
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 10;
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.2);
+
+    background:
+        rgba(5, 7, 12, 0.82);
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.portfolio-preview-prev {
+    left: 24px;
+}
+
+
+.portfolio-preview-next {
+    right: 24px;
+}
+
+
+.portfolio-preview-nav:hover {
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border-color:
+        rgba(255, 255, 255, 0.45);
+
+    transform:
+        translateY(-50%) scale(1.06);
+}
+
+
+.portfolio-preview-nav:active {
+    transform:
+        translateY(-50%) scale(0.96);
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT INFORMATION
+--------------------------------------------------------- */
+
+.portfolio-preview-info {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 112px;
+
+    padding: 20px 32px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+        rgba(255, 255, 255, 0.018);
+}
+
+
+.portfolio-preview-label {
+    display: inline-block;
+
+    margin-bottom: 6px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+}
+
+
+#previewProjectTitle {
+    margin: 0 0 5px;
+
+    font-size: clamp(20px, 2vw, 28px);
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+#previewProjectDescription {
+    margin: 0;
+
+    max-width: 700px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color:
+        rgba(255, 255, 255, 0.58);
+}
+
+
+/* ---------------------------------------------------------
+   BOTTOM CONTROLS
+--------------------------------------------------------- */
+
+.portfolio-preview-controls {
+    position: relative;
+
+    z-index: 5;
+
+    min-height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 32px;
+
+    background:
+        rgba(0, 0, 0, 0.18);
+}
+
+
+/* ---------------------------------------------------------
+   SLIDESHOW BUTTON
+--------------------------------------------------------- */
+
+.portfolio-preview-slideshow {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 38px;
+
+    padding: 0 15px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.16);
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.portfolio-preview-slideshow:hover {
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    border-color:
+        rgba(255, 255, 255, 0.32);
+
+    color: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   KEYBOARD HINT
+--------------------------------------------------------- */
+
+.portfolio-preview-hint {
+    font-size: 10px;
+
+    letter-spacing: 0.08em;
+
+    color:
+        rgba(255, 255, 255, 0.38);
+
+    text-transform: uppercase;
+}
+
+
+.portfolio-preview-hint i {
+    margin-right: 5px;
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT CARD PREVIEW BUTTON
+--------------------------------------------------------- */
+
+.portfolio-project-preview-btn {
+    position: absolute;
+
+    left: 50%;
+    bottom: 18px;
+
+    z-index: 5;
+
+    transform:
+        translateX(-50%)
+        translateY(8px);
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 38px;
+
+    padding: 0 15px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.28);
+
+    background:
+        rgba(5, 7, 12, 0.82);
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    opacity: 0;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Make sure project image can contain the button */
+
+.portfolio-project-card {
+    position: relative;
+}
+
+
+.portfolio-project-card:hover
+.portfolio-project-preview-btn {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+.portfolio-project-preview-btn:hover {
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border-color:
+        rgba(255, 255, 255, 0.5);
+}
+
+
+/* ---------------------------------------------------------
+   BODY LOCK WHEN PREVIEW IS OPEN
+--------------------------------------------------------- */
+
+body.portfolio-preview-open {
+    overflow: hidden !important;
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    #portfolioPreviewModal {
+        padding: 14px;
+    }
+
+
+    .portfolio-preview-container {
+        width: 96vw;
+
+        height: 94vh;
+    }
+
+
+    .portfolio-preview-stage {
+        padding: 22px 72px;
+    }
+
+
+    .portfolio-preview-frame {
+        max-height: 500px;
+    }
+
+
+    .portfolio-preview-prev {
+        left: 12px;
+    }
+
+
+    .portfolio-preview-next {
+        right: 12px;
+    }
+
+
+    .portfolio-preview-nav {
+        width: 48px;
+        height: 48px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 640px) {
+
+    #portfolioPreviewModal {
+        padding: 8px;
+    }
+
+
+    .portfolio-preview-container {
+        width: 98vw;
+
+        height: 96vh;
+
+        border:
+            1px solid rgba(255, 255, 255, 0.12);
+    }
+
+
+    .portfolio-preview-container::before {
+        inset: 6px;
+    }
+
+
+    .portfolio-preview-topbar {
+        min-height: 58px;
+
+        padding:
+            14px 62px 14px 18px;
+    }
+
+
+    .portfolio-preview-category {
+        font-size: 9px;
+
+        letter-spacing: 0.13em;
+    }
+
+
+    .portfolio-preview-counter {
+        min-width: 48px;
+
+        padding: 6px 8px;
+
+        font-size: 10px;
+    }
+
+
+    .portfolio-preview-close {
+        top: 12px;
+        right: 12px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 15px;
+    }
+
+
+    .portfolio-preview-stage {
+        padding:
+            18px 50px;
+    }
+
+
+    .portfolio-preview-frame {
+        padding: 9px;
+
+        max-height: 430px;
+    }
+
+
+    .portfolio-preview-frame::before {
+        inset: 5px;
+    }
+
+
+    .portfolio-preview-nav {
+        width: 40px;
+        height: 40px;
+
+        font-size: 14px;
+    }
+
+
+    .portfolio-preview-prev {
+        left: 6px;
+    }
+
+
+    .portfolio-preview-next {
+        right: 6px;
+    }
+
+
+    .portfolio-preview-info {
+        min-height: 100px;
+
+        padding:
+            16px 18px;
+    }
+
+
+    #previewProjectTitle {
+        font-size: 19px;
+    }
+
+
+    #previewProjectDescription {
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+
+    .portfolio-preview-controls {
+        min-height: 56px;
+
+        padding:
+            9px 18px;
+    }
+
+
+    .portfolio-preview-slideshow {
+        min-height: 34px;
+
+        padding: 0 11px;
+
+        font-size: 9px;
+    }
+
+
+    .portfolio-preview-hint {
+        display: none;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   VERY SMALL MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 400px) {
+
+    .portfolio-preview-stage {
+        padding:
+            14px 44px;
+    }
+
+
+    .portfolio-preview-frame {
+        max-height: 350px;
+    }
+
+
+    .portfolio-preview-info {
+        min-height: 92px;
+
+        padding:
+            13px 15px;
+    }
+
+
+    #previewProjectTitle {
+        font-size: 17px;
+    }
+
+
+    #previewProjectDescription {
+        font-size: 11px;
+    }
+
+}
