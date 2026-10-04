@@ -1434,8 +1434,7 @@ font-size: 22px;
 
 /* =========================================================
    06 — CAREER JOURNEY
-   DIRECT COLOR MODE
-   Colors are controlled directly from HTML variables
+   TWO COLUMN / COLOR MODE
 ========================================================= */
 
 
@@ -1459,7 +1458,7 @@ font-size: 22px;
 
 
 /* =========================================================
-   LEFT — CAREER
+   LEFT — CAREER CONTENT
 ========================================================= */
 
 .career-main {
@@ -1469,7 +1468,7 @@ font-size: 22px;
 
 
 /* =========================================================
-   RIGHT — SOCIAL
+   RIGHT — SOCIAL CONTENT
 ========================================================= */
 
 .career-social-panel {
@@ -1503,7 +1502,7 @@ font-size: 22px;
     position: relative;
 
     width: 100%;
-    max-width: none;
+    max-width: 100%;
 
     display: grid;
 
@@ -1520,10 +1519,6 @@ font-size: 22px;
     overflow: hidden;
 
     box-sizing: border-box;
-
-    /*
-       Direct color from HTML
-    */
 
     border: 1px solid
         color-mix(
@@ -1553,7 +1548,7 @@ font-size: 22px;
 
 
 /* =========================================================
-   COLOR GLOW — LEFT EDGE
+   COLOR EDGE
 ========================================================= */
 
 .career-card::before {
@@ -1610,11 +1605,10 @@ font-size: 22px;
 
 
 /* =========================================================
-   HOVER
+   CAREER CARD HOVER
 ========================================================= */
 
 .career-card:hover {
-
     transform: translateY(-4px);
 
     border-color:
@@ -1688,12 +1682,11 @@ font-size: 22px;
 
 
 /* =========================================================
-   DATE HOVER COLOR
+   DATE HOVER
 ========================================================= */
 
 .career-card:hover .career-date-to,
 .career-card:hover .career-date-from {
-
     color: var(--career-color);
 
     text-shadow:
@@ -1706,7 +1699,6 @@ font-size: 22px;
 ========================================================= */
 
 .career-date-line {
-
     position: absolute;
 
     left: 25px;
@@ -1740,7 +1732,6 @@ font-size: 22px;
 
 .career-date-to::after,
 .career-date-from::after {
-
     content: "";
 
     position: absolute;
@@ -1768,18 +1759,14 @@ font-size: 22px;
 }
 
 
-/* =========================================================
-   TOP DOT
-========================================================= */
+/* TOP DOT */
 
 .career-date-to::after {
     top: 2px;
 }
 
 
-/* =========================================================
-   BOTTOM DOT
-========================================================= */
+/* BOTTOM DOT */
 
 .career-date-from::after {
     bottom: 2px;
@@ -1792,7 +1779,6 @@ font-size: 22px;
 
 .career-card:hover .career-date-to::after,
 .career-card:hover .career-date-from::after {
-
     transform: scale(1.25);
 
     box-shadow:
@@ -1807,7 +1793,6 @@ font-size: 22px;
 ========================================================= */
 
 .career-info {
-
     min-width: 0;
 
     display: flex;
@@ -1825,7 +1810,6 @@ font-size: 22px;
 ========================================================= */
 
 .career-info h3 {
-
     margin: 0;
 
     color: #ffffff;
@@ -1847,7 +1831,6 @@ font-size: 22px;
 ========================================================= */
 
 .career-card:hover .career-info h3 {
-
     color: var(--career-color);
 
     text-shadow:
@@ -1856,11 +1839,10 @@ font-size: 22px;
 
 
 /* =========================================================
-   COMPANY
+   COMPANY / ORGANIZATION
 ========================================================= */
 
 .career-info p {
-
     margin: 0.4rem 0 0;
 
     color: rgba(148,163,184,0.92);
@@ -1880,7 +1862,6 @@ font-size: 22px;
 }
 
 .career-social-heading h3 {
-
     margin: 0.65rem 0 0;
 
     color: #ffffff;
@@ -1893,7 +1874,6 @@ font-size: 22px;
 }
 
 .career-social-heading p {
-
     margin-top: 0.7rem;
 
     color: rgba(148,163,184,0.85);
@@ -1909,7 +1889,6 @@ font-size: 22px;
 ========================================================= */
 
 .career-social-panel .social-preview-card {
-
     position: relative;
 
     width: 100%;
@@ -1946,12 +1925,9 @@ font-size: 22px;
 }
 
 
-/* =========================================================
-   SOCIAL COLOR EDGE
-========================================================= */
+/* SOCIAL COLOR EDGE */
 
 .career-social-panel .social-preview-card::before {
-
     content: "";
 
     position: absolute;
@@ -1972,12 +1948,9 @@ font-size: 22px;
 }
 
 
-/* =========================================================
-   SOCIAL HOVER
-========================================================= */
+/* SOCIAL HOVER */
 
 .career-social-panel .social-preview-card:hover {
-
     transform: translateY(-4px);
 
     border-color:
@@ -1998,7 +1971,6 @@ font-size: 22px;
 ========================================================= */
 
 .social-preview-top {
-
     display: flex;
 
     align-items: center;
@@ -2009,12 +1981,9 @@ font-size: 22px;
 }
 
 
-/* =========================================================
-   SOCIAL ICON
-========================================================= */
+/* SOCIAL ICON */
 
 .social-icon {
-
     width: 38px;
     height: 38px;
 
@@ -2046,16 +2015,12 @@ font-size: 22px;
 }
 
 
-/* =========================================================
-   SOCIAL PLATFORM LABEL
-========================================================= */
+/* SOCIAL PLATFORM */
 
 .social-platform {
-
     display: block;
 
-    color:
-        var(--social-color);
+    color: var(--social-color);
 
     font-size: 0.62rem;
 
@@ -2067,12 +2032,9 @@ font-size: 22px;
 }
 
 
-/* =========================================================
-   SOCIAL NAME
-========================================================= */
+/* SOCIAL NAME */
 
 .social-preview-top h4 {
-
     margin: 0.18rem 0 0;
 
     color: #ffffff;
@@ -2088,7 +2050,6 @@ font-size: 22px;
 ========================================================= */
 
 .facebook-preview {
-
     position: relative;
 
     margin: 0 1.15rem;
@@ -2101,13 +2062,10 @@ font-size: 22px;
 
     background: rgba(2,6,23,0.48);
 
-    border: 1px solid
-        rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
 }
 
-
 .facebook-preview-cover {
-
     height: 58px;
 
     background:
@@ -2120,9 +2078,7 @@ font-size: 22px;
     opacity: 0.8;
 }
 
-
 .facebook-preview-profile {
-
     position: absolute;
 
     left: 14px;
@@ -2144,19 +2100,15 @@ font-size: 22px;
 
     font-weight: 900;
 
-    background:
-        rgba(15,23,42,0.95);
+    background: rgba(15,23,42,0.95);
 
-    border: 2px solid
-        rgba(255,255,255,0.85);
+    border: 2px solid rgba(255,255,255,0.85);
 
     box-shadow:
         0 0 15px var(--social-color-soft);
 }
 
-
 .facebook-preview-info {
-
     display: flex;
 
     flex-direction: column;
@@ -2164,17 +2116,13 @@ font-size: 22px;
     padding: 34px 14px 10px;
 }
 
-
 .facebook-preview-info strong {
-
     color: #ffffff;
 
     font-size: 0.8rem;
 }
 
-
 .facebook-preview-info span {
-
     margin-top: 2px;
 
     color: rgba(148,163,184,0.8);
@@ -2182,35 +2130,26 @@ font-size: 22px;
     font-size: 0.65rem;
 }
 
-
 .facebook-feed-line {
-
     height: 6px;
 
-    margin:
-        7px 14px 0;
+    margin: 7px 14px 0;
 
     width: 72%;
 
     border-radius: 5px;
 
-    background:
-        rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.08);
 }
 
-
 .facebook-feed-line.short {
-
     width: 48%;
 }
 
-
 .facebook-feed-image {
-
     height: 45px;
 
-    margin:
-        12px 14px;
+    margin: 12px 14px;
 
     border-radius: 8px;
 
@@ -2228,7 +2167,6 @@ font-size: 22px;
 ========================================================= */
 
 .youtube-preview {
-
     margin: 0 1.15rem;
 
     overflow: hidden;
@@ -2236,9 +2174,7 @@ font-size: 22px;
     border-radius: 13px;
 }
 
-
 .youtube-placeholder {
-
     min-height: 190px;
 
     display: flex;
@@ -2246,7 +2182,6 @@ font-size: 22px;
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 0.8rem;
@@ -2258,13 +2193,10 @@ font-size: 22px;
             rgba(2,6,23,0.55) 65%
         );
 
-    border: 1px solid
-        rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
 }
 
-
 .youtube-play {
-
     width: 48px;
     height: 34px;
 
@@ -2277,8 +2209,7 @@ font-size: 22px;
 
     color: #ffffff;
 
-    background:
-        var(--social-color);
+    background: var(--social-color);
 
     box-shadow:
         0 0 20px var(--social-color-glow);
@@ -2286,9 +2217,7 @@ font-size: 22px;
     font-size: 0.9rem;
 }
 
-
 .youtube-placeholder span {
-
     color: rgba(203,213,225,0.75);
 
     font-size: 0.68rem;
@@ -2302,7 +2231,6 @@ font-size: 22px;
 ========================================================= */
 
 .social-visit-btn {
-
     display: flex;
 
     align-items: center;
@@ -2322,8 +2250,7 @@ font-size: 22px;
 
     font-weight: 700;
 
-    background:
-        var(--social-color-soft);
+    background: var(--social-color-soft);
 
     border: 1px solid
         color-mix(
@@ -2339,9 +2266,7 @@ font-size: 22px;
         box-shadow 0.25s ease;
 }
 
-
 .social-visit-btn:hover {
-
     color: #ffffff;
 
     background:
@@ -2351,8 +2276,7 @@ font-size: 22px;
             transparent
         );
 
-    border-color:
-        var(--social-color);
+    border-color: var(--social-color);
 
     box-shadow:
         0 0 15px var(--social-color-soft);
@@ -2360,20 +2284,18 @@ font-size: 22px;
 
 
 /* =========================================================
-   MOBILE / TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 950px) {
 
     .career-layout {
-
         grid-template-columns: 1fr;
 
         gap: 3rem;
     }
 
     .career-social-panel {
-
         position: static;
     }
 
@@ -2381,13 +2303,12 @@ font-size: 22px;
 
 
 /* =========================================================
-   SMALL MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 640px) {
 
     .career-card {
-
         grid-template-columns:
             78px
             minmax(0, 1fr);
@@ -2397,67 +2318,78 @@ font-size: 22px;
         padding: 1.1rem;
     }
 
-
     .career-date-line {
-
         left: 21px;
     }
 
-
     .career-date-to::after,
     .career-date-from::after {
-
         left: 17px;
     }
 
-
     .career-info {
-
         padding-left: 0.85rem;
     }
 
-
     .career-info h3 {
-
         font-size: 0.88rem;
     }
 
-
     .career-info p {
-
         font-size: 0.75rem;
     }
 
-
     .career-social-panel {
-
         width: 100%;
     }
 
-
     .social-preview-top {
-
         padding:
             1rem 1rem 0.8rem;
     }
 
-
     .facebook-preview,
     .youtube-preview {
-
         margin-left: 1rem;
         margin-right: 1rem;
     }
 
-
     .social-visit-btn {
-
         margin-left: 1rem;
         margin-right: 1rem;
     }
 
 }
 
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .career-card {
+        grid-template-columns:
+            70px
+            minmax(0, 1fr);
+
+        padding: 1rem;
+    }
+
+    .career-date-line {
+        left: 18px;
+    }
+
+    .career-date-to::after,
+    .career-date-from::after {
+        left: 14px;
+    }
+
+    .career-info {
+        padding-left: 0.7rem;
+    }
+
+}
 
 /* ==========================================================================
 RECOMMENDATIONS
