@@ -1434,7 +1434,7 @@ font-size: 22px;
 
 /* =========================================================
    06 — CAREER JOURNEY
-   CLEAN TWO-COLUMN LAYOUT
+   FINAL CLEAN TWO-COLUMN LAYOUT
 ========================================================= */
 
 /* =========================================================
@@ -1447,10 +1447,10 @@ font-size: 22px;
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.55fr)
-        minmax(260px, 0.70fr);
+        minmax(0, 1fr)
+        minmax(260px, 0.48fr);
 
-    gap: 2.5rem;
+    gap: 2.75rem;
 
     align-items: start;
 }
@@ -1463,11 +1463,8 @@ font-size: 22px;
     width: 100%;
     min-width: 0;
 
-    max-width: 900px;
-}
-
-.career-main > * {
-    max-width: 100%;
+    /* Keep career cards visually compact */
+    max-width: 820px;
 }
 
 /* =========================================================
@@ -1476,7 +1473,7 @@ font-size: 22px;
 
 .career-list {
     width: 100%;
-    min-width: 0;
+    max-width: 820px;
 
     display: flex;
     flex-direction: column;
@@ -1526,15 +1523,15 @@ font-size: 22px;
     position: relative;
 
     width: 100%;
-    max-width: 100%;
+    max-width: 820px;
     min-width: 0;
 
     display: flex;
     align-items: center;
 
-    min-height: 108px;
+    min-height: 104px;
 
-    padding: 1rem 1.2rem;
+    padding: 1rem 1.15rem;
 
     box-sizing: border-box;
 
@@ -1553,7 +1550,7 @@ font-size: 22px;
         );
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.17),
+        0 10px 28px rgba(0, 0, 0, 0.17),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
 
     transition:
@@ -1600,11 +1597,11 @@ font-size: 22px;
 
     position: absolute;
 
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
 
-    right: -90px;
-    top: -90px;
+    right: -85px;
+    top: -85px;
 
     border-radius: 50%;
 
@@ -1615,7 +1612,7 @@ font-size: 22px;
             transparent 70%
         );
 
-    opacity: 0.16;
+    opacity: 0.15;
 
     pointer-events: none;
 }
@@ -1629,37 +1626,31 @@ font-size: 22px;
 
     border-color: var(--career-color);
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--career-color-soft),
-            rgba(15, 23, 42, 0.32) 50%,
-            rgba(2, 6, 23, 0.38)
-        );
-
     box-shadow:
-        0 0 25px var(--career-color-soft),
-        0 16px 38px rgba(0, 0, 0, 0.28),
+        0 0 24px var(--career-color-soft),
+        0 15px 36px rgba(0, 0, 0, 0.28),
         inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 /* =========================================================
-   DATE COLUMN
+   DATE + TIMELINE AREA
+   DATE IS LEFT
+   TIMELINE IS SEPARATE
 ========================================================= */
 
 .career-date-column {
     position: relative;
 
-    width: 68px;
-    min-width: 68px;
+    width: 92px;
+    min-width: 92px;
 
     height: 70px;
 
     display: flex;
     flex-direction: column;
 
-    align-items: flex-start;
     justify-content: space-between;
+    align-items: flex-start;
 
     flex-shrink: 0;
 
@@ -1678,11 +1669,15 @@ font-size: 22px;
 
     display: block;
 
-    width: 100%;
+    width: auto;
+
+    margin: 0;
+    padding: 0 !important;
 
     color: rgba(255, 255, 255, 0.82);
 
     font-size: 0.76rem;
+
     font-weight: 800;
 
     letter-spacing: 0.05em;
@@ -1693,21 +1688,11 @@ font-size: 22px;
 
     text-align: left;
 
-    /* IMPORTANT — NO BACKGROUND */
+    /* Absolutely NO background */
     background: transparent !important;
 
-    padding: 0 !important;
-
-    margin: 0;
-
-    transition:
-        color 0.3s ease,
-        text-shadow 0.3s ease;
+    text-shadow: none;
 }
-
-/* =========================================================
-   DATE COLORS
-========================================================= */
 
 .career-date-to {
     color: var(--career-color);
@@ -1730,13 +1715,14 @@ font-size: 22px;
 }
 
 /* =========================================================
-   TIMELINE
+   TIMELINE LINE
+   LINE IS TO THE RIGHT OF DATE
 ========================================================= */
 
 .career-date-line {
     position: absolute;
 
-    left: 25px;
+    left: 70px;
 
     top: 9px;
     bottom: 9px;
@@ -1747,10 +1733,10 @@ font-size: 22px;
         linear-gradient(
             to bottom,
             var(--career-color),
-            rgba(255, 255, 255, 0.08)
+            rgba(255, 255, 255, 0.10)
         );
 
-    opacity: 0.65;
+    opacity: 0.7;
 
     box-shadow:
         0 0 6px var(--career-color-glow);
@@ -1762,6 +1748,7 @@ font-size: 22px;
 
 /* =========================================================
    TIMELINE DOTS
+   DOTS SIT ON THE LINE, NOT ON THE DATE
 ========================================================= */
 
 .career-date-to::after,
@@ -1770,10 +1757,10 @@ font-size: 22px;
 
     position: absolute;
 
-    left: 21px;
+    left: 66px;
 
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
 
     border-radius: 50%;
 
@@ -1808,12 +1795,12 @@ font-size: 22px;
 
 .career-card:hover .career-date-to::after,
 .career-card:hover .career-date-from::after {
-    transform: scale(1.25);
+    transform: scale(1.2);
 
     box-shadow:
         0 0 9px var(--career-color),
-        0 0 20px var(--career-color),
-        0 0 32px var(--career-color-glow);
+        0 0 18px var(--career-color),
+        0 0 28px var(--career-color-glow);
 }
 
 /* =========================================================
@@ -1834,7 +1821,7 @@ font-size: 22px;
 
     justify-content: center;
 
-    padding-left: 1.1rem;
+    padding-left: 1.15rem;
 }
 
 /* =========================================================
@@ -1847,6 +1834,7 @@ font-size: 22px;
     color: #ffffff;
 
     font-size: 0.96rem;
+
     font-weight: 800;
 
     line-height: 1.35;
@@ -1903,17 +1891,13 @@ font-size: 22px;
 
 .career-social-heading {
     width: 100%;
-    max-width: 100%;
 
     margin: 0 0 1.25rem;
 
     box-sizing: border-box;
 }
 
-/* Prevent accidental duplicate adjacent heading */
-
-.career-social-heading
-+ .career-social-heading {
+.career-social-heading + .career-social-heading {
     display: none !important;
 }
 
@@ -1923,6 +1907,7 @@ font-size: 22px;
     color: #ffffff;
 
     font-size: 1.25rem;
+
     font-weight: 900;
 
     line-height: 1.25;
@@ -1939,7 +1924,7 @@ font-size: 22px;
 }
 
 /* =========================================================
-   SOCIAL COLOR VARIABLES
+   SOCIAL COLORS
 ========================================================= */
 
 .social-facebook {
@@ -1954,18 +1939,8 @@ font-size: 22px;
     --social-color-glow: rgba(255, 0, 51, 0.35);
 }
 
-/* Fallback */
-
-.career-social-panel
-.social-preview-card {
-    --social-color: #2D8CFF;
-    --social-color-soft: rgba(45, 140, 255, 0.12);
-    --social-color-glow: rgba(45, 140, 255, 0.30);
-}
-
 /* =========================================================
    SOCIAL CARD
-   CONTAINED — NEVER FULLSCREEN
 ========================================================= */
 
 .career-social-panel .social-preview-card {
@@ -1980,7 +1955,6 @@ font-size: 22px;
     min-height: 0;
 
     height: auto !important;
-    max-height: none;
 
     margin: 0 0 1rem;
 
@@ -2005,38 +1979,23 @@ font-size: 22px;
         0 10px 30px rgba(0, 0, 0, 0.18),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
 
-    transform: none;
-
-    isolation: isolate;
-
     inset: auto !important;
+
     top: auto !important;
     right: auto !important;
     bottom: auto !important;
     left: auto !important;
 
     z-index: auto !important;
+
+    transform: none;
 }
 
 /* =========================================================
-   SOCIAL CARD CHILDREN — CONTAINED
+   SOCIAL CARD EDGE
 ========================================================= */
 
-.career-social-panel
-.social-preview-card,
-.career-social-panel
-.social-preview-card * {
-    max-width: 100%;
-
-    box-sizing: border-box;
-}
-
-/* =========================================================
-   SOCIAL COLOR EDGE
-========================================================= */
-
-.career-social-panel
-.social-preview-card::before {
+.career-social-panel .social-preview-card::before {
     content: "";
 
     position: absolute;
@@ -2064,8 +2023,7 @@ font-size: 22px;
    SOCIAL HOVER
 ========================================================= */
 
-.career-social-panel
-.social-preview-card:hover {
+.career-social-panel .social-preview-card:hover {
     transform: translateY(-3px) !important;
 
     border-color: var(--social-color);
@@ -2079,10 +2037,7 @@ font-size: 22px;
    SOCIAL TOP
 ========================================================= */
 
-.career-social-panel
-.social-preview-top {
-    position: relative;
-
+.career-social-panel .social-preview-top {
     display: flex;
 
     align-items: center;
@@ -2091,7 +2046,7 @@ font-size: 22px;
 
     width: 100%;
 
-    padding: 1rem 1rem 0.8rem;
+    padding: 1rem;
 
     box-sizing: border-box;
 }
@@ -2100,8 +2055,7 @@ font-size: 22px;
    SOCIAL ICON
 ========================================================= */
 
-.career-social-panel
-.social-icon {
+.career-social-panel .social-icon {
     width: 36px;
     height: 36px;
 
@@ -2125,11 +2079,10 @@ font-size: 22px;
 }
 
 /* =========================================================
-   SOCIAL PLATFORM
+   SOCIAL TEXT
 ========================================================= */
 
-.career-social-panel
-.social-platform {
+.career-social-panel .social-platform {
     display: block;
 
     color: var(--social-color);
@@ -2139,12 +2092,9 @@ font-size: 22px;
     font-weight: 800;
 
     letter-spacing: 0.11em;
-
-    line-height: 1.2;
 }
 
-.career-social-panel
-.social-preview-top h4 {
+.career-social-panel .social-preview-top h4 {
     margin: 0.16rem 0 0;
 
     color: #ffffff;
@@ -2158,12 +2108,8 @@ font-size: 22px;
    FACEBOOK PREVIEW
 ========================================================= */
 
-.career-social-panel
-.facebook-preview {
+.career-social-panel .facebook-preview {
     position: relative;
-
-    width: auto;
-    max-width: none;
 
     margin: 0 1rem;
 
@@ -2180,8 +2126,7 @@ font-size: 22px;
     box-sizing: border-box;
 }
 
-.career-social-panel
-.facebook-preview-cover {
+.career-social-panel .facebook-preview-cover {
     height: 54px;
 
     background:
@@ -2194,8 +2139,7 @@ font-size: 22px;
     opacity: 0.8;
 }
 
-.career-social-panel
-.facebook-preview-profile {
+.career-social-panel .facebook-preview-profile {
     position: absolute;
 
     left: 13px;
@@ -2225,8 +2169,7 @@ font-size: 22px;
         0 0 15px var(--social-color-soft);
 }
 
-.career-social-panel
-.facebook-preview-info {
+.career-social-panel .facebook-preview-info {
     display: flex;
 
     flex-direction: column;
@@ -2234,15 +2177,13 @@ font-size: 22px;
     padding: 31px 13px 8px;
 }
 
-.career-social-panel
-.facebook-preview-info strong {
+.career-social-panel .facebook-preview-info strong {
     color: #ffffff;
 
     font-size: 0.78rem;
 }
 
-.career-social-panel
-.facebook-preview-info span {
+.career-social-panel .facebook-preview-info span {
     margin-top: 2px;
 
     color: rgba(148, 163, 184, 0.8);
@@ -2250,8 +2191,7 @@ font-size: 22px;
     font-size: 0.63rem;
 }
 
-.career-social-panel
-.facebook-feed-line {
+.career-social-panel .facebook-feed-line {
     height: 5px;
 
     margin: 6px 13px 0;
@@ -2263,13 +2203,11 @@ font-size: 22px;
     background: rgba(255, 255, 255, 0.08);
 }
 
-.career-social-panel
-.facebook-feed-line.short {
+.career-social-panel .facebook-feed-line.short {
     width: 48%;
 }
 
-.career-social-panel
-.facebook-feed-image {
+.career-social-panel .facebook-feed-image {
     height: 42px;
 
     margin: 11px 13px;
@@ -2288,13 +2226,7 @@ font-size: 22px;
    YOUTUBE PREVIEW
 ========================================================= */
 
-.career-social-panel
-.youtube-preview {
-    position: relative;
-
-    width: auto;
-    max-width: none;
-
+.career-social-panel .youtube-preview {
     margin: 0 1rem;
 
     overflow: hidden;
@@ -2304,8 +2236,7 @@ font-size: 22px;
     box-sizing: border-box;
 }
 
-.career-social-panel
-.youtube-placeholder {
+.career-social-panel .youtube-placeholder {
     min-height: 175px;
 
     display: flex;
@@ -2327,8 +2258,7 @@ font-size: 22px;
     border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.career-social-panel
-.youtube-play {
+.career-social-panel .youtube-play {
     width: 46px;
     height: 32px;
 
@@ -2349,8 +2279,7 @@ font-size: 22px;
     font-size: 0.85rem;
 }
 
-.career-social-panel
-.youtube-placeholder span {
+.career-social-panel .youtube-placeholder span {
     color: rgba(203, 213, 225, 0.75);
 
     font-size: 0.66rem;
@@ -2362,15 +2291,11 @@ font-size: 22px;
    SOCIAL BUTTON
 ========================================================= */
 
-.career-social-panel
-.social-visit-btn {
+.career-social-panel .social-visit-btn {
     display: flex;
 
     align-items: center;
     justify-content: space-between;
-
-    width: auto;
-    max-width: none;
 
     margin: 0.8rem 1rem 1rem;
 
@@ -2392,18 +2317,11 @@ font-size: 22px;
 
     transition:
         color 0.25s ease,
-        background 0.25s ease,
-        border-color 0.25s ease,
         box-shadow 0.25s ease;
 }
 
-.career-social-panel
-.social-visit-btn:hover {
+.career-social-panel .social-visit-btn:hover {
     color: #ffffff;
-
-    background: var(--social-color-soft);
-
-    border-color: var(--social-color);
 
     box-shadow:
         0 0 15px var(--social-color-soft);
@@ -2422,14 +2340,13 @@ font-size: 22px;
     }
 
     .career-main {
-        max-width: 100%;
+        max-width: 820px;
     }
 
     .career-social-panel {
         position: static;
 
         width: 100%;
-        max-width: 100%;
     }
 }
 
@@ -2440,29 +2357,32 @@ font-size: 22px;
 @media (max-width: 640px) {
 
     .career-card {
-        min-height: 104px;
+        min-height: 100px;
 
         padding: 0.9rem 1rem;
     }
 
     .career-date-column {
-        width: 60px;
-        min-width: 60px;
+        width: 82px;
+        min-width: 82px;
 
         height: 66px;
     }
 
     .career-date-line {
-        left: 22px;
+        left: 63px;
+
+        top: 8px;
+        bottom: 8px;
     }
 
     .career-date-to::after,
     .career-date-from::after {
-        left: 18px;
+        left: 59px;
     }
 
     .career-info {
-        padding-left: 0.9rem;
+        padding-left: 1rem;
     }
 
     .career-info h3 {
@@ -2471,17 +2391,6 @@ font-size: 22px;
 
     .career-info p {
         font-size: 0.75rem;
-    }
-
-    .career-social-panel {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .career-social-panel
-    .social-preview-card {
-        width: 100% !important;
-        max-width: 100% !important;
     }
 }
 
@@ -2492,29 +2401,27 @@ font-size: 22px;
 @media (max-width: 400px) {
 
     .career-card {
-        min-height: 100px;
-
         padding: 0.85rem;
     }
 
     .career-date-column {
-        width: 56px;
-        min-width: 56px;
+        width: 76px;
+        min-width: 76px;
 
         height: 64px;
     }
 
     .career-date-line {
-        left: 20px;
+        left: 58px;
     }
 
     .career-date-to::after,
     .career-date-from::after {
-        left: 16px;
+        left: 54px;
     }
 
     .career-info {
-        padding-left: 0.7rem;
+        padding-left: 0.8rem;
     }
 
     .career-info h3 {
@@ -2525,6 +2432,7 @@ font-size: 22px;
         font-size: 0.72rem;
     }
 }
+
 
 /* ==========================================================================
 RECOMMENDATIONS
