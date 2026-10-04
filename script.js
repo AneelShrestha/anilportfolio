@@ -30,6 +30,7 @@ function initMobileMenu() {
 
     if (!mobileMenuButton || !mobileNav) return;
 
+
     mobileMenuButton.addEventListener("click", () => {
 
         mobileNav.classList.toggle("hidden");
@@ -45,7 +46,7 @@ function initMobileMenu() {
     });
 
 
-    /* Close menu after clicking a navigation link */
+    /* Close mobile menu after navigation */
 
     mobileNav.querySelectorAll("a").forEach(link => {
 
@@ -66,7 +67,7 @@ function initMobileMenu() {
 
 
 /* =========================================================
-   PORTFOLIO FILTER + FULL PREVIEW GALLERY
+   PORTFOLIO FILTER + IMAGE PREVIEW GALLERY
 ========================================================= */
 
 function initPortfolioFilter() {
@@ -161,7 +162,7 @@ function initPortfolioFilter() {
 
 
     /* =====================================================
-       INITIAL STATE
+       INITIAL PORTFOLIO STATE
     ===================================================== */
 
     works.classList.add("hidden");
@@ -172,7 +173,7 @@ function initPortfolioFilter() {
 
 
     /* =====================================================
-       CREATE FULL PREVIEW MODAL
+       CREATE CLEAN IMAGE PREVIEW MODAL
     ===================================================== */
 
     let previewModal =
@@ -193,7 +194,7 @@ function initPortfolioFilter() {
 
             <div class="portfolio-preview-container">
 
-                <!-- CLOSE -->
+                <!-- SMALL CLOSE BUTTON -->
                 <button
                     type="button"
                     class="portfolio-preview-close"
@@ -204,28 +205,10 @@ function initPortfolioFilter() {
                 </button>
 
 
-                <!-- TOP BAR -->
-                <div class="portfolio-preview-topbar">
-
-                    <div class="portfolio-preview-category">
-                        <span id="previewCategory">
-                            GRAPHIC DESIGN
-                        </span>
-                    </div>
-
-                    <div
-                        class="portfolio-preview-counter"
-                        id="previewCounter"
-                    >
-                        1 / 5
-                    </div>
-
-                </div>
-
-
-                <!-- IMAGE AREA -->
+                <!-- IMAGE STAGE -->
                 <div class="portfolio-preview-stage">
 
+                    <!-- SMALL PREVIOUS BUTTON -->
                     <button
                         type="button"
                         class="portfolio-preview-nav portfolio-preview-prev"
@@ -236,6 +219,7 @@ function initPortfolioFilter() {
                     </button>
 
 
+                    <!-- IMAGE -->
                     <div class="portfolio-preview-frame">
 
                         <img
@@ -244,9 +228,18 @@ function initPortfolioFilter() {
                             alt="Portfolio preview"
                         >
 
+                        <!-- PLAY / PAUSE INDICATOR -->
+                        <div
+                            id="portfolioPreviewStatus"
+                            class="portfolio-preview-status"
+                        >
+                            <i class="fas fa-pause"></i>
+                        </div>
+
                     </div>
 
 
+                    <!-- SMALL NEXT BUTTON -->
                     <button
                         type="button"
                         class="portfolio-preview-nav portfolio-preview-next"
@@ -258,59 +251,13 @@ function initPortfolioFilter() {
 
                 </div>
 
-
-                <!-- INFORMATION -->
-                <div class="portfolio-preview-info">
-
-                    <div>
-
-                        <span
-                            id="previewProjectCategory"
-                            class="portfolio-preview-label"
-                        >
-                            GRAPHIC DESIGN
-                        </span>
-
-                        <h3 id="previewProjectTitle">
-                            Creative Poster Design
-                        </h3>
-
-                        <p id="previewProjectDescription">
-                            Promotional poster concept.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- BOTTOM CONTROLS -->
-                <div class="portfolio-preview-controls">
-
-                    <button
-                        type="button"
-                        id="portfolioPreviewSlideshow"
-                        class="portfolio-preview-slideshow"
-                    >
-                        <i class="fas fa-play"></i>
-                        <span>SLIDESHOW</span>
-                    </button>
-
-
-                    <div class="portfolio-preview-hint">
-                        <span>
-                            <i class="fas fa-keyboard"></i>
-                            Use ← → to navigate
-                        </span>
-                    </div>
-
-                </div>
-
             </div>
 
         `;
 
-        document.body.appendChild(previewModal);
+        document.body.appendChild(
+            previewModal
+        );
 
     }
 
@@ -320,38 +267,38 @@ function initPortfolioFilter() {
     ===================================================== */
 
     const previewImage =
-        document.getElementById("portfolioPreviewImage");
-
-    const previewCategory =
-        document.getElementById("previewCategory");
-
-    const previewCounter =
-        document.getElementById("previewCounter");
-
-    const previewProjectCategory =
-        document.getElementById("previewProjectCategory");
-
-    const previewProjectTitle =
-        document.getElementById("previewProjectTitle");
-
-    const previewProjectDescription =
-        document.getElementById("previewProjectDescription");
+        document.getElementById(
+            "portfolioPreviewImage"
+        );
 
     const previewClose =
-        document.getElementById("portfolioPreviewClose");
+        document.getElementById(
+            "portfolioPreviewClose"
+        );
 
     const previewPrev =
-        document.getElementById("portfolioPreviewPrev");
+        document.getElementById(
+            "portfolioPreviewPrev"
+        );
 
     const previewNext =
-        document.getElementById("portfolioPreviewNext");
-
-    const previewSlideshow =
-        document.getElementById("portfolioPreviewSlideshow");
+        document.getElementById(
+            "portfolioPreviewNext"
+        );
 
     const previewBackdrop =
         previewModal.querySelector(
             ".portfolio-preview-backdrop"
+        );
+
+    const previewFrame =
+        previewModal.querySelector(
+            ".portfolio-preview-frame"
+        );
+
+    const previewStatus =
+        document.getElementById(
+            "portfolioPreviewStatus"
         );
 
 
@@ -369,7 +316,7 @@ function initPortfolioFilter() {
 
 
     /* =====================================================
-       GET PROJECTS FROM CURRENT CATEGORY
+       GET PROJECTS FROM CATEGORY
     ===================================================== */
 
     function getProjects(category) {
@@ -381,15 +328,18 @@ function initPortfolioFilter() {
 
         if (!grid) return [];
 
+
         return Array.from(
-            grid.querySelectorAll(".portfolio-project-card")
+            grid.querySelectorAll(
+                ".portfolio-project-card"
+            )
         );
 
     }
 
 
     /* =====================================================
-       READ PROJECT DATA
+       GET IMAGE DATA
     ===================================================== */
 
     function getProjectData(card) {
@@ -399,21 +349,6 @@ function initPortfolioFilter() {
                 ".portfolio-project-image img"
             );
 
-        const title =
-            card.querySelector(
-                ".portfolio-project-info h4"
-            );
-
-        const category =
-            card.querySelector(
-                ".portfolio-project-info span"
-            );
-
-        const description =
-            card.querySelector(
-                ".portfolio-project-info p"
-            );
-
 
         return {
 
@@ -421,18 +356,9 @@ function initPortfolioFilter() {
                 image ? image.src : "",
 
             alt:
-                image ? image.alt : "Portfolio preview",
-
-            title:
-                title ? title.textContent.trim() : "",
-
-            category:
-                category ? category.textContent.trim() : "",
-
-            description:
-                description
-                    ? description.textContent.trim()
-                    : ""
+                image
+                    ? image.alt
+                    : "Portfolio preview"
 
         };
 
@@ -440,7 +366,7 @@ function initPortfolioFilter() {
 
 
     /* =====================================================
-       UPDATE PREVIEW
+       UPDATE PREVIEW IMAGE
     ===================================================== */
 
     function updatePreview() {
@@ -459,7 +385,7 @@ function initPortfolioFilter() {
             );
 
 
-        /* Image */
+        /* Fade old image */
 
         previewImage.classList.remove(
             "portfolio-preview-image-visible"
@@ -474,38 +400,53 @@ function initPortfolioFilter() {
             previewImage.alt =
                 project.alt;
 
+
+            /* Fade new image in */
+
             previewImage.classList.add(
                 "portfolio-preview-image-visible"
             );
 
-        }, 80);
+        }, 100);
+
+    }
 
 
-        /* Category */
+    /* =====================================================
+       SHOW PLAY / PAUSE INDICATOR
+    ===================================================== */
 
-        previewCategory.textContent =
-            project.category;
+    function showStatus(icon) {
 
-        previewProjectCategory.textContent =
-            project.category;
-
-
-        /* Title */
-
-        previewProjectTitle.textContent =
-            project.title;
+        if (!previewStatus) return;
 
 
-        /* Description */
-
-        previewProjectDescription.textContent =
-            project.description;
+        previewStatus.innerHTML =
+            `<i class="fas fa-${icon}"></i>`;
 
 
-        /* Counter */
+        previewStatus.classList.remove(
+            "show"
+        );
 
-        previewCounter.textContent =
-            `${currentIndex + 1} / ${currentProjects.length}`;
+
+        /* Force animation restart */
+
+        void previewStatus.offsetWidth;
+
+
+        previewStatus.classList.add(
+            "show"
+        );
+
+
+        setTimeout(() => {
+
+            previewStatus.classList.remove(
+                "show"
+            );
+
+        }, 700);
 
     }
 
@@ -519,7 +460,11 @@ function initPortfolioFilter() {
         currentProjects =
             getProjects(category);
 
-        if (!currentProjects.length) return;
+
+        if (!currentProjects.length) {
+            return;
+        }
+
 
         currentIndex =
             Math.max(
@@ -546,15 +491,13 @@ function initPortfolioFilter() {
         );
 
 
-        /* Stop slideshow when opening */
-
-        stopSlideshow();
-
-
-        /* Prevent background scrolling */
-
         document.body.style.overflow =
             "hidden";
+
+
+        /* Automatically start slideshow */
+
+        startSlideshow();
 
     }
 
@@ -567,13 +510,16 @@ function initPortfolioFilter() {
 
         stopSlideshow();
 
+
         previewModal.classList.remove(
             "is-active"
         );
 
+
         document.body.classList.remove(
             "portfolio-preview-open"
         );
+
 
         document.body.style.overflow =
             "";
@@ -582,21 +528,28 @@ function initPortfolioFilter() {
 
 
     /* =====================================================
-       NEXT PROJECT
+       NEXT WORK
     ===================================================== */
 
     function showNext() {
 
-        if (!currentProjects.length) return;
+        if (!currentProjects.length) {
+            return;
+        }
+
 
         currentIndex++;
+
 
         if (
             currentIndex >=
             currentProjects.length
         ) {
+
             currentIndex = 0;
+
         }
+
 
         updatePreview();
 
@@ -604,14 +557,18 @@ function initPortfolioFilter() {
 
 
     /* =====================================================
-       PREVIOUS PROJECT
+       PREVIOUS WORK
     ===================================================== */
 
     function showPrevious() {
 
-        if (!currentProjects.length) return;
+        if (!currentProjects.length) {
+            return;
+        }
+
 
         currentIndex--;
+
 
         if (currentIndex < 0) {
 
@@ -620,26 +577,23 @@ function initPortfolioFilter() {
 
         }
 
+
         updatePreview();
 
     }
 
 
     /* =====================================================
-       SLIDESHOW
+       START AUTOMATIC SLIDESHOW
     ===================================================== */
 
     function startSlideshow() {
 
-        if (slideshowRunning) return;
-
-        slideshowRunning = true;
+        stopSlideshow(false);
 
 
-        previewSlideshow.innerHTML = `
-            <i class="fas fa-pause"></i>
-            <span>PAUSE</span>
-        `;
+        slideshowRunning =
+            true;
 
 
         slideshowTimer =
@@ -649,46 +603,11 @@ function initPortfolioFilter() {
 
             }, 4000);
 
-    }
 
+        if (previewStatus) {
 
-    function stopSlideshow() {
-
-        slideshowRunning = false;
-
-
-        if (slideshowTimer) {
-
-            clearInterval(
-                slideshowTimer
-            );
-
-            slideshowTimer = null;
-
-        }
-
-
-        if (previewSlideshow) {
-
-            previewSlideshow.innerHTML = `
-                <i class="fas fa-play"></i>
-                <span>SLIDESHOW</span>
-            `;
-
-        }
-
-    }
-
-
-    function toggleSlideshow() {
-
-        if (slideshowRunning) {
-
-            stopSlideshow();
-
-        } else {
-
-            startSlideshow();
+            previewStatus.innerHTML =
+                `<i class="fas fa-pause"></i>`;
 
         }
 
@@ -696,13 +615,89 @@ function initPortfolioFilter() {
 
 
     /* =====================================================
-       ADD PREVIEW BUTTON TO EVERY PROJECT
+       STOP AUTOMATIC SLIDESHOW
+    ===================================================== */
+
+    function stopSlideshow(updateStatus = true) {
+
+        if (slideshowTimer) {
+
+            clearInterval(
+                slideshowTimer
+            );
+
+            slideshowTimer =
+                null;
+
+        }
+
+
+        slideshowRunning =
+            false;
+
+
+        if (
+            updateStatus &&
+            previewStatus
+        ) {
+
+            previewStatus.innerHTML =
+                `<i class="fas fa-play"></i>`;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       TOGGLE PLAY / PAUSE
+       CLICKING IMAGE
+    ===================================================== */
+
+    function toggleSlideshow() {
+
+        if (slideshowRunning) {
+
+            stopSlideshow();
+
+            showStatus("play");
+
+        } else {
+
+            startSlideshow();
+
+            showStatus("pause");
+
+        }
+
+    }
+
+
+    /* =====================================================
+       REMOVE OLD PREVIEW BUTTONS
+       IF THEY EXIST
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            ".portfolio-project-preview-btn"
+        )
+        .forEach(button => {
+
+            button.remove();
+
+        });
+
+
+    /* =====================================================
+       CLICK IMAGE TO OPEN PREVIEW
     ===================================================== */
 
     workGrids.forEach(grid => {
 
         const category =
             grid.dataset.workCategory;
+
 
         const cards =
             grid.querySelectorAll(
@@ -712,41 +707,27 @@ function initPortfolioFilter() {
 
         cards.forEach((card, index) => {
 
-            let previewButton =
+            const image =
                 card.querySelector(
-                    ".portfolio-project-preview-btn"
+                    ".portfolio-project-image"
                 );
 
 
-            if (!previewButton) {
-
-                previewButton =
-                    document.createElement("button");
-
-                previewButton.type =
-                    "button";
-
-                previewButton.className =
-                    "portfolio-project-preview-btn";
-
-                previewButton.innerHTML = `
-                    <i class="fas fa-expand"></i>
-                    PREVIEW
-                `;
-
-                card.appendChild(
-                    previewButton
-                );
-
-            }
+            if (!image) return;
 
 
-            previewButton.addEventListener(
+            image.style.cursor =
+                "pointer";
+
+
+            image.addEventListener(
                 "click",
                 event => {
 
                     event.preventDefault();
+
                     event.stopPropagation();
+
 
                     openPreview(
                         category,
@@ -756,38 +737,185 @@ function initPortfolioFilter() {
                 }
             );
 
-
-            /* Also allow clicking image */
-
-            const image =
-                card.querySelector(
-                    ".portfolio-project-image"
-                );
-
-
-            if (image) {
-
-                image.style.cursor =
-                    "pointer";
-
-
-                image.addEventListener(
-                    "click",
-                    () => {
-
-                        openPreview(
-                            category,
-                            index
-                        );
-
-                    }
-                );
-
-            }
-
         });
 
     });
+
+
+    /* =====================================================
+       CLOSE BUTTON
+    ===================================================== */
+
+    if (previewClose) {
+
+        previewClose.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+                closePreview();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       BACKDROP CLOSE
+    ===================================================== */
+
+    if (previewBackdrop) {
+
+        previewBackdrop.addEventListener(
+            "click",
+            () => {
+
+                closePreview();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       PREVIOUS BUTTON
+    ===================================================== */
+
+    if (previewPrev) {
+
+        previewPrev.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+                showPrevious();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       NEXT BUTTON
+    ===================================================== */
+
+    if (previewNext) {
+
+        previewNext.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+                showNext();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       IMAGE CLICK = PLAY / PAUSE
+    ===================================================== */
+
+    if (previewFrame) {
+
+        previewFrame.addEventListener(
+            "click",
+            event => {
+
+                /*
+                 * Do not toggle when clicking
+                 * navigation buttons.
+                 */
+
+                if (
+                    event.target.closest(
+                        ".portfolio-preview-nav"
+                    )
+                ) {
+                    return;
+                }
+
+
+                toggleSlideshow();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       TOUCH SWIPE
+    ===================================================== */
+
+    let touchStartX = 0;
+
+    let touchEndX = 0;
+
+
+    if (previewFrame) {
+
+        previewFrame.addEventListener(
+            "touchstart",
+            event => {
+
+                touchStartX =
+                    event.changedTouches[0]
+                        .screenX;
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        previewFrame.addEventListener(
+            "touchend",
+            event => {
+
+                touchEndX =
+                    event.changedTouches[0]
+                        .screenX;
+
+
+                const distance =
+                    touchEndX -
+                    touchStartX;
+
+
+                if (
+                    Math.abs(distance) < 50
+                ) {
+                    return;
+                }
+
+
+                if (distance < 0) {
+
+                    showNext();
+
+                } else {
+
+                    showPrevious();
+
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+
+    }
 
 
     /* =====================================================
@@ -799,7 +927,10 @@ function initPortfolioFilter() {
         const info =
             categoryInfo[category];
 
-        if (!info) return;
+
+        if (!info) {
+            return;
+        }
 
 
         /* Hide category cards */
@@ -809,7 +940,7 @@ function initPortfolioFilter() {
         );
 
 
-        /* Show work area */
+        /* Show work section */
 
         works.classList.remove(
             "hidden"
@@ -844,7 +975,7 @@ function initPortfolioFilter() {
         }
 
 
-        /* Update heading */
+        /* Update section information */
 
         if (workNumber) {
 
@@ -870,7 +1001,7 @@ function initPortfolioFilter() {
         }
 
 
-        /* Update count */
+        /* Count selected works */
 
         const projectCount =
             selectedGrid
@@ -888,7 +1019,7 @@ function initPortfolioFilter() {
         }
 
 
-        /* Scroll to work section */
+        /* Scroll to selected work */
 
         setTimeout(() => {
 
@@ -903,7 +1034,7 @@ function initPortfolioFilter() {
 
 
     /* =====================================================
-       BACK TO PORTFOLIO
+       BACK TO PORTFOLIO CATEGORIES
     ===================================================== */
 
     function showCategories() {
@@ -954,8 +1085,10 @@ function initPortfolioFilter() {
 
                 event.preventDefault();
 
+
                 const category =
                     button.dataset.openCategory;
+
 
                 if (category) {
 
@@ -990,224 +1123,6 @@ function initPortfolioFilter() {
 
     }
 
-
-    /* =====================================================
-       PREVIOUS BUTTON
-    ===================================================== */
-
-    if (previewPrev) {
-
-        previewPrev.addEventListener(
-            "click",
-            event => {
-
-                event.preventDefault();
-
-                showPrevious();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       NEXT BUTTON
-    ===================================================== */
-
-    if (previewNext) {
-
-        previewNext.addEventListener(
-            "click",
-            event => {
-
-                event.preventDefault();
-
-                showNext();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       CLOSE BUTTON
-    ===================================================== */
-
-    if (previewClose) {
-
-        previewClose.addEventListener(
-            "click",
-            event => {
-
-                event.preventDefault();
-
-                closePreview();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       CLICK BACKDROP TO CLOSE
-    ===================================================== */
-
-    if (previewBackdrop) {
-
-        previewBackdrop.addEventListener(
-            "click",
-            () => {
-
-                closePreview();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       SLIDESHOW BUTTON
-    ===================================================== */
-
-    if (previewSlideshow) {
-
-        previewSlideshow.addEventListener(
-            "click",
-            event => {
-
-                event.preventDefault();
-
-                toggleSlideshow();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       KEYBOARD NAVIGATION
-    ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        event => {
-
-            if (
-                !previewModal.classList.contains(
-                    "is-active"
-                )
-            ) {
-                return;
-            }
-
-
-            if (event.key === "Escape") {
-
-                closePreview();
-
-            }
-
-
-            if (
-                event.key === "ArrowRight"
-            ) {
-
-                showNext();
-
-            }
-
-
-            if (
-                event.key === "ArrowLeft"
-            ) {
-
-                showPrevious();
-
-            }
-
-
-            if (
-                event.code === "Space"
-            ) {
-
-                event.preventDefault();
-
-                toggleSlideshow();
-
-            }
-
-        }
-    );
-
-
-    /* =====================================================
-       TOUCH / SWIPE SUPPORT
-    ===================================================== */
-
-    let touchStartX = 0;
-
-    let touchEndX = 0;
-
-
-    const stage =
-        previewModal.querySelector(
-            ".portfolio-preview-stage"
-        );
-
-
-    if (stage) {
-
-        stage.addEventListener(
-            "touchstart",
-            event => {
-
-                touchStartX =
-                    event.changedTouches[0].screenX;
-
-            },
-            { passive: true }
-        );
-
-
-        stage.addEventListener(
-            "touchend",
-            event => {
-
-                touchEndX =
-                    event.changedTouches[0].screenX;
-
-                const swipeDistance =
-                    touchEndX - touchStartX;
-
-
-                if (
-                    Math.abs(swipeDistance) < 50
-                ) {
-                    return;
-                }
-
-
-                if (swipeDistance < 0) {
-
-                    showNext();
-
-                } else {
-
-                    showPrevious();
-
-                }
-
-            },
-            { passive: true }
-        );
-
-    }
-
 }
 
 
@@ -1222,7 +1137,10 @@ function initContactForm() {
             "#contactForm"
         );
 
-    if (!contactForm) return;
+
+    if (!contactForm) {
+        return;
+    }
 
 
     contactForm.addEventListener(
@@ -1238,7 +1156,9 @@ function initContactForm() {
                 );
 
 
-            if (!button) return;
+            if (!button) {
+                return;
+            }
 
 
             const originalText =
@@ -1251,7 +1171,8 @@ function initContactForm() {
             `;
 
 
-            button.disabled = true;
+            button.disabled =
+                true;
 
 
             setTimeout(() => {
@@ -1294,7 +1215,10 @@ function initModalHandlers() {
             "packageModal"
         );
 
-    if (!modal) return;
+
+    if (!modal) {
+        return;
+    }
 
 
     const openButtons =
@@ -1315,6 +1239,7 @@ function initModalHandlers() {
             "hidden"
         );
 
+
         document.body.style.overflow =
             "hidden";
 
@@ -1326,6 +1251,7 @@ function initModalHandlers() {
         modal.classList.add(
             "hidden"
         );
+
 
         document.body.style.overflow =
             "";
