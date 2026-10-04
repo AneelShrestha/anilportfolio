@@ -6643,3 +6643,371 @@ RESPONSIVE
     border-color: rgba(24,119,242,.45);
     transform: translateY(-1px);
 }
+/* =========================================================
+   RECOMMENDATIONS — 3 × 2 PROFESSIONAL GRID
+========================================================= */
+
+.recommendations-heading {
+    max-width: 780px;
+}
+
+.recommendations-heading h2 {
+    margin-top: 12px;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    line-height: .98;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    color: #fff;
+}
+
+.recommendations-heading h2 span {
+    background: linear-gradient(
+        90deg,
+        #39ff88,
+        #2d8cff,
+        #ff4fd8
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.recommendations-heading p {
+    margin-top: 20px;
+    max-width: 650px;
+    color: rgba(255,255,255,.52);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.recommendation-card {
+    position: relative;
+    min-width: 0;
+    min-height: 330px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.018)
+        );
+
+    border: 1px solid rgba(255,255,255,.09);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+.recommendation-card::before {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+
+    top: -100px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background: var(--recommendation-glow);
+
+    filter: blur(45px);
+
+    opacity: .25;
+
+    pointer-events: none;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--recommendation-border);
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.28),
+        0 0 30px var(--recommendation-shadow);
+}
+
+
+/* =========================================================
+   PROFILE ROW
+========================================================= */
+
+.recommendation-profile {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* =========================================================
+   VECTOR AVATAR
+========================================================= */
+
+.recommendation-avatar {
+    width: 82px;
+    height: 82px;
+    min-width: 82px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 2px solid var(--recommendation-border);
+
+    background: rgba(255,255,255,.04);
+
+    box-shadow:
+        0 0 22px var(--recommendation-shadow);
+}
+
+.recommendation-avatar svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   PERSON
+========================================================= */
+
+.recommendation-person {
+    min-width: 0;
+}
+
+.recommendation-person h3 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 17px;
+    line-height: 1.2;
+    font-weight: 750;
+}
+
+.recommendation-person span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: rgba(255,255,255,.48);
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.recommendation-line {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    height: 1px;
+
+    margin: 20px 0 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--recommendation-border),
+            rgba(255,255,255,.06),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   RECOMMENDATION CONTENT
+========================================================= */
+
+.recommendation-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    gap: 12px;
+
+    flex: 1;
+}
+
+.recommendation-quote {
+    flex-shrink: 0;
+
+    margin-top: -4px;
+
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+    line-height: 1;
+
+    font-weight: 900;
+
+    color: var(--recommendation-color);
+
+    text-shadow:
+        0 0 15px var(--recommendation-shadow);
+}
+
+.recommendation-text,
+.recommendation-content p {
+    margin: 0;
+
+    color: rgba(255,255,255,.68);
+
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.recommendation-footer {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 20px;
+    padding-top: 14px;
+
+    border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.recommendation-footer span {
+    color: var(--recommendation-color);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: .18em;
+}
+
+.recommendation-footer strong {
+    color: var(--recommendation-color);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    opacity: .85;
+}
+
+
+/* =========================================================
+   CARD COLORS
+========================================================= */
+
+.recommendation-blue {
+    --recommendation-color: #2d8cff;
+    --recommendation-border: rgba(45,140,255,.65);
+    --recommendation-shadow: rgba(45,140,255,.25);
+    --recommendation-glow: #2d8cff;
+}
+
+.recommendation-green {
+    --recommendation-color: #39ff88;
+    --recommendation-border: rgba(57,255,136,.60);
+    --recommendation-shadow: rgba(57,255,136,.22);
+    --recommendation-glow: #39ff88;
+}
+
+.recommendation-pink {
+    --recommendation-color: #ff4fd8;
+    --recommendation-border: rgba(255,79,216,.65);
+    --recommendation-shadow: rgba(255,79,216,.25);
+    --recommendation-glow: #ff4fd8;
+}
+
+.recommendation-purple {
+    --recommendation-color: #9b6cff;
+    --recommendation-border: rgba(155,108,255,.65);
+    --recommendation-shadow: rgba(155,108,255,.25);
+    --recommendation-glow: #9b6cff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .recommendations-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .recommendation-card {
+        min-height: 0;
+        padding: 20px;
+    }
+
+    .recommendation-avatar {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+    }
+
+    .recommendation-person h3 {
+        font-size: 15px;
+    }
+
+    .recommendation-person span {
+        font-size: 10px;
+    }
+
+    .recommendation-text,
+    .recommendation-content p {
+        font-size: 12px;
+    }
+
+}
