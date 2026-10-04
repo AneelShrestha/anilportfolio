@@ -1433,339 +1433,208 @@ font-size: 22px;
 
 
 /* =========================================================
-06 — CAREER JOURNEY
+   06 — CAREER JOURNEY
+   CAREER CARD SYSTEM
 ========================================================= */
 
-.career-layout {
-display: grid;
-grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.75fr);
-gap: 3rem;
-align-items: start;
+.career-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
 }
 
-.career-main {
-min-width: 0;
-}
-
-.career-social-panel {
-position: sticky;
-top: 7rem;
-}
 
 /* =========================================================
-CAREER HEADINGS
+   CAREER CONTAINER
 ========================================================= */
-
-.career-heading {
-display: flex;
-align-items: center;
-gap: 1rem;
-margin-bottom: 2rem;
-}
-
-.career-heading-number {
-display: flex;
-align-items: center;
-justify-content: center;
-
-```
-width: 42px;
-height: 42px;
-
-border: 1px solid rgba(255,255,255,0.12);
-border-radius: 12px;
-
-color: rgba(255,255,255,0.55);
-font-size: 0.72rem;
-font-weight: 700;
-letter-spacing: 0.12em;
-```
-
-}
-
-.career-heading-label {
-display: block;
-
-```
-color: rgba(255,255,255,0.42);
-
-font-size: 0.68rem;
-font-weight: 700;
-
-letter-spacing: 0.18em;
-text-transform: uppercase;
-
-margin-bottom: 0.2rem;
-```
-
-}
-
-.career-heading h3 {
-margin: 0;
-
-```
-color: #fff;
-
-font-size: 1.35rem;
-font-weight: 800;
-```
-
-}
-
-/* =========================================================
-CAREER TIMELINE
-========================================================= */
-
-.career-timeline {
-position: relative;
-display: flex;
-flex-direction: column;
-gap: 1rem;
-}
-
-.career-item {
-display: grid;
-
-```
-grid-template-columns: 125px minmax(0, 1fr);
-
-gap: 1.25rem;
-
-align-items: stretch;
-```
-
-}
-
-.career-year {
-display: flex;
-align-items: center;
-
-```
-color: rgba(255,255,255,0.58);
-
-font-size: 0.78rem;
-font-weight: 700;
-
-letter-spacing: 0.08em;
-white-space: nowrap;
-```
-
-}
 
 .career-card {
-position: relative;
+    position: relative;
 
-```
-min-height: 105px;
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
 
-padding: 1.4rem 1.5rem;
+    min-height: 126px;
 
-transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
-```
+    padding: 1.35rem 1.5rem;
 
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .career-card:hover {
-transform: translateY(-3px);
+    transform: translateY(-4px);
 }
 
-.career-number {
-display: inline-flex;
-
-```
-margin-bottom: 0.65rem;
-
-color: rgba(255,255,255,0.35);
-
-font-size: 0.65rem;
-font-weight: 700;
-
-letter-spacing: 0.15em;
-```
-
-}
-
-.career-card h4 {
-margin: 0;
-
-```
-color: #fff;
-
-font-size: 1.05rem;
-font-weight: 800;
-
-line-height: 1.35;
-```
-
-}
-
-.career-card p {
-margin: 0.4rem 0 0;
-
-```
-color: rgba(148,163,184,0.85);
-
-font-size: 0.85rem;
-line-height: 1.5;
-```
-
-}
 
 /* =========================================================
-SOCIAL CHANNELS
+   LEFT DATE COLUMN
 ========================================================= */
 
-.social-channel-card {
-display: grid;
+.career-date-column {
+    position: relative;
 
-```
-grid-template-columns: 48px minmax(0, 1fr) auto;
+    display: flex;
+    flex-direction: column;
 
-align-items: center;
+    justify-content: space-between;
 
-gap: 1rem;
+    align-items: flex-start;
 
-width: 100%;
-
-padding: 1.2rem;
-
-margin-bottom: 1rem;
-
-text-decoration: none;
-
-transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
-```
-
+    padding: 0.15rem 0;
 }
 
-.social-channel-card:hover {
-transform: translateY(-4px);
+
+/* DATE */
+
+.career-date-to,
+.career-date-from {
+    position: relative;
+    z-index: 2;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 0.06em;
+
+    line-height: 1;
 }
 
-.social-channel-icon {
-display: flex;
-align-items: center;
-justify-content: center;
-
-```
-width: 48px;
-height: 48px;
-
-border-radius: 14px;
-
-background: rgba(255,255,255,0.06);
-
-color: #fff;
-
-font-size: 1.35rem;
-font-weight: 800;
-```
-
-}
-
-.social-channel-content {
-min-width: 0;
-}
-
-.social-channel-content span {
-display: block;
-
-```
-margin-bottom: 0.25rem;
-
-color: rgba(255,255,255,0.48);
-
-font-size: 0.68rem;
-font-weight: 700;
-
-letter-spacing: 0.12em;
-text-transform: uppercase;
-```
-
-}
-
-.social-channel-content strong {
-display: block;
-
-```
-color: #fff;
-
-font-size: 0.88rem;
-font-weight: 700;
-
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-```
-
-}
-
-.social-channel-arrow {
-color: rgba(255,255,255,0.5);
-
-```
-font-size: 1rem;
-
-transition:
-    transform 0.3s ease,
-    color 0.3s ease;
-```
-
-}
-
-.social-channel-card:hover .social-channel-arrow {
-color: #fff;
-transform: translate(3px, -3px);
-}
 
 /* =========================================================
-MOBILE
+   DATE CONNECTING LINE
 ========================================================= */
 
-@media (max-width: 900px) {
+.career-date-line {
+    position: absolute;
 
-```
-.career-layout {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    top: 12px;
+    bottom: 12px;
+
+    left: 25px;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.28),
+            rgba(255, 255, 255, 0.07)
+        );
 }
 
-.career-social-panel {
-    position: static;
-}
-```
 
+/* DATE POINTS */
+
+.career-date-to::after,
+.career-date-from::after {
+    content: "";
+
+    position: absolute;
+
+    left: 21px;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.35);
 }
+
+.career-date-to::after {
+    top: -1px;
+}
+
+.career-date-from::after {
+    bottom: -1px;
+}
+
+
+/* =========================================================
+   RIGHT INFORMATION COLUMN
+========================================================= */
+
+.career-info {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding-left: 1.35rem;
+}
+
+
+.career-info h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    line-height: 1.45;
+}
+
+
+.career-info p {
+    margin: 0.45rem 0 0;
+
+    color: rgba(148, 163, 184, 0.9);
+
+    font-size: 0.84rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 640px) {
 
-```
-.career-item {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-}
+    .career-card {
+        grid-template-columns: 82px minmax(0, 1fr);
 
-.career-year {
-    padding-left: 0.25rem;
-}
+        min-height: 116px;
 
-.career-card {
-    padding: 1.25rem;
-}
+        padding: 1.15rem 1.1rem;
+    }
 
-.career-heading-number {
-    width: 38px;
-    height: 38px;
-}
+    .career-date-line {
+        left: 21px;
+    }
 
-.social-channel-card {
-    padding: 1rem;
-}
-```
+    .career-date-to::after,
+    .career-date-from::after {
+        left: 17px;
+    }
+
+    .career-info {
+        padding-left: 0.95rem;
+    }
+
+    .career-info h3 {
+        font-size: 0.88rem;
+    }
+
+    .career-info p {
+        font-size: 0.76rem;
+    }
 
 }
 
