@@ -6484,3 +6484,162 @@ RESPONSIVE
     }
 
 }
+/* =========================================================
+   FACEBOOK PERSONAL PROFILE PREVIEW — FINAL FIX
+========================================================= */
+
+.facebook-live-profile {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none !important;
+    color: inherit !important;
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 14px;
+    background: rgba(255,255,255,.035);
+    transition: .25s ease;
+}
+
+.facebook-live-profile:hover {
+    border-color: rgba(24,119,242,.55);
+    background: rgba(24,119,242,.06);
+    transform: translateY(-2px);
+}
+
+.facebook-live-cover {
+    width: 100%;
+    height: 78px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(24,119,242,.95),
+            rgba(45,140,255,.55),
+            rgba(24,119,242,.18)
+        );
+    position: relative;
+}
+
+.facebook-live-cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255,255,255,.20),
+            transparent 35%
+        );
+}
+
+.facebook-live-profile-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 15px;
+    margin-top: -24px;
+    position: relative;
+    z-index: 2;
+}
+
+.facebook-live-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1877f2,
+            #2d8cff
+        );
+
+    border: 3px solid rgba(15,15,18,.95);
+
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: .5px;
+
+    box-shadow:
+        0 5px 18px rgba(24,119,242,.35);
+}
+
+.facebook-live-name {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-top: 23px;
+    min-width: 0;
+}
+
+.facebook-live-name strong {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.facebook-live-name span {
+    color: rgba(255,255,255,.55);
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+.facebook-live-status {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin: 14px 15px 15px;
+
+    padding-top: 11px;
+    border-top: 1px solid rgba(255,255,255,.07);
+
+    color: rgba(255,255,255,.58);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.facebook-online-dot {
+    width: 7px;
+    height: 7px;
+    min-width: 7px;
+    border-radius: 50%;
+    background: #39ff88;
+    box-shadow: 0 0 9px rgba(57,255,136,.7);
+}
+
+/* Facebook visit button */
+
+.social-visit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-top: 10px;
+    padding: 10px 13px;
+
+    border-radius: 10px;
+
+    background: rgba(24,119,242,.10);
+    border: 1px solid rgba(24,119,242,.20);
+
+    color: #fff !important;
+    text-decoration: none !important;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: .25s ease;
+}
+
+.social-visit-btn:hover {
+    background: rgba(24,119,242,.18);
+    border-color: rgba(24,119,242,.45);
+    transform: translateY(-1px);
+}
