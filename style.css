@@ -8833,3 +8833,44 @@ h2,
 /* ==========================================================================
    END — FINAL TYPOGRAPHY
 ========================================================================== */
+/* ==========================================================================
+   HERO TITLE — EQUAL LINE SIZE
+   I CREATE / VISUAL / STORIES
+========================================================================== */
+
+.hero-title,
+.hero-title .hero-line,
+.hero-title span,
+.hero-title .highlight,
+.hero-title .accent {
+    font-size: clamp(3.5rem, 7vw, 7rem) !important;
+    line-height: 0.95 !important;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 900 !important;
+    text-transform: capitalize !important;
+}
+
+
+/* Ensure every hero title line uses the exact same size */
+
+.hero-title > *,
+.hero-title * {
+    font-size: inherit !important;
+}
+
+
+/* Prevent VISUAL or any other individual line
+   from being scaled differently */
+
+.hero-title .visual,
+.hero-title .visual-text,
+.hero-title .highlight,
+.hero-title .accent {
+    font-size: inherit !important;
+    transform: none;
+}
+
+
+/* ==========================================================================
+   END — EQUAL HERO TITLE SIZE
+========================================================================== */
