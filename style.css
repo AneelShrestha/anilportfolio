@@ -15,7 +15,7 @@
    FONT IMPORT
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Rubik:wght@400;500;600;700&display=swap');
 
 
 /* =========================================================
@@ -8502,4 +8502,334 @@ select {
 
 /* ==========================================================================
    END — FINAL TYPOGRAPHY OVERRIDE
+========================================================================== */
+/* ==========================================================================
+   ANIL SHRESTHA — FINAL TYPOGRAPHY OVERRIDE
+   H1       → Poppins Black 900
+   H2       → Poppins Bold 700
+   H3-H6    → Rubik
+   ALL TEXT → Rubik
+   QUOTES   → Rubik
+========================================================================== */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html,
+body {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   ALL GENERAL TEXT
+========================================================= */
+
+body,
+p,
+span,
+small,
+label,
+li,
+figcaption,
+a,
+button,
+input,
+textarea,
+select,
+option {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   H1 — POPPINS BLACK
+========================================================= */
+
+h1,
+.main-title,
+.hero-title,
+.display-title {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 900 !important;
+    text-transform: capitalize !important;
+}
+
+
+/* =========================================================
+   H2 — POPPINS BOLD
+========================================================= */
+
+h2,
+.section-title {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 700 !important;
+    text-transform: capitalize !important;
+}
+
+
+/* =========================================================
+   H3 — H6 → RUBIK
+========================================================= */
+
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   QUOTE MARKS → RUBIK
+========================================================= */
+
+.quote-mark,
+.quote-container .quote-mark {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.site-header a,
+.header-nav a,
+.nav-links a,
+.nav-link,
+.mobile-menu-button {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skill-card h3,
+.skill-card span,
+.skill-card p {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   SOFTWARE
+========================================================= */
+
+.software-card h3,
+.software-card span,
+.software-card p {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   WORK / PORTFOLIO
+========================================================= */
+
+.portfolio-category-content h3,
+.portfolio-category-content p,
+.portfolio-project-info h4,
+.portfolio-project-info p,
+.portfolio-project-info > span,
+.portfolio-work-count,
+.portfolio-view-btn,
+.portfolio-back-btn {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   CAREER
+========================================================= */
+
+.career-dashboard-heading h2 {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 700 !important;
+    text-transform: capitalize !important;
+}
+
+.career-dashboard-heading h3,
+.career-info h3,
+.career-info p,
+.career-date,
+.career-date-to,
+.career-date-from {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.social-column .career-dashboard-heading h3,
+.social-preview-title h4,
+.social-preview-title p,
+.social-platform,
+.social-label,
+.social-visit-btn,
+.facebook-preview-profile,
+.facebook-preview-info strong,
+.facebook-preview-info span,
+.facebook-live-avatar,
+.facebook-live-name strong,
+.facebook-live-name span,
+.facebook-live-status,
+.youtube-placeholder {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   RECOMMENDATIONS
+========================================================= */
+
+.recommendations-badge,
+.recommendations-heading p,
+.recommendation-meta h3,
+.recommendation-meta .role-title,
+.quote-container p {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* Recommendations main H2 */
+
+.recommendations-heading h2 {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 700 !important;
+    text-transform: capitalize !important;
+}
+
+
+/* =========================================================
+   PACKAGES
+========================================================= */
+
+.package-card h3,
+.featured-package h3,
+.custom-package h3,
+.package-title-row h3,
+.package-subtitle,
+.package-price,
+.package-price small,
+.package-perfect,
+.package-content-grid > div,
+.package-category h4,
+.package-category p,
+.package-note,
+.package-view-btn,
+.package-select-btn {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-info-card span,
+.contact-info-card a,
+#contactForm label,
+#contactForm input,
+#contactForm textarea,
+#contactForm select,
+#contactForm button,
+.contact-submit {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer-links a,
+.footer-content,
+.footer-content p,
+.footer-content span {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   MODALS / PREVIEW
+========================================================= */
+
+.portfolio-modal,
+.portfolio-modal *,
+.preview-modal,
+.preview-modal * {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button,
+.btn,
+.button,
+.cta-button {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* =========================================================
+   UTILITY CLASSES
+========================================================= */
+
+.font-body {
+    font-family: "Rubik", sans-serif !important;
+}
+
+.font-display {
+    font-family: "Poppins", sans-serif !important;
+}
+
+
+/* =========================================================
+   FINAL H1 PRIORITY
+========================================================= */
+
+h1,
+.main-title,
+.hero-title,
+.display-title {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 900 !important;
+    text-transform: capitalize !important;
+}
+
+
+/* =========================================================
+   FINAL H2 PRIORITY
+========================================================= */
+
+h2,
+.section-title {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 700 !important;
+    text-transform: capitalize !important;
+}
+
+
+/* =========================================================
+   FINAL QUOTE PRIORITY
+========================================================= */
+
+.quote-mark,
+.quote-container .quote-mark {
+    font-family: "Rubik", sans-serif !important;
+}
+
+
+/* ==========================================================================
+   END — FINAL TYPOGRAPHY
 ========================================================================== */
