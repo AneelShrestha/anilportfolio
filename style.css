@@ -52,7 +52,17 @@ h2,
     text-transform: uppercase;
     letter-spacing: -0.02em;
 }
+/* ==========================================================================
+SECTION LABELS
+POPPINS BLACK
+========================================================================== */
 
+.section-tag {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
 /* ==========================================================================
 DETAILS / SUPPORTING INFORMATION
 MONOSPACE
