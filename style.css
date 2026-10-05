@@ -1,4 +1,553 @@
 /* ==========================================================================
+   ANIL SHRESTHA — GLOBAL TYPOGRAPHY SYSTEM
+   PREMIUM CREATIVE PORTFOLIO
+   --------------------------------------------------------------------------
+   DISPLAY / HEADINGS : Space Grotesk
+   BODY / UI           : Inter
+   QUOTE MARKS         : Georgia
+   --------------------------------------------------------------------------
+   This section controls the global font hierarchy.
+   Layout, colors, spacing and animations remain untouched.
+========================================================================== */
+
+
+/* =========================================================
+   FONT IMPORT
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   TYPOGRAPHY VARIABLES
+========================================================= */
+
+:root {
+
+    /* Primary typefaces */
+    --font-body:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --font-display:
+        "Space Grotesk",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --font-serif:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+
+    /* Font weights */
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-heavy: 800;
+    --weight-black: 900;
+}
+
+
+/* =========================================================
+   GLOBAL BODY
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: var(--weight-regular);
+
+    background: #070707;
+    color: #F2F2F2;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   UNIVERSAL FONT RESET
+   Prevent old monospace rules from leaking into the website.
+========================================================= */
+
+body,
+p,
+span,
+small,
+label,
+li,
+blockquote,
+figcaption,
+button,
+a,
+input,
+textarea,
+select {
+    font-family: var(--font-body);
+}
+
+
+/* =========================================================
+   DISPLAY / HEADING SYSTEM
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.main-title,
+.hero-title,
+.display-title,
+.section-title,
+.font-display {
+    font-family: var(--font-display);
+}
+
+
+/* =========================================================
+   H1 — PRIMARY DISPLAY
+========================================================= */
+
+h1,
+.main-title,
+.hero-title,
+.display-title {
+    font-family: var(--font-display);
+
+    font-weight: var(--weight-bold);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   H2 — SECTION HEADINGS
+========================================================= */
+
+h2,
+.section-title {
+    font-family: var(--font-display);
+
+    font-weight: var(--weight-bold);
+
+    text-transform: uppercase;
+
+    letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   H3 / H4 / H5 / H6
+========================================================= */
+
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+
+    font-weight: var(--weight-semibold);
+}
+
+
+/* =========================================================
+   SECTION LABELS
+   Example:
+   01 — ABOUT
+   02 — EXPERTISE
+   03 — SOFTWARE
+========================================================= */
+
+.section-tag,
+.section-label,
+.section-number {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-bold);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   DISPLAY FONT UTILITY
+========================================================= */
+
+.font-display {
+    font-family: var(--font-display);
+
+    font-weight: var(--weight-heavy);
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BODY COPY
+========================================================= */
+
+p {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-regular);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+    font-family: var(--font-body);
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-semibold);
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+========================================================= */
+
+input,
+textarea,
+select {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-regular);
+}
+
+
+/* =========================================================
+   HERO TYPOGRAPHY
+========================================================= */
+
+.hero-title,
+.hero-visual,
+.main-title {
+    font-family: var(--font-display);
+}
+
+
+/* =========================================================
+   CARD / PROJECT / CAREER / PACKAGE TITLES
+========================================================= */
+
+.skill-card h3,
+.software-card h3,
+.portfolio-category-content h3,
+.portfolio-project-info h4,
+.career-info h3,
+.social-column .career-dashboard-heading h3,
+.social-preview-title h4,
+.package-card h3,
+.featured-package h3,
+.custom-package h3,
+.recommendation-meta h3 {
+    font-family: var(--font-display);
+
+    font-weight: var(--weight-bold);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.01em;
+}
+
+
+/* =========================================================
+   PORTFOLIO SECTION TITLES
+========================================================= */
+
+.section-title,
+.section-title span {
+    font-family: var(--font-display);
+
+    font-weight: var(--weight-bold);
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PORTFOLIO SUPPORTING TEXT
+========================================================= */
+
+.section-description,
+.portfolio-project-info p,
+.portfolio-project-info > span,
+.portfolio-view-btn,
+.portfolio-back-btn,
+.portfolio-work-count {
+    font-family: var(--font-body);
+}
+
+
+/* =========================================================
+   SMALL UI / META TEXT
+========================================================= */
+
+small,
+label,
+figcaption {
+    font-family: var(--font-body);
+}
+
+
+/* =========================================================
+   QUOTATIONS
+   Keep quotation marks elegant and distinct.
+========================================================= */
+
+blockquote,
+.quote-mark {
+    font-family: var(--font-serif);
+}
+
+
+/* =========================================================
+   PACKAGE TYPOGRAPHY
+========================================================= */
+
+.package-card h3,
+.package-title-row h3 {
+    font-family: var(--font-display);
+
+    font-weight: var(--weight-bold);
+}
+
+
+.package-subtitle,
+.package-price,
+.package-price small,
+.package-perfect,
+.package-content-grid > div,
+.package-category p,
+.package-note,
+.package-view-btn,
+.package-select-btn {
+    font-family: var(--font-body);
+}
+
+
+.package-category h4 {
+    font-family: var(--font-display);
+
+    font-weight: var(--weight-bold);
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CAREER DASHBOARD TYPOGRAPHY
+========================================================= */
+
+.career-dashboard-heading h2,
+.career-dashboard-heading h3,
+.career-column .career-info h3,
+.software-column .software-card h3,
+.social-preview-title h4 {
+    font-family: var(--font-display);
+}
+
+
+.career-dashboard-heading p,
+.career-column .career-info p,
+.software-column .software-card p,
+.social-preview-title p {
+    font-family: var(--font-body);
+}
+
+
+/* Career dates */
+
+.career-date-to,
+.career-date-from {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-bold);
+}
+
+
+/* Social platform labels */
+
+.social-platform,
+.social-label {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-bold);
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   RECOMMENDATIONS TYPOGRAPHY
+========================================================= */
+
+.recommendations-badge {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-bold);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.18em;
+}
+
+
+.recommendations-heading h2,
+.recommendations-heading h3 {
+    font-family: var(--font-display);
+
+    font-weight: var(--weight-bold);
+}
+
+
+.recommendations-heading p {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-regular);
+}
+
+
+.recommendation-meta h3 {
+    font-family: var(--font-display);
+
+    font-weight: var(--weight-semibold);
+}
+
+
+.recommendation-meta .role-title {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-medium);
+}
+
+
+.quote-container p {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-regular);
+}
+
+
+.quote-mark {
+    font-family: var(--font-serif);
+}
+
+
+/* =========================================================
+   CONTACT TYPOGRAPHY
+========================================================= */
+
+.contact-info-card span,
+.social-label,
+#contactForm label {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-semibold);
+}
+
+
+.contact-info-card a,
+#contactForm input,
+#contactForm textarea,
+.contact-submit {
+    font-family: var(--font-body);
+}
+
+
+/* =========================================================
+   FOOTER TYPOGRAPHY
+========================================================= */
+
+.footer-links a {
+    font-family: var(--font-body);
+
+    font-weight: var(--weight-semibold);
+}
+
+
+/* =========================================================
+   FONT DISPLAY UTILITY CLASSES
+========================================================= */
+
+.font-body {
+    font-family: var(--font-body) !important;
+}
+
+.font-display {
+    font-family: var(--font-display) !important;
+}
+
+.font-serif {
+    font-family: var(--font-serif) !important;
+}
+
+
+/* =========================================================
+   PREVENT BROWSER FORM FONT OVERRIDES
+========================================================= */
+
+button,
+input,
+textarea,
+select,
+option {
+    font-family: var(--font-body);
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+    background: rgba(45, 140, 255, 0.30);
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background: rgba(45, 140, 255, 0.30);
+    color: #ffffff;
+}
+/* ==========================================================================
 ANIL SHRESTHA — PORTFOLIO CUSTOM CSS
 Cleaned & Consolidated Version
 Existing Theme & Structure Preserved
