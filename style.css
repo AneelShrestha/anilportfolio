@@ -83,7 +83,17 @@ DISPLAY UTILITY
     font-weight: 800;
     text-transform: uppercase;
 }
+/* ==========================================================================
+SKILL CARD TITLES
+MAIN DISPLAY TYPOGRAPHY
+========================================================================== */
 
+.skill-card h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
 /* ==========================================================================
 SELECTION
 ========================================================================== */
