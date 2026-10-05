@@ -84,16 +84,46 @@ DISPLAY UTILITY
     text-transform: uppercase;
 }
 /* ==========================================================================
-CARD TITLES
+CARD / PROJECT TITLES
 MAIN DISPLAY TYPOGRAPHY
 ========================================================================== */
 
 .skill-card h3,
-.software-card h3 {
+.software-card h3,
+.portfolio-category-content h3,
+.portfolio-project-info h4 {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.02em;
+}
+
+
+/* ==========================================================================
+PORTFOLIO SECTION TITLES
+POPPINS BLACK
+========================================================================== */
+
+.section-title,
+.section-title span {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================================
+PORTFOLIO SUPPORTING TEXT
+MONOSPACE
+========================================================================== */
+
+.section-description,
+.portfolio-project-info p,
+.portfolio-project-info > span,
+.portfolio-view-btn,
+.portfolio-back-btn,
+.portfolio-work-count {
+    font-family: monospace;
 }
 /* ==========================================================================
 SELECTION
