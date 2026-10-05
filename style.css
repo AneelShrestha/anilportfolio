@@ -84,7 +84,7 @@ DISPLAY UTILITY
     text-transform: uppercase;
 }
 /* ==========================================================================
-CARD / PROJECT / CAREER TITLES
+CARD / PROJECT / CAREER / PACKAGE TITLES
 MAIN DISPLAY TYPOGRAPHY
 ========================================================================== */
 
@@ -93,13 +93,15 @@ MAIN DISPLAY TYPOGRAPHY
 .portfolio-category-content h3,
 .portfolio-project-info h4,
 .career-info h3,
-.social-column .career-dashboard-heading h3 {
+.social-column .career-dashboard-heading h3,
+.package-card h3,
+.featured-package h3,
+.custom-package h3 {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.02em;
 }
-
 
 /* ==========================================================================
 PORTFOLIO SECTION TITLES
