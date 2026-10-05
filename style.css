@@ -94,7 +94,7 @@ DISPLAY UTILITY
     text-transform: uppercase;
 }
 /* ==========================================================================
-CARD / PROJECT / CAREER / PACKAGE TITLES
+CARD / PROJECT / CAREER / PACKAGE / SOCIAL TITLES
 MAIN DISPLAY TYPOGRAPHY
 ========================================================================== */
 
@@ -104,6 +104,7 @@ MAIN DISPLAY TYPOGRAPHY
 .portfolio-project-info h4,
 .career-info h3,
 .social-column .career-dashboard-heading h3,
+.social-preview-title h4,
 .package-card h3,
 .featured-package h3,
 .custom-package h3 {
@@ -112,7 +113,6 @@ MAIN DISPLAY TYPOGRAPHY
     text-transform: uppercase;
     letter-spacing: 0.02em;
 }
-
 /* ==========================================================================
 PORTFOLIO SECTION TITLES
 POPPINS BLACK
