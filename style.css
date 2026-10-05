@@ -84,11 +84,12 @@ DISPLAY UTILITY
     text-transform: uppercase;
 }
 /* ==========================================================================
-SKILL CARD TITLES
+CARD TITLES
 MAIN DISPLAY TYPOGRAPHY
 ========================================================================== */
 
-.skill-card h3 {
+.skill-card h3,
+.software-card h3 {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
