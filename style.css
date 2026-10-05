@@ -34,7 +34,7 @@ h1,
 .main-title,
 .hero-title,
 .display-title {
-    font-family: "Bison", Impact, "Arial Black", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -79,8 +79,8 @@ DISPLAY UTILITY
 ========================================================================== */
 
 .font-display {
-    font-family: "Bison", Impact, "Arial Black", sans-serif;
-    font-weight: 700;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 800;
     text-transform: uppercase;
 }
 
