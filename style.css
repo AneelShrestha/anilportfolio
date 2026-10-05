@@ -7,6 +7,10 @@ Existing Theme & Structure Preserved
 
 /* ==========================================================================
 ROOT / GLOBAL
+ANIL SHRESTHA — GLOBAL TYPOGRAPHY SYSTEM
+H1     → BISON
+H2     → POPPINS BLACK
+DETAIL → MONOSPACE
 ========================================================================== */
 
 html {
@@ -15,32 +19,99 @@ html {
 }
 
 body {
-    font-family: "Primavera Sans", "Trebuchet MS", Arial, sans-serif;
+    font-family: "Courier New", Courier, monospace;
     background: #070707;
     color: #F2F2F2;
     overflow-x: hidden;
 }
 
-.font-display {
-    font-family: "THE BOLD FONT", "Arial Black", Impact, sans-serif;
+/* ==========================================================================
+H1 — MAIN CREATIVE / DISPLAY TITLES
+BISON
+========================================================================== */
+
+h1,
+.main-title,
+.hero-title,
+.display-title {
+    font-family: "Bison", Impact, "Arial Black", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
+
+/* ==========================================================================
+H2 — MAJOR SECTION TITLES
+POPPINS BLACK
+========================================================================== */
+
+h2,
+.section-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+DETAILS / SUPPORTING INFORMATION
+MONOSPACE
+========================================================================== */
+
+body,
+p,
+span,
+small,
+label,
+li,
+blockquote,
+figcaption,
+button,
+a,
+input,
+textarea,
+select {
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* ==========================================================================
+DISPLAY UTILITY
+========================================================================== */
+
+.font-display {
+    font-family: "Bison", Impact, "Arial Black", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+SELECTION
+========================================================================== */
 
 ::selection {
     background: rgba(45, 140, 255, 0.35);
     color: #ffffff;
 }
 
+/* ==========================================================================
+MEDIA
+========================================================================== */
+
 img {
     max-width: 100%;
 }
 
+/* ==========================================================================
+FORM / INTERACTION
+========================================================================== */
+
 button,
 a,
 input,
-textarea {
+textarea,
+select {
     font-family: inherit;
 }
-
 
 /* ==========================================================================
 CUSTOM SCROLLBAR
