@@ -84,14 +84,16 @@ DISPLAY UTILITY
     text-transform: uppercase;
 }
 /* ==========================================================================
-CARD / PROJECT TITLES
+CARD / PROJECT / CAREER TITLES
 MAIN DISPLAY TYPOGRAPHY
 ========================================================================== */
 
 .skill-card h3,
 .software-card h3,
 .portfolio-category-content h3,
-.portfolio-project-info h4 {
+.portfolio-project-info h4,
+.career-info h3,
+.social-column .career-dashboard-heading h3 {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
