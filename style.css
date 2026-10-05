@@ -7980,3 +7980,526 @@ RESPONSIVE
     }
 
 }
+/* ==========================================================================
+   ANIL SHRESTHA — FINAL TYPOGRAPHY OVERRIDE
+   --------------------------------------------------------------------------
+   Paste this block at the VERY BOTTOM of style.css.
+
+   DISPLAY FONT : Space Grotesk
+   BODY FONT    : Inter
+   QUOTE MARKS  : Georgia
+
+   PURPOSE:
+   - Remove unwanted monospace/Courier typography
+   - Standardize headings and body text
+   - Preserve existing layout, colors, spacing and animations
+========================================================================== */
+
+
+/* =========================================================
+   GLOBAL FONT SYSTEM
+========================================================= */
+
+html,
+body {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   BODY / GENERAL CONTENT
+========================================================= */
+
+body,
+p,
+span,
+small,
+label,
+li,
+figcaption,
+a,
+button,
+input,
+textarea,
+select,
+option {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   ALL HEADINGS
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.main-title,
+.hero-title,
+.display-title,
+.section-title,
+.font-display {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+
+/* =========================================================
+   H1 / HERO DISPLAY
+========================================================= */
+
+h1,
+.main-title,
+.hero-title,
+.display-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+h2,
+.section-title,
+.section-title span {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   H3 / H4 / H5 / H6
+========================================================= */
+
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+
+/* =========================================================
+   SECTION TAGS / SMALL HEADINGS
+========================================================= */
+
+.section-tag,
+.section-label,
+.section-number,
+.card-number {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-title,
+.hero-title *,
+.hero-visual,
+.hero-visual * {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.site-header a,
+.header-nav a,
+.nav-links a,
+.nav-link,
+.mobile-menu-button {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skill-card h3,
+.skill-card span,
+.skill-card p {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.skill-card p {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   SOFTWARE
+========================================================= */
+
+.software-card h3 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.software-card span,
+.software-card p {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   PORTFOLIO / WORK
+========================================================= */
+
+.portfolio-category-content h3,
+.portfolio-project-info h4 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.portfolio-category-content p,
+.portfolio-project-info p,
+.portfolio-project-info > span,
+.portfolio-work-count {
+    font-family: "Inter", sans-serif;
+}
+
+.portfolio-view-btn,
+.portfolio-back-btn {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PORTFOLIO CATEGORY META
+========================================================= */
+
+.portfolio-category-overlay,
+.portfolio-category-number {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   CAREER / PROFESSIONAL EXPERIENCE
+========================================================= */
+
+.career-dashboard-heading h2,
+.career-dashboard-heading h3,
+.career-info h3,
+.career-column .career-info h3 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.career-info p,
+.career-column .career-info p,
+.career-date,
+.career-date-to,
+.career-date-from {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   CAREER SMALL META
+========================================================= */
+
+.career-date,
+.career-date-to,
+.career-date-from {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SOCIAL DASHBOARD
+========================================================= */
+
+.social-column .career-dashboard-heading h3,
+.social-preview-title h4,
+.facebook-preview-profile,
+.facebook-live-name strong {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.social-preview-title p,
+.social-platform,
+.social-label,
+.facebook-preview-info span,
+.facebook-live-name span,
+.facebook-live-status,
+.youtube-placeholder {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   SOCIAL BUTTONS
+========================================================= */
+
+.social-visit-btn,
+.social-visit-btn span {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   RECOMMENDATIONS — HEADING
+========================================================= */
+
+.recommendations-heading h2,
+.recommendations-heading h3 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+
+/* =========================================================
+   RECOMMENDATIONS — SUPPORTING TEXT
+========================================================= */
+
+.recommendations-heading p,
+.recommendations-badge {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   RECOMMENDATION CARDS
+========================================================= */
+
+.recommendation-meta h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 600;
+}
+
+.recommendation-meta .role-title {
+    font-family: "Inter", sans-serif;
+}
+
+.quote-container p {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   RECOMMENDATION QUOTE MARK
+========================================================= */
+
+.quote-mark {
+    font-family: Georgia, "Times New Roman", serif !important;
+}
+
+
+/* =========================================================
+   PACKAGES
+========================================================= */
+
+.package-card h3,
+.featured-package h3,
+.custom-package h3,
+.package-title-row h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+}
+
+.package-subtitle,
+.package-price,
+.package-price small,
+.package-perfect,
+.package-content-grid > div,
+.package-category p,
+.package-note {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* Package category headings */
+
+.package-category h4 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+}
+
+
+/* Package buttons */
+
+.package-view-btn,
+.package-select-btn {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-info-card span,
+.social-label,
+#contactForm label {
+    font-family: "Inter", sans-serif;
+}
+
+.contact-info-card a,
+#contactForm input,
+#contactForm textarea,
+#contactForm select {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* Contact submit button */
+
+.contact-submit,
+#contactForm button {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer-links a,
+.footer-content,
+.footer-content p,
+.footer-content span {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   BUTTONS — GLOBAL
+========================================================= */
+
+button,
+.btn,
+.button,
+.cta-button {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MODAL / PREVIEW
+========================================================= */
+
+.portfolio-modal,
+.portfolio-modal *,
+.preview-modal,
+.preview-modal * {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* Keep preview controls clean */
+
+.portfolio-modal button,
+.preview-modal button {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   FORM CONTROLS
+========================================================= */
+
+input,
+textarea,
+select,
+option {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   UTILITY CLASSES
+========================================================= */
+
+.font-body {
+    font-family: "Inter", sans-serif !important;
+}
+
+.font-display {
+    font-family: "Space Grotesk", sans-serif !important;
+}
+
+.font-serif {
+    font-family: Georgia, "Times New Roman", serif !important;
+}
+
+
+/* =========================================================
+   REMOVE OLD MONOSPACE / COURIER EFFECT
+   Applies to common text elements only.
+========================================================= */
+
+body,
+p,
+span,
+small,
+label,
+li,
+figcaption,
+a,
+button,
+input,
+textarea,
+select {
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   FINAL HEADING PRIORITY
+   Ensures later legacy rules don't turn headings monospace.
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.main-title,
+.hero-title,
+.display-title,
+.section-title,
+.skill-card h3,
+.software-card h3,
+.portfolio-category-content h3,
+.portfolio-project-info h4,
+.career-info h3,
+.package-card h3,
+.featured-package h3,
+.custom-package h3,
+.package-category h4,
+.recommendations-heading h2,
+.recommendations-heading h3,
+.recommendation-meta h3 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+
+/* =========================================================
+   SMOOTH FONT RENDERING
+========================================================= */
+
+body,
+button,
+input,
+textarea,
+select {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+
+/* ==========================================================================
+   END — FINAL TYPOGRAPHY OVERRIDE
+========================================================================== */
