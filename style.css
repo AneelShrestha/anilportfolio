@@ -9021,23 +9021,3 @@ h2,
         font-size: 0.75rem;
     }
 }
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .package-actions {
-        gap: 8px;
-    }
-
-    .package-view-btn,
-    .package-select-btn {
-        min-height: 44px;
-        padding: 11px 12px;
-        font-size: 0.70rem;
-        letter-spacing: 0.06em;
-    }
-}
