@@ -3778,9 +3778,14 @@ FINAL CONSOLIDATED VERSION
 }
 
 /* ==========================================================================
-PACKAGES
-2 × 2 BALANCED PACKAGE SYSTEM
-========================================================================== */
+   PACKAGES
+   FINAL — 2 × 2 BALANCED PACKAGE SYSTEM
+   ========================================================================== */
+
+
+/* ==========================================================================
+   PACKAGES GRID
+   ========================================================================== */
 
 .packages-grid {
     display: grid;
@@ -3791,212 +3796,292 @@ PACKAGES
 
 
 /* ==========================================================================
-PACKAGE CARD
-========================================================================== */
+   PACKAGE CARD
+   ========================================================================== */
 
 .package-card {
+    --package-color: #ffffff;
+    --package-rgb: 255, 255, 255;
+
     position: relative;
     display: flex;
     flex-direction: column;
+
+    width: 100%;
     min-width: 0;
     min-height: 620px;
+
     padding: 32px;
+
+    border: 1px solid rgba(var(--package-rgb), 0.22);
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.10);
+
     background: rgba(15, 23, 42, 0.65);
+
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+
     overflow: hidden;
+
     transition:
         transform 0.3s ease,
         border-color 0.3s ease,
         box-shadow 0.3s ease;
 }
 
+
 .package-card:hover {
     transform: translateY(-6px);
+    border-color: rgba(var(--package-rgb), 0.55);
+
+    box-shadow:
+        0 18px 50px rgba(var(--package-rgb), 0.10);
 }
 
 
 /* ==========================================================================
-PACKAGE COLOUR SYSTEM
-========================================================================== */
+   PACKAGE COLOURS
+   ========================================================================== */
 
-.package-bronze {
+.package-card.package-bronze {
     --package-color: #39FF88;
     --package-rgb: 57, 255, 136;
 }
 
-.package-silver {
+.package-card.package-silver {
     --package-color: #2D8CFF;
     --package-rgb: 45, 140, 255;
 }
 
-.package-gold {
+.package-card.package-gold {
     --package-color: #FF4FD8;
     --package-rgb: 255, 79, 216;
 }
 
-.package-platinum {
+.package-card.package-platinum {
     --package-color: #FF4B5C;
     --package-rgb: 255, 75, 92;
 }
 
 
-.package-card {
-    border-color: rgba(var(--package-rgb), 0.22);
-}
-
-.package-card:hover {
-    border-color: rgba(var(--package-rgb), 0.55);
-    box-shadow: 0 18px 50px rgba(var(--package-rgb), 0.10);
-}
-
-
 /* ==========================================================================
-PACKAGE TOP
-========================================================================== */
+   PACKAGE TOP
+   ========================================================================== */
 
 .package-card-top {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
     gap: 20px;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
 
 
 .package-title-row {
     display: flex;
     align-items: center;
+
     gap: 14px;
     min-width: 0;
 }
 
 
+/* ==========================================================================
+   PACKAGE ICON
+   ========================================================================== */
+
 .package-icon {
     flex: 0 0 auto;
+
     width: 48px;
     height: 48px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 14px;
+
     background: rgba(var(--package-rgb), 0.10);
     border: 1px solid rgba(var(--package-rgb), 0.28);
+
+    color: var(--package-color);
+
     font-size: 22px;
     line-height: 1;
 }
 
 
-.package-card h3 {
+/* ==========================================================================
+   PACKAGE TITLE
+   ========================================================================== */
+
+.package-card h3,
+.package-title-row h3 {
     margin: 0;
+
     color: #ffffff;
+
     font-family: "Space Grotesk", sans-serif;
     font-size: clamp(1.35rem, 2vw, 1.8rem);
     font-weight: 800;
+
     line-height: 1;
     letter-spacing: 0.02em;
 }
 
 
-.package-subtitle {
-    display: block;
-    margin-top: 7px;
-    color: rgba(255, 255, 255, 0.48);
-    font-family: monospace;
-    font-size: 0.70rem;
-    letter-spacing: 0.10em;
-}
-
-
 /* ==========================================================================
-PACKAGE PRICE
-========================================================================== */
+   PACKAGE PRICE
+   ========================================================================== */
 
 .package-price {
     flex: 0 0 auto;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 125px;
+
+    padding: 9px 13px;
+
+    border-radius: 10px;
+
+    background: rgba(var(--package-rgb), 0.08);
+    border: 1px solid rgba(var(--package-rgb), 0.28);
+
     color: var(--package-color);
-    font-family: monospace;
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    font-weight: 700;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 800;
+
     line-height: 1.25;
-    text-align: right;
+    text-align: center;
+    white-space: nowrap;
 }
 
 
 .package-price small {
     display: block;
-    margin-top: 5px;
+
+    margin-top: 3px;
+
     color: rgba(255, 255, 255, 0.50);
-    font-family: monospace;
-    font-size: 0.68rem;
-    font-weight: 400;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+
+    line-height: 1.25;
 }
 
 
 /* ==========================================================================
-PERFECT FOR
-========================================================================== */
+   PACKAGE DESCRIPTION
+   ========================================================================== */
 
 .package-perfect {
-    margin: 0 0 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.66);
-    font-family: monospace;
-    font-size: 0.78rem;
-    line-height: 1.7;
-}
+    margin: 0 0 22px;
+    padding-bottom: 18px;
 
-.package-perfect strong {
-    color: var(--package-color);
-    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: rgba(255, 255, 255, 0.66);
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.76rem;
+    font-weight: 400;
+
+    line-height: 1.6;
 }
 
 
 /* ==========================================================================
-PACKAGE CONTENT
-3-COLUMN GRID
-========================================================================== */
+   MAIN PACKAGE FEATURES
+   EXACTLY 2 COLUMNS × 3 ROWS
+   ========================================================================== */
 
-.package-content-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px 14px;
+.package-card .package-content-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    grid-template-rows:
+        repeat(3, minmax(0, auto));
+
+    column-gap: 28px;
+    row-gap: 15px;
+
+    width: 100%;
+
+    max-height: none;
+    overflow: visible;
+
+    margin: 0;
+    padding: 0;
 }
 
 
-.package-content-grid > div {
-    color: rgba(255, 255, 255, 0.68);
-    font-family: monospace;
-    font-size: 0.72rem;
+/* Individual feature */
+
+.package-card .package-content-grid > div {
+    min-width: 0;
+
+    color: rgba(255, 255, 255, 0.70);
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.70rem;
+    font-weight: 400;
+
     line-height: 1.55;
 }
 
 
 /* ==========================================================================
-PLATINUM CONTENT
-========================================================================== */
+   VIEW MORE CONTENT
+   ========================================================================== */
 
-.package-platinum-content {
+.package-more-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    max-height: 380px;
+
+    gap: 18px;
+
+    max-height: 0;
+    margin-top: 0;
+
+    opacity: 0;
     overflow: hidden;
+
     transition:
         max-height 0.45s ease,
-        opacity 0.35s ease;
+        opacity 0.3s ease,
+        margin-top 0.3s ease;
 }
 
-.package-platinum-content.is-expanded {
+
+/* Expanded state */
+
+.package-more-content.is-expanded {
     max-height: 3000px;
+    margin-top: 24px;
+
+    opacity: 1;
 }
 
+
+/* ==========================================================================
+   PACKAGE CATEGORY
+   ========================================================================== */
 
 .package-category {
-    padding-bottom: 18px;
+    padding-bottom: 16px;
+
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
@@ -4007,64 +4092,97 @@ PLATINUM CONTENT
 
 
 .package-category h4 {
-    margin: 0 0 12px;
+    margin: 0 0 10px;
+
     color: var(--package-color);
-    font-family: "Poppins", sans-serif;
-    font-size: 0.72rem;
-    font-weight: 900;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.70rem;
+    font-weight: 800;
+
     letter-spacing: 0.08em;
+    line-height: 1.3;
+
     text-transform: uppercase;
 }
 
 
 .package-category p {
-    margin: 8px 0 0;
+    margin: 7px 0 0;
+
     color: rgba(255, 255, 255, 0.68);
-    font-family: monospace;
-    font-size: 0.72rem;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.70rem;
+    font-weight: 400;
+
     line-height: 1.6;
 }
 
 
+/* ==========================================================================
+   PACKAGE NOTE
+   ========================================================================== */
+
 .package-note {
     margin-top: 2px !important;
     padding: 14px;
+
     border-radius: 12px;
+
     background: rgba(var(--package-rgb), 0.055);
     border: 1px solid rgba(var(--package-rgb), 0.12);
+
     color: rgba(255, 255, 255, 0.48) !important;
-    font-family: monospace;
-    font-size: 0.65rem !important;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.64rem !important;
+    font-weight: 400;
+
     line-height: 1.65;
 }
 
 
 /* ==========================================================================
-VIEW MORE / SELECT PACKAGE
-BOTTOM LEFT + RIGHT
-========================================================================== */
+   PACKAGE ACTIONS
+   ALWAYS AT BOTTOM
+   ========================================================================== */
 
 .package-actions {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 14px;
+
     margin-top: auto;
     padding-top: 28px;
 }
 
 
+/* ==========================================================================
+   PACKAGE BUTTONS
+   ========================================================================== */
+
 .package-view-btn,
 .package-select-btn {
     min-height: 42px;
+
     padding: 10px 17px;
+
     border-radius: 10px;
-    font-family: monospace;
-    font-size: 0.68rem;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.67rem;
     font-weight: 700;
+
     letter-spacing: 0.06em;
+    line-height: 1;
+
     text-transform: uppercase;
+
     cursor: pointer;
+
     transition:
         background 0.25s ease,
         border-color 0.25s ease,
@@ -4074,53 +4192,59 @@ BOTTOM LEFT + RIGHT
 }
 
 
+/* ==========================================================================
+   VIEW MORE BUTTON
+   ========================================================================== */
+
 .package-view-btn {
-    color: rgba(255, 255, 255, 0.68);
+    flex: 0 0 auto;
+
+    color: rgba(255, 255, 255, 0.70);
+
     background: transparent;
+
     border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 
 .package-view-btn:hover {
     color: var(--package-color);
+
     border-color: rgba(var(--package-rgb), 0.45);
+
     background: rgba(var(--package-rgb), 0.07);
 }
 
 
+/* ==========================================================================
+   SELECT PACKAGE BUTTON
+   ========================================================================== */
+
 .package-select-btn {
     margin-left: auto;
+
     color: #050505;
+
     background: var(--package-color);
+
     border: 1px solid var(--package-color);
-    box-shadow: 0 8px 22px rgba(var(--package-rgb), 0.15);
+
+    box-shadow:
+        0 8px 22px rgba(var(--package-rgb), 0.15);
 }
 
 
 .package-select-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(var(--package-rgb), 0.25);
+
+    box-shadow:
+        0 12px 28px rgba(var(--package-rgb), 0.25);
 }
 
 
 /* ==========================================================================
-VIEW MORE STATES
-========================================================================== */
-
-.package-card:not(.package-platinum) .package-content-grid {
-    max-height: 118px;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-}
-
-.package-card:not(.package-platinum) .package-content-grid.is-expanded {
-    max-height: 800px;
-}
-
-
-/* ==========================================================================
-TABLET
-========================================================================== */
+   TABLET
+   ========================================================================== */
 
 @media (max-width: 900px) {
 
@@ -4129,53 +4253,76 @@ TABLET
     }
 
     .package-card {
-        min-height: 0;
+        min-height: 620px;
     }
 
-    .package-content-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .package-card .package-content-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
     }
 }
 
 
 /* ==========================================================================
-MOBILE
-========================================================================== */
+   MOBILE
+   ========================================================================== */
 
 @media (max-width: 600px) {
 
     .package-card {
+        min-height: 0;
+
         padding: 24px;
+
         border-radius: 20px;
     }
 
+
     .package-card-top {
         flex-direction: column;
+
         gap: 16px;
     }
 
+
     .package-price {
-        width: 100%;
-        text-align: left;
+        width: fit-content;
+
+        min-width: 120px;
+
+        align-items: center;
     }
 
-    .package-content-grid {
-        grid-template-columns: 1fr;
+
+    .package-card .package-content-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        column-gap: 18px;
+        row-gap: 13px;
     }
+
+
+    .package-card .package-content-grid > div {
+        font-size: 0.66rem;
+    }
+
 
     .package-actions {
         gap: 10px;
     }
 
+
     .package-view-btn,
     .package-select-btn {
         flex: 1;
+
         padding-left: 10px;
         padding-right: 10px;
-        font-size: 0.62rem;
+
+        font-size: 0.60rem;
     }
 }
-
 
 /* ==========================================================================
 CONTACT
