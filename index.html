@@ -2964,7 +2964,6 @@
             </article>
 
 
-
             <!-- ==============================================================
                  PLATINUM
                  ============================================================== -->
@@ -3228,7 +3227,115 @@
         </div>
 
     </div>
+<!-- =========================================================
+     PACKAGE PAYMENT AREA
+========================================================= -->
 
+<div id="packagePaymentPanel" class="package-payment-panel" aria-hidden="true">
+
+    <div class="package-payment-inner">
+
+        <div class="package-payment-header">
+            <span class="package-payment-label">SECURE PAYMENT</span>
+
+            <h3>
+                SELECTED PACKAGE:
+                <span id="selectedPackageName">BRONZE</span>
+            </h3>
+
+            <p>
+                Package Amount:
+                <strong id="selectedPackagePrice">NPR 8,000</strong>
+            </p>
+        </div>
+
+
+        <!-- QR IMAGE -->
+
+        <div class="package-qr-wrapper">
+
+            <p class="package-payment-instruction">
+                Scan the QR code using your Khalti app to complete the payment.
+            </p>
+
+            <div class="package-qr-image">
+                <img
+                    src="assets/payment/khalti-qr-sample.png"
+                    alt="Khalti Payment QR Code"
+                >
+            </div>
+
+            <span class="package-qr-note">
+                Replace this sample image with your actual Khalti QR code.
+            </span>
+
+        </div>
+
+
+        <!-- TRANSACTION PROOF -->
+
+        <div class="package-proof-area">
+
+            <h4>UPLOAD TRANSACTION PROOF</h4>
+
+            <p>
+                After completing the payment, upload your payment screenshot
+                or transaction proof.
+            </p>
+
+            <label class="package-upload-btn">
+
+                <input
+                    type="file"
+                    id="transactionProof"
+                    accept="image/*,.pdf"
+                >
+
+                <span>CHOOSE FILE</span>
+
+            </label>
+
+            <div
+                id="transactionFileName"
+                class="transaction-file-name"
+            >
+                No file selected
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="package-contact-area">
+
+            <p>
+                Payment completed?
+                Contact me with your transaction proof to confirm your package.
+            </p>
+
+            <button
+                type="button"
+                id="contactAfterTransaction"
+                class="package-contact-btn"
+            >
+                CONTACT ME AFTER TRANSACTION
+            </button>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="closePackagePayment"
+            class="package-payment-close"
+        >
+            CLOSE
+        </button>
+
+    </div>
+
+</div>
 </section>
 
 <!-- =========================================================
