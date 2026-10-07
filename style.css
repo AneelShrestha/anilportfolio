@@ -9021,3 +9021,222 @@ h2,
         font-size: 0.75rem;
     }
 }
+/* =========================================================
+   PACKAGE PAYMENT PANEL
+========================================================= */
+
+.package-payment-panel {
+    display: none;
+    width: 100%;
+    margin-top: 32px;
+    padding: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.package-payment-panel.is-visible {
+    display: block;
+}
+
+.package-payment-inner {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.package-payment-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.package-payment-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.3;
+}
+
+.package-payment-header h3 span {
+    margin-left: 6px;
+}
+
+.package-payment-header p {
+    margin: 10px 0 0;
+    opacity: 0.72;
+}
+
+.package-payment-header strong {
+    margin-left: 5px;
+}
+
+
+/* =========================================================
+   QR AREA
+========================================================= */
+
+.package-qr-wrapper {
+    margin-top: 28px;
+}
+
+.package-payment-instruction {
+    margin-bottom: 18px;
+    opacity: 0.75;
+}
+
+.package-qr-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    padding: 14px;
+    border-radius: 18px;
+    background: #ffffff;
+}
+
+.package-qr-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.package-qr-note {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.7rem;
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   TRANSACTION PROOF
+========================================================= */
+
+.package-proof-area {
+    margin-top: 30px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+}
+
+.package-proof-area h4 {
+    margin: 0 0 8px;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+}
+
+.package-proof-area p {
+    margin: 0 0 18px;
+    font-size: 0.85rem;
+    opacity: 0.65;
+}
+
+.package-upload-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.package-upload-btn input {
+    display: none;
+}
+
+.transaction-file-name {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.package-contact-area {
+    margin-top: 24px;
+}
+
+.package-contact-area p {
+    margin: 0 0 16px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.package-contact-btn {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 20px;
+    border: 0;
+    border-radius: 11px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.package-payment-close {
+    margin-top: 18px;
+    padding: 8px 16px;
+    border: 0;
+    background: transparent;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    opacity: 0.55;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .package-payment-panel {
+        margin-top: 24px;
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    .package-payment-header h3 {
+        font-size: 1.15rem;
+    }
+
+    .package-qr-image {
+        width: 210px;
+        height: 210px;
+    }
+
+    .package-proof-area {
+        padding: 20px 16px;
+    }
+
+    .package-contact-btn {
+        min-height: 48px;
+        padding: 12px 14px;
+        font-size: 0.7rem;
+    }
+}
