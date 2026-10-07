@@ -832,55 +832,323 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =====================================================
-       PACKAGE BUTTONS
-    ===================================================== */
+/* =====================================================
+   PACKAGE BUTTONS + PAYMENT SYSTEM
+===================================================== */
 
-    const packageButtons =
-        document.querySelectorAll(
-            "[data-package]"
-        );
 
-    packageButtons.forEach(button => {
+/* =====================================================
+   OLD PACKAGE BUTTONS → CONTACT
+   Kept for compatibility with any existing
+   data-package buttons elsewhere on the website.
+===================================================== */
 
-        button.addEventListener(
-            "click",
-            () => {
+const packageButtons =
+    document.querySelectorAll(
+        "[data-package]"
+    );
 
-                const packageName =
-                    button.getAttribute(
-                        "data-package"
-                    );
+packageButtons.forEach(button => {
 
-                const contact =
-                    document.querySelector(
-                        "#contact"
-                    );
+    button.addEventListener(
+        "click",
+        () => {
 
-                if (!contact) return;
+            const packageName =
+                button.getAttribute(
+                    "data-package"
+                );
 
-                const messageField =
-                    document.querySelector(
-                        "#packageMessage"
-                    );
+            const contact =
+                document.querySelector(
+                    "#contact"
+                );
 
-                if (messageField) {
+            if (!contact) return;
 
-                    messageField.value =
-                        `Hello Anil, I am interested in the ${packageName} package.`;
+            const messageField =
+                document.querySelector(
+                    "#packageMessage"
+                );
 
-                }
+            if (messageField) {
 
-                contact.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+                messageField.value =
+                    `Hello Anil, I am interested in the ${packageName} package.`;
 
             }
-        );
 
-    });
+            contact.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
 
+        }
+    );
+
+});
+
+
+/* =====================================================
+   PACKAGE PAYMENT ELEMENTS
+===================================================== */
+
+const packagePaymentPanel =
+    document.getElementById(
+        "packagePaymentPanel"
+    );
+
+const selectedPackageName =
+    document.getElementById(
+        "selectedPackageName"
+    );
+
+const selectedPackagePrice =
+    document.getElementById(
+        "selectedPackagePrice"
+    );
+
+const closePackagePayment =
+    document.getElementById(
+        "closePackagePayment"
+    );
+
+const transactionProof =
+    document.getElementById(
+        "transactionProof"
+    );
+
+const transactionFileName =
+    document.getElementById(
+        "transactionFileName"
+    );
+
+const contactAfterTransaction =
+    document.getElementById(
+        "contactAfterTransaction"
+    );
+
+
+/* =====================================================
+   PACKAGE PRICES
+===================================================== */
+
+const packagePrices = {
+
+    BRONZE:
+        "NPR 8,000",
+
+    SILVER:
+        "NPR 18,000",
+
+    GOLD:
+        "NPR 30,000",
+
+    PLATINUM:
+        "NPR 65,000 / Month"
+
+};
+
+
+/* =====================================================
+   SELECT PACKAGE
+   → SHOW KHALTI PAYMENT AREA
+===================================================== */
+
+const selectPackageButtons =
+    document.querySelectorAll(
+        ".package-select-btn"
+    );
+
+selectPackageButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const packageName =
+                button.getAttribute(
+                    "data-package-select"
+                );
+
+            const packagePrice =
+                packagePrices[
+                    packageName
+                ] || "";
+
+
+            /* -----------------------------------------
+               UPDATE SELECTED PACKAGE
+            ----------------------------------------- */
+
+            if (selectedPackageName) {
+
+                selectedPackageName.textContent =
+                    packageName;
+
+            }
+
+
+            if (selectedPackagePrice) {
+
+                selectedPackagePrice.textContent =
+                    packagePrice;
+
+            }
+
+
+            /* -----------------------------------------
+               SHOW PAYMENT PANEL
+            ----------------------------------------- */
+
+            if (!packagePaymentPanel) return;
+
+            packagePaymentPanel.classList.add(
+                "is-visible"
+            );
+
+            packagePaymentPanel.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            /* -----------------------------------------
+               RESET TRANSACTION FILE
+            ----------------------------------------- */
+
+            if (transactionProof) {
+
+                transactionProof.value = "";
+
+            }
+
+            if (transactionFileName) {
+
+                transactionFileName.textContent =
+                    "No file selected";
+
+            }
+
+
+            /* -----------------------------------------
+               SCROLL TO PAYMENT AREA
+            ----------------------------------------- */
+
+            packagePaymentPanel.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   CLOSE PAYMENT AREA
+===================================================== */
+
+if (closePackagePayment) {
+
+    closePackagePayment.addEventListener(
+        "click",
+        () => {
+
+            if (!packagePaymentPanel) return;
+
+            packagePaymentPanel.classList.remove(
+                "is-visible"
+            );
+
+            packagePaymentPanel.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   UPLOAD TRANSACTION PROOF
+   → SHOW SELECTED FILE NAME
+===================================================== */
+
+if (transactionProof) {
+
+    transactionProof.addEventListener(
+        "change",
+        () => {
+
+            if (
+                transactionProof.files &&
+                transactionProof.files.length > 0
+            ) {
+
+                transactionFileName.textContent =
+                    transactionProof.files[0].name;
+
+            } else {
+
+                transactionFileName.textContent =
+                    "No file selected";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   CONTACT ME AFTER TRANSACTION
+===================================================== */
+
+if (contactAfterTransaction) {
+
+    contactAfterTransaction.addEventListener(
+        "click",
+        () => {
+
+            const packageName =
+                selectedPackageName
+                    ? selectedPackageName.textContent
+                    : "";
+
+            const packagePrice =
+                selectedPackagePrice
+                    ? selectedPackagePrice.textContent
+                    : "";
+
+            const message =
+                `Hello Anil,
+
+I have completed the payment for the ${packageName} package (${packagePrice}).
+
+I would like to confirm my package and submit my transaction proof.
+
+Thank you.`;
+
+
+            window.location.href =
+                `mailto:babal6anil@gmail.com` +
+                `?subject=${encodeURIComponent(
+                    "Package Payment Confirmation - " +
+                    packageName
+                )}` +
+                `&body=${encodeURIComponent(
+                    message
+                )}`;
+
+        }
+    );
+
+}
 
     /* =====================================================
        CONTACT FORM
