@@ -8950,3 +8950,94 @@ h2,
 /* ==========================================================================
    END — EQUAL HERO TITLE SIZE
 ========================================================================== */
+/* =========================================================
+   RESPONSIVE PACKAGE ACTION BUTTONS
+========================================================= */
+
+.package-actions {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 14px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.package-view-btn,
+.package-select-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 18px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .package-actions {
+        gap: 12px;
+    }
+
+    .package-view-btn,
+    .package-select-btn {
+        min-height: 46px;
+        padding: 12px 14px;
+        font-size: 0.74rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .package-actions {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .package-view-btn,
+    .package-select-btn {
+        flex: none;
+        width: 100%;
+        min-height: 46px;
+        padding: 12px 16px;
+        font-size: 0.75rem;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .package-actions {
+        gap: 8px;
+    }
+
+    .package-view-btn,
+    .package-select-btn {
+        min-height: 44px;
+        padding: 11px 12px;
+        font-size: 0.70rem;
+        letter-spacing: 0.06em;
+    }
+}
