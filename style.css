@@ -8439,45 +8439,6 @@ h6 {
 }
 
 
-/* =========================================================
-   PACKAGES
-========================================================= */
-
-.package-card h3,
-.featured-package h3,
-.custom-package h3,
-.package-title-row h3 {
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 700;
-}
-
-.package-subtitle,
-.package-price,
-.package-price small,
-.package-perfect,
-.package-content-grid > div,
-.package-category p,
-.package-note {
-    font-family: "Inter", sans-serif;
-}
-
-
-/* Package category headings */
-
-.package-category h4 {
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 700;
-}
-
-
-/* Package buttons */
-
-.package-view-btn,
-.package-select-btn {
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-}
-
 
 /* =========================================================
    CONTACT
@@ -8853,27 +8814,6 @@ h6 {
     text-transform: capitalize !important;
 }
 
-
-/* =========================================================
-   PACKAGES
-========================================================= */
-
-.package-card h3,
-.featured-package h3,
-.custom-package h3,
-.package-title-row h3,
-.package-subtitle,
-.package-price,
-.package-price small,
-.package-perfect,
-.package-content-grid > div,
-.package-category h4,
-.package-category p,
-.package-note,
-.package-view-btn,
-.package-select-btn {
-    font-family: "Rubik", sans-serif !important;
-}
 
 
 /* =========================================================
