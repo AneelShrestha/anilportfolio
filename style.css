@@ -9240,3 +9240,222 @@ h2,
         font-size: 0.7rem;
     }
 }
+/* =========================================================
+   PORTFOLIO IMAGE PREVIEW
+   ========================================================= */
+
+.preview-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.preview-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   PREVIEW BOX
+   ========================================================= */
+
+.preview-box {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(90vw, 900px);
+    height: min(82vh, 700px);
+
+    max-width: 900px;
+    max-height: 700px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   PREVIEW IMAGE
+   ========================================================= */
+
+.preview-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.preview-image {
+    display: block;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.preview-close {
+    position: absolute;
+
+    top: -18px;
+    right: -18px;
+
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    color: #ffffff;
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.preview-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   PREVIOUS / NEXT
+   ========================================================= */
+
+.preview-control {
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    color: #ffffff;
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.preview-control:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.preview-prev {
+    left: -58px;
+}
+
+.preview-next {
+    right: -58px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .preview-overlay {
+        padding: 20px;
+    }
+
+    .preview-box {
+        width: 90vw;
+        height: 75vh;
+    }
+
+    .preview-close {
+        top: -12px;
+        right: -8px;
+    }
+
+    .preview-prev {
+        left: -5px;
+    }
+
+    .preview-next {
+        right: -5px;
+    }
+
+    .preview-control {
+        width: 34px;
+        height: 34px;
+
+        font-size: 26px;
+    }
+}
