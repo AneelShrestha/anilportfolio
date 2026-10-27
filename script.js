@@ -4,28 +4,64 @@
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+/* =====================================================
+   MOBILE MENU — FIXED
+===================================================== */
 
-    /* =====================================================
-       ELEMENTS
-    ===================================================== */
+if (mobileMenuButton && mobileMenu) {
 
-    const preloader = document.getElementById("preloader");
-    const siteHeader = document.getElementById("siteHeader");
+    mobileMenuButton.addEventListener("click", () => {
 
-    const mobileMenuButton =
-        document.getElementById("mobileMenuButton") ||
-        document.querySelector(".mobile-menu-button") ||
-        document.querySelector(".menu-toggle");
+        const isOpen =
+            mobileMenu.classList.contains("hidden");
 
-    const mobileMenu =
-        document.getElementById("mobileMenu") ||
-        document.querySelector(".mobile-menu") ||
-        document.querySelector(".nav-menu");
+        mobileMenu.classList.toggle("hidden", !isOpen);
+        mobileMenu.classList.toggle("active", isOpen);
 
-    const navLinks = document.querySelectorAll(
-        'a[href^="#"]'
-    );
+        mobileMenuButton.classList.toggle("active", isOpen);
 
+        mobileMenuButton.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        mobileMenuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+
+        document.body.classList.toggle("menu-open", isOpen);
+
+    });
+
+    /* Close menu after selecting a navigation link */
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mobileMenu.classList.add("hidden");
+            mobileMenu.classList.remove("active");
+
+            mobileMenuButton.classList.remove("active");
+
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            mobileMenuButton.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+            document.body.classList.remove("menu-open");
+
+        });
+
+    });
+
+}
 
     /* =====================================================
        PRELOADER
