@@ -1,6 +1,65 @@
 /* =========================================================
    ANIL SHRESTHA — PORTFOLIO JAVASCRIPT
-   Complete Replacement
+   Comp
+    
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    if (mobileMenuButton && mobileMenu) {
+
+        mobileMenuButton.addEventListener("click", () => {
+
+            const isOpening =
+                mobileMenu.classList.contains("hidden");
+
+            mobileMenu.classList.toggle("hidden", !isOpening);
+            mobileMenu.classList.toggle("active", isOpening);
+
+            mobileMenuButton.classList.toggle("active", isOpening);
+
+            mobileMenuButton.setAttribute(
+                "aria-expanded",
+                isOpening ? "true" : "false"
+            );
+
+            mobileMenuButton.setAttribute(
+                "aria-label",
+                isOpening
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+
+            document.body.classList.toggle(
+                "menu-open",
+                isOpening
+            );
+        });
+
+        mobileMenu.querySelectorAll("a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenu.classList.add("hidden");
+                mobileMenu.classList.remove("active");
+                mobileMenuButton.classList.remove("active");
+
+                mobileMenuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                mobileMenuButton.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                document.body.classList.remove("menu-open");
+            });
+        });
+    }
+
+lete Replacement
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
