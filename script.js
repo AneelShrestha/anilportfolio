@@ -6,6 +6,22 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const preloader = document.getElementById("preloader");
+    const siteHeader = document.getElementById("siteHeader");
+
+    const mobileMenuButton =
+        document.getElementById("mobileMenuBtn");
+
+    const mobileMenu =
+        document.getElementById("mobileNav");
+
+    const navLinks =
+        document.querySelectorAll('a[href^="#"]');
+
+    /* =====================================================
        PRELOADER
     ===================================================== */
 
