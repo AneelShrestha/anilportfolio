@@ -615,9 +615,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ===================================================== */
 
     const portfolioGalleryImages = document.querySelectorAll(
-        ".work-card img, .portfolio-item img, " +
-        ".work-item img, [data-portfolio-image]"
-    );
+    ".portfolio-project-card img, " +
+    ".work-card img, " +
+    ".portfolio-item img, " +
+    ".work-item img, " +
+    "[data-portfolio-image]"
+);
 
     portfolioGalleryImages.forEach(image => {
 
