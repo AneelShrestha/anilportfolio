@@ -1,39 +1,48 @@
 /* =========================================================
    ANIL SHRESTHA — PORTFOLIO JAVASCRIPT
-   Comp
-    
+   Complete Replacement
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
     /* =====================================================
-       MOBILE MENU
+       ELEMENT REFERENCES
+    ===================================================== */
+
+    const preloader = document.getElementById("preloader");
+    const siteHeader = document.getElementById("siteHeader");
+    const mobileMenuButton = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileNav");
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+
+
+    /* =====================================================
+       MOBILE MENU — FIXED
     ===================================================== */
 
     if (mobileMenuButton && mobileMenu) {
 
         mobileMenuButton.addEventListener("click", () => {
 
-            const isOpening =
+            const isOpen =
                 mobileMenu.classList.contains("hidden");
 
-            mobileMenu.classList.toggle("hidden", !isOpening);
-            mobileMenu.classList.toggle("active", isOpening);
-
-            mobileMenuButton.classList.toggle("active", isOpening);
+            mobileMenu.classList.toggle("hidden", !isOpen);
+            mobileMenu.classList.toggle("active", isOpen);
+            mobileMenuButton.classList.toggle("active", isOpen);
 
             mobileMenuButton.setAttribute(
                 "aria-expanded",
-                isOpening ? "true" : "false"
+                isOpen ? "true" : "false"
             );
 
             mobileMenuButton.setAttribute(
                 "aria-label",
-                isOpening
-                    ? "Close navigation menu"
-                    : "Open navigation menu"
+                isOpen ? "Close navigation menu" : "Open navigation menu"
             );
 
-            document.body.classList.toggle(
-                "menu-open",
-                isOpening
-            );
+            document.body.classList.toggle("menu-open", isOpen);
+
         });
 
         mobileMenu.querySelectorAll("a").forEach(link => {
@@ -55,36 +64,20 @@
                 );
 
                 document.body.classList.remove("menu-open");
+
             });
+
         });
+
     }
 
-lete Replacement
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* =====================================================
-       ELEMENTS
-    ===================================================== */
-
-    const preloader = document.getElementById("preloader");
-    const siteHeader = document.getElementById("siteHeader");
-
-    const mobileMenuButton =
-        document.getElementById("mobileMenuBtn");
-
-    const mobileMenu =
-        document.getElementById("mobileNav");
-
-    const navLinks =
-        document.querySelectorAll('a[href^="#"]');
 
     /* =====================================================
        PRELOADER
     ===================================================== */
 
     const hidePreloader = () => {
+
         if (!preloader) return;
 
         preloader.classList.add("loaded");
@@ -92,13 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             preloader.style.display = "none";
         }, 700);
+
     };
 
     window.addEventListener("load", () => {
         setTimeout(hidePreloader, 500);
     });
 
-    /* Safety fallback */
     setTimeout(hidePreloader, 4000);
 
 
@@ -107,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ===================================================== */
 
     const updateHeader = () => {
+
         if (!siteHeader) return;
 
         if (window.scrollY > 40) {
@@ -114,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             siteHeader.classList.remove("scrolled");
         }
+
     };
 
     window.addEventListener("scroll", updateHeader, {
@@ -124,56 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       MOBILE MENU
-    ===================================================== */
-
-    if (mobileMenuButton && mobileMenu) {
-
-        mobileMenuButton.addEventListener("click", () => {
-
-            const isOpen =
-                mobileMenu.classList.toggle("active");
-
-            mobileMenuButton.classList.toggle(
-                "active",
-                isOpen
-            );
-
-            mobileMenuButton.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
-
-            document.body.classList.toggle(
-                "menu-open",
-                isOpen
-            );
-        });
-
-        /* Close mobile menu when a link is clicked */
-
-        mobileMenu.querySelectorAll("a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                mobileMenu.classList.remove("active");
-                mobileMenuButton.classList.remove("active");
-
-                mobileMenuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                document.body.classList.remove(
-                    "menu-open"
-                );
-            });
-
-        });
-    }
-
-
-    /* =====================================================
        SMOOTH SCROLL
     ===================================================== */
 
@@ -181,8 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         link.addEventListener("click", function (event) {
 
-            const targetId =
-                this.getAttribute("href");
+            const targetId = this.getAttribute("href");
 
             if (
                 !targetId ||
@@ -192,17 +136,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            const target =
-                document.querySelector(targetId);
+            const target = document.querySelector(targetId);
 
             if (!target) return;
 
             event.preventDefault();
 
-            const headerHeight =
-                siteHeader
-                    ? siteHeader.offsetHeight
-                    : 0;
+            const headerHeight = siteHeader
+                ? siteHeader.offsetHeight
+                : 0;
 
             const targetPosition =
                 target.getBoundingClientRect().top +
@@ -223,13 +165,11 @@ document.addEventListener("DOMContentLoaded", () => {
        ACTIVE NAVIGATION
     ===================================================== */
 
-    const sections =
-        document.querySelectorAll("section[id]");
+    const sections = document.querySelectorAll("section[id]");
 
-    const navItems =
-        document.querySelectorAll(
-            '.site-nav a[href^="#"], .nav-links a[href^="#"]'
-        );
+    const navItems = document.querySelectorAll(
+        '.site-nav a[href^="#"], .nav-links a[href^="#"]'
+    );
 
     const updateActiveNav = () => {
 
@@ -246,12 +186,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         sections.forEach(section => {
 
-            const sectionTop =
-                section.offsetTop;
-
+            const sectionTop = section.offsetTop;
             const sectionBottom =
-                sectionTop +
-                section.offsetHeight;
+                sectionTop + section.offsetHeight;
 
             if (
                 scrollPosition >= sectionTop &&
@@ -266,23 +203,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             link.classList.remove("active");
 
-            const href =
-                link.getAttribute("href");
-
             if (
-                href === `#${currentSection}`
+                link.getAttribute("href") === `#${currentSection}`
             ) {
                 link.classList.add("active");
             }
 
         });
+
     };
 
-    window.addEventListener(
-        "scroll",
-        updateActiveNav,
-        { passive: true }
-    );
+    window.addEventListener("scroll", updateActiveNav, {
+        passive: true
+    });
 
     updateActiveNav();
 
@@ -291,39 +224,32 @@ document.addEventListener("DOMContentLoaded", () => {
        SCROLL REVEAL
     ===================================================== */
 
-    const revealElements =
-        document.querySelectorAll(
-            ".reveal, .reveal-up, .fade-in, .section-heading, .skill-card, .software-card, .package-card, .recommendation-card, .experience-item"
-        );
+    const revealElements = document.querySelectorAll(
+        ".reveal, .reveal-up, .fade-in, .section-heading, " +
+        ".skill-card, .software-card, .package-card, " +
+        ".recommendation-card, .experience-item"
+    );
 
     if ("IntersectionObserver" in window) {
 
-        const revealObserver =
-            new IntersectionObserver(
-                (entries, observer) => {
+        const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
 
-                    entries.forEach(entry => {
+                entries.forEach(entry => {
 
-                        if (!entry.isIntersecting) {
-                            return;
-                        }
+                    if (!entry.isIntersecting) return;
 
-                        entry.target.classList.add(
-                            "visible"
-                        );
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
 
-                        observer.unobserve(
-                            entry.target
-                        );
+                });
 
-                    });
-
-                },
-                {
-                    threshold: 0.12,
-                    rootMargin: "0px 0px -50px 0px"
-                }
-            );
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -50px 0px"
+            }
+        );
 
         revealElements.forEach(element => {
             revealObserver.observe(element);
@@ -353,15 +279,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animatedGroups.forEach(selector => {
 
-        const container =
-            document.querySelector(selector);
+        const container = document.querySelector(selector);
 
         if (!container) return;
 
-        const children =
-            Array.from(container.children);
-
-        children.forEach((child, index) => {
+        Array.from(container.children).forEach((child, index) => {
 
             child.style.setProperty(
                 "--animation-delay",
@@ -371,940 +293,714 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
+       /* =====================================================
+       PORTFOLIO CATEGORY FILTER
+    ===================================================== */
+
+    const portfolioFilters = document.querySelectorAll(
+        "[data-filter]"
+    );
+
+    const portfolioItems = document.querySelectorAll(
+        "[data-category]"
+    );
+
+    portfolioFilters.forEach(filterButton => {
+
+        filterButton.addEventListener("click", () => {
+
+            const selectedCategory =
+                filterButton.getAttribute("data-filter");
+
+            portfolioFilters.forEach(button => {
+                button.classList.remove("active");
+            });
+
+            filterButton.classList.add("active");
+
+            portfolioItems.forEach(item => {
+
+                const itemCategory =
+                    item.getAttribute("data-category");
+
+                const shouldShow =
+                    selectedCategory === "all" ||
+                    selectedCategory === itemCategory;
+
+                item.style.display = shouldShow ? "" : "none";
+
+            });
+
+        });
+
+    });
 
 
     /* =====================================================
-       WORK / PORTFOLIO PREVIEW
-       
-       Clicking artwork opens preview directly.
-       No visible PREVIEW button required.
-       Preview contains artwork only.
-       Automatic slideshow starts.
-       Mouse click toggles play / pause.
-       ===================================================== */
-
-    const workItems = Array.from(
-        document.querySelectorAll(
-            ".work-card, .project-card, .portfolio-item, [data-preview]"
-        )
-    );
-
-    let previewImages = [];
-    let currentPreviewIndex = 0;
-    let previewTimer = null;
-    let previewPlaying = false;
+       PORTFOLIO IMAGE PREVIEW
+    ===================================================== */
 
     let previewOverlay =
         document.getElementById("previewOverlay");
 
-    let previewImage =
-        document.getElementById("previewImage");
+    let previewImage = null;
+    let previewClose = null;
+    let previewPrevious = null;
+    let previewNext = null;
+    let previewPlayPause = null;
 
-    let previewPrev =
-        document.getElementById("previewPrev");
-
-    let previewNext =
-        document.getElementById("previewNext");
-
-    let previewClose =
-        document.getElementById("previewClose");
-
-
-    /* =====================================================
-       CREATE PREVIEW IF HTML DOES NOT EXIST
-    ===================================================== */
-
-    if (!previewOverlay) {
-
-        previewOverlay =
-            document.createElement("div");
-
-        previewOverlay.id =
-            "previewOverlay";
-
-        previewOverlay.className =
-            "preview-overlay";
-
-        previewOverlay.innerHTML = `
-            <div class="preview-box">
-
-                <button
-                    type="button"
-                    id="previewClose"
-                    class="preview-close"
-                    aria-label="Close preview"
-                >
-                    ×
-                </button>
-
-                <button
-                    type="button"
-                    id="previewPrev"
-                    class="preview-control preview-prev"
-                    aria-label="Previous"
-                >
-                    ‹
-                </button>
-
-                <div class="preview-image-wrap">
-                    <img
-                        id="previewImage"
-                        class="preview-image"
-                        src=""
-                        alt=""
-                    >
-                </div>
-
-                <button
-                    type="button"
-                    id="previewNext"
-                    class="preview-control preview-next"
-                    aria-label="Next"
-                >
-                    ›
-                </button>
-
-            </div>
-        `;
-
-        document.body.appendChild(
-            previewOverlay
-        );
-
-        previewImage =
-            document.getElementById(
-                "previewImage"
-            );
-
-        previewPrev =
-            document.getElementById(
-                "previewPrev"
-            );
-
-        previewNext =
-            document.getElementById(
-                "previewNext"
-            );
-
-        previewClose =
-            document.getElementById(
-                "previewClose"
-            );
-    }
+    let previewImages = [];
+    let previewIndex = 0;
+    let previewAutoplay = null;
+    let previewIsPlaying = false;
 
 
-    /* =====================================================
-       COLLECT WORK IMAGES
-    ===================================================== */
+    const stopPreviewAutoplay = () => {
 
-    workItems.forEach(item => {
-
-        const image =
-            item.querySelector("img");
-
-        if (!image) return;
-
-        const source =
-            image.currentSrc ||
-            image.src ||
-            image.getAttribute("src");
-
-        if (!source) return;
-
-        const existing =
-            previewImages.find(
-                imageItem =>
-                    imageItem.src === source
-            );
-
-        if (!existing) {
-
-            previewImages.push({
-                src: source,
-                alt:
-                    image.getAttribute("alt") ||
-                    "Portfolio artwork"
-            });
-
+        if (previewAutoplay) {
+            clearInterval(previewAutoplay);
+            previewAutoplay = null;
         }
 
-    });
+        previewIsPlaying = false;
+
+    };
 
 
-    /* =====================================================
-       PREVIEW FUNCTIONS
-    ===================================================== */
+    const updatePreviewImage = () => {
 
-    const renderPreview = () => {
-
-        if (
-            !previewImage ||
-            !previewImages.length
-        ) {
+        if (!previewImage || !previewImages.length) {
             return;
         }
 
-        const item =
-            previewImages[
-                currentPreviewIndex
-            ];
+        previewIndex =
+            (previewIndex + previewImages.length) %
+            previewImages.length;
 
-        previewImage.classList.remove(
-            "preview-image-show"
-        );
+        const currentImage = previewImages[previewIndex];
 
-        previewImage.src = item.src;
-        previewImage.alt = item.alt;
+        previewImage.src =
+            currentImage.currentSrc ||
+            currentImage.src;
 
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                previewImage.classList.add(
-                    "preview-image-show"
-                );
-            });
+        previewImage.alt =
+            currentImage.alt || "Portfolio artwork";
+
+    };
+
+
+    const startPreviewAutoplay = () => {
+
+        stopPreviewAutoplay();
+
+        if (previewImages.length < 2) {
+            return;
+        }
+
+        previewIsPlaying = true;
+
+        previewAutoplay = setInterval(() => {
+
+            previewIndex =
+                (previewIndex + 1) %
+                previewImages.length;
+
+            updatePreviewImage();
+
+        }, 3500);
+
+    };
+
+
+    const closePortfolioPreview = () => {
+
+        stopPreviewAutoplay();
+
+        if (previewOverlay) {
+            previewOverlay.classList.remove("active");
+            previewOverlay.setAttribute("aria-hidden", "true");
+        }
+
+        document.body.classList.remove("preview-open");
+
+    };
+
+
+    const openPortfolioPreview = (clickedImage, imageGroup) => {
+
+        previewImages = imageGroup.filter(image => {
+            return image && image.src;
         });
 
-    };
+        previewIndex = previewImages.indexOf(clickedImage);
 
-
-    const stopPreviewTimer = () => {
-
-        if (previewTimer) {
-
-            clearInterval(
-                previewTimer
-            );
-
-            previewTimer = null;
+        if (previewIndex < 0) {
+            previewIndex = 0;
         }
 
-    };
+        if (!previewOverlay) {
 
+            previewOverlay = document.createElement("div");
 
-    const startPreviewTimer = () => {
+            previewOverlay.id = "previewOverlay";
+            previewOverlay.className = "preview-overlay";
 
-        stopPreviewTimer();
+            previewOverlay.innerHTML = `
+                <div class="preview-box" role="dialog"
+                     aria-modal="true"
+                     aria-label="Portfolio artwork preview">
 
-        if (
-            !previewPlaying ||
-            previewImages.length < 2
-        ) {
-            return;
+                    <button type="button"
+                            id="previewClose"
+                            class="preview-close"
+                            aria-label="Close preview">
+                        &times;
+                    </button>
+
+                    <button type="button"
+                            id="previewPrevious"
+                            class="preview-nav preview-previous"
+                            aria-label="Previous artwork">
+                        &#10094;
+                    </button>
+
+                    <img id="previewImage"
+                         class="preview-image"
+                         alt="Portfolio artwork">
+
+                    <button type="button"
+                            id="previewNext"
+                            class="preview-nav preview-next"
+                            aria-label="Next artwork">
+                        &#10095;
+                    </button>
+
+                    <button type="button"
+                            id="previewPlayPause"
+                            class="preview-play-pause"
+                            aria-label="Pause slideshow">
+                        &#10074;&#10074;
+                    </button>
+
+                </div>
+            `;
+
+            document.body.appendChild(previewOverlay);
+
         }
 
-        previewTimer =
-            setInterval(() => {
+        previewImage =
+            previewOverlay.querySelector("#previewImage");
 
-                currentPreviewIndex =
-                    (
-                        currentPreviewIndex + 1
-                    ) %
+        previewClose =
+            previewOverlay.querySelector("#previewClose");
+
+        previewPrevious =
+            previewOverlay.querySelector("#previewPrevious");
+
+        previewNext =
+            previewOverlay.querySelector("#previewNext");
+
+        previewPlayPause =
+            previewOverlay.querySelector("#previewPlayPause");
+
+
+        updatePreviewImage();
+
+        previewOverlay.classList.add("active");
+        previewOverlay.setAttribute("aria-hidden", "false");
+
+        document.body.classList.add("preview-open");
+
+
+        if (previewClose) {
+            previewClose.onclick = closePortfolioPreview;
+        }
+
+        if (previewPrevious) {
+
+            previewPrevious.onclick = () => {
+
+                stopPreviewAutoplay();
+
+                previewIndex =
+                    (previewIndex - 1 + previewImages.length) %
                     previewImages.length;
 
-                renderPreview();
+                updatePreviewImage();
 
-            }, 3500);
+            };
 
-    };
-
-
-    const openPreview = index => {
-
-        if (!previewImages.length) {
-            return;
         }
 
-        currentPreviewIndex =
-            Math.max(
-                0,
-                Math.min(
-                    index,
-                    previewImages.length - 1
-                )
+        if (previewNext) {
+
+            previewNext.onclick = () => {
+
+                stopPreviewAutoplay();
+
+                previewIndex =
+                    (previewIndex + 1) %
+                    previewImages.length;
+
+                updatePreviewImage();
+
+            };
+
+        }
+
+        if (previewPlayPause) {
+
+            previewPlayPause.onclick = () => {
+
+                if (previewIsPlaying) {
+
+                    stopPreviewAutoplay();
+
+                    previewPlayPause.innerHTML =
+                        "&#9654;";
+
+                    previewPlayPause.setAttribute(
+                        "aria-label",
+                        "Play slideshow"
+                    );
+
+                } else {
+
+                    startPreviewAutoplay();
+
+                    previewPlayPause.innerHTML =
+                        "&#10074;&#10074;";
+
+                    previewPlayPause.setAttribute(
+                        "aria-label",
+                        "Pause slideshow"
+                    );
+
+                }
+
+            };
+
+        }
+
+
+        previewOverlay.onclick = event => {
+
+            if (event.target === previewOverlay) {
+                closePortfolioPreview();
+            }
+
+        };
+
+
+        startPreviewAutoplay();
+
+        if (previewPlayPause) {
+
+            previewPlayPause.innerHTML =
+                "&#10074;&#10074;";
+
+            previewPlayPause.setAttribute(
+                "aria-label",
+                "Pause slideshow"
             );
 
-        previewPlaying = true;
-
-        renderPreview();
-
-        previewOverlay.classList.add(
-            "active"
-        );
-
-        document.body.classList.add(
-            "preview-open"
-        );
-
-        startPreviewTimer();
-
-    };
-
-
-    const closePreview = () => {
-
-        stopPreviewTimer();
-
-        previewPlaying = false;
-
-        previewOverlay.classList.remove(
-            "active"
-        );
-
-        document.body.classList.remove(
-            "preview-open"
-        );
-
-    };
-
-
-    const nextPreview = () => {
-
-        if (!previewImages.length) return;
-
-        currentPreviewIndex =
-            (
-                currentPreviewIndex + 1
-            ) %
-            previewImages.length;
-
-        renderPreview();
-
-        if (previewPlaying) {
-            startPreviewTimer();
-        }
-
-    };
-
-
-    const previousPreview = () => {
-
-        if (!previewImages.length) return;
-
-        currentPreviewIndex =
-            (
-                currentPreviewIndex -
-                1 +
-                previewImages.length
-            ) %
-            previewImages.length;
-
-        renderPreview();
-
-        if (previewPlaying) {
-            startPreviewTimer();
         }
 
     };
 
 
     /* =====================================================
-       OPEN PREVIEW BY CLICKING WORK
+       CONNECT PORTFOLIO IMAGES TO PREVIEW
     ===================================================== */
 
-    workItems.forEach((item, index) => {
+    const portfolioGalleryImages = document.querySelectorAll(
+        ".work-card img, .portfolio-item img, " +
+        ".work-item img, [data-portfolio-image]"
+    );
 
-        item.addEventListener(
-            "click",
-            event => {
+    portfolioGalleryImages.forEach(image => {
 
-                /*
-                 * Don't interfere with ordinary links,
-                 * buttons or explicit controls.
-                 */
+        image.style.cursor = "pointer";
 
-                if (
-                    event.target.closest("a") &&
-                    !event.target.closest("img")
-                ) {
-                    return;
-                }
+        image.addEventListener("click", event => {
 
-                event.preventDefault();
+            event.preventDefault();
 
-                openPreview(index);
+            const galleryContainer =
+                image.closest(
+                    ".work-grid, .portfolio-grid, " +
+                    ".work-gallery, [data-gallery]"
+                );
 
-            }
-        );
+            const groupImages = galleryContainer
+                ? Array.from(
+                    galleryContainer.querySelectorAll(
+                        "img"
+                    )
+                )
+                : [image];
 
-        item.style.cursor = "pointer";
+            openPortfolioPreview(image, groupImages);
+
+        });
 
     });
 
 
     /* =====================================================
-       PREVIEW CONTROLS
+       CLOSE PREVIEW WITH ESCAPE KEY
     ===================================================== */
 
-    if (previewNext) {
+    document.addEventListener("keydown", event => {
 
-        previewNext.addEventListener(
-            "click",
-            event => {
-
-                event.stopPropagation();
-
-                nextPreview();
-
-            }
-        );
-
-    }
-
-
-    if (previewPrev) {
-
-        previewPrev.addEventListener(
-            "click",
-            event => {
-
-                event.stopPropagation();
-
-                previousPreview();
-
-            }
-        );
-
-    }
-
-
-    if (previewClose) {
-
-        previewClose.addEventListener(
-            "click",
-            event => {
-
-                event.stopPropagation();
-
-                closePreview();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       CLICK IMAGE = PLAY / PAUSE
-    ===================================================== */
-
-    if (previewImage) {
-
-        previewImage.addEventListener(
-            "click",
-            event => {
-
-                event.stopPropagation();
-
-                previewPlaying =
-                    !previewPlaying;
-
-                if (previewPlaying) {
-                    startPreviewTimer();
-                } else {
-                    stopPreviewTimer();
-                }
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       CLICK OUTSIDE PREVIEW = CLOSE
-    ===================================================== */
-
-    if (previewOverlay) {
-
-        previewOverlay.addEventListener(
-            "click",
-            event => {
-
-                if (
-                    event.target ===
-                    previewOverlay
-                ) {
-                    closePreview();
-                }
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       KEYBOARD CONTROLS
-    ===================================================== */
-
-    document.addEventListener(
-        "keydown",
-        event => {
-
-            if (
-                !previewOverlay ||
-                !previewOverlay.classList.contains(
-                    "active"
-                )
-            ) {
-                return;
-            }
-
-            if (event.key === "Escape") {
-                closePreview();
-            }
-
-            if (
-                event.key === "ArrowRight"
-            ) {
-                nextPreview();
-            }
-
-            if (
-                event.key === "ArrowLeft"
-            ) {
-                previousPreview();
-            }
-
-            if (event.key === " ") {
-
-                event.preventDefault();
-
-                previewPlaying =
-                    !previewPlaying;
-
-                if (previewPlaying) {
-                    startPreviewTimer();
-                } else {
-                    stopPreviewTimer();
-                }
-
-            }
-
+        if (
+            event.key === "Escape" &&
+            previewOverlay &&
+            previewOverlay.classList.contains("active")
+        ) {
+            closePortfolioPreview();
         }
-    );
 
+    });
+       /* =====================================================
+       PACKAGE BUTTONS — SCROLL TO CONTACT
+    ===================================================== */
 
-/* =====================================================
-   PACKAGE BUTTONS + PAYMENT SYSTEM
-===================================================== */
-
-
-/* =====================================================
-   OLD PACKAGE BUTTONS → CONTACT
-   Kept for compatibility with any existing
-   data-package buttons elsewhere on the website.
-===================================================== */
-
-const packageButtons =
-    document.querySelectorAll(
+    const packageButtons = document.querySelectorAll(
         "[data-package]"
     );
 
-packageButtons.forEach(button => {
+    packageButtons.forEach(button => {
 
-    button.addEventListener(
-        "click",
-        () => {
+        button.addEventListener("click", () => {
 
             const packageName =
-                button.getAttribute(
-                    "data-package"
-                );
+                button.getAttribute("data-package");
 
-            const contact =
-                document.querySelector(
-                    "#contact"
-                );
-
-            if (!contact) return;
+            const contactSection =
+                document.getElementById("contact");
 
             const messageField =
-                document.querySelector(
-                    "#packageMessage"
-                );
+                document.getElementById("packageMessage");
 
             if (messageField) {
-
                 messageField.value =
                     `Hello Anil, I am interested in the ${packageName} package.`;
-
             }
 
-            contact.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+            if (contactSection) {
+                contactSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
 
-        }
-    );
+        });
 
-});
-
-
-/* =====================================================
-   PACKAGE PAYMENT ELEMENTS
-===================================================== */
-
-const packagePaymentPanel =
-    document.getElementById(
-        "packagePaymentPanel"
-    );
-
-const selectedPackageName =
-    document.getElementById(
-        "selectedPackageName"
-    );
-
-const selectedPackagePrice =
-    document.getElementById(
-        "selectedPackagePrice"
-    );
-
-const closePackagePayment =
-    document.getElementById(
-        "closePackagePayment"
-    );
-
-const transactionProof =
-    document.getElementById(
-        "transactionProof"
-    );
-
-const transactionFileName =
-    document.getElementById(
-        "transactionFileName"
-    );
-
-const contactAfterTransaction =
-    document.getElementById(
-        "contactAfterTransaction"
-    );
+    });
 
 
-/* =====================================================
-   PACKAGE PRICES
-===================================================== */
+    /* =====================================================
+       PACKAGE PAYMENT ELEMENTS
+    ===================================================== */
 
-const packagePrices = {
+    const packagePaymentPanel =
+        document.getElementById("packagePaymentPanel");
 
-    BRONZE:
-        "NPR 8,000",
+    const selectedPackageName =
+        document.getElementById("selectedPackageName");
 
-    SILVER:
-        "NPR 18,000",
+    const selectedPackagePrice =
+        document.getElementById("selectedPackagePrice");
 
-    GOLD:
-        "NPR 30,000",
+    const closePackagePayment =
+        document.getElementById("closePackagePayment");
 
-    PLATINUM:
-        "NPR 65,000 / Month"
+    const transactionProof =
+        document.getElementById("transactionProof");
 
-};
+    const transactionFileName =
+        document.getElementById("transactionFileName");
+
+    const contactAfterTransaction =
+        document.getElementById("contactAfterTransaction");
 
 
-/* =====================================================
-   SELECT PACKAGE
-   → SHOW KHALTI PAYMENT AREA
-===================================================== */
+    /* =====================================================
+       PACKAGE PRICES
+    ===================================================== */
 
-const selectPackageButtons =
-    document.querySelectorAll(
-        ".package-select-btn"
-    );
+    const packagePrices = {
+        BRONZE: "NPR 8,000",
+        SILVER: "NPR 18,000",
+        GOLD: "NPR 30,000",
+        PLATINUM: "NPR 65,000 / Month"
+    };
 
-selectPackageButtons.forEach(button => {
 
-    button.addEventListener(
-        "click",
-        () => {
+    /* =====================================================
+       SELECT PACKAGE — OPEN PAYMENT PANEL
+    ===================================================== */
+
+    const selectPackageButtons =
+        document.querySelectorAll(".package-select-btn");
+
+    selectPackageButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
 
             const packageName =
-                button.getAttribute(
-                    "data-package-select"
-                );
+                button.getAttribute("data-package-select");
+
+            if (!packageName) return;
 
             const packagePrice =
-                packagePrices[
-                    packageName
-                ] || "";
-
-
-            /* -----------------------------------------
-               UPDATE SELECTED PACKAGE
-            ----------------------------------------- */
+                packagePrices[packageName] || "";
 
             if (selectedPackageName) {
-
-                selectedPackageName.textContent =
-                    packageName;
-
+                selectedPackageName.textContent = packageName;
             }
-
 
             if (selectedPackagePrice) {
-
-                selectedPackagePrice.textContent =
-                    packagePrice;
-
+                selectedPackagePrice.textContent = packagePrice;
             }
 
+            if (!packagePaymentPanel) {
+                console.warn(
+                    "Package payment panel not found. Check #packagePaymentPanel in your HTML."
+                );
+                return;
+            }
 
-            /* -----------------------------------------
-               SHOW PAYMENT PANEL
-            ----------------------------------------- */
-
-            if (!packagePaymentPanel) return;
-
-            packagePaymentPanel.classList.add(
-                "is-visible"
-            );
+            packagePaymentPanel.classList.add("is-visible");
 
             packagePaymentPanel.setAttribute(
                 "aria-hidden",
                 "false"
             );
 
-
-            /* -----------------------------------------
-               RESET TRANSACTION FILE
-            ----------------------------------------- */
-
             if (transactionProof) {
-
                 transactionProof.value = "";
-
             }
 
             if (transactionFileName) {
-
                 transactionFileName.textContent =
                     "No file selected";
-
             }
-
-
-            /* -----------------------------------------
-               SCROLL TO PAYMENT AREA
-            ----------------------------------------- */
 
             packagePaymentPanel.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
             });
 
-        }
-    );
+        });
 
-});
+    });
 
 
-/* =====================================================
-   CLOSE PAYMENT AREA
-===================================================== */
+    /* =====================================================
+       CLOSE PACKAGE PAYMENT PANEL
+    ===================================================== */
 
-if (closePackagePayment) {
+    if (closePackagePayment) {
 
-    closePackagePayment.addEventListener(
-        "click",
-        () => {
+        closePackagePayment.addEventListener("click", () => {
 
             if (!packagePaymentPanel) return;
 
-            packagePaymentPanel.classList.remove(
-                "is-visible"
-            );
+            packagePaymentPanel.classList.remove("is-visible");
 
             packagePaymentPanel.setAttribute(
                 "aria-hidden",
                 "true"
             );
 
-        }
-    );
+        });
 
-}
+    }
 
 
-/* =====================================================
-   UPLOAD TRANSACTION PROOF
-   → SHOW SELECTED FILE NAME
-===================================================== */
+    /* =====================================================
+       TRANSACTION PROOF — DISPLAY FILE NAME
+    ===================================================== */
 
-if (transactionProof) {
+    if (transactionProof) {
 
-    transactionProof.addEventListener(
-        "change",
-        () => {
+        transactionProof.addEventListener("change", () => {
 
             if (
                 transactionProof.files &&
                 transactionProof.files.length > 0
             ) {
 
-                transactionFileName.textContent =
-                    transactionProof.files[0].name;
+                if (transactionFileName) {
+                    transactionFileName.textContent =
+                        transactionProof.files[0].name;
+                }
 
-            } else {
+            } else if (transactionFileName) {
 
                 transactionFileName.textContent =
                     "No file selected";
 
             }
 
-        }
-    );
-
-}
-
-
-/* =====================================================
-   CONTACT ME AFTER TRANSACTION
-===================================================== */
-
-if (contactAfterTransaction) {
-
-    contactAfterTransaction.addEventListener(
-        "click",
-        () => {
-
-            const packageName =
-                selectedPackageName
-                    ? selectedPackageName.textContent
-                    : "";
-
-            const packagePrice =
-                selectedPackagePrice
-                    ? selectedPackagePrice.textContent
-                    : "";
-
-            const message =
-                `Hello Anil,
-
-I have completed the payment for the ${packageName} package (${packagePrice}).
-
-I would like to confirm my package and submit my transaction proof.
-
-Thank you.`;
-
-
-            window.location.href =
-                `mailto:babal6anil@gmail.com` +
-                `?subject=${encodeURIComponent(
-                    "Package Payment Confirmation - " +
-                    packageName
-                )}` +
-                `&body=${encodeURIComponent(
-                    message
-                )}`;
-
-        }
-    );
-
-}
-
-    /* =====================================================
-       CONTACT FORM
-    ===================================================== */
-
-    const contactForm =
-        document.querySelector(
-            "#contactForm"
-        );
-
-    if (contactForm) {
-
-        contactForm.addEventListener(
-            "submit",
-            event => {
-
-                /*
-                 * Prevent accidental page reload.
-                 * If the form later receives a backend
-                 * action, this section can be replaced.
-                 */
-
-                const action =
-                    contactForm.getAttribute(
-                        "action"
-                    );
-
-                if (!action) {
-
-                    event.preventDefault();
-
-                    const name =
-                        contactForm.querySelector(
-                            '[name="name"]'
-                        )?.value.trim();
-
-                    const email =
-                        contactForm.querySelector(
-                            '[name="email"]'
-                        )?.value.trim();
-
-                    const message =
-                        contactForm.querySelector(
-                            '[name="message"]'
-                        )?.value.trim();
-
-                    if (
-                        !name ||
-                        !email ||
-                        !message
-                    ) {
-                        return;
-                    }
-
-                    const subject =
-                        encodeURIComponent(
-                            `Portfolio Inquiry from ${name}`
-                        );
-
-                    const body =
-                        encodeURIComponent(
-                            message +
-                            "\n\nName: " +
-                            name +
-                            "\nEmail: " +
-                            email
-                        );
-
-                    window.location.href =
-                        `mailto:babal6anil@gmail.com?subject=${subject}&body=${body}`;
-
-                }
-
-            }
-        );
+        });
 
     }
 
 
     /* =====================================================
-       BACK TO TOP
+       CONTACT ME AFTER TRANSACTION
     ===================================================== */
 
-    const backToTop =
-        document.querySelector(
-            "#backToTop"
-        );
+    if (contactAfterTransaction) {
 
-    if (backToTop) {
+        contactAfterTransaction.addEventListener("click", () => {
+
+            const packageName = selectedPackageName
+                ? selectedPackageName.textContent.trim()
+                : "";
+
+            const packagePrice = selectedPackagePrice
+                ? selectedPackagePrice.textContent.trim()
+                : "";
+
+            if (!packageName) {
+                alert("Please select a package first.");
+                return;
+            }
+
+            let message =
+                `Hello Anil,\n\n` +
+                `I would like to confirm my ${packageName} package ` +
+                `(${packagePrice}).\n\n`;
+
+            if (
+                transactionProof &&
+                transactionProof.files &&
+                transactionProof.files.length > 0
+            ) {
+                message +=
+                    `Transaction proof selected: ` +
+                    `${transactionProof.files[0].name}\n\n` +
+                    `I will attach the transaction proof to this email.\n\n`;
+            } else {
+                message +=
+                    `I will provide my transaction proof separately.\n\n`;
+            }
+
+            message += "Thank you.";
+
+            const emailSubject =
+                `Package Payment Confirmation - ${packageName}`;
+
+            window.location.href =
+                "mailto:babal6anil@gmail.com" +
+                `?subject=${encodeURIComponent(emailSubject)}` +
+                `&body=${encodeURIComponent(message)}`;
+
+        });
+
+    }
+       /* =====================================================
+       CONTACT FORM
+    ===================================================== */
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+    if (contactForm) {
+
+        contactForm.addEventListener("submit", event => {
+
+            event.preventDefault();
+
+            const nameField =
+                contactForm.querySelector(
+                    '[name="name"], #name'
+                );
+
+            const emailField =
+                contactForm.querySelector(
+                    '[name="email"], #email'
+                );
+
+            const subjectField =
+                contactForm.querySelector(
+                    '[name="subject"], #subject'
+                );
+
+            const messageField =
+                contactForm.querySelector(
+                    '[name="message"], #message'
+                );
+
+            const name = nameField
+                ? nameField.value.trim()
+                : "";
+
+            const email = emailField
+                ? emailField.value.trim()
+                : "";
+
+            const subject = subjectField
+                ? subjectField.value.trim()
+                : "Portfolio Contact";
+
+            const message = messageField
+                ? messageField.value.trim()
+                : "";
+
+            if (!name || !email || !message) {
+
+                alert(
+                    "Please fill in your name, email, and message."
+                );
+
+                return;
+
+            }
+
+            const emailSubject =
+                `${subject} — Message from ${name}`;
+
+            const emailBody =
+                `Name: ${name}\n` +
+                `Email: ${email}\n\n` +
+                `Message:\n${message}`;
+
+            window.location.href =
+                "mailto:babal6anil@gmail.com" +
+                `?subject=${encodeURIComponent(emailSubject)}` +
+                `&body=${encodeURIComponent(emailBody)}`;
+
+        });
+
+    }
+
+
+    /* =====================================================
+       BACK TO TOP BUTTON
+    ===================================================== */
+
+    const backToTopButton =
+        document.getElementById("backToTop");
+
+    if (backToTopButton) {
 
         const updateBackToTop = () => {
 
-            if (window.scrollY > 600) {
+            if (window.scrollY > 400) {
 
-                backToTop.classList.add(
-                    "visible"
-                );
+                backToTopButton.classList.add("visible");
+                backToTopButton.classList.add("show");
 
             } else {
 
-                backToTop.classList.remove(
-                    "visible"
-                );
+                backToTopButton.classList.remove("visible");
+                backToTopButton.classList.remove("show");
 
             }
 
@@ -1318,78 +1014,47 @@ Thank you.`;
 
         updateBackToTop();
 
-        backToTop.addEventListener(
-            "click",
-            () => {
+        backToTopButton.addEventListener("click", () => {
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       IMAGE LAZY LOADING
-    ===================================================== */
-
-    document
-        .querySelectorAll("img")
-        .forEach(image => {
-
-            if (
-                !image.hasAttribute("loading")
-            ) {
-                image.setAttribute(
-                    "loading",
-                    "lazy"
-                );
-            }
-
-            image.addEventListener(
-                "error",
-                () => {
-                    image.classList.add(
-                        "image-error"
-                    );
-                }
-            );
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
         });
 
-
-    /* =====================================================
-       DISABLE RIGHT CLICK ON PREVIEW IMAGE
-       (Keeps preview clean; does not affect the
-        rest of the website.)
-    ===================================================== */
-
-    if (previewImage) {
-
-        previewImage.addEventListener(
-            "contextmenu",
-            event => {
-                event.preventDefault();
-            }
-        );
-
     }
 
 
     /* =====================================================
-       YEAR — AUTOMATIC COPYRIGHT YEAR
+       LAZY-LOAD IMAGES
     ===================================================== */
 
-    const yearElements =
+    const lazyImages = document.querySelectorAll(
+        'img[loading="lazy"]'
+    );
+
+    lazyImages.forEach(image => {
+
+        image.addEventListener("error", () => {
+
+            image.classList.add("image-load-error");
+
+        });
+
+    });
+
+
+    /* =====================================================
+       CURRENT YEAR — COPYRIGHT
+    ===================================================== */
+
+    const currentYearElements =
         document.querySelectorAll(
-            "[data-current-year]"
+            "#currentYear, [data-current-year]"
         );
 
-    yearElements.forEach(element => {
+    currentYearElements.forEach(element => {
 
         element.textContent =
             new Date().getFullYear();
@@ -1398,11 +1063,35 @@ Thank you.`;
 
 
     /* =====================================================
-       PAGE READY
+       EXTERNAL LINKS — SECURITY
     ===================================================== */
 
-    document.body.classList.add(
-        "js-ready"
+    document.querySelectorAll(
+        'a[target="_blank"]'
+    ).forEach(link => {
+
+        link.setAttribute("rel", "noopener noreferrer");
+
+    });
+
+
+    /* =====================================================
+       PREVENT EMPTY PLACEHOLDER LINKS
+    ===================================================== */
+
+    document.querySelectorAll('a[href="#"]').forEach(link => {
+
+        link.addEventListener("click", event => {
+            event.preventDefault();
+        });
+
+    });
+       /* =====================================================
+       FINAL INITIALIZATION
+    ===================================================== */
+
+    console.log(
+        "Anil Shrestha Portfolio — JavaScript initialized successfully."
     );
 
 });
