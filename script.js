@@ -631,10 +631,13 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
 
             const galleryContainer =
-                image.closest(
-                    ".work-grid, .portfolio-grid, " +
-                    ".work-gallery, [data-gallery]"
-                );
+    image.closest(
+        ".portfolio-work-grid, " +
+        ".work-grid, " +
+        ".portfolio-grid, " +
+        ".work-gallery, " +
+        "[data-gallery]"
+    );
 
             const groupImages = galleryContainer
                 ? Array.from(
